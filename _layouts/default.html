@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<style>
+a.top {
+	position: fixed;
+	left: 90%;
+	bottom: 30px;
+	display: none;
+	float: right;
+}
+</style>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$( document ).ready( function() {
+		$( window ).scroll( function() {
+				if ( $( this ).scrollTop() > 200 ) {
+				$( '.top' ).fadeIn();
+				} else {
+				$( '.top' ).fadeOut();
+				}
+				} );
+		$( '.top' ).click( function() {
+				$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+				return false;
+				} );
+		} );
+</script>
+
+<html lang="{{ page.lang }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+<a href="#" style="color:black" class="top"><img src="/assets/top.png" width="35px" height="25px"/></a>
+
+</html>
