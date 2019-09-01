@@ -1,0 +1,13 @@
+{% assign sortTags = site.categories | sort%}
+
+{% for tag in sortTags %}
+{% for post in tag[1] %}
+{% if post.lang == page.lang %}
+{% if page.title != post.title %}
+{% if post.tags contains tagParam %}
+ - [{{ post.title }}]({{post.url}})
+{%endif%}
+{%endif%}
+{%endif%}
+{% endfor %}
+{% endfor %}
