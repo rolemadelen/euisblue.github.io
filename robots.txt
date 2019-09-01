@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://myoiwritescode.github.io/sitemap.xml
