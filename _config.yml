@@ -1,0 +1,47 @@
+# Site settings
+home:
+  en: Home
+  ko: 홈
+  ja: ホム
+title:
+  en: Mui (Jii Yoo)
+  ko: 무이 (지원 유)
+  ja: ムイ (ジー・ユー)
+email: public.mui@gmail.com
+
+description:
+  en: Programming Blog
+  ko: 프로그래밍 블로그
+  ja: プログラミングブログ
+
+index:
+  en:
+  ko: index-ko.html
+  ja: index-ja.html
+
+feed:
+  en: /feed.xml
+  ko: /feed-ko.xml
+  ja: /feed-ja.xml
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://muicode.github.io" # the base hostname & protocol for your site
+twitter_username: muicode
+github_username:  muicode
+
+# Social Sharing
+og_image : "/assets/logo.png"
+
+# Build settings
+markdown: kramdown
+
+# Syntax Highlighter
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Defaults
+defaults:
+  sitemap :
+    changefreq : daily
+    priority : 1.0
