@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+
+<br />
+<br />
+	<!-- previous -->
+<span>
+	{% for post in site.posts %}
+	  {% if post.lang == page.lang %}
+		{% if prev %}
+		  <a href="{{ post.url }}" style="color: blue;">
+			{% if post.lang == "ko" %}
+				이전 글
+			{% elsif post.lang == "ja" %}
+				前の記事
+		  	{% else %}
+				Previous post
+			{% endif %}
+		  </a>
+		{% endif %}
+		{% assign prev = false %}
+		{% if post.id == page.id %}
+		  {% assign prev = true %}
+		{% endif %}
+	  {% endif %}
+	{% endfor %}
+</span>
+
+<span style="float: right">
+	<!-- next -->
+	{% for post in site.posts reversed %}
+	  {% if post.lang == page.lang %}
+		{% if next %}
+		  <a href="{{ post.url }}" style="color: blue;">
+			{% if post.lang == "ko" %}
+				다음 글
+			{% elsif post.lang == "ja" %}
+				次の記事
+		  	{% else %}
+				Next post
+			{% endif %}
+		  </a>
+		  {% break %}
+		{% endif %}
+		{% assign next = false %}
+		{% if post.id == page.id %}
+		  {% assign next = true %}
+		{% endif %}
+	  {% endif %}
+	{% endfor %}
+</span>
+<br />
+<hr />
+<br />
+
+<script src="https://utteranc.es/client.js"
+        repo="myoiwritescode/myoiwritescode.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<br />
+
+</article>

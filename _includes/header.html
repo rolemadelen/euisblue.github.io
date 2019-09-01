@@ -1,0 +1,41 @@
+<header class="site-header site-navbar-scroll" id="navbar">
+<script>
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+	console.log(1);
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/{{ site.index[page.lang] }}" style="color: white;"> {{ site.home[page.lang] }} </a>$
+    <nav class="site-nav">
+      <div class="trigger">
+        {% assign pages=site.pages | where:"lang", page.lang %}
+        {% for my_page in pages %}
+          {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
+  <div style="float: right; line-height: 60px;">
+	  	{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+	  	{% for post in posts %} <a href="{{ post.url | prepend: site.baseurl }}" class="{{ post.lang }}" style="padding-right: 4px; color: {%if post.lang == page.lang %} #f17171; font-weight: bold;{%else%} #bfbfbf; {%endif%}">{{ post.lang }}</a> {% endfor %}
+
+	  	{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+	  	{% for page1 in pages %} <a href="{{ page1.url | prepend: site.baseurl }}" class="{{ page1.lang }}" style="padding-right: 4px;color: {%if page1.lang == page.lang %} #f17171; font-weight: bold; {%else%} #bfbfbf; {%endif%}">{{ page1.lang }}</a> {% endfor %}
+
+		</div>
+  </div>
+
+</header>
