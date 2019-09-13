@@ -6,11 +6,7 @@
 ### Demo
 - [View on the web](https://myoiwritescode.github.io/projects/rock-paper-scissor/)
 
-<div>
-<a href="#" style="float: left;"><img src="./rps-ip.png" height="400" width="800"/></a>
-
-<a href="#" style="float: right;"><img src="./rps-end.png" height="400" width="800"/></a>
-</div>
+<a href="#" style="float: left;"><img src="./rps-ip.png" height="700" width="600"/></a>
 
 ### Reflection
 
