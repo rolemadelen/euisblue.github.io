@@ -4,7 +4,7 @@
 - Create a 'Rock Paper Scissor' game using HTML/CSS and JavaScript.
 
 ### Demo
-- [View on the web](https://myoiwritescode.github.io/projects/rock-paper-scissor/)
+- [View on the web](https://muicode.github.io/projects/rock-paper-scissor/)
 
 <a href="#" style="float: left;"><img src="./rps-ip.png" height="700" width="600"/></a>
 
