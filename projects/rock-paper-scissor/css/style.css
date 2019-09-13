@@ -1,0 +1,104 @@
+body {
+    font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+header {
+    text-align: center;
+}
+
+div {
+    margin: 5px 0;
+}
+
+/* Game Screen part */
+.game-screen {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 695px;
+    height: 350px;
+    border: 3px dotted #aedfff;
+}
+
+.game-screen-header {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.game-screen-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-score-board {
+    display: flex;
+    justify-content: space-around;
+    font-size: 35px;
+}
+
+#user, #computer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px #cacaca solid;
+    border-radius: 50%;
+    width: 250px;
+    height: 200px;
+}
+
+#vs {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+/* RPS Selection part */
+.game-select-rps button {
+    border-radius: 50%;
+}
+.game-select-rps {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    width: 645px;
+}
+
+button {
+    background-color: #ffeaea;
+}
+#btn-rock {
+    margin: 0px 9px;
+}
+
+#btn-rock img {
+    margin: 0px 9px;
+    padding: 20px;
+}
+
+#btn-scissor img {
+    padding: 6px 25px;
+}
+
+#btn-paper {
+    margin: 0px 50px;
+}
+
+#btn-paper img {
+    padding: 25px;
+}
+
+.game-select-rps button:focus {
+    outline: 0;
+}
+
+.game-select-rps button:hover {
+    background-color: #a1ffba;
+    cursor: pointer;
+    box-shadow: 2px 2px;
+}
