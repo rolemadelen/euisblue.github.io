@@ -91,7 +91,7 @@ function sketch() {
     cells.forEach(cell => {
         cell.addEventListener('mouseenter', (e) => {
             let R, G, B;
-    
+            
             if(count == 10) {
                 R = G = B = 0;
                 count = 0;
@@ -105,7 +105,18 @@ function sketch() {
             if(toggle == 1) {
                 cell.style.backgroundColor = `rgba(${R}, ${G}, ${B}, 1.0)`;
             } else {
-                cell.style.backgroundColor = `rgba(0, 0, 0, 1.0)`;
+                let opa = cell.style.opacity;
+                if(opa == "") {
+                    opa = 0.20;
+                } else {
+                    opa = parseFloat(opa) + 0.2;
+                    if(opa > 1.0) {
+                        opa = 1.0
+                    }
+                }
+                console.log((cell.style.opacity));
+                cell.style.backgroundColor = `rgb(0, 0, 0)`;
+                cell.style.opacity = opa;
             }
         });
     });
