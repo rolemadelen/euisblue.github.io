@@ -1,4 +1,4 @@
-let size = parseInt(prompt("grid size: "));
+let size = 15;
 let cells;
 let color_btn;
 let color_btn_txts = ['Color', 'Black'];
@@ -72,49 +72,64 @@ function createResetButton() {
     div.appendChild(div_right);
 
     document.querySelector('.etch-a-sketch').appendChild(div);
+}
+
+function sketch() {
+    color_btn = document.querySelector('.color-button');
+    cells = document.querySelectorAll('.col');
     
+    color_btn.addEventListener('click', (e) => {
+        toggle = !toggle;
+    
+        if(toggle === true) {
+            color_btn.textContent = "Black";
+        } else {
+            color_btn.textContent = "Color";
+        }
+    });
+
+    cells.forEach(cell => {
+        cell.addEventListener('mouseenter', (e) => {
+            let R, G, B;
+    
+            if(count == 10) {
+                R = G = B = 0;
+                count = 0;
+            } else {
+                ++count;
+                R = Math.floor(Math.random() * 255 + 1);
+                G = Math.floor(Math.random() * 255 + 1);
+                B = Math.floor(Math.random() * 255 + 1);
+            }
+    
+            if(toggle == 1) {
+                cell.style.backgroundColor = `rgba(${R}, ${G}, ${B}, 1.0)`;
+            } else {
+                cell.style.backgroundColor = `rgba(0, 0, 0, 1.0)`;
+            }
+        });
+    });
+}
+
+function reset_func() {
+    size = parseInt(prompt("grid size: "));
+    document.body.removeChild(document.querySelectorAll('div')[0]);
+    createTemplate();
+    createBoard();
+    createResetButton();
+    sketch();
+    reset = document.querySelector('.reset button');
+    reset.addEventListener('click', (e) => {
+        reset_func();
+     });
 }
 
 createTemplate();
 createBoard();
 createResetButton();
-
-color_btn = document.querySelector('.color-button');
-cells = document.querySelectorAll('.col');
-
-color_btn.addEventListener('click', (e) => {
-    toggle = !toggle;
-
-    if(toggle === true) {
-        color_btn.textContent = "Black";
-    } else {
-        color_btn.textContent = "Color";
-    }
-});
-
-cells.forEach(cell => {
-    cell.addEventListener('mouseenter', (e) => {
-        let R, G, B;
-
-        if(count == 10) {
-            R = G = B = 0;
-            count = 0;
-        } else {
-            ++count;
-            R = Math.floor(Math.random() * 255 + 1);
-            G = Math.floor(Math.random() * 255 + 1);
-            B = Math.floor(Math.random() * 255 + 1);
-        }
-
-        if(toggle == 1) {
-            cell.style.backgroundColor = `rgba(${R}, ${G}, ${B}, 1.0)`;
-        } else {
-            cell.style.backgroundColor = `rgba(0, 0, 0, 1.0)`;
-        }
-    });
-});
+sketch();
 
 reset = document.querySelector('.reset button');
 reset.addEventListener('click', (e) => {
-    location.reload();
+   reset_func();
 });
