@@ -1,0 +1,36 @@
+I".
+<h2 id="目次">目次</h2>
+<ul>
+  <li><a href="#raster">ラスター「raster」イメージ</a></li>
+  <li><a href="#vector">ベクター「vector」イメージ</a></li>
+  <li><a href="#ref">参照</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="ラスターrasterイメージ-">ラスター「raster」イメージ <a id="raster"></a></h2>
+
+<p><strong>ラスターイメージ</strong>とは数百個の正方形の点、またはピクセル「pixel」で構成されたイメージで通常はビットマップ「bitmap」と呼ばれる。ピクセルが多ければ多いほど、より自然な色感や絵を表すことができる。しかし、それぞれのピクセルの情報を全部貯蔵しなければならないので、ファイルの容量は大きくなる。容量は大きいが、すべての情報を記憶してるためグラフィックの処理時間が早い。そのため、高画質なイメージを表す時よく使われる。</p>
+
+<p>ラスターイメージの場合、スケーラビリティ「scalability」はあまり良くない。イメージを拡大する場合それぞれのピクセルが全部見えて結果的にイメージの質が悪くなる。</p>
+
+<p><a href="https://www.pixilart.com"><img src="/assets/images/computer/raster-vector/bitmap.png" alt="Bitmap circle" /></a> <br />
+<a href="https://www.pixilart.com/">pixel art online editor</a></p>
+
+<p><br /></p>
+<h2 id="ベクターvectorイメージ-">ベクター「vector」イメージ <a id="vector"></a></h2>
+
+<p><strong>ベクターイメージ</strong>とは、点と点の間の曲線で構成されている。ラスターイメージとは違い、すべての点の情報を貯蔵せず、基本的な点たちの位置だけを貯蔵しているため容量が少ない。しかし、すべてのベクターイメージは「rasterization」というラスター化の作業を経るためグラフィックの処理時間が長くかかる。このためベクターイメージはロゴデザインや簡単なアイコンを表す時使う。</p>
+
+<p>ベクターイメージの場合、スクーラビリチィが優れているのでイメージを拡大しても色感や質が原本のまま保たれる。</p>
+
+<p><a href="https://vectr.com/"><img src="/assets/images/computer/raster-vector/vector-map.png" alt="vector circle" /></a> <br />
+<a href="https://vectr.com/">vector art online editor</a></p>
+
+<p><br /></p>
+<h2 id="参照-">参照 <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://wacomkoreablog.com/624">ベクターとラスターの違い</a></li>
+</ul>
+:ET

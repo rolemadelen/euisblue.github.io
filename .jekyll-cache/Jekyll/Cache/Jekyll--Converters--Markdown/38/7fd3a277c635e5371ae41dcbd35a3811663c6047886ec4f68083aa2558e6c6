@@ -1,0 +1,219 @@
+I"}9<h2 id="목차">목차</h2>
+<ul>
+  <li><a href="#namespace">이름 공간</a></li>
+  <li><a href="#structure">기본 구조</a></li>
+  <li><a href="#usage">활용</a>
+    <ul>
+      <li><a href="#scope">범위 지정자(::)</a></li>
+      <li><a href="#nested">이름 공간의 중첩</a></li>
+      <li><a href="#using"><em>using</em> 키워드</a></li>
+      <li><a href="#nickname">별칭 (Alias)</a></li>
+    </ul>
+  </li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="이름-공간-">이름 공간 <a id="namespace"></a></h2>
+<p>이름공간(namespace)이란 고유의 이름을 가지고 있는 대상물들의 집합이다. 때문에 하나의 이름공간 안에는
+같은 이름을 가진 대상물(변수, 함수, 객체, … 등등)이 존재할 수 없다.</p>
+
+<p><br /></p>
+<h2 id="기본-구조-">기본 구조 <a id="structure"></a></h2>
+<p>이름공간의 구조는 접근 제어자(access modifier)가 없는 클래스의 구조와 똑같다.</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="err">이름</span>
+<span class="p">{</span>
+	<span class="err">변수</span> <span class="p">...</span>
+	<span class="err">상수</span> <span class="p">...</span>
+	<span class="err">함수</span> <span class="p">...</span>
+	<span class="err">개체</span> <span class="p">...</span>
+	<span class="k">namespace</span> <span class="err">다른이름</span>
+	<span class="p">{</span>
+		<span class="p">...</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>namespace 키워드를 이용해 원하는 이름의 이름공간을 만들고, 몸통에는 변수, 상수, 함수, 개체, 
+ … 등등이 올 수 있고, 원한다면 이름공간안에 또 다른 이름공간을 선언 할 수도 있다.</p>
+
+<p><br /></p>
+<h2 id="활용-">활용 <a id="usage"></a></h2>
+<p>이름공간의 여러 활용방법을 예제와 함께 설명한다.</p>
+
+<h3 id="범위-지정자-">범위 지정자(::) <a id="scope"></a></h3>
+<p>범위지정 연산자(::)를 이용해 해당 이름공간에 접근한다.</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">namespace</span> <span class="n">UCSD</span>
+<span class="p">{</span>
+	<span class="k">const</span> <span class="n">string</span> <span class="n">UC</span> <span class="o">=</span> <span class="s">"University of California"</span><span class="p">;</span>
+	<span class="kt">void</span> <span class="n">printName</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">UCLA</span>
+<span class="p">{</span>
+	<span class="kt">void</span> <span class="n">printName</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">UCSD</span><span class="o">::</span><span class="n">printName</span><span class="p">();</span>
+	<span class="n">UCLA</span><span class="o">::</span><span class="n">printName</span><span class="p">();</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">UCSD</span><span class="o">::</span><span class="n">printName</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">UC</span> <span class="o">+</span> <span class="s">", San Diego"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">UCLA</span><span class="o">::</span><span class="n">printName</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">UCSD</span><span class="o">::</span><span class="n">UC</span> <span class="o">+</span> <span class="s">", Los Angeles"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>main에서 범위 지정자를 사용해 각각 <code class="highlighter-rouge">UCSD</code>와 <code class="highlighter-rouge">UCLA</code> 공간속에 있는 <code class="highlighter-rouge">printName()</code>을 호출했다.
+ 범위지정을 하지 않으면 어떤 <code class="highlighter-rouge">printName()</code>을 사용하는지 알 수 없어 오류가 발생한다.</p>
+
+<p><code class="highlighter-rouge">UCSD</code>안에는 <code class="highlighter-rouge">UCLA</code>에는 없는 <code class="highlighter-rouge">UC</code>라는 상수 문자열이 존재한다.
+ <code class="highlighter-rouge">UCSD</code>속 <code class="highlighter-rouge">printName()</code>의 구현을 보면 범위 지정자없이 <code class="highlighter-rouge">UC</code>를 가리키는데,
+ 같은 이름공간에 존재하기에 따로 범위를 지정해줄 필요가 없다.<br />
+ 하지만 반대로 다른 이름공간(<code class="highlighter-rouge">UCLA</code>)에서 <code class="highlighter-rouge">UC</code>를 가리키기 위해서는 범위를 지정해야만 접근이 가능하다.</p>
+
+<h3 id="이름-공간의-중첩-">이름 공간의 중첩 <a id="nested"></a></h3>
+<p>이름공간안에 또 다른 이름공간을 선언 할 수 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">namespace</span> <span class="n">University</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+	<span class="k">namespace</span> <span class="n">UCSD</span>
+	<span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">"University of California, San Diego"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">namespace</span> <span class="n">UCLA</span>
+	<span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">"University of California, Los Angeles"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">University</span><span class="o">::</span><span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">University</span><span class="o">::</span><span class="n">UCSD</span><span class="o">::</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">University</span><span class="o">::</span><span class="n">UCLA</span><span class="o">::</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="using-">using <a id="using"></a></h3>
+<p>이름공간속 변수, 함수, 등등에 접근 하기 위해 범위지정 연산자를 계속해서 사용해야 한다. 
+하지만 자주 사용하는 대상의 경우 계속해서 범위를 지정하는게 번거로울 수 있다. 이 때 using을
+사용하면 마치 로컬에서 선언한 것 마냥 대상에 접근할 수 가 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">UCSD</span>
+<span class="p">{</span>
+	<span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">"University of California, San Diego"</span><span class="p">;</span>
+	<span class="kt">void</span> <span class="n">printName</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">using</span> <span class="n">UCSD</span><span class="o">::</span><span class="n">name</span><span class="p">;</span>
+	<span class="k">using</span> <span class="n">UCSD</span><span class="o">::</span><span class="n">printName</span><span class="p">;</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">printName</span><span class="p">();</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예제에서는 이름 공간속에 존재하는 대상들을 하나하나 명시했지만, 
+이름 공간 전체를 명시 할 수도 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">UCSD</span>
+<span class="p">{</span>
+	<span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">"University of California, San Diego"</span><span class="p">;</span>
+	<span class="kt">void</span> <span class="n">printName</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">using</span> <span class="k">namespace</span> <span class="n">UCSD</span><span class="p">;</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">printName</span><span class="p">();</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="별칭-alias">별칭 (Alias)<a id="nickname"></a></h3>
+<p>원하는 대상에 접근하기 까지의 범위 또는 단순히 공간의 이름이 길 경우, 이름공간에 
+별칭을 부여 할 수 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">University</span>
+<span class="p">{</span>
+	<span class="k">namespace</span> <span class="n">UCSD</span>
+	<span class="p">{</span>
+		<span class="k">namespace</span> <span class="n">College</span>
+		<span class="p">{</span>
+			<span class="k">namespace</span> <span class="n">Warren</span>
+			<span class="p">{</span>
+				<span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="k">namespace</span> <span class="n">Sixth</span>
+			<span class="p">{</span>
+				<span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">namespace</span> <span class="n">College</span> <span class="o">=</span> <span class="n">University</span><span class="o">::</span><span class="n">UCSD</span><span class="o">::</span><span class="n">College</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">College</span><span class="o">::</span><span class="n">Warren</span><span class="o">::</span><span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">College</span><span class="o">::</span><span class="n">Sixth</span><span class="o">::</span><span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="reference-">Reference <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://wikidocs.net/14043">wikidocs.net</a></li>
+</ul>
+:ET
