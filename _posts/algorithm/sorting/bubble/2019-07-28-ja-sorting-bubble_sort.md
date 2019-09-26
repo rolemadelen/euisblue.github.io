@@ -16,7 +16,7 @@ lang: ja
 - [実装](#imp)
 	+ 最適化方法
 		* [C](#c)
-		* [Python](#python)
+		* [Ruby](#ruby)
 - [関連記事](#related)	
 - [参照](#ref)
 <hr />
@@ -138,23 +138,30 @@ void bubbleSort(int arr[])
 ```
 
 <br />
-### バブルソート最適化（Python） <a id="python"></a>
-```python
-def bubbleSort(arr, n):
-	for i in range(n):
-		isSwapped = False
+### バブルソート最適化（Ruby） <a id="ruby"></a>
+```ruby
+def bubble_sort(arr)
+    n = arr.size
 
-		for j in range(n - i - 1):
-			if arr[j] > arr[j+1]:
-				temp = arr[j]
-				arr[j] = arr[j+1]
-				arr[j+1] = temp
-			
-				isSwapped = True
+    for i in (0 ... n)
+        bSwapped = false
+        
+        for j in (0 ... n - i - 1)
+            if arr[j] > arr[j+1]
+                bSwapped = true
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            end
+        end
 
-		if isSwapped == False:
-			break
+        if bSwapped == false
+            return arr
+        end
+    end
+
+    arr
+end
 ```
+
 <br />
 
 ## 関連記事 <a id="related"></a>	

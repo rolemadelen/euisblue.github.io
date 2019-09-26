@@ -14,7 +14,7 @@ lang: ko
 - [구현](#imp)
 	+ 최적화 방법
 		+ [C](#c)
-		+ [Python](#python)
+		+ [Ruby](#ruby)
 - [풀어 볼 문제](#try)
 - [관련 글](#related)
 - [참조](#ref)
@@ -141,24 +141,30 @@ void bubbleSort(int arr[])
 ```
 
 <br />
-### 거품 정렬 최적화 - Python <a id="python"></a>
-```python
-def bubbleSort(arr, n):
-	for i in range(n):
-		isSwapped = False
+### 거품 정렬 최적화 - Ruby <a id="ruby"></a>
+```ruby
+def bubble_sort(arr)
+    n = arr.size
 
+    for i in (0 ... n)
+		bSwapped = false
+		
 		# 최적화 방법; 하나
-		for j in range(n - i - 1):
-			if arr[j] > arr[j+1]:
-				temp = arr[j]
-				arr[j] = arr[j+1]
-				arr[j+1] = temp
-			
-				isSwapped = True
-
+        for j in (0 ... n - i - 1)
+            if arr[j] > arr[j+1]
+                bSwapped = true
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            end
+		end
+		
 		# 최적화 방법; 둘
-		if isSwapped == False:
-			break
+        if bSwapped == false
+            return arr
+        end
+    end
+
+    arr
+end
 ```
 
 <br />
