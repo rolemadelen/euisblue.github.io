@@ -1,0 +1,147 @@
+I"n<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#first">Preface</a></li>
+  <li><a href="#disable">Disable Laptop Keyboard</a>
+    <ul>
+      <li><a href="#inputdev">find the input device</a></li>
+      <li><a href="#disable2">disabling</a></li>
+      <li><a href="#enable">enabling</a></li>
+    </ul>
+  </li>
+  <li><a href="#launcher">Create Launcher Icon</a>
+    <ul>
+      <li><a href="#script">shell script</a></li>
+      <li><a href="#desktop">.deskotp</a></li>
+    </ul>
+  </li>
+  <li><a href="#dock">Attach to Dock</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="preface-">Preface <a id="first"></a></h2>
+<p>I’m currently using HHKB Professional JP as an external keyboard with my laptop.
+Because of such small space I have on my desk, I lay the keyboard on top of my laptop where
+internal keyboard is located. Everything is good except random key presses and clicks on
+the touch pad; it really disturbes me. I realized I could disable the internal keyboard
+using command lines (perhaps the only way I believe) on Ubuntu.</p>
+
+<p><br /></p>
+<h2 id="disable-laptop-keyboard-">Disable Laptop Keyboard <a id="disable"></a></h2>
+<h3 id="find-the-input-device-">find the input device <a id="inputdev"></a></h3>
+<p>Open up the terminal and enter the following command <code class="highlighter-rouge">xinput --list</code>.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/xinput--list.png" alt="xniput --list result" /></p>
+
+<p>Then you’ll see list of all input devices connected to you laptop. <br />
+<code class="highlighter-rouge">AT Translated Set 2 Keyboard</code> is the internal keyboard and its <code class="highlighter-rouge">id</code> is <code class="highlighter-rouge">14</code>.</p>
+
+<p><br /></p>
+<h3 id="disabling-">disabling <a id="disable2"></a></h3>
+<blockquote>
+  <p><strong>Warning: <br /> Unless you have an extra keyboard or a virtual keyboard, do not attempt to try this code.</strong></p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xinput set-int-prop 14 "Device Enabled" 8 0
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="enabling-">enabling <a id="enable"></a></h3>
+<p>To enable your keyboard, use the following command: <br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xinput set-int-prop 14 "Device Enabled" 8 1
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="create-launcher-icon-">Create Launcher Icon <a id="launcher"></a></h2>
+<p>Terminal commands may become problematic if you accidentally ran the command without having an
+extra keyboard. The only option is to reboot. Even if you had an extra one, it could be annoying
+to go get your keyboard and set it up just to type a command to enable your keyboard.</p>
+
+<p>It would be nice to have an executable program where you can enable and disable with a click.
+So lets make one.</p>
+
+<p><br /></p>
+<h3 id="shell-scripts-">shell scripts <a id="script"></a></h3>
+<p>Below is the output from running the command <code class="highlighter-rouge">xinput --list --long</code> when your keyboard is disabled.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/disabled-message.png" alt="Disabled Message" /></p>
+
+<p>It actually tells you that <em>This device is disabled</em>. I’m going to use this fact to write a
+script file that works as a switch to enable/disable the keyboard.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># file: kbd-onoff</span>
+<span class="nv">kbd</span><span class="o">=</span><span class="sb">`</span>xinput <span class="nt">--list</span> <span class="nt">--long</span> | <span class="nb">grep</span> <span class="nt">-A</span> 1 <span class="s2">"id=14"</span> | <span class="nb">grep </span>disabled<span class="sb">`</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$kbd</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"keyboard disabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 0<span class="sb">`</span>
+<span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"keyboard enabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 1<span class="sb">`</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>The logic is straightforward. 
+<code class="highlighter-rouge">kbd</code> will either store <code class="highlighter-rouge">""</code> or <code class="highlighter-rouge">"This device is disabled"</code>. So if a variable 
+<code class="highlighter-rouge">kbd</code> is empty, then disable the keyboard because its currently enabled  and vice versa.</p>
+
+<hr />
+
+<p><br /></p>
+
+<p>Turn the script file you created into an executable.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>u+x kbd-onoff
+</code></pre></div></div>
+
+<p>You may try to run the program <strong>ONLY</strong> if you have an extra keyboard. Otherwise you will
+have to reboot or use a virtual keyboard.</p>
+
+<p><br /></p>
+<h3 id="desktop-">.desktop <a id="desktop"></a></h3>
+<p>We will write <code class="highlighter-rouge">.desktop</code> file to create the launcher icon.</p>
+
+<p>You’ll need two things:</p>
+<ol>
+  <li>launcher icon’s path: <code class="highlighter-rouge">/usr/share/icons/icon.png</code></li>
+  <li>script file’s path  : <code class="highlighter-rouge">/bin/kbd-onoff</code></li>
+</ol>
+
+<p>Open up your favorite text editor and copy below codes:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env xdg-open</span>
+<span class="o">[</span>Desktop Entry]
+<span class="nv">Version</span><span class="o">=</span>1.0
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Terminal</span><span class="o">=</span><span class="nb">false
+</span><span class="nv">Exec</span><span class="o">=</span>/bin/kbd-onoff
+<span class="nv">Name</span><span class="o">=</span>Keyboard On/Off
+<span class="nv">Comment</span><span class="o">=</span><span class="s2">"Keyboard on/off runnnig"</span>
+<span class="nv">Icon</span><span class="o">=</span>/usr/share/icons/kbd.png
+</code></pre></div></div>
+
+<p>Save the file as <code class="highlighter-rouge">kbd-onoff.desktop</code> and run the program.</p>
+
+<p>If you see an error (or a pop up screen) regarding running untrusted app, click <code class="highlighter-rouge">Trust and Launch</code>.</p>
+
+<p><br /></p>
+<h2 id="attach-to-dock-">Attach to Dock <a id="dock"></a></h2>
+<p>In order to make the launcher icon visible in application dash bar, move <code class="highlighter-rouge">.desktop</code> file 
+to either <code class="highlighter-rouge">/usr/share/applications/</code> or <code class="highlighter-rouge">~/.local/share/applications/</code>.</p>
+
+<p>Then you’ll be able to find the program in application dash with the name you used on <code class="highlighter-rouge">Name=</code> inside <code class="highlighter-rouge">.desktop</code> file. Right click on the icon and select <code class="highlighter-rouge">Add to Favorites</code> to add it to the dock.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/dock.png" alt="dock image" /></p>
+
+<p><br /></p>
+<h2 id="reference-">Reference <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://blog.hostonnet.com/laptop-keyboard-ubuntu">Disable Laptop Keyboard in Ubuntu</a></li>
+  <li><a href="https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/">Bash Shell : is a variable empty?</a></li>
+  <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php">Bash Shell : if-statement</a></li>
+</ul>
+:ET

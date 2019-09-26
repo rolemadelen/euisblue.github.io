@@ -1,0 +1,146 @@
+I"#<h2 id="목차">목차</h2>
+<ul>
+  <li><a href="#first">먼저</a></li>
+  <li><a href="#disable">키보드 잠금 설정 방법</a>
+    <ul>
+      <li><a href="#inputdev">입력 장치 찾기</a></li>
+      <li><a href="#disable2">비활성화 하기</a></li>
+      <li><a href="#enable">활성화 하기</a></li>
+    </ul>
+  </li>
+  <li><a href="#launcher">런처 아이콘 만드는 방법</a>
+    <ul>
+      <li><a href="#script">쉘 스크립트</a></li>
+      <li><a href="#desktop">.deskotp</a></li>
+    </ul>
+  </li>
+  <li><a href="#dock">도크에 프로그램 추가하기</a></li>
+  <li><a href="#ref">참조</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="먼저-">먼저 <a id="first"></a></h2>
+<p>현재 HHKB Professional JP 키보드를 노트북에 연결해서 사용하고 있다. 공간이 협소하다 보니 
+키보드를 노트북 위에 두고 사용하고 있는데 때때로 노트북 터치 패드나 키보드가 눌려서 
+귀찮은 상황이 한 두가지가 아니다. 사실 노트북 내장 키보드를 비활성화 시키면 해결되는 간단한 
+문제인데 이를 지금까지 안하고 있었다. 비활성화 시키는 방법 또한 생각보다 간단해서 
+(실제 약 30초 걸림) 기록 삼아 글로 남긴다.</p>
+
+<p><br /></p>
+<h2 id="키보드-잠금-설정-방법-">키보드 잠금 설정 방법 <a id="disable"></a></h2>
+<h3 id="입력-장치-찾기-">입력 장치 찾기 <a id="inputdev"></a></h3>
+<p>터미널을 열고 <code class="highlighter-rouge">xinput --list</code> 커맨드를 입력.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/xinput--list.png" alt="xniput --list result" /></p>
+
+<p>그러면 현재 연결되어 있는 입력 장치들이 쭉 출력된다. <br />
+내장 키보드는 <code class="highlighter-rouge">AT Translated Set 2 Keyboard</code>고, 이 장치의 <code class="highlighter-rouge">id</code>는 <code class="highlighter-rouge">14</code>이다.</p>
+
+<p><br /></p>
+<h3 id="비활성화-하기-">비활성화 하기 <a id="disable2"></a></h3>
+<blockquote>
+  <p><strong>주의:<br /> 여분의 키보드 또는 가상 키보드가 없는 경우 따라하지 마세요.</strong></p>
+</blockquote>
+
+<p>내장 키보드의 <code class="highlighter-rouge">id</code>(여기서는 14)를 가지고 아래의 커맨드와 같이 입력하면 <br />
+내장 키보드가 비활성화되어 사용할 수 없게 된다.</p>
+
+<p><code class="highlighter-rouge">xinput set-int-prop 14 "Device Enabled" 8 0</code></p>
+
+<p><br /></p>
+<h3 id="활성화-하기-">활성화 하기 <a id="enable"></a></h3>
+<p>다시 활성화 하기 위해서는 위와 동일한 커맨드를 입력하되 마지막 숫자 <code class="highlighter-rouge">0</code>을 <code class="highlighter-rouge">1</code>로 바꿔주기만 하면된다.</p>
+
+<p><code class="highlighter-rouge">xinput set-int-prop 14 "Device Enabled" 8 1</code></p>
+
+<p><br /></p>
+<h2 id="런처-아이콘-만드는-방법-">런처 아이콘 만드는 방법 <a id="launcher"></a></h2>
+<p>혹 여분의 키보드가 없는 상태에서 실수로 내장 키보드를 비활성화 시켰을 경우, 이를 다시
+활성화 시키려면 재부팅하는 수 밖에 없다. 입력을 할 수 없으니 당연한 결과. 혹은 키보드가 있다
+하더라도 다시 활성화 시키기 위해서 키보드를 가져와서 연결해서 명령어 입력하고 치우고 갖다놓고
+…… 번거롭다.</p>
+
+<p>만약 실행 프로그램이 있다면 마우스 클릭으로 다시 활성화 시킬 수 있을 터.
+런처 아이콘을 직접 만들어 보자.</p>
+
+<p><br /></p>
+<h3 id="쉘-스크립트-">쉘 스크립트 <a id="script"></a></h3>
+<p>아래는 내장 키보드가 비활성화 되어 있는 상태에서 <code class="highlighter-rouge">xinput --list --long</code> 커맨드를 입력 했을 때의
+출력 결과이다.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/disabled-message.png" alt="Disabled Message" /></p>
+
+<p>잘 보면 해당 장치가 비활성화 되어 있다는 문구(<em>This device is disabled</em>)가 출력되어 있다.
+반대로 활성화 되어 있다면 위 문구는 나타나지 않는다. 이 사실을 
+이용해서 내장 키보드를 on/off 시키는 스크립트를 만들어 보도록 하겠다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># file: kbd-onoff</span>
+<span class="nv">kbd</span><span class="o">=</span><span class="sb">`</span>xinput <span class="nt">--list</span> <span class="nt">--long</span> | <span class="nb">grep</span> <span class="nt">-A</span> 1 <span class="s2">"id=14"</span> | <span class="nb">grep </span>disabled<span class="sb">`</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$kbd</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"keyboard disabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 0<span class="sb">`</span>
+<span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"keyboard enabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 1<span class="sb">`</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">kbd</code> 라는 변수에 <code class="highlighter-rouge">This device is disabled</code>라는 문구가 저장되어 있다면 비활성화 되어있는 
+상태이므로 활성화 시키고, 빈 문자열이라면 활성화 되어 있으니 비활성화 시킨다.</p>
+
+<p>스크립트를 작성했으면 실행 파일로 만들어 주도록 한다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>u+x kbd-onoff
+</code></pre></div></div>
+
+<p>여분의 키보드가 있다면 지금 위 스크립트를 실행해서 결과를 확인해봐도 좋다.</p>
+
+<p><br /></p>
+<h3 id="desktop-">.desktop <a id="desktop"></a></h3>
+<p><code class="highlighter-rouge">.desktop</code> 파일은 런처 아이콘을 만들기 위해 필요한 파일이다.</p>
+
+<p>여기서 필요한 준비물은 두 가지:</p>
+<ol>
+  <li>런처 아이콘의 경로: <code class="highlighter-rouge">/usr/share/icons/icon.png</code></li>
+  <li>스크립트 파일의 경로: <code class="highlighter-rouge">/bin/kbd-onoff</code></li>
+</ol>
+
+<p>준비가 되었다면 원하는 편집기를 열고 아래의 내용을 입력,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env xdg-open</span>
+<span class="o">[</span>Desktop Entry]
+<span class="nv">Version</span><span class="o">=</span>1.0
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Terminal</span><span class="o">=</span><span class="nb">false
+</span><span class="nv">Exec</span><span class="o">=</span>/bin/kbd-onoff
+<span class="nv">Name</span><span class="o">=</span>Keyboard On/Off
+<span class="nv">Comment</span><span class="o">=</span><span class="s2">"Keyboard on/off runnnig"</span>
+<span class="nv">Icon</span><span class="o">=</span>/usr/share/icons/kbd.png
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">kbd-onoff.desktop</code>라는 이름으로 저장 후 실행한다.</p>
+
+<p>처음 실행 할 경우 믿을 수 없는 프로그램이다 라는 팝업 창이 뜨는데 이 때
+ <code class="highlighter-rouge">Trust and Launch</code>를 클릭하면 된다.</p>
+
+<p><br /></p>
+<h2 id="도크에-프로그램-추가하기-">도크에 프로그램 추가하기 <a id="dock"></a></h2>
+
+<p><code class="highlighter-rouge">.desktop</code>파일을 <code class="highlighter-rouge">/usr/share/applications/</code> 또는 <code class="highlighter-rouge">~/.local/share/applications/</code>에 저장한다.
+<code class="highlighter-rouge">.desktop</code> 파일에서 <code class="highlighter-rouge">Name=</code>에 해당 하는 부분이 프로그램의 이름이므로 이를 
+시작 어플리케이션에서 찾아 마우스 오른쪽 버튼 클릭 후 <code class="highlighter-rouge">Add to Favorites</code> 클릭하면 도크에 추가가 된다.</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/dock.png" alt="dock image" /></p>
+
+<p><br /></p>
+<h2 id="참조-">참조 <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://blog.hostonnet.com/laptop-keyboard-ubuntu">Disable Laptop Keyboard in Ubuntu</a></li>
+  <li><a href="https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/">Bash Shell : is a variable empty?</a></li>
+  <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php">Bash Shell : if-statement</a></li>
+</ul>
+:ET

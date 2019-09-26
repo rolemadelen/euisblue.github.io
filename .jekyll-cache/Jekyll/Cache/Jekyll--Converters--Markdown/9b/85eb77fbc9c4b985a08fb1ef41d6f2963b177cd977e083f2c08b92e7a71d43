@@ -1,0 +1,116 @@
+I"<h1 id="contents">Contents</h1>
+<ul>
+  <li><a href="#concept">Concept</a></li>
+  <li><a href="#example">Sorting Process</a></li>
+  <li><a href="#timecomp">Time Complexity</a></li>
+  <li><a href="#imp">Implementation</a>
+    <ul>
+      <li>C</li>
+      <li>Python</li>
+    </ul>
+  </li>
+  <li><a href="#related">Related Posts</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="concept">Concept<a id="concept"></a></h2>
+<p>Insertion sort finds a right place to insert an element by comparing with all values prior to the current value, or a key.</p>
+
+<p>Lot of people actually apply the concept of insertion sort to clean their bookshelfs. We pick a book on the right, and scan it down to the left and find the right place to insert that book.</p>
+
+<p>Also, when we play a card game like UNO, we order our cards by moving one on the right to the left. This is insertion sort as well.</p>
+
+<p>Because this algorithm is already permeated to our daily lives, understanding should not be a problem.
+<br /></p>
+
+<h2 id="sorting-process-">Sorting Process <a id="example"></a></h2>
+
+<p>In the case of Insertion Sort, we start from the 1<sup>st</sup> index not the 2<sup>nd</sup>.</p>
+
+<p><img src="/assets/images/algorithm/sorting/insertion_sort_en.png" alt="Insertion sort" /></p>
+
+<p><br /></p>
+<h2 id="time-complexity-">Time Complexity <a id="timecomp"></a></h2>
+<ul>
+  <li>Number of Comparisons
+    <ul>
+      <li>In the best case we only compare once to know the right place to insert. <br />
+1 + 1 + …. + 1 → <strong>Ω(n)</strong></li>
+      <li>In the worst case scenario, the number of elements we need to compare increases it by one everytime. <br />
+1 + 2 + … + (n-2) + (n-1) →  <strong>O(n<sup>2</sup>)</strong></li>
+    </ul>
+  </li>
+  <li>Number of Swaps
+    <ul>
+      <li>In the best case no swaps occur →  <strong>Ω(1)</strong></li>
+      <li>In the worst case we will need to swap every time we compare. <br />
+1 + 2 + … + (n-2) + (n-1) →  <strong>O(n<sup>2</sup>)</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<h2 id="implementation-">Implementation <a id="imp"></a></h2>
+<p>A key(one we’re trying to insert) must be smaller than the one on the left. So, shift all elements to
+the right until the key is greater than the left or is not reached the 0<sup>th</sup> index.</p>
+
+<h3 id="c">C</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[])</span>
+<span class="p">{</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+
+		<span class="k">while</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+		<span class="p">{</span>
+			<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+			<span class="o">--</span><span class="n">index</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="python">Python</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+		<span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+		<span class="k">while</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+
+		<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="related-posts-">Related Posts <a id="related"></a></h2>
+
+<ul>
+  <li>
+    <p><a href="/algorithm/2019/08/06/en-sorting-quick_sort.html">[Algorithm] Quick Sort</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/08/05/en-sorting-merge_sort.html">[Algorithm] Merge Sort</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/08/01/en-sorting-selection_sort.html">[Algorithm] Selection Sort</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/07/28/en-sorting-bubble_sort.html">[Algorithm] Bubble Sort</a></p>
+  </li>
+</ul>
+
+<p><br /></p>
+<h2 id="reference-">Reference <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html">[알고리즘] 삽입 정렬(insertion sort)이란</a></li>
+</ul>
+:ET

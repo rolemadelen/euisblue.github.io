@@ -1,0 +1,189 @@
+I"�@<h2 id="목차">목차</h2>
+<ul>
+  <li><a href="#concept">기본 개념</a></li>
+  <li><a href="#op">연산</a></li>
+  <li><a href="#implementation">구현</a></li>
+  <li><a href="#app">사용 사례</a></li>
+  <li><a href="#problem">풀어 불 문제</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="기본-개념-">기본 개념 <a id="concept"></a></h2>
+<p>단일 연결 리스트(Singly Linked List)는 가장 기본적인 형태의 연결 리스트로 오직 다음 
+노드의 참조만이 가능하다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node_t</span>
+<span class="p">{</span>
+	<span class="k">struct</span> <span class="n">node_t</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+	<span class="n">elem</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>단순한 형태의 자료구조지만 단순한 만큼 위험성 또한 존재한다.
+첫 노드의 주소를 잃어버리거나 실수로 덮어버릴 경우 모든 데이터의 접근이 불가능하다.
+같은 이유로 중간에 노드의 참조를 잘못 할 경우, 그 노드서부터 뒤쪽 자료들에는 접근 할 수가 없다.</p>
+
+<p>리스트의 장점으로는 빠른 데이터의 추가와 제거로 두 연산 모두 O(1)의 시간이 걸린다. <br />
+하지만 마지막 노드에 접근하기 위해서는 무조건 첫 노드부터 접근해야 되기때문에 O(n)의 시간이 걸린다.</p>
+
+<p><br /></p>
+<h2 id="연산-">연산 <a id="op"></a></h2>
+<ul>
+  <li><strong>pushFront(..)</strong> : 리스트 시작점에 노드를 추가한다.</li>
+  <li><strong>pushBack(..)</strong> : 리스트 마지막에 노드를 추가한다.</li>
+  <li><strong>popFront(..)</strong> : 리스트 첫 노드를 제거한다.</li>
+  <li><strong>popBack(..)</strong> : 리스트 마지막 노드를 제거한다.</li>
+  <li><strong>insertAt(..)</strong> : 원하는 위치의 노드를 추가한다.</li>
+  <li><strong>removeAt(..)</strong> : 원하는 위치의 노드를 제거한다.</li>
+</ul>
+
+<p><br /></p>
+<h2 id="구현-">구현 <a id="implementation"></a></h2>
+
+<p>리스트 처음과 끝을 나타내는 더미 노드(Sentinel Node)를 사용하여 구현했다.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">slinkedlist_t</span>
+<span class="p">{</span>
+	<span class="c1">// Sentinel nodes</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">dummy_head</span><span class="p">;</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">dummy_tail</span><span class="p">;</span>
+	<span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">SLinkedList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">pushFront</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">elem</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+	<span class="n">connectLink</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">,</span> <span class="n">newNode</span><span class="p">);</span>
+	<span class="n">connectLink</span><span class="p">(</span><span class="n">newNode</span><span class="p">,</span> <span class="n">temp</span><span class="p">);</span>
+	
+	<span class="o">++</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">pushBack</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">elem</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">// locate the last node</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">lastNode</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">lastNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_tail</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">lastNode</span> <span class="o">=</span> <span class="n">lastNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// add new node</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+	<span class="n">connectLink</span><span class="p">(</span><span class="n">lastNode</span><span class="p">,</span> <span class="n">newNode</span><span class="p">);</span>
+	<span class="n">connectLink</span><span class="p">(</span><span class="n">newNode</span><span class="p">,</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_tail</span><span class="p">);</span>
+
+	<span class="o">++</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">popFront</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+		<span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+		<span class="n">connectLink</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">,</span> <span class="n">temp</span><span class="p">);</span>
+		<span class="o">--</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">popBack</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// locate the last node</span>
+		<span class="n">Node</span> <span class="o">*</span><span class="n">lastNode</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">;</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">lastNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_tail</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">lastNode</span> <span class="o">=</span> <span class="n">lastNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="c1">// remove the last node and reconnect links</span>
+		<span class="n">free</span><span class="p">(</span><span class="n">lastNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+		<span class="n">connectLink</span><span class="p">(</span><span class="n">lastNode</span><span class="p">,</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_tail</span><span class="p">);</span>
+		<span class="o">--</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertAt</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="n">elem</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">pushFront</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">pushBack</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">;</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">pos</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+		<span class="n">connectLink</span><span class="p">(</span><span class="n">newNode</span><span class="p">,</span> <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+		<span class="n">connectLink</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">newNode</span><span class="p">);</span>
+
+		<span class="o">++</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeAt</span><span class="p">(</span><span class="n">SLinkedList</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">popFront</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">popBack</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">Node</span> <span class="o">*</span><span class="n">prev</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">dummy_head</span><span class="p">;</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+		<span class="n">free</span><span class="p">(</span><span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+		<span class="n">connectLink</span><span class="p">(</span><span class="n">prev</span><span class="p">,</span> <span class="n">temp</span><span class="p">);</span>
+
+		<span class="o">--</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="사용-사례-">사용 사례 <a id="app"></a></h2>
+<ul>
+  <li>스택의 구현</li>
+  <li>큐의 구현</li>
+  <li>해시 체이닝</li>
+  <li>FAT 파일 시스템 - 청킹(chunking)</li>
+</ul>
+
+<p><br /></p>
+<h2 id="풀어-볼-문제-">풀어 볼 문제 <a id="problem"></a></h2>
+<ul>
+  <li><a href="https://leetcode.com/problems/middle-of-the-linked-list/">Middle of the Linked List</a></li>
+  <li><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/">Delete Node in a Linked List</a></li>
+</ul>
+
+<p><br /></p>
+<h2 id="reference-">Reference <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Linked_list">Wikipedia : Linked list</a></li>
+  <li><a href="https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8">Namu Wiki : Linked List</a></li>
+</ul>
+:ET
