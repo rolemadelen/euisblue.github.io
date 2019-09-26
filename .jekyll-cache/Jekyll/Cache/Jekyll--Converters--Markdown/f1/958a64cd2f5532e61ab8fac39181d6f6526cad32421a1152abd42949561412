@@ -1,0 +1,48 @@
+I"�
+<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#lossy">Lossy Compression</a></li>
+  <li><a href="#loseless">Lossless Compression</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="lossy-compression-">Lossy Compression <a id="lossy"></a></h2>
+<p><strong>Lossy Compression</strong> is a process of compressing data that (intentionally) loses unnecessary data 
+to reduce the size.
+It seems bad idea to lose a data while compressing; however, lossy compression is used in lots of
+places.</p>
+
+<p><code class="highlighter-rouge">.mp3</code>, for example, is an audio file that uses lossy compression; it throws away parts of
+an audio that cannot be heard by human ears. Also, video files like <code class="highlighter-rouge">.avi</code> throws away unused data 
+and leave just enough amount of data that we wont feel anything wroing when we watch the video.</p>
+
+<p><a href="https://namu.wiki/w/%EC%86%90%EC%8B%A4%20%EC%95%95%EC%B6%95%20%ED%8F%AC%EB%A7%B7">List of Lossy Compression Formats</a>: <code class="highlighter-rouge">jpeg</code>, <code class="highlighter-rouge">webp</code>, <code class="highlighter-rouge">heif</code>, <code class="highlighter-rouge">bpg</code>, <code class="highlighter-rouge">avif</code>, …</p>
+
+<p><br /></p>
+<h2 id="loseless-compression-">Loseless Compression <a id="loseless"></a></h2>
+<p><strong>Loseless Compression</strong> is opposite of lossy compression. It compress and reduce the size but
+maintains the original data with zero data loss.</p>
+
+<p>How is it possible to reduce the size when compressed data has lost 0% of data? 
+It has to do with source encoding.</p>
+
+<p><em>Source Encoding</em> is about converting given information source into digital format and 
+compressing, and the goal is to use minimal number of bits to represent the orginal data.</p>
+
+<p>For example, this 8 bits of message:<code class="highlighter-rouge">65666768</code>, can be converted and compressed into <code class="highlighter-rouge">abcd</code> which 
+is only 4 bits long. We saved 4 bits and did not lose any original data.</p>
+
+<p>This is how lossless compression compresses data to reduce the size and keep the original 
+information.</p>
+
+<p><a href="https://namu.wiki/w/%EB%AC%B4%EC%86%90%EC%8B%A4%20%EC%95%95%EC%B6%95%20%ED%8F%AC%EB%A7%B7">List of Loseless Compression Formats</a>: <code class="highlighter-rouge">zip</code>, <code class="highlighter-rouge">rar</code>, <code class="highlighter-rouge">7z</code>, <code class="highlighter-rouge">gz</code>, <code class="highlighter-rouge">bz2</code>, …</p>
+
+<p><br /></p>
+<h2 id="reference-">Reference <a id="ref"></a></h2>
+<ul>
+  <li><a href="http://mat.hjg.com.ar/tic/img/Shannon%20Source%20Coding%20Theorem.pdf">Shannon’s source coding theorem</a></li>
+</ul>
+:ET
