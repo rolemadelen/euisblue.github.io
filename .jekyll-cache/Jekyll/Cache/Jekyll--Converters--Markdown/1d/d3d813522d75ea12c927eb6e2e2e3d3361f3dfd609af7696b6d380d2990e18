@@ -1,0 +1,18 @@
+I"ç<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#namespace">Namespace</a></li>
+  <li><a href="#structure">Basic Structure</a></li>
+  <li><a href="#usage">Usage</a>
+    <ul>
+      <li><a href="#scope">Scope Resolution Operator(::)</a></li>
+      <li><a href="#nested">Nested Namespace</a></li>
+      <li><a href="#using">keyword <em>using</em></a></li>
+      <li><a href="#nickname">Alias</a></li>
+    </ul>
+  </li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+:ET

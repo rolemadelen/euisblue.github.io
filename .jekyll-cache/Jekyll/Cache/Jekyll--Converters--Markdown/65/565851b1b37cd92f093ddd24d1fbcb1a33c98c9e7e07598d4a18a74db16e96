@@ -1,0 +1,124 @@
+I"R<h1 id="목차">목차</h1>
+<ul>
+  <li><a href="#concept">소개</a></li>
+  <li><a href="#example">정렬 과정</a></li>
+  <li><a href="#timecomp">시간 복잡도</a></li>
+  <li><a href="#imp">구현</a>
+    <ul>
+      <li>C</li>
+      <li>Python</li>
+    </ul>
+  </li>
+  <li><a href="#try">풀어 볼 문제</a></li>
+  <li><a href="#related">관련 글</a></li>
+  <li><a href="#ref">참조</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="소개-">소개 <a id="concept"></a></h2>
+<p>Insertion Sort(삽입 정렬)은 이미 정렬이 된 앞 부분의 요소들과 비교해가며 삽입할 위치를 찾는 알고리즘이다.</p>
+
+<p>살면서 책 정리를 해본 경험이 한 번 쯤은 있을거라고 생각한다. 
+보통 책을 정리 할 때, 바로 옆에 있는 책을 가지고 크기를 하나 씩 비교해가면서 맞는 위치에 삽입을 하는데, 이 방식이 바로 삽입 정렬이다.</p>
+
+<p>또 카드 게임을 하면서 손에 쥐고있는 카드를 정리할 때, 오른쪽에 있는 카드를 왼쪽에 (이미 정렬 된) 카드들 속에서 위치를 찾지않는가? 마찬가지로 삽입 정렬이다.</p>
+
+<p>이미 우리들이 쓰고 있는 알고리즘이기 때문에 이해하는데 문제는 없을 것이다.</p>
+
+<p><br /></p>
+<h2 id="정렬-과정-">정렬 과정 <a id="example"></a></h2>
+<p>삽입 정렬의 경우 첫 번째가 아닌 두 번째 값부터 시작한다.</p>
+
+<p><img src="/assets/images/algorithm/sorting/insertion_sort_ko.png" alt="insertion sort" /></p>
+
+<p><br /></p>
+<h2 id="시간-복잡도-">시간 복잡도 <a id="timecomp"></a></h2>
+<ul>
+  <li>비교 횟수
+    <ul>
+      <li>최선의 경우 한 번의 비교만으로 삽입 할 위치를 찾게 된다.<br />
+1 + 1 + … + 1 → <strong>Ω(n)</strong></li>
+      <li>최악의 경우 비교해 야 할 숫자가 하나 씩 늘어나면서 결국 모든 요소들과 비교하게 된다. <br />
+1 + 2 + … + (n-2) + (n-1) = n*(n-1)/2 → <strong>O(n<sup>2</sup>)</strong></li>
+    </ul>
+  </li>
+  <li>교환 횟수
+    <ul>
+      <li>최선의 경우 바로 삽입 할 위치를 찾으므로 <strong>Ω(n)</strong>.</li>
+      <li>최악의 경우 비교를 할 때마다 교환을 하게된다.  <br />
+1 + 2 + … + (n-2) + (n-1) = n*(n-1)/2 →  <strong>O(n<sup>2</sup>)</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<h2 id="구현-">구현 <a id="imp"></a></h2>
+
+<p>삽입할 위치를 찾고있는 요소는 그 전 요소보다 작아야 한다. 그렇기 때문에 왼쪽에 있는 값이 현재 값 보다
+작거나 첫 번째(0번 인덱스)일 때까지 계속 한 칸씩 오른쪽으로 밀어주면 된다.</p>
+
+<h3 id="삽입-정렬---c언어">삽입 정렬 - C언어</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[])</span>
+<span class="p">{</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+
+		<span class="k">while</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+		<span class="p">{</span>
+			<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+			<span class="o">--</span><span class="n">index</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="삽입-정렬---python">삽입 정렬 - Python</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+		<span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+		<span class="k">while</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+
+		<span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="풀어-볼-문제-">풀어 볼 문제 <a id="try"></a></h2>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/2750">수 정렬하기</a></li>
+</ul>
+
+<p><br /></p>
+<h2 id="관련-글--">관련 글  <a id="related"></a></h2>
+
+<ul>
+  <li>
+    <p><a href="/algorithm/2019/08/06/ko-sorting-quick_sort.html">[알고리즘] 퀵 정렬</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/08/05/ko-sorting-merge_sort.html">[알고리즘] 합병 정렬</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/08/01/ko-sorting-selection_sort.html">[알고리즘] 선택 정렬</a></p>
+  </li>
+  <li>
+    <p><a href="/algorithm/2019/07/28/ko-sorting-bubble_sort.html">[알고리즘] 거품 정렬</a></p>
+  </li>
+</ul>
+
+<p><br /></p>
+<h2 id="참조-">참조 <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html">[알고리즘] 삽입 정렬(insertion sort)이란</a></li>
+</ul>
+:ET

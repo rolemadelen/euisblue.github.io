@@ -1,0 +1,89 @@
+I"V<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#nimf">What is nimf?</a></li>
+  <li><a href="#bug">Edge Character Bug</a></li>
+  <li>Installation
+    <ul>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#config">Configuration</a></li>
+      <li><a href="#deact">Disabling Language Inputs</a></li>
+    </ul>
+  </li>
+  <li><a href="#procon">Pros and Cons</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+<h2 id="what-is-nimf">What is nimf?</h2>
+<p><code class="highlighter-rouge">nimf</code> is an input method program for Korean (also provides Japanese and Chinese) 
+that has no <strong>edge-character bug</strong> which other input methods like <code class="highlighter-rouge">ibus</code> or <code class="highlighter-rouge">fcitx</code> does have.</p>
+
+<p><br /></p>
+<h2 id="edge-character-bug">Edge-Character Bug</h2>
+<p>Typing in Korean in <em>Elementary OS 0.4.1 Loki</em> is troublesome because of a space input. <br />
+Let say you’re trying to type <code class="highlighter-rouge">한글 입력기</code>, then you’ll see something like this in your screen.</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">한글 입력기</code> –&gt; <code class="highlighter-rouge">한 글입력기</code></p>
+</blockquote>
+
+<p>As you can see, a space is printed before the last character(<code class="highlighter-rouge">글</code>) not in front of it. 
+This is called the edge-character bug.</p>
+
+<p><br /></p>
+<h2 id="install-nimf">Install nimf</h2>
+
+<p>Open the terminal and run the below command to install <code class="highlighter-rouge">nimf</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nimf
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="configuration-setting">Configuration Setting</h2>
+
+<p>Set input method to nimf.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>im-config <span class="nt">-n</span> nimf
+</code></pre></div></div>
+
+<p>Now logout and log back in and you’re ready to go.</p>
+
+<p><br /></p>
+<h2 id="disable-other-language">Disable Other Language</h2>
+
+<p>By default, Japanese and Chinese input is enabled in nimf. 
+To disable these languages, open up nimf’s setting</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nimf-setting
+</code></pre></div></div>
+
+<p>and disable <em>anthy</em> for Japanese input and  <em>sunpinyin</em> for Chinese input.</p>
+
+<p><br /></p>
+<h2 id="pros-and-cons">Pros and Cons</h2>
+<p>I have no words to say for Korean input. I’ve always had to press extra right-arrow key to prevent 
+printing a space before the last character, and now I don’t have to do that. It is ‘the’ best input method for Korean.</p>
+
+<p>However, that’s pretty much it. As a person who also uses Japanese input, nimf is terrible with it.
+As far as I know, nimf’s main focus is on Korean, so I guess its not fair to mention other language, 
+   but I’m going to vent about it since its part of the nimf.</p>
+
+<p>The reason why I said its terrible is because it has no auto-complete for ん(n) character.
+For example, I want to type べんきょう which means <em>study</em>, but what I get is べnきょう.
+Realizing that I need to type <em>nn</em> every single time to get ん was huge disappointmnet for me.
+Its like you built an escalator without any power so you still need to walk up steps; yes I’m saying its useless.</p>
+
+<p>Seems like the developer did provided the feature in the beginning, but, for some reason, the developer got rid of it. Then, the whole Japanese input should’ve been removed in my opinion. Besides the ん(nn) issue, there’s also a part where you have to use the arrow key to convert <em>-kana</em> to <em>kanji</em> rather than a space, which is also a negative to me.</p>
+
+<p>TL;DR: <br />
+Use nimf if you’re only using Korean.</p>
+
+<p><br /></p>
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://elementaryos.stackexchange.com/questions/8041/adding-korean-input-for-loki">StackExchange : Adding Korean Input</a></li>
+  <li><a href="https://cogniti-works.blogspot.com/2018/09/nimf-23.html#comment-form">nimf developer’s blog</a></li>
+</ul>
+:ET

@@ -1,0 +1,76 @@
+I"<p>One day I was implementing a linked-list stack and this line of code threw a <em>type mismatched</em> error.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">stack</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Those two pointers <code class="highlighter-rouge">next</code> and <code class="highlighter-rouge">head</code> should be of same data type, <code class="highlighter-rouge">Node *</code>, but apparently it wasn’t. <br />
+I wanted to know their types and see why its different, but does how do you print its type on C?</p>
+
+<p>There’s a generic selection called <code class="highlighter-rouge">_Generic</code> (C11+ only).</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define typename(x) _Generic((x),                                                                     \
+		_Bool: "_Bool",                              unsigned char: "unsigned char",          \
+		char: "char",                                  signed char: "signed char",            \
+		short int: "short int",                 unsigned short int: "unsigned short int",     \
+		int: "int",                                   unsigned int: "unsigned int",           \
+		long int: "long int",                    unsigned long int: "unsigned long int",      \
+		long long int: "long long int",     unsigned long long int: "unsigned long long int", \
+		float: "float",                                     double: "double",                 \
+		long double: "long double",                         char *: "pointer to char",        \
+		void *: "pointer to void",                           int *: "pointer to int",         \
+		default: "other") 
+</span></code></pre></div></div>
+
+<p>With above macro defined in your code, you can now identify variable types.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+	<span class="kt">double</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"type of x: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="kr">typename</span><span class="p">(</span><span class="n">x</span><span class="p">));</span> <span class="c1">// output "int"</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"type of y: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="kr">typename</span><span class="p">(</span><span class="n">y</span><span class="p">));</span> <span class="c1">// output "char"</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"type of z: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="kr">typename</span><span class="p">(</span><span class="n">z</span><span class="p">));</span> <span class="c1">// output "double"</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Above macro does not include types of mine, so I added <code class="highlighter-rouge">struct Node * : "pointer to Node"</code> and ran the program.</p>
+
+<p>The output was <code class="highlighter-rouge">other</code> and <code class="highlighter-rouge">pointer to Node</code>. I figured there must be something wrong with my Node structure.</p>
+
+<p>I had the following code:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+	<span class="c1">// code</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+	<span class="c1">// code</span>
+<span class="p">}</span> <span class="n">Stack</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>which should’ve been:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span><span class="p">{</span>
+	<span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+	<span class="c1">// code</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Stack</span> <span class="p">{</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+	<span class="c1">// code</span>
+<span class="p">}</span> <span class="n">Stack</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/6280055/how-do-i-check-if-a-variable-is-of-a-certain-type-compare-two-types-in-c">StackOverflow : Checking certain type</a></li>
+  <li><a href="https://stackoverflow.com/questions/17720223/c-typedef-struct-name-vs-typedef-struct-name/23660072">StackOverflow : typedef struct</a></li>
+</ul>
+:ET
