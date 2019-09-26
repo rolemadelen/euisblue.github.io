@@ -13,7 +13,7 @@ lang: ja
 - [時間複雑度](#timecomp)
 - 実装
   * [C](#c)
-  * [Python](#python)
+  * [Ruby](#ruby)
 - [関連記事](#related)
 - [参照](#ref)
 <hr />
@@ -64,19 +64,23 @@ void selectionSort(int arr[])
 ```
 
 <br />
-### Python <a id="python"></a>
-```python
-def selectionSort(arr, n):
-	for i in range(n-1):
-		minIndex = i
-		
-		for j in range(i+1, n):
-			if arr[minIndex] > arr[j]:
-				minIndex = j
+### Ruby <a id="ruby"></a>
+```ruby
+def selection_sort(arr)
+    n = arr.size
 
-		temp = arr[minIndex]
-		arr[minIndex] = arr[i]
-		arr[i] = temp
+    for i in (0 ... n - 1)
+        min = i
+
+        for j in (i+1 ... n)
+            if arr[j] < arr[min]
+                min = j
+            end
+        end
+
+        arr[i], arr[min] = arr[min], arr[i]
+    end
+end
 ```
 
 <br />
