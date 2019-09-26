@@ -13,7 +13,7 @@ lang: ko
 - [시간 복잡도](#timecomp)
 - 구현
   * [C](#c)
-  * [Python](#python)
+  * [Ruby](#ruby)
 - [풀어 볼 문제](#try)
 - [관련 글](#related)
 - [참조](#ref)
@@ -64,19 +64,23 @@ void selectionSort(int arr[])
 ```
 
 <br />
-### 파이썬 <a id="python"></a>
-```python
-def selectionSort(arr, n):
-	for i in range(n-1):
-		minIndex = i
-		
-		for j in range(i+1, n):
-			if arr[minIndex] > arr[j]:
-				minIndex = j
+### 파이썬 <a id="ruby"></a>
+```ruby
+def selection_sort(arr)
+    n = arr.size
 
-		temp = arr[minIndex]
-		arr[minIndex] = arr[i]
-		arr[i] = temp
+    for i in (0 ... n - 1)
+        min = i
+
+        for j in (i+1 ... n)
+            if arr[j] < arr[min]
+                min = j
+            end
+        end
+
+        arr[i], arr[min] = arr[min], arr[i]
+    end
+end
 ```
 
 <br />
