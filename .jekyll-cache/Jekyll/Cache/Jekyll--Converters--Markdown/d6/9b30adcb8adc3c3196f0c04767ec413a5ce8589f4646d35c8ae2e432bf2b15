@@ -1,0 +1,150 @@
+I"�<h2 id="目次">目次</h2>
+<ul>
+  <li><a href="#struct">基本構造</a></li>
+  <li><a href="#treatment">シンボリックリンクの動作</a>
+    <ul>
+      <li><a href="#popt">-P</a></li>
+      <li><a href="#lopt">-L</a></li>
+      <li><a href="#hopt">-H</a></li>
+    </ul>
+  </li>
+  <li><a href="#tldr">要約</a></li>
+  <li><a href="#related">関連記事</a></li>
+  <li><a href="#ref">参照</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="基本構造-">基本構造 <a id="struct"></a></h2>
+
+<p>findコマンドの基本構造は下記のような少し複雑な形をしている。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="o">[</span><span class="nt">-H</span><span class="o">]</span> <span class="o">[</span><span class="nt">-L</span><span class="o">]</span> <span class="o">[</span><span class="nt">-P</span><span class="o">]</span> <span class="o">[</span><span class="nt">-D</span> debug option] <span class="o">[</span><span class="nt">-Olevel</span><span class="o">]</span> <span class="o">[</span>path] <span class="o">[</span><span class="nb">expr</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>それぞれのオプションたちは下記のように考えたら簡単に理解できる：</p>
+
+<p><code class="highlighter-rouge">-H</code>, <code class="highlighter-rouge">-L</code>, <code class="highlighter-rouge">-P</code> →  シンボリックリンクをどうように動作する？</p>
+
+<p><code class="highlighter-rouge">-D</code> →  どんな作業をしてるか仮面に表示する？</p>
+
+<p><code class="highlighter-rouge">-O</code> → どのように最適化する?</p>
+
+<p><code class="highlighter-rouge">path</code> → どこから作業を始めようか？</p>
+
+<p><code class="highlighter-rouge">expr</code> → どんな作業をすればいいの？</p>
+
+<p><br /></p>
+
+<h2 id="シンボリックリンクの動作-">シンボリックリンクの動作 <a id="treatment"></a></h2>
+
+<p><code class="highlighter-rouge">-H</code>, <code class="highlighter-rouge">-L</code>, <code class="highlighter-rouge">-P</code>このオプションたちはシンボリックリンクの動作と関連がある。<br />
+それぞれどのように動作するか調べてみよう。</p>
+
+<p>説明のため下記のような構造のディレクトリを作った：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test/
+├── blog.c
+├── hello.c
+├── my-blog -&gt; /home/myoi/Documents/blog
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">my-blog</code>は<code class="highlighter-rouge">/home/myoi/Documents/blog</code>を指すシンボリックリンクで、<code class="highlighter-rouge">blog</code>の構造は下記の通りだ：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blog
+└── file1.c
+└── file2.c
+└── post
+    ├── post1.md
+    └── post2.md
+</code></pre></div></div>
+
+<p>ディレクトリからファイルを探したい時<code class="highlighter-rouge">-type f</code>のオプションを使う。 <br />
+このオプションを使って<code class="highlighter-rouge">test</code>ディレクトリの中にあるすべてのファイルを出力してみよう。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find test/ -type f
+
+test/hello.c
+test/blog.c
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">hello.c</code>と<code class="highlighter-rouge">blog.c</code>が出力された。<br />
+このディレクトリの中にあるシンボリックリンクは表示されてはない。</p>
+
+<p><br /></p>
+<h3 id="-p-オプション-">-P オプション <a id="popt"></a></h3>
+<p><strong>-P</strong>オプションを使って一度も実行してみよう。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find -P test/ -type f
+
+test/hello.c
+test/blog.c
+</code></pre></div></div>
+
+<p>同じ結果だ。</p>
+
+<p>これが<code class="highlighter-rouge">find</code>のディフォルトの動作で、<strong>シンボリックリンクを全く辿らない</strong>。</p>
+
+<p><br /></p>
+<h3 id="-l-オプション-">-L オプション <a id="lopt"></a></h3>
+<p><strong>-L</strong>の場合はどうだろ。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find -L test/ -type f
+
+test/hello.c
+test/my-blog/file1.c
+test/my-blog/file2.c
+test/my-blog/post/post2.md
+test/my-blog/post/post1.md
+test/blog.c
+</code></pre></div></div>
+
+<p>すべてのファイルが出力された。<strong>-Lオプションはシンボリックリンクを辿る</strong>。</p>
+
+<p><br /></p>
+<h3 id="-h-オプション-">-H オプション <a id="hopt"></a></h3>
+<p>最後で<strong>-H</strong>オプションを見てみよう。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find -H test/ -type f
+
+test/hello.c
+test/blog.c
+</code></pre></div></div>
+<p><strong>-H</strong>は一見<strong>-P</strong>オプションと似ている。
+他の経路でもう一度実行してみよう。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find -H test/my-blog/ -type f
+
+test/my-blog/file1.c
+test/my-blog/file2.c
+test/my-blog/post/post2.md
+test/my-blog/post/post1.md
+test/blog.c
+</code></pre></div></div>
+
+<p>出力結果が違う。</p>
+
+<p><strong>普通-Hは-Pと同じ方式で動作するけど、与えた経路がシンボリックリンクの場合-Lのように動作方式を変わる</strong>。</p>
+
+<p><br /></p>
+<h2 id="要約-">要約 <a id="tldr"></a></h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find -[P/L/H] test/ -type f
+</code></pre></div></div>
+<ul>
+  <li><strong>-P</strong>: シンボリックリンクを辿らない。</li>
+  <li><strong>-L</strong>: シンボリックリンクを辿る。</li>
+  <li><strong>-H</strong>: 与えた経路がシンボリックリンクの場合辿る。</li>
+</ul>
+
+<p><br /></p>
+<h2 id="関連記事-">関連記事 <a id="related"></a></h2>
+
+<ul>
+  <li><a href="/linux/2019/02/21/ja-linux-howto-find_command_debug_opt.html">Linux・findコマンド [2]</a></li>
+</ul>
+
+<p><br /></p>
+<h2 id="参照-">参照 <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://linuxjm.osdn.jp/html/GNU_findutils/man1/find.1.html">find(1) - linux JP man page</a></li>
+</ul>
+:ET
