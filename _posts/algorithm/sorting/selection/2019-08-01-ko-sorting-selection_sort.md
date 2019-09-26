@@ -64,7 +64,7 @@ void selectionSort(int arr[])
 ```
 
 <br />
-### 파이썬 <a id="ruby"></a>
+### 루비 <a id="ruby"></a>
 ```ruby
 def selection_sort(arr)
     n = arr.size
