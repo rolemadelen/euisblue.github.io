@@ -1,0 +1,211 @@
+I"<div class="home">
+
+  <h1 class="page-heading">전체 글</h1>
+
+  <ul class="post-list">
+    
+    
+      <li>
+        <span class="post-meta">Aug 6, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/08/06/ko-sorting-quick_sort.html">[알고리즘] 퀵 정렬</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 5, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/08/05/ko-sorting-merge_sort.html">[알고리즘] 합병 정렬</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 4, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/08/04/ko-sorting-insertion_sort.html">[알고리즘] 삽입 정렬</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 1, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/08/01/ko-sorting-selection_sort.html">[알고리즘] 선택 정렬</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 28, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/07/28/ko-sorting-bubble_sort.html">[알고리즘] 거품 정렬</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 2, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2019/07/02/ko-linux-restore-bash.html">[Ubuntu] /bin/bash 복구하기</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 2, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/computer/2019/07/02/ko-computer-lossy_lossless.html">[Computer] 손실과 무손실 압축의 차이점</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 1, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/computer/2019/07/01/ko-computer-raster_vector.html">[Design] 래스터와 벡터 이미지</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jun 30, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2019/06/30/ko-linux-disable-keyboard.html">[Ubuntu] 노트북 내장 키보드 비활성화 하기</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 3, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2019/04/03/ko-ds-priority_queue.html">[자료구조] 우선순위 큐</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 1, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2019/04/01/ko-ds-linkedlist-circular.html">[자료구조] 원형 연결 리스트</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 27, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2019/03/27/ko-ds-linkedlist-doubly.html">[자료구조] 이중 연결 리스트</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 27, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2019/03/27/ko-ds-linkedlist-singly.html">[자료구조] 단일 연결 리스트</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Feb 21, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2019/02/21/ko-linux-howto-find_command_debug_opt.html">[Linux] find 명령어 [2]</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Feb 21, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2019/02/21/ko-linux-howto-find_command_symlink.html">[Linux] find 명령어 [1]</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jan 13, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/algorithm/2019/01/13/ko-algorithm-reverse_string.html">[알고리즘] 문자열 뒤집기</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jan 6, 2019</span>
+
+        <h2>
+          <a class="post-link" href="/c++/2019/01/06/ko-cpp-namespace.html">[C++] 이름공간 (namespace)</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Dec 31, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/c/2018/12/31/ko-c-case_ranges.html">[C] switch문 case 범위 지정</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Dec 11, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2018/12/11/ko-ds-queue.html">[자료구조] 큐</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 27, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/data%20structure/2018/11/27/ko-ds-stack.html">[자료구조] 스택</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 26, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/c/2018/11/26/ko-c-generic.html">[C] 변수의 자료형 출력하기</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 22, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/c/2018/11/22/ko-c-hex2dec.html">[C] 16진수 10진수로 변환하기</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 12, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2018/11/12/ko-linux-howto-replace_terminal.html">[Elementary OS] GNOME 터미널 설치</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Oct 30, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/c/2018/10/30/ko-c-stdbool.html">[C] 불(Boolean) 자료형</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Oct 23, 2018</span>
+
+        <h2>
+          <a class="post-link" href="/linux/2018/10/23/ko-linux-howto-nimf.html">[Elementary OS] nimf 설치</a>
+        </h2>
+      </li>
+    
+  </ul>
+
+</div>
+:ET

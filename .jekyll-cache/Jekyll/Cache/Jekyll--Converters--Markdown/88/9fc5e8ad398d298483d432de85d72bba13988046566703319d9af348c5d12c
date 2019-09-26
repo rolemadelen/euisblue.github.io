@@ -1,0 +1,23 @@
+I"Z<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#first">Preface</a></li>
+  <li><a href="#disable">Disable Laptop Keyboard</a>
+    <ul>
+      <li><a href="#inputdev">find the input device</a></li>
+      <li><a href="#disable2">disabling</a></li>
+      <li><a href="#enable">enabling</a></li>
+    </ul>
+  </li>
+  <li><a href="#launcher">Create Launcher Icon</a>
+    <ul>
+      <li><a href="#script">shell script</a></li>
+      <li><a href="#desktop">.deskotp</a></li>
+    </ul>
+  </li>
+  <li><a href="#dock">Attach to Dock</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+:ET

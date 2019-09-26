@@ -1,0 +1,22 @@
+I"û<h1 id="contents">Contents</h1>
+<ul>
+  <li><a href="#concept">Concept</a></li>
+  <li><a href="#example">Sorting Process</a></li>
+  <li><a href="#timecomp">Time Complexity</a></li>
+  <li><a href="#imp">Implementation</a>
+    <ul>
+      <li>Optimization
+        <ul>
+          <li><a href="#c">C</a></li>
+          <li><a href="#ruby">Ruby</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#related">Related Posts</a></li>
+  <li><a href="#ref">Reference</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+:ET

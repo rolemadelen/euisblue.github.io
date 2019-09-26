@@ -1,0 +1,128 @@
+I"$<h2 id="目次">目次</h2>
+<ul>
+  <li><a href="#first">前振り</a></li>
+  <li><a href="#disable">キーボード非活性化する方法</a>
+    <ul>
+      <li><a href="#inputdev">入力装置を探す</a></li>
+      <li><a href="#disable2">非活性化</a></li>
+      <li><a href="#enable">活性化</a></li>
+    </ul>
+  </li>
+  <li><a href="#launcher">ランチャーアイコンを作る方法</a>
+    <ul>
+      <li><a href="#script">shellスクリプト</a></li>
+      <li><a href="#desktop">.deskotp</a></li>
+    </ul>
+  </li>
+  <li><a href="#dock">Dockにプログラム追加</a></li>
+  <li><a href="#ref">参照</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="前振り-">前振り <a id="first"></a></h2>
+<p>最近「HHKB Professional JP」キーボードをノートパソコンに繋いで使っているけど、机の空間が狭くてHHKBをパソコンのキーボードの上に乗せて使っている。空間的には全然いいけど、たまにキーが押されて面倒な状況と向き合うことになる。実は内蔵キーボードを非活性化したら解決できる問題を今までやってなかった。非活性化する方法も思いより簡単で、この経験を記録しようと思った。</p>
+
+<p><br /></p>
+<h2 id="キーボード非活性化する方法-">キーボード非活性化する方法 <a id="disable"></a></h2>
+<h3 id="入力装置を探す-">入力装置を探す <a id="inputdev"></a></h3>
+<p>ターミナルを開いて<code class="highlighter-rouge">xinput --list</code>コマンドを入力する。</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/xinput--list.png" alt="xniput --list result" /></p>
+
+<p>そうすると今繋いでる入力措置が全部出力される。 <br />
+内蔵キーボードの名は<code class="highlighter-rouge">AT Translated Set 2 Keyboard</code>で、この装置の<code class="highlighter-rouge">id</code>は<code class="highlighter-rouge">14</code>だ。</p>
+
+<p><br /></p>
+<h3 id="非活性化-">非活性化 <a id="disable2"></a></h3>
+<blockquote>
+  <p><strong>注意：<br /> 他のキーボードとか仮想キーボードがいない場合は真似しなくてください。</strong></p>
+</blockquote>
+
+<p><code class="highlighter-rouge">xinput set-int-prop 14 "Device Enabled" 8 0</code></p>
+
+<p>上のコマンドの中で<code class="highlighter-rouge">14</code>は僕の内蔵キーボードの<code class="highlighter-rouge">id</code>だ。この<code class="highlighter-rouge">id</code>を自分の内蔵キーボードの<code class="highlighter-rouge">id</code>で直して入力する。そうしたら非活性化になってキーを押してもなんの反応しない。</p>
+
+<p><br /></p>
+<h3 id="活性化-">活性化 <a id="enable"></a></h3>
+<p>非活性化したキーボードをまた活性化したい場合、コマンドの最後の数字<code class="highlighter-rouge">0</code>を<code class="highlighter-rouge">1</code>に治すと活性化になる：<code class="highlighter-rouge">xinput set-int-prop 14 "Device Enabled" 8 1</code></p>
+
+<p><br /></p>
+<h2 id="ランチャーアイコンを作る方法-">ランチャーアイコンを作る方法 <a id="launcher"></a></h2>
+<p>他のキーボードがない状態で間違えて内向キーボードを非活性化する場合、活性化する方法はリブートしか無い。入力できないからしょうがない。 もし他のキーボードを持っていっても、キーボードを持って来て、パソコンに繋いで、コマンドを入力して、〜して。。まぁ、面倒くさい。</p>
+
+<p>でも実行ファイルがあったらマウスクリックでOn/Offができる。じゃ、ランチャーアイコンを作ってみよう。</p>
+
+<p><br /></p>
+<h3 id="shellスクリプト-">shellスクリプト <a id="script"></a></h3>
+<p>どうやってOn/Offするスクリプトを作成したらいいのかな？</p>
+
+<p>内蔵キーボードが非活性化できた状態で<code class="highlighter-rouge">xinput --list --long</code>コマンドを入力してみた。</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/disabled-message.png" alt="Disabled Message" /></p>
+
+<p><em>This device is disabled</em>という文句が出力されるのを確認した。活性化中にはこの文句がない。この事実を利用してOn/Offするスクリプトを作ってみようと思う。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># file: kbd-onoff</span>
+<span class="nv">kbd</span><span class="o">=</span><span class="sb">`</span>xinput <span class="nt">--list</span> <span class="nt">--long</span> | <span class="nb">grep</span> <span class="nt">-A</span> 1 <span class="s2">"id=14"</span> | <span class="nb">grep </span>disabled<span class="sb">`</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$kbd</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"keyboard disabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 0<span class="sb">`</span>
+<span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"keyboard enabled"</span>
+        <span class="sb">`</span>xinput set-int-prop 14 <span class="s2">"Device Enabled"</span> 8 1<span class="sb">`</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>変数<code class="highlighter-rouge">kbd</code>に<code class="highlighter-rouge">This device is disabled</code>という文句が貯蔵されてあるかどうかを確認する。もし<code class="highlighter-rouge">kbd</code>が空文字列だったらキーボードが活性化されていることが分かる。逆の場合はもう非活性化されている状態だから、また活性化したらいい。</p>
+
+<p>スクリプトを作成したら実行権限を与える。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>u+x kbd-onoff
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="desktop-">.desktop <a id="desktop"></a></h3>
+<p><code class="highlighter-rouge">.desktop</code>ファイルはランチャーアイコンを作るため必要なファイルだ。</p>
+
+<p>ここで必要な準備物が２つある：</p>
+<ol>
+  <li>ランチャーアイコンの経路: <code class="highlighter-rouge">/usr/share/icons/icon.png</code></li>
+  <li>スクリプトファイルの経路: <code class="highlighter-rouge">/bin/kbd-onoff</code></li>
+</ol>
+
+<p>準備できたら好きな編集機を開いて下の内容を入力する。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env xdg-open</span>
+<span class="o">[</span>Desktop Entry]
+<span class="nv">Version</span><span class="o">=</span>1.0
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Terminal</span><span class="o">=</span><span class="nb">false
+</span><span class="nv">Exec</span><span class="o">=</span>/bin/kbd-onoff
+<span class="nv">Name</span><span class="o">=</span>Keyboard On/Off
+<span class="nv">Comment</span><span class="o">=</span><span class="s2">"Keyboard on/off runnnig"</span>
+<span class="nv">Icon</span><span class="o">=</span>/usr/share/icons/kbd.png
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">kbd-onoff.desktop</code>の名で貯蔵して実行する。</p>
+
+<p>はじめに実行する時、信じられないプログラムというポップアップスクリンが表示されるかもしれない。この時は<code class="highlighter-rouge">Trust and Launch</code>をクリックしたら大丈夫。</p>
+
+<p><br /></p>
+<h2 id="dockにプログラム追加-">Dockにプログラム追加 <a id="dock"></a></h2>
+
+<p><code class="highlighter-rouge">.desktop</code>ファイルを<code class="highlighter-rouge">/usr/share/applications/</code>または<code class="highlighter-rouge">~/.local/share/applications/</code>に移動する。<code class="highlighter-rouge">.desktop</code>フィアルの中で<code class="highlighter-rouge">Name=</code>に該当する部分がプログラムの名前になるので、アプリリストからその名前を使って探したらいい。見つけたらマウスの右クリックして<code class="highlighter-rouge">Add to Favorites</code>を選ぶとdockに追加される。</p>
+
+<p><img src="/assets/images/linux/how-to/disable-keyboard/dock.png" alt="dock image" /></p>
+
+<p><br /></p>
+<h2 id="参照-">参照 <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://blog.hostonnet.com/laptop-keyboard-ubuntu">Disable Laptop Keyboard in Ubuntu</a></li>
+  <li><a href="https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/">Bash Shell : is a variable empty?</a></li>
+  <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php">Bash Shell : if-statement</a></li>
+</ul>
+:ET

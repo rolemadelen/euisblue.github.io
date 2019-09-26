@@ -1,0 +1,17 @@
+I"h<h1 id="目次">目次</h1>
+<ul>
+  <li><a href="#concept">選択ソート</a></li>
+  <li><a href="#timecomp">時間複雑度</a></li>
+  <li>実装
+    <ul>
+      <li><a href="#c">C</a></li>
+      <li><a href="#ruby">Ruby</a></li>
+    </ul>
+  </li>
+  <li><a href="#related">関連記事</a></li>
+  <li><a href="#ref">参照</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+:ET

@@ -1,0 +1,184 @@
+I";7<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#concept">Concept</a></li>
+  <li><a href="#op">Operations</a></li>
+  <li><a href="#implementation">Implementations</a>
+    <ul>
+      <li><a href="#linkedlist">Linked List</a></li>
+      <li><a href="#array">Array</a></li>
+    </ul>
+  </li>
+  <li><a href="#app">Applications of Queue</a></li>
+  <li><a href="#problem">Problems to Try</a></li>
+  <li><a href="#ref">References</a></li>
+</ul>
+<hr />
+
+<p><br /></p>
+
+<h2 id="concept-">Concept <a id="concept"></a></h2>
+<p>A linear data structure that follows <strong>FIFO</strong>(First-In First-Out) design which an element that
+came in first is served first. An element can only be inserted/deleted at the one end of the container.</p>
+
+<h2 id="operations-">Operations <a id="op"></a></h2>
+<p>The <em>front</em> refers to the <em>head</em> of the container and the <em>back</em> refers to the <em>tail</em> (or top) of the container.</p>
+<ul>
+  <li><strong>void enqueue(..)</strong>: inserts a data.</li>
+  <li><strong>void dequeue(..)</strong>: removes a data.</li>
+  <li><strong>bool isEmpty(..)</strong>: determine whether the container is empty.</li>
+  <li><strong>T front(..)</strong>: return the first elmeent.</li>
+  <li><strong>T back(..)</strong>: return the last element.</li>
+  <li><strong>int size(..)</strong>: return the number of elements in the container.</li>
+</ul>
+
+<h2 id="implementations-">Implementations <a id="implementation"></a></h2>
+<p>Queue can be implemented using a linked list or an array and each system has both pros and cons.</p>
+
+<p>If Queue is implemented with a linked list,
+we can insert/delete elements in O(1) time, but access requires O(n) time.</p>
+
+<p>If Queue is implemented with an array,
+we can insert elements in O(1) time, but
+deleting now takes O(n) due to shifting of elements.
+But access can be done in O(1) time.</p>
+
+<p>If number of operations on insert/delete is dominating the number of operations on access, it is better to choose Linked List rather than Array and vice versa.</p>
+
+<h3 id="linked-list-based-queue--">Linked List based Queue  <a id="linkedlist"></a></h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">q</span><span class="p">,</span> <span class="n">elem</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">newNode</span><span class="p">));</span>
+	<span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+	<span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+
+	<span class="o">++</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"queue is empty</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+		<span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+	<span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">free</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">elem</span> <span class="nf">front</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">assert</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">elem</span> <span class="nf">back</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">assert</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">size</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="array-based-queue-">Array based Queue <a id="array"></a></h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">q</span><span class="p">,</span> <span class="n">elem</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"Queue is full</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">q</span><span class="o">-&gt;</span><span class="n">queue</span><span class="p">[</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+	<span class="o">++</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"Queue is empty</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="o">--</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">elem</span> <span class="nf">front</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">queue</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">elem</span> <span class="nf">back</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">queue</span><span class="p">)[</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">size</span><span class="p">(</span><span class="k">const</span> <span class="n">Queue</span> <span class="o">*</span> <span class="k">const</span> <span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="applications-of-queue-">Applications of Queue <a id="app"></a></h2>
+<ul>
+  <li>BFS (Breadth First Search)</li>
+  <li>OS Scheduling</li>
+  <li>Disk Scheduling</li>
+  <li>Print Queue</li>
+  <li>Customer Queue (market, bank, …, etc)</li>
+</ul>
+
+<h2 id="problems-to-try-">Problems to Try <a id="problem"></a></h2>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/1966">Printer Queue</a></li>
+</ul>
+
+<h2 id="references-">References <a id="ref"></a></h2>
+<ul>
+  <li><a href="https://www.acmicpc.net/">acmicpc.net</a></li>
+  <li><a href="https://en.cppreference.com/w/cpp/container/queue">cppreference : queue</a></li>
+</ul>
+:ET
