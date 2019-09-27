@@ -14,7 +14,7 @@ lang: ko
 - [시간 복잡도](#timecomp)
 - [구현](#imp)
   * C
-  * Python
+  * Ruby
 - [풀어 볼 문제](#try)
 - [관련 글](#related)	
 - [참조](#ref)
@@ -51,12 +51,12 @@ Insertion Sort(삽입 정렬)은 이미 정렬이 된 앞 부분의 요소들과
    1 + 2 + ... + (n-2) + (n-1) = n\*(n-1)/2 →  **O(n<sup>2</sup>)**
 
 <br />
-## 구현 <a id="imp"></a>
+## 삽입 정렬 구현 <a id="imp"></a>
 
 삽입할 위치를 찾고있는 요소는 그 전 요소보다 작아야 한다. 그렇기 때문에 왼쪽에 있는 값이 현재 값 보다
-작거나 첫 번째(0번 인덱스)일 때까지 계속 한 칸씩 오른쪽으로 밀어주면 된다.
+작거나 더 이상 비교 할 값이 없을 때까지 현재 값을 계속 한 칸씩 왼쪽으로 밀어주면 된다.
 
-### 삽입 정렬 - C언어
+### C언어
 ```c
 void insertionSort(int arr[])
 {
@@ -77,18 +77,23 @@ void insertionSort(int arr[])
 ```
 
 <br />
-### 삽입 정렬 - Python
-```python
-def insertionSort(arr, n):
-	for i in range(1, n):
-		index = i
-		key = arr[i]
+### Ruby
+```ruby
+def insertion_sort(arr)
+    n = arr.size
 
-		while index > 0 and key < arr[index-1]:
-			arr[index] = arr[index-1]
-			index = index - 1
+    for i in (1 ... n)
+        index = i
+        key = arr[i]
 
-		arr[index] = key
+        while index > 0 and key < arr[index-1]
+            arr[index] = arr[index - 1]
+            index -= 1
+        end
+
+        arr[index] = key
+    end
+end
 ```
 
 <br />
