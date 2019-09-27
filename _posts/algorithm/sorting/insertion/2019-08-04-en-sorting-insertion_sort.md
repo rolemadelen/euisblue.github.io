@@ -14,7 +14,7 @@ lang: en
 - [Time Complexity](#timecomp)
 - [Implementation](#imp)
   * C
-  * Python
+  * Ruby
 - [Related Posts](#related)	
 - [Reference](#ref)
 <hr />
@@ -52,7 +52,7 @@ In the case of Insertion Sort, we start from the 1<sup>st</sup> index not the 2<
 <br />
 ## Implementation <a id="imp"></a>
 A key(one we're trying to insert) must be smaller than the one on the left. So, shift all elements to
-the right until the key is greater than the left or is not reached the 0<sup>th</sup> index.
+the right until the key is greater than the left or the key reached the index 0.
 
 ### C
 ```c
@@ -75,18 +75,23 @@ void insertionSort(int arr[])
 ```
 
 <br />
-### Python
-```python
-def insertionSort(arr, n):
-	for i in range(1, n):
-		index = i
-		key = arr[i]
+### Ruby
+```ruby
+def insertion_sort(arr)
+    n = arr.size
 
-		while index > 0 and key < arr[index-1]:
-			arr[index] = arr[index-1]
-			index = index - 1
+    for i in (1 ... n)
+        index = i
+        key = arr[i]
 
-		arr[index] = key
+        while index > 0 and key < arr[index-1]
+            arr[index] = arr[index - 1]
+            index -= 1
+        end
+
+        arr[index] = key
+    end
+end
 ```
 
 <br />
