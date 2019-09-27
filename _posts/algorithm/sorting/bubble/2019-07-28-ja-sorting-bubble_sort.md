@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Algorithm・ バブルソート"
+title: "Algorithm・バブルソート"
 ref: algorithm-bubble-sort
 date: 2019-07-28 19:46:00
 categories: Algorithm
-published: true
 tags: sorting
 lang: ja
 ---
