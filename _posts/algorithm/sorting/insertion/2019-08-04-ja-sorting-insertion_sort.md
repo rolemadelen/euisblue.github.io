@@ -2,7 +2,7 @@
 layout: post
 title: "Algorithm・挿入ソート"
 ref: algorithm-insertion-sort
-date: 2019-09-26 18:08:00
+date: 2019-08-04 18:08:00
 categories: Algorithm
 tags: sorting
 lang: ja
