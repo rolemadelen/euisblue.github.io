@@ -1,11 +1,11 @@
 ---
 layout: page
-ref: index
-lang: ko
+title: Category
+ref: category
+lang: en
 ---
 
-{% assign siteCtgo = site.categories | sort %}
-
+{% assign siteCtgo = site.categories | sort%}
 {% for category in siteCtgo %}
 {% assign header = nil %}
 {% assign posted = nil %}
@@ -17,7 +17,7 @@ lang: ko
 			  {% assign header = true %}
 			  {% assign posted = true %}
 			{%endif%}
-		  <li><a href="{{ post.url }}">{{ post.title }}</a> <span style="color: #828282; float: right;">{{ post.date | date:"%Y.%m.%d"}}</span></li>
+		  <li> <a href="{{ post.url }}">{{ post.title }}</a> <span style="color: #828282; float: right;">{{ post.date | date:"%Y.%m.%d"}}</span></li>
       {% endif %}
     {% endfor %}
 	{% if posted == true %}
