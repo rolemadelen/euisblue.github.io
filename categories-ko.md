@@ -1,10 +1,12 @@
 ---
 layout: page
-ref: index
-lang: ja
+title: 카테고리
+ref: category
+lang: ko
 ---
 
-{% assign siteCtgo = site.categories | sort%}
+{% assign siteCtgo = site.categories | sort %}
+
 {% for category in siteCtgo %}
 {% assign header = nil %}
 {% assign posted = nil %}
