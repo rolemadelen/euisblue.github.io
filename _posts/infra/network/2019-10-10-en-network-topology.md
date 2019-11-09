@@ -9,7 +9,7 @@ lang: en
 ---
 
 ## Contents
-- [Network Topology](#start)
+- [What is Network Topology?](#start)
 - Types of Topologies
   1. [Bus Topology](#bus)
   2. [Star Topology](#star)
