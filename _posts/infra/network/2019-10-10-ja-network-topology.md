@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ネットワークトポロジー"
+title: "ネットワーク・トポロジー"
 ref: network-topology
 date: 2019-10-10 07:00:00
 categories: Network
@@ -9,26 +9,26 @@ tags: network
 lang: ja
 ---
 
-## Contents
-- [Network Topology](#start)
-- Types of Topologies
-  1. [Bus Topology](#bus)
-  2. [Star Topology](#star)
-  3. [Mesh Topology](#mesh)
-  4. [Ring Topology](#ring)
+## 目次
+- [ネットワーク・トポロジーとは](#start)
+- トポロジー
+  1. [Busトポロジー](#bus)
+  2. [Starトポロジー](#star)
+  3. [Meshトポロジー](#mesh)
+  4. [Ringトポロジー](#ring)
 - [Segments and Backbones](#cable)
 
 <hr>
 <br>
 
-## What is Network Topology? <a id="start"></a>
-**Network Topology** is an arragement of networks connecting various nodes (sender and receiver) either physically or logically.
+## トポロジーとは? <a id="start"></a>
+**Network トポロジー** is an arragement of networks connecting various nodes (sender and receiver) either physically or logically.
 There are many different topologies but we will look at the four basic topologies: _BUS_, _Star_, _Mesh_, and _Ring_.
 
 <br>
 
-## BUS Topology <a id="bus"></a>
-![BUS Topology](/assets/images/infra/network/bus.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
+## BUSトポロジー <a id="bus"></a>
+![BUSトポロジー](/assets/images/infra/network/bus.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
 
   + Advantage
     1. Less cost
@@ -41,8 +41,8 @@ There are many different topologies but we will look at the four basic topologie
 
 <br>
 
-## Star Topology <a id="star"></a>
-![Star Topology](/assets/images/infra/network/star.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
+## Starトポロジー <a id="star"></a>
+![Starトポロジー](/assets/images/infra/network/star.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
 
   + Advantage 
     1. Centralization 
@@ -53,8 +53,8 @@ There are many different topologies but we will look at the four basic topologie
 
 <br>
 
-## Mesh Topology <a id="mesh"></a>
-![Mesh Topology](/assets/images/infra/network/mesh.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
+## Meshトポロジー <a id="mesh"></a>
+![Meshトポロジー](/assets/images/infra/network/mesh.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
 
   + Advantage 
     1. Fault Tolerance
@@ -64,8 +64,8 @@ There are many different topologies but we will look at the four basic topologie
 
 <br>
 
-## Ring Topology <a id="ring"></a>
-![Ring Topology](/assets/images/infra/network/ring.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
+## Ringトポロジー <a id="ring"></a>
+![Ringトポロジー](/assets/images/infra/network/ring.jpg) [https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/](https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/)
 
   + Advantage 
     1. All machines have equall access to the network
