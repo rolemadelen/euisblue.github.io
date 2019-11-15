@@ -60,7 +60,7 @@ _정렬은 오름차순으로 되어 있다 가정하고 설명한다. 만약 �
    ![Binary Search](/assets/images/algorithm/search/search-binary-search-3.jpg)
 
 3. 중간 값이 `target`보다 작을 경우
-  + `target`이 중간 값 **오른쪽**에 위치하므로 `low`의 값을 `low + 1`으로 바꾸고 값을 다시 비교한다.<br>
+  + `target`이 중간 값 **오른쪽**에 위치하므로 `low`의 값을 `middle + 1`으로 바꾸고 값을 다시 비교한다.<br>
     ![Binary Search](/assets/images/algorithm/search/search-binary-search-4.jpg)
 
 
