@@ -63,7 +63,7 @@ for (int i=0; i<HALF; ++i)
 <br>
 
 ## **풀어 볼 문제**
-백준 온라인 저지에서 간단한 회문 문제를 풀어보자.
+[백준 온라인 저지](https://www.acmicpc.net/problemset?search=%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC)에서 간단한 회문 문제를 풀어보자.
 
 - [10988번](https://www.acmicpc.net/problem/10988), [13235번](https://www.acmicpc.net/problem/13235)
   + 위에서 구현 한 것 처럼 회문 알고리즘을 구현만 할 수 있으면 풀 수 있는 문제.
