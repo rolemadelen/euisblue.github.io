@@ -70,4 +70,4 @@ for (int i=0; i<HALF; ++i)
 - [10174번](https://www.acmicpc.net/problem/10174)
   + 대소문자를 구분하지 않지만 공백은 구분하는 문제.
 - [1259번](https://www.acmicpc.net/problem/1259)
-  + 문자열이 아닌 수가 회문인지 판별하는 문제.
+  + 주어진 수가 회문인지 판별하는 문제.
