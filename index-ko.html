@@ -1,24 +1,27 @@
 ---
-layout: default
+layout: page
 ref: index
 lang: ko
 ---
 
-<div class="home">
+{% assign siteCtgo = site.categories | sort %}
 
-  <h1 class="page-heading">전체 글</h1>
-
-  <ul class="post-list">
-    {% assign posts=site.posts | where:"lang", page.lang %}
-    {% for post in posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+{% for category in siteCtgo %}
+{% assign header = nil %}
+{% assign posted = nil %}
+  <ul style="list-style-type: none">
+    {% for post in category[1] %}
+	  {% if post.lang == page.lang %}
+			{% if header == nil %}
+			  <h3>{{ category[0] }}</h3>
+			  {% assign header = true %}
+			  {% assign posted = true %}
+			{%endif%}
+		  <li><a href="{{ post.url }}">{{ post.title }}</a> <span style="color: #828282; float: right;">{{ post.date | date:"%Y.%m.%d"}}</span></li>
+      {% endif %}
     {% endfor %}
+	{% if posted == true %}
+	  <hr  style="border: 0.5px solid grey; border-radius: 5px; width: 100%;"/>
+	{% endif %}
   </ul>
-
-</div>
+{% endfor %}
