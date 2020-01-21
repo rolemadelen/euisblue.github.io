@@ -1,0 +1,436 @@
+I"8<p><a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>ブログ購読をすると、毎日一つのプログラミング問題をメールにて送信します。</p>
+
+<h2 id="dcp-3-"><strong>DCP #3</strong> <a id="problem"></a></h2>
+<p>この問題はGoogleの面接からの質問です。</p>
+
+<p>BinaryTreeのrootが与えられたとき、BinaryTreeを文字化させる<code class="highlighter-rouge">serialize(root)</code>関数と、文字列からBinaryTreeを復元する<code class="highlighter-rouge">deserialize(s)</code>関数を実装してください。</p>
+
+<p>例えば、下記のようなNodeクラスがあるとき</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+</code></pre></div></div>
+<p>次のテストケースをパスします。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s">'root'</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s">'left'</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s">'left.left'</span><span class="p">)),</span> <span class="n">Node</span><span class="p">(</span><span class="s">'right'</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">deserialize</span><span class="p">(</span><span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">))</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="s">'left.left'</span>
+</code></pre></div></div>
+
+<p><a href="en-dcp-3.html#dcp3">原文を読む</a></p>
+
+<p><br /></p>
+
+<h2 id="コード-"><strong>コード</strong> <a id="code"></a></h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:val</span><span class="p">,</span> <span class="ss">:left</span><span class="p">,</span> <span class="ss">:right</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+        <span class="vi">@val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="vi">@left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="vi">@right</span> <span class="o">=</span> <span class="n">right</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="kp">nil</span> 
+        <span class="k">return</span> <span class="s1">'nil'</span>
+    <span class="k">end</span>
+
+    <span class="n">left_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">left</span><span class="p">)</span>
+    <span class="n">right_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">right</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">"</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">val</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">left_str</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">right_str</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">des_helper</span> <span class="n">tokens</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="nf">shift</span>
+
+    <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="s1">'nil'</span>
+        <span class="k">return</span> <span class="kp">nil</span>
+    <span class="k">end</span>
+
+    <span class="n">curr_node</span> <span class="o">=</span> <span class="no">Node</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">left</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">right</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">curr_node</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="説明-"><strong>説明</strong> <a id="explain"></a></h2>
+
+<h3 id="serialize"><strong>Serialize</strong></h3>
+<p>最小は<code class="highlighter-rouge">DFS</code>の方法で接近したけど失敗して、<code class="highlighter-rouge">preorder</code>走査方法で方向を変えた。</p>
+
+<p><code class="highlighter-rouge">preorder</code>はtreeを走査する３つの方法の中で一つで下記のような順で動く。</p>
+<ol>
+  <li>現ノード訪問（visit）</li>
+  <li>左-子ノードに移動（left）</li>
+  <li>右-子ノードに移動（right）</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="c1"># 再帰関数終了条件</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="kp">nil</span> 
+        <span class="k">return</span> <span class="s1">'nil'</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 現ノードの左-子のノードを再帰関数に渡す</span>
+    <span class="n">left_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">left</span><span class="p">)</span>
+    <span class="c1"># 現ノードの右-子のノードを再帰関数に渡す</span>
+    <span class="n">right_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">right</span><span class="p">)</span>
+
+    <span class="c1"># 現ノード後ろに左と右-子のノードの文字列をつなげる</span>
+    <span class="c1"># 一個ずつ空白に分離する</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">val</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">left_str</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">right_str</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="deserialize"><strong>Deserialize</strong></h3>
+
+<p><code class="highlighter-rouge">deserialize</code>の場合<code class="highlighter-rouge">serialize</code>中使用された経路をそのまま従いながら復元しなければならない。
+それで<code class="highlighter-rouge">deserialize</code>も<code class="highlighter-rouge">preorder</code>走査を使用する。</p>
+
+<p>その前に、まず文字列形にあるノードたちを一つずつ分離する必要がある。
+空白で区分されているから<code class="highlighter-rouge">split(' ')</code>を使って分離して、その配列をhelper関数に渡す。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c1"># 文字列からノードを分離してhelper関数に渡す。</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">des_helper</span> <span class="n">tokens</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>ノードを<strong>前から順に</strong>Treeに入れる。Queueを使うと便利だからQueueを使う。
+ただRubyの配列にはQueueと同じ機能があるので、配列を使用した。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="c1"># Queueからpopする.</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="nf">shift</span>
+
+    <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="s1">'nil'</span>
+        <span class="k">return</span> <span class="kp">nil</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 新しいノードを作ってqueueからpopした値を代入する</span>
+    <span class="n">curr_node</span> <span class="o">=</span> <span class="no">Node</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+    <span class="c1"># 再帰を使ってcurr_nodeの左と右の子ノードを探す</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">left</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">right</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="c1"># 復元したtreeのrootを返す</span>
+    <span class="k">return</span> <span class="n">curr_node</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">serialize</code>過程の中ですべてのノードを一度ずつ訪問するから、時間複雑度は<strong>O(n)</strong>になる。<br />
+空間複雑度も再起するたびにstack frameの大きさが増加するので<strong>O(n)</strong>になる。</p>
+
+<p><br /></p>
+
+<h2 id="関連記事-"><strong>関連記事</strong> <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/ja-dcp-7.html">DCP 7・メッセージ解読</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/ja-dcp-6.html">DCP 6・XOR連結リスト</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/ja-dcp-5.html">DCP 5・CARとCDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/ja-dcp-4.html">DCP 4・一番低い正数</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/ja-dcp-2.html">DCP 2・新しい配列</a>
+      </div>
+      
+      
+        
+
+</div>
+
+:ET

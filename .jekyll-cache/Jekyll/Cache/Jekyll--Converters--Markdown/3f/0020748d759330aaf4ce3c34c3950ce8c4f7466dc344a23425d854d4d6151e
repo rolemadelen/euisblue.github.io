@@ -1,0 +1,427 @@
+I"g8<p><a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>을 구독하면 매일 한 개의 코딩 문제를 이메일로 받을 수 있습니다.</p>
+
+<h2 id="dcp-3"><strong>DCP #3</strong></h2>
+<p>이 문제는 구글 면접에서 나온 질문입니다.</p>
+
+<p>이진 트리의 루트가 주어졌을 때, 트리를 문자화시키는 <code class="highlighter-rouge">serialize(root)</code> 함수와, 문자열로 부터 이진 트리를 재구성하는 <code class="highlighter-rouge">deserialize(s)</code> 함수를 구현해주세요.</p>
+
+<p>예를들어, 아래와 같은 노드 클래스가 있을 때</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+</code></pre></div></div>
+<p>다음의 테스트 케이스를 통과해야 합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s">'root'</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s">'left'</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s">'left.left'</span><span class="p">)),</span> <span class="n">Node</span><span class="p">(</span><span class="s">'right'</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">deserialize</span><span class="p">(</span><span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">))</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="s">'left.left'</span>
+</code></pre></div></div>
+
+<p><a href="en-dcp-3.html#dcp3">원문 읽기</a></p>
+
+<p><br /></p>
+
+<h2 id="코드"><strong>코드</strong></h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:val</span><span class="p">,</span> <span class="ss">:left</span><span class="p">,</span> <span class="ss">:right</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+        <span class="vi">@val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="vi">@left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="vi">@right</span> <span class="o">=</span> <span class="n">right</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="kp">nil</span> 
+        <span class="k">return</span> <span class="s1">'nil'</span>
+    <span class="k">end</span>
+
+    <span class="n">left_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">left</span><span class="p">)</span>
+    <span class="n">right_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">right</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">"</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">val</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">left_str</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">right_str</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">des_helper</span> <span class="n">tokens</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="nf">shift</span>
+
+    <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="s1">'nil'</span>
+        <span class="k">return</span> <span class="kp">nil</span>
+    <span class="k">end</span>
+
+    <span class="n">curr_node</span> <span class="o">=</span> <span class="no">Node</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">left</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">right</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">curr_node</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="설명"><strong>설명</strong></h2>
+
+<p><code class="highlighter-rouge">serialize(node)</code>함수는 처음에 <code class="highlighter-rouge">DFS</code>로 하려다가 망해서(지금 생각해보면 하긴 했다. 그런데 필자가 작성한 코드의 결과를 필자가 이해하지 못했다)재귀를 사용한 <code class="highlighter-rouge">preorder</code>로 방향을 바꿨다.</p>
+
+<p>preorder는 트리에서 순회하는 세 가지 방법 중 하나로 아래와 같은 순서로 동작한다.</p>
+<ol>
+  <li>현재 노드 방문 (visit)</li>
+  <li>현재 노드의 왼쪽 자식으로 이동 (left)</li>
+  <li>현재 노드의 오른쪽 자식으로 이동 (right)</li>
+</ol>
+
+<p>위 방법을 이용해 작성한 코드가 <code class="highlighter-rouge">serialize(node)</code>이다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="c1"># 재귀함수 종료 (terminating condition)</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="kp">nil</span> 
+        <span class="k">return</span> <span class="s1">'nil'</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 현재 노드의 왼쪽 자식들의 값</span>
+    <span class="n">left_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">left</span><span class="p">)</span>
+    <span class="c1"># 현재 노드의 오른쪽 자식들의 값</span>
+    <span class="n">right_str</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">right</span><span class="p">)</span>
+
+    <span class="c1"># 현재 노드 값뒤에 자식들의 값을 이어 붙힌다.</span>
+    <span class="c1"># 각 노드의 값들은 공백으로 분리</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">val</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">left_str</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">right_str</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><code class="highlighter-rouge">deserialize(s)</code>의 경우 트리가 serialize될 때 사용된 경로를 그대로 따라가며 재구성 해야한다.
+그렇기 때문에 deserialize 역시 <code class="highlighter-rouge">preorder</code> 방법을 사용한다.</p>
+
+<p>그전에 우선 문자열 형태로 있는 노드들을 각각의 노드로 분리해줘야 한다.
+공백으로 구분되어 있으니 아래와 같이 분리하고 helper 함수에 분리된 값을 넘겨준다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c1"># 문자열에서 모든 노드들을 분리하고 helper 함수에 넘겨준다.</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">des_helper</span> <span class="n">tokens</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>분리된 노드들을 <strong>앞에서부터 차례대로</strong> 트리에 집어넣는다. 잠깐? 왠지 <code class="highlighter-rouge">Queue</code>를 사용해야 할 것 같은 느낌이 든다 (아님 말고).</p>
+
+<p>루비에서는 배열로 큐와 같은 작업을 할 수 있기때문에 배열을 사용했다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="c1"># 큐에서 값을 가져온다.</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="nf">shift</span>
+
+    <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="s1">'nil'</span>
+        <span class="k">return</span> <span class="kp">nil</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 새로운 노드를 만들고 현재 노드에 큐에서 나온 값을 대입</span>
+    <span class="n">curr_node</span> <span class="o">=</span> <span class="no">Node</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+    <span class="c1"># 재귀를 사용해 새로운 노드의 왼쪽과 오른쪽 자식들의 값을 가져온다.</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">left</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">curr_node</span><span class="p">.</span><span class="nf">right</span> <span class="o">=</span> <span class="n">des_helper</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="c1"># 재구성된 트리의 root를 반환</span>
+    <span class="k">return</span> <span class="n">curr_node</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>문자화를 하면서 모든 노드들을 방문하기 때문에 시간복잡도는 <strong>O(n)</strong>이고,<br />
+공간복잡도 또한 스택 프레임 때문에 <strong>O(n)</strong>이 된다.</p>
+
+<p><br /></p>
+
+<h2 id="관련-글-"><strong>관련 글</strong> <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/ko-dcp-7.html">DCP 7: 메세지 해독하기</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/ko-dcp-6.html">DCP 6: XOR 연결 리스트</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/ko-dcp-5.html">DCP 5: CAR과 CDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/ko-dcp-4.html">DCP 4: 가장 낮은 양수</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/ko-dcp-2.html">DCP 2: 새로운 배열</a>
+      </div>
+      
+      
+        
+
+</div>
+
+:ET
