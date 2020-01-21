@@ -1,47 +1,65 @@
-# Site settings
-home:
-  en: Home
-  ko: 홈
-  ja: ホーム
-title:
-  en: Mui (Jii Yoo)
-  ko: 무이 (지원 유)
-  ja: ムイ (ジー・ユー)
-email: public.mui@gmail.com
-
-description:
-  en: Programming Blog
-  ko: 프로그래밍 블로그
-  ja: プログラミングブログ
+# Site Info
+title:  Muicode
+description:        "Programming Blog"
+author_name: 
+    en: Mui (Jii Yoo)
+    ko: 무이 (유 지원)
+    ja: ムイ (優 ジー)
 
 index:
-  en:
-  ko: index-ko.html
-  ja: index-ja.html
+    en: /
+    ko: /index-ko
+    ja: /index-ja
+
+about:
+    en: /about
+    ko: /about-ko
+    ja: /about-ja
 
 feed:
-  en: /feed.xml
-  ko: /feed-ko.xml
-  ja: /feed-ja.xml
+    en: /feed.xml
+    ko: /feed-ko.xml
+    ja: /feed-ja.xml
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://muicode.github.io" # the base hostname & protocol for your site
-twitter_username: _muicode
-github_username:  muicode
+logo_url:           https://api.github.com/users/muicode # Get it from GitHub API: https://api.github.com/users/<username>
 
-# Social Sharing
-og_image : "/assets/logo.png"
+# Site Settings
+url:                https://muicode.github.io # main url
+baseurl:            ""
+permalink:          /:title # Post permalink
+timezone:           America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
-# Build settings
-markdown: kramdown
-
-# Syntax Highlighter
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+    input:          GFM
+sass:
+    style:          :compressed
 
-# Defaults
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script" ]
+plugins:
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+remote_theme: heiswayi/the-plain
+
 defaults:
-  sitemap :
-    changefreq : daily
-    priority : 1.0
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
