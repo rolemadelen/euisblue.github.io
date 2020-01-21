@@ -1,0 +1,14 @@
+I"“<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#start">What is Network Topology?</a></li>
+  <li>Types of Topologies
+    <ol>
+      <li><a href="#bus">Bus Topology</a></li>
+      <li><a href="#star">Star Topology</a></li>
+      <li><a href="#mesh">Mesh Topology</a></li>
+      <li><a href="#ring">Ring Topology</a></li>
+    </ol>
+  </li>
+  <li><a href="#cable">Segments and Backbones</a></li>
+</ul>
+:ET

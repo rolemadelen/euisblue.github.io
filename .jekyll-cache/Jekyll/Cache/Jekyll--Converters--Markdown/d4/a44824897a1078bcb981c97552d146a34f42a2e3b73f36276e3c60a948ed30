@@ -1,0 +1,125 @@
+I"±<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#start">What is Network Topology?</a></li>
+  <li>Types of Topologies
+    <ol>
+      <li><a href="#bus">Bus Topology</a></li>
+      <li><a href="#star">Star Topology</a></li>
+      <li><a href="#mesh">Mesh Topology</a></li>
+      <li><a href="#ring">Ring Topology</a></li>
+    </ol>
+  </li>
+  <li><a href="#cable">Segments and Backbones</a></li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="what-is-network-topology-">What is Network Topology? <a id="start"></a></h2>
+<p><strong>Network Topology</strong> is an arragement of networks connecting various nodes (sender and receiver) either physically or logically.
+There are many different topologies but we will look at the four basic topologies: <em>BUS</em>, <em>Star</em>, <em>Mesh</em>, and <em>Ring</em>.</p>
+
+<p><br /></p>
+
+<h2 id="bus-topology-">BUS Topology <a id="bus"></a></h2>
+<p><img src="/assets/images/infra/network/bus.jpg" alt="BUS Topology" /> <a href="https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/">https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/</a></p>
+
+<ul>
+  <li>Advantage
+    <ol>
+      <li>Less cost</li>
+      <li>Easy Installation</li>
+      <li>Most Economical Choice</li>
+    </ol>
+  </li>
+  <li>Disadvantage
+    <ol>
+      <li>Difficulty Troubleshooting</li>
+      <li>More traffic -&gt; Slower network</li>
+      <li>Not scalable</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="star-topology-">Star Topology <a id="star"></a></h2>
+<p><img src="/assets/images/infra/network/star.jpg" alt="Star Topology" /> <a href="https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/">https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/</a></p>
+
+<ul>
+  <li>Advantage
+    <ol>
+      <li>Centralization</li>
+      <li>Easy to make a change</li>
+    </ol>
+  </li>
+  <li>Disadvantage
+    <ol>
+      <li>Problem with the hub -&gt; whole network dies</li>
+      <li>Expensive</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="mesh-topology-">Mesh Topology <a id="mesh"></a></h2>
+<p><img src="/assets/images/infra/network/mesh.jpg" alt="Mesh Topology" /> <a href="https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/">https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/</a></p>
+
+<ul>
+  <li>Advantage
+    <ol>
+      <li>Fault Tolerance</li>
+    </ol>
+  </li>
+  <li>Disadvantage
+    <ol>
+      <li>Hard to administer and manage</li>
+      <li>Expensive</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="ring-topology-">Ring Topology <a id="ring"></a></h2>
+<p><img src="/assets/images/infra/network/ring.jpg" alt="Ring Topology" /> <a href="https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/">https://www.comparitech.com/net-admin/network-topologies-advantages-disadvantages/</a></p>
+
+<ul>
+  <li>Advantage
+    <ol>
+      <li>All machines have equall access to the network</li>
+      <li>Provide good performance for the workstation</li>
+      <li>Signal degeneration is slow</li>
+    </ol>
+  </li>
+  <li>Disadvantage
+    <ol>
+      <li>One is broken -&gt; whole network breaks down</li>
+      <li>Difficult to make a change
+        <ul>
+          <li>(not that its difficult but brief disconnection of a one cable breaks the whole network)</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="segments-and-backbones-">Segments and Backbones <a id="cable"></a></h2>
+<ul>
+  <li>Segments
+    <ol>
+      <li>Actual physical cable segment</li>
+      <li>logical segment with networking</li>
+    </ol>
+  </li>
+  <li>Backbone
+    <ul>
+      <li>main cable segment in the network</li>
+    </ul>
+  </li>
+</ul>
+:ET
