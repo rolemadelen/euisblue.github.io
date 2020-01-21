@@ -6,7 +6,7 @@
 
 ## Authors
 
-- [**Heiswayi Nrird**](https://heiswayi.nrird.com)
+- [**Heiswayi Nrird**](https://heiswayi.nrird.com) (GitHub: https://github.com/heiswayi)
 
 See also the list of [contributors](https://github.com/heiswayi/the-plain/graphs/contributors) who participated in this project.
 
