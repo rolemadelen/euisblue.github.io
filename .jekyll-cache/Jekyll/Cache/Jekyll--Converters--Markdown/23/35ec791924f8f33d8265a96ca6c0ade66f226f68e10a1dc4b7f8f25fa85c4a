@@ -1,0 +1,334 @@
+I"�<p>Subscribe <a href="https://www.dailycodingproblem.com">Daily Coding Problem</a> to receive a coding problem every day.</p>
+
+<h2 id="dcp-7-"><strong>DCP #7</strong> <a id="dcp7"></a></h2>
+<p>This problem was asked by Facebook.</p>
+
+<p>Given the mapping a = 1, b = 2, … z = 26, and an encoded message, count the number of ways it can be decoded.</p>
+
+<p>For example, the message ‘111’ would give 3, since it could be decoded as ‘aaa’, ‘ka’, and ‘ak’.</p>
+
+<p>You can assume that the messages are decodable. For example, ‘001’ is not allowed.</p>
+
+<p><br /></p>
+
+<h2 id="my-solution"><strong>My Solution</strong></h2>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">size</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elsif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="mi">26</span> <span class="k">then</span> <span class="k">return</span> <span class="mi">2</span> <span class="k">else</span> <span class="k">return</span> <span class="mi">1</span> <span class="k">end</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">])</span> <span class="o">+</span> 
+            <span class="p">(</span><span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">2</span><span class="p">].</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="mi">26</span> <span class="k">then</span> <span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">])</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><a href="https://github.com/muicode/DCP/blob/master/problem7/dcp7.c">Click to view the solution in C</a></p>
+
+<p><br /></p>
+
+<h2 id="related-posts-"><strong>Related Posts</strong> <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/en-dcp-6.html">DCP 6: XOR Linked List</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/en-dcp-5.html">DCP 5: CAR and CDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/en-dcp-4.html">DCP 4: Lowest Positive Number</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/en-dcp-3.html">DCP 3: (De)serialization</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/en-dcp-2.html">DCP 2: New Array</a>
+      </div>
+      
+      
+        
+
+</div>
+:ET
