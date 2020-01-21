@@ -2,77 +2,66 @@
 layout: default
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article>
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+	<div class="center">
+		<h1 class="title">{{ page.title }}</h1>
+        <time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>  <br><br>
+	</div>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+    <div class="center code">
+    {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% for post in posts %}
+        {% if post.ref == page.ref and post.lang != page.lang%}
+        <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.lang }} </a>
+        {% endif %}
+    {% endfor %}
+    </div>
+           
+	<div class="divider"></div>
 
-
-<br />
-<br />
-	<!-- previous -->
-<span>
-	{% for post in site.posts %}
-	  {% if post.lang == page.lang %}
-		{% if prev %}
-		  <a href="{{ post.url }}" style="color: blue;">
-			{% if post.lang == "ko" %}
-				이전 글
-			{% elsif post.lang == "ja" %}
-				前の記事
-		  	{% else %}
-				Previous post
-			{% endif %}
-		  </a>
-		{% endif %}
-		{% assign prev = false %}
-		{% if post.id == page.id %}
-		  {% assign prev = true %}
-		{% endif %}
-	  {% endif %}
-	{% endfor %}
-</span>
-
-<span style="float: right">
-	<!-- next -->
-	{% for post in site.posts reversed %}
-	  {% if post.lang == page.lang %}
-		{% if next %}
-		  <a href="{{ post.url }}" style="color: blue;">
-			{% if post.lang == "ko" %}
-				다음 글
-			{% elsif post.lang == "ja" %}
-				次の記事
-		  	{% else %}
-				Next post
-			{% endif %}
-		  </a>
-		  {% break %}
-		{% endif %}
-		{% assign next = false %}
-		{% if post.id == page.id %}
-		  {% assign next = true %}
-		{% endif %}
-	  {% endif %}
-	{% endfor %}
-</span>
-<br />
-<hr />
-<br />
-
-<script src="https://utteranc.es/client.js"
-        repo="muicode/muicode.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<br />
+	{{ content }}
 
 </article>
+
+<div class="page-navigation code">
+<!--	{% if page.next.url %}
+    <a class="next" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
+		<span> &middot; </span>
+  {% endif %}
+-->
+    {% for post in site.posts %}
+        {% if post.lang == page.lang %}
+            {% if prev %}
+                <a class="prev" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="PREV: {{post.title}}">&lt;&lt;</a>
+                <span> &middot; </span>
+            {% endif %}
+            {% assign prev = false %}
+            {% if post.id == page.id %}
+                {% assign prev = true %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+		<a class="home" href="{{ "/" | prepend: site.baseurl | prepend: site.url }}" title="Back to Index">Index</a>
+
+    {% for post in site.posts reversed %}
+        {% if post.lang == page.lang %}
+            {% if next %}
+                <span> &middot; </span>
+                <a class="next" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="NEXT: {{post.title}}">&gt;&gt;</a>
+            {% endif %}
+            {% assign next = false %}
+            {% if post.id == page.id %}
+                {% assign next = true %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    <!--
+  {% if page.previous.url %}
+		<span> &middot; </span>
+    <a class="prev" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
+  {% endif %}
+    -->
+</div>
