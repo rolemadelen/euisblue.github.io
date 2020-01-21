@@ -1,50 +1,25 @@
+---
+layout: compress
+published: true
+---
+
 <!DOCTYPE html>
+<html lang="en">
 
-<style>
-a.top {
-	position: fixed;
-	left: 90%;
-	bottom: 30px;
-	display: none;
-	float: right;
-}
-</style>
+	<head>
+		{% include head.html %}
+	</head>
 
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-$( document ).ready( function() {
-		$( window ).scroll( function() {
-				if ( $( this ).scrollTop() > 200 ) {
-				$( '.top' ).fadeIn();
-				} else {
-				$( '.top' ).fadeOut();
-				}
-				} );
-		$( '.top' ).click( function() {
-				$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
-				return false;
-				} );
-		} );
-</script>
+	<body>
 
-<html lang="{{ page.lang }}">
+		{% include header.html %}
 
-  {% include head.html %}
+		<div id="content">
+			{{ content }}
+		</div>
 
-  <body>
+		{% include footer.html %}
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-<a href="#" style="color:black" class="top"><img src="/assets/top.png" width="35px" height="25px"/></a>
+	</body>
 
 </html>
