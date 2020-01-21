@@ -1,0 +1,341 @@
+I"=<p><a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>을 구독하면 매일 한 개의 코딩 문제를 이메일로 받을 수 있다.</p>
+
+<h2 id="dcp-5"><strong>DCP #5</strong></h2>
+<p>이 문제는 Jane Street 면접에서 나온 문제입니다.</p>
+
+<p><code class="highlighter-rouge">cons(a, b)</code>함수는 <code class="highlighter-rouge">pair</code>를 만들고 <code class="highlighter-rouge">car(pair)</code>함수와 <code class="highlighter-rouge">cdr(pair)</code>함수는 각각 <code class="highlighter-rouge">pair</code>의 첫 번째와 마지막 요소를 반환합니다. 예를들어, <code class="highlighter-rouge">car(cons(3, 4))</code>은 <code class="highlighter-rouge">3</code>을 반환하고, <code class="highlighter-rouge">cdr(cons(3, 4))</code>은 <code class="highlighter-rouge">4</code>를 반환합니다.</p>
+
+<p><code class="highlighter-rouge">cons</code>함수가 아래와 같이 주어졌을 때:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cons</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pair</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pair</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">car</code>함수와 <code class="highlighter-rouge">cdr</code>함수를 구현 해보세요.</p>
+
+<p><a href="en-dcp-5.html#dcp5">원문 확인</a></p>
+
+<p><br /></p>
+
+<h2 id="코드--python"><strong>코드 : Python</strong></h2>
+<p>루비의 경우 위 파이썬 코드처럼 중첩으로 함수 선언을 할 수 있을지 언정, 동작은 다르게 한다. 애초에 중첩 함수라는 개념이 루비에는 없기때문에 어쩔 수 없이 파이썬을 사용했다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cons</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pair</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">pair</span>
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">left</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">cdr</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">right</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="설명"><strong>설명</strong></h2>
+
+<p>음, 일단 파이썬에 대해 자세히는 모르지만, <code class="highlighter-rouge">cons</code> 함수가 또 다른 함수(<code class="highlighter-rouge">pair</code>)를 반환한고 있고, <code class="highlighter-rouge">pair</code> 함수 또한 인자로 다른 함수를 받는 것 까지는 알 수 있다.</p>
+
+<p>그래서 <code class="highlighter-rouge">left(a, b)</code>와 <code class="highlighter-rouge">right(a, b)</code>라는 이름의 두 함수를 만들었다. 이름에서 알 수 있듯이 각각 왼쪽(<code class="highlighter-rouge">a</code>)과 오른쪽(<code class="highlighter-rouge">b</code>)의 인자 값을 반환하는 함수고, 이를 <code class="highlighter-rouge">pair</code>의 인자로 넘겨주면 끝.</p>
+
+<p><code class="highlighter-rouge">lambda</code>를 이용하면 아래와 같이 한 줄로도 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">cdr</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="관련-글"><strong>관련 글</strong></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/ko-dcp-7.html">DCP 7: 메세지 해독하기</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/ko-dcp-6.html">DCP 6: XOR 연결 리스트</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/ko-dcp-4.html">DCP 4: 가장 낮은 양수</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/ko-dcp-3.html">DCP 3: 직렬화 &amp; 역직렬화</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/ko-dcp-2.html">DCP 2: 새로운 배열</a>
+      </div>
+      
+      
+        
+
+</div>
+:ET

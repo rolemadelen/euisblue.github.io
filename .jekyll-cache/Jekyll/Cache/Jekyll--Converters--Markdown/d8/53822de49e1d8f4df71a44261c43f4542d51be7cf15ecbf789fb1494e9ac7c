@@ -1,0 +1,346 @@
+I"�<p>Subscribe <a href="https://www.dailycodingproblem.com">Daily Coding Problem</a> to receive a coding problem every day.</p>
+
+<h2 id="dcp-2--"><strong>DCP #2</strong>  <a id="dcp2"></a></h2>
+<p>This problem was asked by Uber.</p>
+
+<p>Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.</p>
+
+<p>For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].</p>
+
+<p>Follow-up: what if you can’t use division?</p>
+
+<h2 id="my-solution"><strong>My Solution</strong></h2>
+<p><a href="https://github.com/muicode/DCP/blob/master/problem2/dcp2.c">C Solution</a></p>
+
+<h3 id="with-division"><strong>With Division</strong></h3>
+<p>When division is allowed, we can simply find the product of all numbers and divide by <code class="highlighter-rouge">i</code><sup>th</sup> element.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">with_div</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">inject</span><span class="p">(:</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">product</span><span class="o">/</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">end</span>
+    <span class="n">arr</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Time Complexity: <strong>O(n)</strong> <br />
+Space Complexity: <strong>O(1)</strong></p>
+
+<h3 id="without-division"><strong>Without Division</strong></h3>
+<p>My first attempt was to iterate all numbers and simply multiply them except one at the <code class="highlighter-rouge">i</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">without_div</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span>
+                <span class="n">prod</span> <span class="o">*=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">end</span>
+        <span class="k">end</span>
+        <span class="n">ans</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">prod</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">ans</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Time Complexity: <strong>O(n^2)</strong> <br />
+Space Complexity: <strong>O(n)</strong></p>
+
+<p>My second attempt, which is sort of ruby way, is basically same as my first attempt.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">wo_division2</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span> <span class="o">*</span> <span class="n">n</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">arr</span> <span class="o">-</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]]).</span><span class="nf">inject</span><span class="p">(:</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">ans</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Time Complexity: <strong>O(n^2)</strong> <br />
+Space Complexity: <strong>O(n)</strong></p>
+
+<p>I couldn’t think of any solutions other than quadratic, but there are many people who have solved this in linear time.
+You may take a look at comments section in this <a href="https://dev.to/cwetanow/daily-coding-problem-2-21pj">post</a>.</p>
+
+<h2 id="related-posts-"><strong>Related Posts</strong> <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/en-dcp-7.html">DCP 7: Message Decoding</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/en-dcp-6.html">DCP 6: XOR Linked List</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/en-dcp-5.html">DCP 5: CAR and CDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/en-dcp-4.html">DCP 4: Lowest Positive Number</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/en-dcp-3.html">DCP 3: (De)serialization</a>
+      </div>
+      
+      
+        
+
+</div>
+:ET

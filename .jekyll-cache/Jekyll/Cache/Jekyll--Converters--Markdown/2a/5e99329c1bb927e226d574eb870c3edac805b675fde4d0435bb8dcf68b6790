@@ -1,0 +1,329 @@
+I"}<p><a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>ブログ購読をすると、毎日一つのプログラミング問題をメールにて送信します。</p>
+
+<h2 id="dcp-7"><strong>DCP #7</strong></h2>
+<p>この問題はFacebookの面接からの質問です。</p>
+
+<p>以下のように各文字に対応する数字があります。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a = 1, b = 2, ... z = 26
+</code></pre></div></div>
+<p>エンコーディングされたメッセージが与えられたとき、何個のメッセージに解読できるか確認するプログラムを実装してください。
+例えばメッセージ<code class="highlighter-rouge">111</code>の場合、<code class="highlighter-rouge">['aaa', 'ka', 'ak']</code>に解読できるので<code class="highlighter-rouge">3</code>を返します。</p>
+
+<p><code class="highlighter-rouge">001</code>ように解読できないメッセージは与えられません。</p>
+
+<p><a href="en-dcp-7.html#dcp7">原文を読む</a></p>
+
+<p><br /></p>
+
+<h2 id="コード"><strong>コード</strong></h2>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">size</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elsif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="mi">26</span> <span class="k">then</span> <span class="k">return</span> <span class="mi">2</span> <span class="k">else</span> <span class="k">return</span> <span class="mi">1</span> <span class="k">end</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">])</span> <span class="o">+</span>
+            <span class="p">(</span><span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">2</span><span class="p">].</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="mi">26</span> <span class="k">then</span> <span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">])</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><a href="https://github.com/muicode/DCP/blob/master/problem7/dcp7.c">C言語のコードはこちらへ</a></p>
+
+<p><br /></p>
+
+<h2 id="関連記事-">関連記事 <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/ja-dcp-6.html">DCP 6・XOR連結リスト</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/ja-dcp-5.html">DCP 5・CARとCDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/ja-dcp-4.html">DCP 4・一番低い正数</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/ja-dcp-3.html">DCP 3・直列化 ＆ 逆直列化</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/ja-dcp-2.html">DCP 2・新しい配列</a>
+      </div>
+      
+      
+        
+
+</div>
+:ET
