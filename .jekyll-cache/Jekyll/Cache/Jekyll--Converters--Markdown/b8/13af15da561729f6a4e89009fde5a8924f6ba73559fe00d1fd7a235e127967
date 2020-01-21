@@ -1,0 +1,440 @@
+I"�H<p><a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>을 구독하면 매일 한 개의 코딩 문제를 이메일로 받을 수 있습니다.</p>
+
+<h2 id="dcp-4"><strong>DCP #4</strong></h2>
+<p>이 문제는 Stripe 면접에서 나온 질문입니다.</p>
+
+<p>정수의 배열이 주어졌을 때, 미포함되어 있는 첫 번째 양수를 구하는 함수를 O(N)의 시간복잡도와 O(1)의 공간복잡도로 작성해주세요. 다시 말해, <strong>배열에 존재하지 않는</strong> 가장 낮은 양수를 구하세요. 배열은 
+중복된 수와 음수를 포함할 수도 있습니다.</p>
+
+<p>예를들어, 입력으로 <code class="highlighter-rouge">[3, 4, -1, 1]</code>가 들어오면 <code class="highlighter-rouge">2</code>를 출력하고,
+ <code class="highlighter-rouge">[1, 2, 0]</code>가 들어오면 <code class="highlighter-rouge">3</code>을 출력합니다.</p>
+
+<p>인플레이스(in-place)로 배열을 수정해도 됩니다.</p>
+
+<p><a href="en-dcp-4.html#dcp4">원문 확인</a></p>
+
+<p><br /></p>
+
+<h2 id="코드"><strong>코드</strong></h2>
+<p>시간복잡도 / 공간복잡도</p>
+
+<h3 id="on--omaxn-largest-element-in-n">O(n) / O(max(n, largest element in n))</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dcp4</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">max</span>                   <span class="c1"># linear</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">([</span><span class="o">*</span><span class="mi">1</span> <span class="o">..</span> <span class="n">max</span><span class="p">]</span> <span class="o">-</span> <span class="n">input</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nf">empty?</span>                       <span class="c1"># constant</span>
+        <span class="k">return</span> <span class="n">max</span><span class="o">+</span><span class="mi">1</span> 
+    <span class="k">end</span>
+
+    <span class="n">b</span><span class="p">.</span><span class="nf">first</span>                           <span class="c1"># constant</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="on--o1">O(n) / O(1)</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dcp4</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">input</span><span class="p">.</span><span class="nf">sort!</span>                       <span class="c1"># in-place sorting?</span>
+
+    <span class="n">input</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>                 <span class="c1"># linear</span>
+        <span class="k">next</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="n">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">target</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">break</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">target</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">target</span>
+            <span class="n">target</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">target</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="설명"><strong>설명</strong></h2>
+
+<h3 id="on--omaxn-largest-element-in-n-1">O(n) / O(max(n, largest element in n))</h3>
+<p>첫 번째 코드는 set difference를 사용하는 방법이다.</p>
+
+<p>두 개의 set <code class="highlighter-rouge">A</code>와 <code class="highlighter-rouge">B</code>가 있다고 가정 할 경우 <code class="highlighter-rouge">A - B</code>를 하면 <code class="highlighter-rouge">B</code>에는 없고 <code class="highlighter-rouge">A</code>에 있는 요소들만 남게된다. 예를들어 <code class="highlighter-rouge">A = [1,2,3]</code>, <code class="highlighter-rouge">B = [2, 3]</code> 일 때 <code class="highlighter-rouge">A - B</code>의 값은 <code class="highlighter-rouge">[1]</code>이 된다.</p>
+
+<p>이 방법을 토대로 코드를 작성해봤다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">max</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">([</span><span class="o">*</span><span class="mi">1</span> <span class="o">..</span> <span class="n">max</span><span class="p">]</span> <span class="o">-</span> <span class="n">input</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>우선 <code class="highlighter-rouge">max</code>에 주어진 배열에서 가장 큰 요소를 찾은 다음 <code class="highlighter-rouge">[1, 2, ..., max]</code>의 배열(<code class="highlighter-rouge">A</code>)을 만든다. 
+여기서 <code class="highlighter-rouge">A - 주어진 배열</code>을 하면 배열에 존재하지 않는 가장 낮은 양수가 <code class="highlighter-rouge">A</code> 첫 번째 요소에 존재하게 되므로 이 값을 반환하면 된다.</p>
+
+<p>다만 주어진 배열이 <code class="highlighter-rouge">[1, 2, 3, 4]</code>처럼 중간에 비어있는 양수가 없을 경우 <code class="highlighter-rouge">A</code>는 빈 배열이거나 첫 번째 요소가 <code class="highlighter-rouge">5</code>가 아닐 수 있기 때문에 이를 확인하는 과정을 거친 다음 값을 반환해야 한다.</p>
+
+<p>일단 이 방법은 문제의 요구조건 중 하나인 O(1)의 공간복잡도를 충족하지 못하기 때문에 실패다.</p>
+
+<p>단순히 충족하지 못한 것 뿐만 아니라 상당히 비효율적이다. 예를들어 입력 배열이 <code class="highlighter-rouge">[1, 10억]</code>일 경우, 단 두 개의 값이 들어있음에도 불구하고 크기 <code class="highlighter-rouge">10억</code>의 배열을 만들어야 한다. 일단 대충 생각해봐도 크기가 너무 커서 스택에 다 담을 수 없다는 걸 알지만, 한 번 시도해 봤다.</p>
+
+<p><img src="/assets/images/dcp/problem4/memory.png" alt="Memory" /></p>
+
+<p>사진만 봐서는 “아 에러가 났구나”하고 지나가면 될 것 같지만, 간단한 문제가 아니다.
+실제로는 10억개 만들다 컴퓨터 날라가는 줄 알았다💢</p>
+
+<p><br /></p>
+
+<h3 id="on--o1-1">O(n) / O(1)</h3>
+<p>시간복잡도 면에서는 통과이지만 공간복잡도가 문제인데.. 추가적인 배열없이 어떻게 해결 할 수 있을까?</p>
+
+<p>배열이 정렬이 되어있는 상태라면 상당히 간단하다. 그냥 <code class="highlighter-rouge">1</code>부터 시작해서 하나하나 확인하면 되니까.
+하지만 비정렬이기 때문에 정렬을 하려면 (정렬없이 하는 방법은 모르겠다) 정렬 중에서도 추가적인 공간을 사용하지 않는 in-place 알고리즘을 사용해야 한다.</p>
+
+<p>루비의 <code class="highlighter-rouge">sort!</code>를 보면 in-place인 것 같아서 일단 사용은 했다. 만약 아니면 직접 구현하면 되니
+딱히 문제는 없다고 생각된다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* sort!() */</span>
+<span class="cm">/* https://apidock.com/ruby/v2_5_5/Array/sort! */</span>
+<span class="n">VALUE</span>
+<span class="nf">rb_ary_sort_bang</span><span class="p">(</span><span class="n">VALUE</span> <span class="n">ary</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">rb_ary_modify</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+    <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">ARY_SHARED_P</span><span class="p">(</span><span class="n">ary</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">RARRAY_LEN</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">VALUE</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">ary_make_substitution</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span> <span class="cm">/* only ary refers tmp */</span>
+        <span class="k">struct</span> <span class="n">ary_sort_data</span> <span class="n">data</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="n">RARRAY_LEN</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+
+        <span class="n">RBASIC_CLEAR_CLASS</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">ary</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">cmp_opt</span><span class="p">.</span><span class="n">opt_methods</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">cmp_opt</span><span class="p">.</span><span class="n">opt_inited</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">RARRAY_PTR_USE</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="p">{</span>
+            <span class="n">ruby_qsort</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VALUE</span><span class="p">),</span>
+                       <span class="n">rb_block_given_p</span><span class="p">()</span><span class="o">?</span><span class="n">sort_1</span><span class="o">:</span><span class="n">sort_2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">});</span> <span class="cm">/* WB: no new reference */</span>
+        <span class="n">rb_ary_modify</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ARY_EMBED_P</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ARY_SHARED_P</span><span class="p">(</span><span class="n">ary</span><span class="p">))</span> <span class="p">{</span> <span class="cm">/* ary might be destructively operated in the given block */</span>
+                <span class="n">rb_ary_unshare</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+                <span class="n">FL_SET_EMBED</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">ary_memcpy</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ARY_EMBED_LEN</span><span class="p">(</span><span class="n">tmp</span><span class="p">),</span> <span class="n">ARY_EMBED_PTR</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+            <span class="n">ARY_SET_LEN</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">ARY_EMBED_LEN</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ARY_EMBED_P</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">ARY_HEAP_PTR</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span> <span class="o">==</span> <span class="n">ARY_HEAP_PTR</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">FL_UNSET_SHARED</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+                <span class="n">ARY_SET_CAPA</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">RARRAY_LEN</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">ARY_SHARED_P</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">ARY_EMBED_P</span><span class="p">(</span><span class="n">ary</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">FL_UNSET_EMBED</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">ARY_SHARED_P</span><span class="p">(</span><span class="n">ary</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="cm">/* ary might be destructively operated in the given block */</span>
+                    <span class="n">rb_ary_unshare</span><span class="p">(</span><span class="n">ary</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">ruby_sized_xfree</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">ARY_HEAP_PTR</span><span class="p">(</span><span class="n">ary</span><span class="p">),</span> <span class="n">ARY_HEAP_SIZE</span><span class="p">(</span><span class="n">ary</span><span class="p">));</span>
+                <span class="p">}</span>
+                <span class="n">ARY_SET_PTR</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">RARRAY_CONST_PTR</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+                <span class="n">ARY_SET_HEAP_LEN</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+                <span class="n">ARY_SET_CAPA</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">RARRAY_LEN</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="cm">/* tmp was lost ownership for the ptr */</span>
+            <span class="n">FL_UNSET</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">FL_FREEZE</span><span class="p">);</span>
+            <span class="n">FL_SET_EMBED</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+            <span class="n">ARY_SET_EMBED_LEN</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="n">FL_SET</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">FL_FREEZE</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="cm">/* tmp will be GC'ed. */</span>
+        <span class="n">RBASIC_SET_CLASS_RAW</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">rb_cArray</span><span class="p">);</span> <span class="cm">/* rb_cArray must be marked */</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ary</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="관련-글"><strong>관련 글</strong></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/ko-dcp-7.html">DCP 7: 메세지 해독하기</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/ko-dcp-6.html">DCP 6: XOR 연결 리스트</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/ko-dcp-5.html">DCP 5: CAR과 CDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/ko-dcp-3.html">DCP 3: 직렬화 &amp; 역직렬화</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/19/ko-dcp-2.html">DCP 2: 새로운 배열</a>
+      </div>
+      
+      
+        
+
+</div>
+:ET

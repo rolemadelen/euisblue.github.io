@@ -1,0 +1,405 @@
+I"�.<h2 id="what-is-dcp"><strong>What is DCP?</strong></h2>
+<p>When you subscribe to <a href="https://www.dailycodingproblem.com">Daily Coding Problem</a>, you will receive a coding problem every day to
+solve it.</p>
+
+<p>These problems were actually asked by top companies during a coding interview, so it should be good practice if you’re
+preparing for a job interview. Even if you’re not, I believe this type of problem will help you to think more logically so
+I’m going to give it a shot.</p>
+
+<p>I will be using C/C++ and Ruby, the one I’m currently studying, to solve problems.</p>
+
+<p>However, there’s no point of posting two same codes just in different languages so I’ll only post Ruby code here.</p>
+
+<p>If you want to look at my C or C++ code solutions, please visit my <a href="https://github.com/muicode/DCP">GitHub</a>.</p>
+
+<p>By the way, if you’re a premium member at DCP, they will send you the solution the following day; however, I am not. 
+So if you find any errors in my code or you have a better solution, please share it with me.</p>
+
+<p>Well then, here it goes the first problem.</p>
+
+<p><br /></p>
+
+<h2 id="dcp-1--"><strong>DCP #1</strong>  <a id="dcp1"></a></h2>
+<p>This problem was recently asked by Google.</p>
+
+<p>Given a list of numbers and a number k, return whether any two numbers from the list add up to k.</p>
+
+<p>For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.</p>
+
+<p>Bonus: Can you do this in one pass?</p>
+
+<p><br /></p>
+
+<h2 id="my-solution"><strong>My Solution</strong></h2>
+<p><a href="https://github.com/muicode/DCP/blob/master/problem1/dcp1.cpp">C++ Solution</a></p>
+
+<h3 id="bruteforce"><strong>Bruteforce</strong></h3>
+
+<p>We can use brute force type algorithm here to find whether two values sum up to <code class="highlighter-rouge">k</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bruteforce</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">size</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">...</span> <span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span>
+                <span class="nb">puts</span> <span class="s2">"found: </span><span class="si">#{</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> + </span><span class="si">#{</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2"> = </span><span class="si">#{</span><span class="n">k</span><span class="si">}</span><span class="s2">"</span>
+                <span class="k">return</span>
+            <span class="k">end</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="nb">puts</span> <span class="s2">"none exists"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Starting from the first element, we can add rest of them one by one and see if it equals to <code class="highlighter-rouge">k</code>.
+If it dose we return True and False if not.</p>
+
+<p>The time complexity for this algorithm would be <strong>O(n^2)</strong>.</p>
+
+<p>Since we didn’t use any extra array, the space complexity is <strong>O(1)</strong>.</p>
+
+<p><br /></p>
+
+<h3 id="one-pass"><strong>One-Pass</strong></h3>
+
+<p>Brute force algorithm tends to get slower as data gets bigger (obviously its O(n^2) right?).</p>
+
+<p>Lets solve it with one-pass.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">one_pass</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">arr</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
+        <span class="k">if</span> <span class="n">m</span><span class="p">.</span><span class="nf">has_key?</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>
+            <span class="nb">puts</span> <span class="s2">"found: </span><span class="si">#{</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span><span class="si">}</span><span class="s2"> + </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">#{</span><span class="n">k</span><span class="si">}</span><span class="s2">"</span>
+            <span class="k">return</span>
+        <span class="k">else</span>
+            <span class="n">m</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="nb">puts</span> <span class="s2">"none exists"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>As we iterate through each element in the array, we see if the value <code class="highlighter-rouge">n</code> matches its key, <code class="highlighter-rouge">k - n</code>.
+We return True if it does exist, if not add <code class="highlighter-rouge">n</code> and <code class="highlighter-rouge">k - n</code> as a new key and value pair to its hash.</p>
+
+<p><br /></p>
+
+<h3 id="timespace-complexity"><strong>Time/Space Complexity</strong></h3>
+<p>The implementation of <code class="highlighter-rouge">[]</code> method in <code class="highlighter-rouge">Hash</code> looks like the following:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># source: https://apidock.com/ruby/v2_5_5/Hash/%5B%5D</span>
+
+<span class="no">VALUE</span>
+<span class="n">rb_hash_aref</span><span class="p">(</span><span class="no">VALUE</span> <span class="nb">hash</span><span class="p">,</span> <span class="no">VALUE</span> <span class="n">key</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">st_data_t</span> <span class="n">val</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="no">RHASH</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ntbl</span> <span class="o">||</span> <span class="o">!</span><span class="n">st_lookup</span><span class="p">(</span><span class="no">RHASH</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ntbl</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">rb_hash_default_value</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="no">VALUE</span><span class="p">)</span><span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>I’m not quite sure how <code class="highlighter-rouge">st_lookup</code> is implemented but I’m going to assume its O(1) since its a lookup table.</p>
+
+<p><code class="highlighter-rouge">has_key</code> method is implemented like the below:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># source: https://apidock.com/ruby/v2_5_5/Hash/has_key%3F</span>
+
+<span class="no">VALUE</span>
+<span class="n">rb_hash_has_key</span><span class="p">(</span><span class="no">VALUE</span> <span class="nb">hash</span><span class="p">,</span> <span class="no">VALUE</span> <span class="n">key</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="no">RHASH</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ntbl</span><span class="p">)</span>
+        <span class="k">return</span> <span class="no">Qfalse</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">st_lookup</span><span class="p">(</span><span class="no">RHASH</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ntbl</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">Qtrue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="no">Qfalse</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>O(1) as it is.</p>
+
+<p>So, our one-pass implementation has the time complexity of <strong>O(n)</strong> with the space complexity being <strong>O(1)</strong> at best and <strong>O(n)</strong> at worst.</p>
+
+<p><br /></p>
+
+<h2 id="related-posts-"><strong>Related Posts</strong> <a id="related"></a></h2>
+
+<div class="relatedPosts">
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/27/en-dcp-7.html">DCP 7: Message Decoding</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/25/en-dcp-6.html">DCP 6: XOR Linked List</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/10/20/en-dcp-5.html">DCP 5: CAR and CDR</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/21/en-dcp-4.html">DCP 4: Lowest Positive Number</a>
+      </div>
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+
+  
+
+    
+    
+
+    
+
+    
+      <div>
+      ┈ <a href="/dcp/2019/09/20/en-dcp-3.html">DCP 3: (De)serialization</a>
+      </div>
+      
+      
+        
+
+</div>
+
+:ET
