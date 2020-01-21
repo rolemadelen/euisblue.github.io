@@ -1,37 +1,4 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title[page.lang] }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html%} <a href="https://github.com/muicode">GitHub</a>
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html %} <a href="https://twitter.com/_muicode">Twitter</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description[page.lang] }}</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
+<div class="footer">
+    <span class="block">&copy; {{ site.time | date: '%Y' }} {{ site.author_name.[page.lang] }}</span>
+  <span class="block"><small>&lt;/&gt; Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/heiswayi/the-plain">The Plain theme</a>.</small></span>
+</div>
