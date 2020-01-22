@@ -1,27 +1,14 @@
 ---
 layout: post
-title: "[알고리즘] 거품 정렬"
+title: "버블 정렬 (Bubble Sort)"
 ref: algorithm-bubble-sort
 date: 2019-07-28 19:46:00
 categories: Algorithm
 tags: sorting
 lang: ko
 ---
-### 목차
-- [소개](#concept)
-- [정렬 과정](#example)
-- [시간 복잡도](#timecomp)
-- [구현](#imp)
-	+ 최적화 방법
-		+ [C](#c)
-		+ [Ruby](#ruby)
-- [풀어 볼 문제](#try)
-- [관련 글](#related)
-- [참조](#ref)
-<hr />
-<br />
 
-## 소개<a id="concept"></a>
+## 소개
 거품 정렬은 인접한 두 원소를 반복적으로 비교하며 정렬하는 알고리즘 이다.
 구현이 간단해서 많은 사람들이 처음 마주하게 되는 정렬 알고리즘이기도 하다. 
 
@@ -31,8 +18,9 @@ lang: ko
 거품 정렬은 가장 큰 숫자가 먼저 제 위치를 찾는다는 점이 마치 무거운 물체가 먼저 
 가라앉는 것 같다는 점에서 **싱킹(sinking) 정렬**이라고 불리우기도 한다.
 
-<br />
-## 정렬 과정 <a id="example"></a>
+<div class="divider"></div>
+
+## 정렬 과정
 ![bubble sort](/assets/images/algorithm/sorting/bubble_sort.png)
 
 1회전의 과정을 살펴보자.
@@ -63,34 +51,36 @@ lang: ko
 
 자동적으로 하나 남은 숫자 `10`은 가장 작은 수로 배열의 첫 번째 자리에 위치하게 된다.
 
-<br />
-## 시간 복잡도 <a id="timecomp"></a>
+<div class="divider"></div>
+
+## 시간 복잡도
  - 비교 횟수
    + 거품정렬의 경우 매 회전마다 비교 대상이 하나 씩 줄어들게 된다: <br />
    (n-1) + (n-2) + ... + 2 + 1 = n(n-1)/2 = **O(n^2)**.
  - 교환 횟수
    + 최악의 경우 비교를 할 때마다 교환을 하므로 비교 횟수와 마찬가지로 **O(n^2)**가 된다.
 
-<br />
-## 거품 정렬 구현 - C언어<a id="imp"></a>
+<div class="divider"></div>
+
+## 구현
 
 ```c
 #define SIZE 5
 
 void bubbleSort(int arr[])
 {
-	for(int i=0; i<SIZE; ++i)
-	{
-		for(int j=0; j<SIZE; ++j)
-		{
-			if(arr[j] > arr[j+1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
-			}
-		}
-	}
+    for(int i=0; i<SIZE; ++i)
+    {
+        for(int j=0; j<SIZE; ++j)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
 }
 ```
 
@@ -107,78 +97,48 @@ void bubbleSort(int arr[])
   이미 정렬이 되어 있는 경우 교환 횟수는 0이다. 즉 교환을 한 번도 하지 않았다면, 
 	이미 정렬되어 있으므로 작업을 중단하고 바로 빠져나와도 된다.
 
-<br />
-### 거품 정렬 최적화 - C언어 <a id="c"></a>
+
+### 거품 정렬 최적화 
 ```c
 #define SIZE 5
 
 void bubbleSort(int arr[])
 {
-	for(int i=0; i<SIZE; ++i)
-	{
-		_Bool isSwapped = 0;
+    for(int i=0; i<SIZE; ++i)
+    {
+        _Bool isSwapped = 0;
 
-		// 최적화 방법; 하나
-		for(int j=0; j<SIZE-i-1; ++j)
-		{
-			if(arr[j] > arr[j+1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
+        // 최적화 방법; 하나
+        for(int j=0; j<SIZE-i-1; ++j)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 
-				isSwapped = 1;
-			}
-		}
+                isSwapped = 1;
+            }
+        }
 
-		// 최적화 방법; 둘
-		if(isSwapped == 0)
-		{
-			break;
-		}
-	}
+        // 최적화 방법; 둘
+        if(isSwapped == 0)
+        {
+            break;
+        }
+    }
 }
 ```
 
-<br />
-### 거품 정렬 최적화 - Ruby <a id="ruby"></a>
-```ruby
-def bubble_sort(arr)
-    n = arr.size
+<div class="divider"></div>
 
-    for i in (0 ... n)
-		bSwapped = false
-		
-		# 최적화 방법; 하나
-        for j in (0 ... n - i - 1)
-            if arr[j] > arr[j+1]
-                bSwapped = true
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-            end
-		end
-		
-		# 최적화 방법; 둘
-        if bSwapped == false
-            return arr
-        end
-    end
-
-    arr
-end
-```
-
-<br />
 ## 풀어 볼 문제 <a id="try"></a>
- - [수 정렬하기](https://www.acmicpc.net/problem/2750)
- - [세 수 정렬](https://www.acmicpc.net/problem/2752)
-   + 조건문으로 간단히 풀어도 된다.
+From. @[acmicpc.net](https://www.acmicpc.net)
 
-<br />
+ - [2750. 수 정렬하기](https://www.acmicpc.net/problem/2750)
+ - [2752. 세 수 정렬](https://www.acmicpc.net/problem/2752)
 
-## 관련 글 <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
+<div class="divider"></div>
 
-<br />
 ## 참조 <a id="ref"></a>
 - [[알고리즘] 버블 정렬(bubble sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html)

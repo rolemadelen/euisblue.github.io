@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Bubble Sort"
+title: "Bubble Sort"
 ref: algorithm-bubble-sort
 date: 2019-07-28 19:46:00
 categories: Algorithm
@@ -8,28 +8,16 @@ tags: sorting
 lang: en
 ---
 
-# Contents
-- [Concept](#concept)
-- [Sorting Process](#example)
-- [Time Complexity](#timecomp)
-- [Implementation](#imp)
-	+ Optimization
-		+ [C](#c)
-		+ [Ruby](#ruby)
-- [Related Posts](#related)	
-- [Reference](#ref)
-<hr />
-<br />
-
-## Concept<a id="concept"></a>
+## Concept
 Bubble Sort compares two adjacent elements to sorts an array. Due to easy implementation, this bubble sort is often used as an entry point to sorting algorithms.
 
 Bubble Sort, however, is an **inefficient algorithm** that is rarely used in practice due to expontial growth of its time complexity.
 
 Bubble sort sometimes refered to as **Sinking Sort** because the idea of larger data finding its own place first resembles to the heavier object sinking first.
-<br />
 
-## Sorting Process <a id="example"></a>
+<div class="divider"></div>
+
+## Sorting Process
 ![bubble sort](/assets/images/algorithm/sorting/bubble_sort.png)
 
 First Pass:
@@ -59,8 +47,9 @@ Compare `10` with `24`. `10` is smaller than `24`. <br />
 **Fourth Round** is done. The **fourth largest number** in the array is `24` and `10` sholud be the
 first element of the array because it is the **smallest number**.
 
-<br />
-## Time Complexity <a id="timecomp"></a>
+<div class="divider"></div>
+
+## Time Complexity
  - Number of Comparisons
    + The number of elements to compare decreases by one every round: <br />
    (n-1) + (n-2) + ... + 2 + 1 = n(n-1)/2 = **O(n^2)**.
@@ -68,26 +57,26 @@ first element of the array because it is the **smallest number**.
  - Number of Swaps
    * In the worst case, swaps occur on every comparison so the time complexity becomes **O(n^2)**.
 
-<br />
-## Implementation in C<a id="imp"></a>
+<div class="divider"></div>
 
+## Implementation 
 ```c
 #define SIZE 5
 
 void bubbleSort(int arr[])
 {
-	for(int i=0; i<SIZE; ++i)
-	{
-		for(int j=0; j<SIZE; ++j)
-		{
-			if(arr[j] > arr[j+1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
-			}
-		}
-	}
+    for(int i=0; i<SIZE; ++i)
+    {
+        for(int j=0; j<SIZE; ++j)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
 }
 ```
 
@@ -101,68 +90,39 @@ because `k` data are already sorted.
 When all elements are sorted, the number of swaps happens to be 0. <br />
 So, if we know that no swaps occured, we can immediately exit from the loop.
 
-<br />
-### Optimized Bubble Sort - C <a id="c"></a>
+### Optimized Bubble Sort
+
 ```c
 #define SIZE 5
 
 void bubbleSort(int arr[])
 {
-	for(int i=0; i<SIZE; ++i)
-	{
-		_Bool isSwapped = 0;
+    for(int i=0; i<SIZE; ++i)
+    {
+        _Bool isSwapped = 0;
 
-		for(int j=0; j<SIZE-i-1; ++j)
-		{
-			if(arr[j] > arr[j+1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
+        for(int j=0; j<SIZE-i-1; ++j)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 
-				isSwapped = 1;
-			}
-		}
+                isSwapped = 1;
+            }
+        }
 
-		if(isSwapped == 0)
-		{
-			break;
-		}
-	}
+        if(isSwapped == 0)
+        {
+            break;
+        }
+    }
 }
 ```
 
-<br />
-### Optimized Bubble Sort - Ruby <a id="ruby"></a>
-```ruby
-def bubble_sort(arr)
-    n = arr.size
+<div class="divider"></div>
 
-    for i in (0 ... n)
-        bSwapped = false
-        
-        for j in (0 ... n - i - 1)
-            if arr[j] > arr[j+1]
-                bSwapped = true
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-            end
-        end
-
-        if bSwapped == false
-            return arr
-        end
-    end
-
-    arr
-end
-```
-
-<br />
-## Related Posts <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
-
-<br />
 ## Reference <a id="ref"></a>
 - [[알고리즘] 버블 정렬(bubble sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html)
 
