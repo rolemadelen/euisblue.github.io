@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Algorithm・選択ソート"
+title: "選択ソート・Selection Sort"
 ref: algorithm-selection-sort
 date: 2019-08-01 09:51:00
 categories: Algorithm
@@ -8,25 +8,15 @@ tags: sorting
 lang: ja
 ---
 
-# 目次
-- [選択ソート](#concept)
-- [時間複雑度](#timecomp)
-- 実装
-  * [C](#c)
-  * [Ruby](#ruby)
-- [関連記事](#related)
-- [参照](#ref)
-<hr />
-<br />
-
-## 選択ソート<a id="concept"></a>
+## 選択ソート
 選択ソート（英: selection sort）とは最小値（または最大値）を見つけて先頭に、次に２番目に小さい（または大きい）要素を見つけて２番目に置く。このようにn番目に小さい（大きい）要素を見つけてn番目に移動して整列するアルゴリズムだ。
 
 <br />
 ![selection sort](/assets/images/algorithm/sorting/selection_sort.png)
 
-<br />
-## 時間複雑度 <a id="timecomp"></a>
+<div class="divider"></div>
+
+## 時間複雑度 
 `n`は配列の要素数だ。<br />
 
 - 比較回数
@@ -36,68 +26,34 @@ lang: ja
 - 交換回数
   * 内部ループが終わった後交換が行われるので、外部ループと同じように`n-1`回繰り返す。
 
-<br />
-## 選択ソート実装
+<div class="divider"></div>
+
+## 実装
 ここでは、intの型の配列を選択ソートを使って小さい順に整列する。
 
-### C言語 <a id="c"></a>
 ```c
 void selectionSort(int arr[])
 {
-	for(int i=0; i<SIZE-1; ++i)
-	{
-		int minIndex = i;
+    for(int i=0; i<SIZE-1; ++i)
+    {
+        int minIndex = i;
 
-		for(int j=i+1; j<SIZE; ++j)
-		{
-			if(arr[minIndex] > arr[j])
-			{
-				minIndex = j;
-			}
-		}
+        for(int j=i+1; j<SIZE; ++j)
+        {
+            if(arr[minIndex] > arr[j])
+            {
+                minIndex = j;
+            }
+        }
 
-		int temp = arr[minIndex];
-		arr[minIndex] = arr[i];
-		arr[i] = temp;
-	}
+        int temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
+    }
 }
 ```
 
-<br />
-### Ruby <a id="ruby"></a>
-```ruby
-def selection_sort(arr)
-    n = arr.size
+<div class="divider"></div>
 
-    for i in (0 ... n - 1)
-        min = i
-
-        for j in (i+1 ... n)
-            if arr[j] < arr[min]
-                min = j
-            end
-        end
-
-        arr[i], arr[min] = arr[min], arr[i]
-    end
-end
-```
-
-<br />
-実行結果：
-```
-Before Sorting
- 9  3  5  6  1  7  4  8  6  1 
-
-After Sorting
- 1  1  3  4  5  6  6  7  8  9 
-```
-
-<br />
-## 関連記事 <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
-
-<br />
 ## 参照 <a id="ref"></a>
 - [선택 정렬(selection sort)이란?](https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html)
