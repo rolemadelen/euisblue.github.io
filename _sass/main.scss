@@ -153,10 +153,11 @@ blockquote {
 iframe {
   margin: 45px 0 !important;
 }
+
 ul,
 ol {
-  margin: 40px 0;
-  padding-left: 50px;
+  margin: 5px 0;
+  padding-left: 10px;
   li {
     word-wrap: break-word;
   }
@@ -337,6 +338,7 @@ section {
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: 10px;
     li {
       margin: 25px 0;
       .title {
