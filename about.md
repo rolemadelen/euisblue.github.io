@@ -21,7 +21,7 @@ conversational: Java, HTML/CSS <br>
 tourist: Python, Ruby, C#
 <br>
 <br>
-OS: Linux, Windows
+os: Linux, Windows
 </ul>
 </div>
 
