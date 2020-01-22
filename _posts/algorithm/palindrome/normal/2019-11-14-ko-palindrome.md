@@ -52,8 +52,7 @@ bool isPalindrome(string str)
 
 ## 풀어 볼 문제
 From. @[acmicpc.net](https://www.acmicpc.net/problemset?search=%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC)
-
-• [10988. 팰린드롬인지 확인하기](https://www.acmicpc.net/problem/10988) <br>
-• [13235. 팰린드롬](https://www.acmicpc.net/problem/13235) <br>
-• [10174. 팰린드롬](https://www.acmicpc.net/problem/10174) <br>
-• [1259. 팰린드롬 수](https://www.acmicpc.net/problem/1259) <br>
+- [10988. 팰린드롬인지 확인하기](https://www.acmicpc.net/problem/10988) 
+- [13235. 팰린드롬](https://www.acmicpc.net/problem/13235)
+- [10174. 팰린드롬](https://www.acmicpc.net/problem/10174)
+- [1259. 팰린드롬 수](https://www.acmicpc.net/problem/1259) 
