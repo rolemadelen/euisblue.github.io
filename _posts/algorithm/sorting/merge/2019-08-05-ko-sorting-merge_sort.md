@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "합병 정렬"
+title: "합병 정렬 (Merge Sort)"
 ref: algorithm-merge-sort
 date: 2019-08-05 10:21:00
 categories: Algorithm
