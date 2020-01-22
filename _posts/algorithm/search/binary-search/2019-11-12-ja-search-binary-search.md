@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Algorithm・二分探索「Binary Search」"
+title: "二分探索アルゴリズム"
 ref: search-binary-search
 date: 2019-11-12 7:00:00
 categories: Algorithm
@@ -8,9 +8,9 @@ tags: search
 lang: ja
 ---
 
-## **二分探索アルゴリズムとは?**
+## 二分探索アルゴリズムとは?
 
-二分探索く(Binary Search)アルゴリズムは**並べ替えリスト**から特定の値の位置を探すアルゴリズムだ。
+二分探索(Binary Search)アルゴリズムは**並べ替えリスト**から特定の値の位置を探すアルゴリズムだ。
 
 最初に中間値を求めたあと、その値と探す値を比較して不要な部分とは比較しなくても大丈夫だ。
 不要な部分とは中間値の左または右にあるデータたちで、このデータはリストの半分と同じだ。
@@ -20,9 +20,9 @@ lang: ja
 もし探すダータが`5`より大きい場合、`5`左にあるすべてのデータはもう関係ないし逆の場合も同じだ。つまり、
 毎回リストを半分にするのができてLinear Searchよりもっと早く値を探すのができる。
 
-<br>
+<div class="divider"></div>
 
-## **Ruby実装コード**
+## 実装
 
 ```rb
 def binarySearch(arr, val, low, high)
@@ -40,14 +40,6 @@ def binarySearch(arr, val, low, high)
 end
 ```
 
-[C++コードが見たい！](https://github.com/muicode/coding/blob/master/algorithm/search/binsearch.cpp)
-
-<br>
-
-## **説明**
-
-_リストは昇順に並べ替えてる。もし降順の場合は条件式を逆にすると大丈夫。_
-
 中間値を探す：`mid = low + (high - low) / 2;`
 
 普通中間値は`mid = (low + high) / 2`を使って求めるけどこれはoverflow-errorが起こる危険がある。
@@ -55,18 +47,14 @@ _リストは昇順に並べ替えてる。もし降順の場合は条件式を�
 なぜその式を使うのかぐらいは知っているのが重要と思う。
 
 中間値求めて探す値「`target`」と比較する。このとき発生できる場合の数は４つがある。
-1. 中間値＝＝`target`の場合
-  + `target`のindexを戻す。
-    ![Binary Search](/assets/images/algorithm/search/search-binary-search-2.jpg)
+1. `arr[mid] == target` <br>
+  `target`のindexを戻す。
 
-2. 中間値が`target`より大きい場合
-  + `target`が中間値の**左側**にあるので`high`の値を`middle - 1`に返してまた比較する。<br>
-    ![Binary Search](/assets/images/algorithm/search/search-binary-search-3.jpg)
+2. `arr[mid] > targeat` <br>
+  `target`が中間値の**左側**にあるので`high`の値を`middle - 1`に返してまた比較する。<br>
 
-3. 中間値が`target`より小さい場合
-  + `target`が中間値の**右側**にあるので`low`の値を`middle + 1`に返してまた比較する。<br>
-    ![Binary Search](/assets/images/algorithm/search/search-binary-search-4.jpg)
+3. `arr[mid] < targeat` <br>
+   `target`が中間値の**右側**にあるので`low`の値を`middle + 1`に返してまた比較する。<br>
 
-
-4. `target`がリストの中に存在しない場合
-  + `target`が存在しないとき`low`が`high`より大きいになる。そのときは`-1`を戻す。
+4. `low > high` <br>
+  `target`が存在しないとき`low`が`high`より大きいになる。そのときは`-1`を戻す。
