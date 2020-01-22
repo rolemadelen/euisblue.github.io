@@ -21,7 +21,7 @@ feed:
     ko: /feed-ko.xml
     ja: /feed-ja.xml
 
-logo_url:           https://avatars3.githubusercontent.com/u/34954499?s=400&u=c3137b6757fcba86e529acf3727f4739b5a659aa&v=4 # Get it from GitHub API: https://api.github.com/users/<username>
+logo_url:           https://avatars3.githubusercontent.com/u/34954499?v=4 # Get it from GitHub API: https://api.github.com/users/<username>
 
 # Site Settings
 url:                https://muicode.dev # main url
