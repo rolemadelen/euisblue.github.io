@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Reverse String"
+title: "Reverse a String"
 ref: algorithm-rev-str
 date: 2019-01-13 13:04:00
 categories: Algorithm
@@ -8,99 +8,87 @@ tags: reverse string
 lang: en
 ---
 
-## Contents
-- [Reverse a string](#algo)
-- Methods
-  + [Method 1: Pointer](#pointer)
-  + [Method 2: Array](#array)
-  + [Method 3: Stack](#stack)
-  + [Method 4: Queue](#q)
-- [Application](#app)
-- [Problems to Try](#try)
-- [Reference](#ref)
-<hr />
-<br />
-
-## Reverse a string <a id="algo"></a>
+## Reverse a string
 The algorithm itself is very straightforward. We start from the last character of a string and
 print or save its character until it reaches the beginning to reverse a string, and there are
 many ways to accomplish this task. I came up with four different methods to reverse a string
 using Pointers, Array, Stack, and Queue.
 
-<br />
+<div class="divider"></div>
+
 ## Methods
-### Pointer <a id="pointer"></a>
+### Pointer
 Pointer is my favorite method to use when reversing a string. The code is clean and intuitive.
 
 We use two pointers `p` and `q` where `p` points to the first character and `q` points
 to the last character of a string. Then we compare two pointers value (`*p`, `*q`) and 
 continue until `p < q`.
 
-```c
+```cpp
 /* String Reverse using two pointers */
 void strrevptr(char *line)
 {
-	char *p = line;
-	char *q = line + strlen(line) - 1;
+    char *p = line;
+    char *q = line + strlen(line) - 1;
 
-	while(p < q)
-	{
-		char temp = *p;
-		*p = *q;
-		*q = temp;
+    while(p < q)
+    {
+        char temp = *p;
+        *p = *q;
+        *q = temp;
 
-		++p;
-		--q;
-	}
+        ++p;
+        --q;
+    }
 }
 ```
 
-### Array <a id="array"></a>
+### Array
 The idea is same as pointer but we use array form of arithmetic instead of pointer arithmetic.
 
-```c
+```cpp
 /* String reverse using array */
 void strrevindex(char *line)
 {
-	int size = strlen(line);
-	int bound = size >> 1;
+    int size = strlen(line);
+    int bound = size >> 1;
 
-	for(int i=0; i<bound; ++i)
-	{
-		char temp = line[i];
-		line[i] = line[size-(1+i)];
-		line[size-(1+i)] = temp;
-	}
+    for(int i=0; i<bound; ++i)
+    {
+        char temp = line[i];
+        line[i] = line[size-(1+i)];
+        line[size-(1+i)] = temp;
+    }
 }
 ```
 
-### Stack<a id="stack"></a>
+### Stack
 We can reverse a string using a stack and its pretty simple. We push all characters to the stack
 and pop all of it.
 
-```c
+```cpp
 // Reverse string using a stack
 void revstrstk(char *line)
 {
-	stack<char> stk;
-	char *p = line;
+    stack<char> stk;
+    char *p = line;
 
-	while(*p != '\0')
-	{
-		stk.push(*p);
-		++p;
-	}
+    while(*p != '\0')
+    {
+        stk.push(*p);
+        ++p;
+    }
 
-	while(!stk.empty())
-	{
-		cout << stk.top();
-		stk.pop();
-	}
-	cout << endl;
+    while(!stk.empty())
+    {
+        cout << stk.top();
+        stk.pop();
+    }
+    cout << endl;
 }
 ```
 
-### Queue<a id="q"></a>
+### Queue
 In order to reverse a string, we need to use two queues.
 
 Let `q1` and `q2` be the first and second queue, respectively. 
@@ -111,53 +99,50 @@ Let `q1` and `q2` be the first and second queue, respectively.
 
 Now we have a reversed string.
 
-```c
+```cpp
 // Reverse a string using two queues
 void revstrstk(char *line)
 {
-	queue<char> q;
-	queue<char> q2;
-	char *p = line;
+    queue<char> q;
+    queue<char> q2;
+    char *p = line;
 
-	while(*p != '\0')
-	{
-		q.push(*p);
-		
-		while(!q2.empty())
-		{
-			q.push(q2.front());
-			q2.pop();
-		}
+    while(*p != '\0')
+    {
+        q.push(*p);
 
-		while(!q.empty())
-		{
-			q2.push(q.front());
-			q.pop();
-		}
+        while(!q2.empty())
+        {
+            q.push(q2.front());
+            q2.pop();
+        }
 
-		++p;
-	}
+        while(!q.empty())
+        {
+            q2.push(q.front());
+            q.pop();
+        }
 
-	p = line;
-	while(!q2.empty())
-	{
-		*p = q2.front();
-		q2.pop();
-		++p;
-	}
+        ++p;
+    }
+
+    p = line;
+    while(!q2.empty())
+    {
+        *p = q2.front();
+        q2.pop();
+        ++p;
+    }
 }
 ```
 
-<br />
-## Application <a id="app"></a>
-- Interview Questions
-- Sexeger (check reference)
-
-<br />
+<div class="divider"></div>
 ## Problems to try <a id="try"></a>
-- [Reverse a String](https://leetcode.com/problems/reverse-string/)
+From. @[LeetCode](https://leetcode.com/)
 
-<br />
+- [344. Reverse a String](https://leetcode.com/problems/reverse-string/)
+
+<div class="divider"></div>
 ## Reference<a id="ref"></a>
 - [StackExchange : string reversal usage](https://softwareengineering.stackexchange.com/questions/24691/what-do-you-use-string-reversal-for)
 - [sexeger](https://www.perlmonks.org/index.pl?node=sexeger)
