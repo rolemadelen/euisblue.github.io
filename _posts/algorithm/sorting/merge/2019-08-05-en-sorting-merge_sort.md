@@ -1,24 +1,12 @@
 ---
 layout: post
-title: "[Algorithm] Merge Sort"
+title: "Merge Sort"
 ref: algorithm-merge-sort
 date: 2019-08-05 10:21:00
 categories: Algorithm
 tags: sorting
 lang: en
 ---
-
-# Contents
-- [Merge Sort](#concept)
-- [Sorting Process](#example)
-- [Time Complexity](#timecomp)
-- [Implementation](#imp)
-  * C
-  * Python
-- [Related Posts](#related)	
-- [Reference](#ref)
-<hr />
-<br />
 
 ## Merge Sort <a id="concept"></a>
 Merge Sort is a **divide and conquer** type algorithm which was invented by **[John Von Neumann](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%8F%B0_%EB%85%B8%EC%9D%B4%EB%A7%8C)** in 1945.
@@ -31,7 +19,8 @@ For example, let say we have an array like the following:`{(A, 1), (B, 2), (C, 1
 
 In stable sort, it is guaranteed that `A` comes before `C`. If its not a stable sort, the result could be either `{(A,1), (C,1), (B,2)}` or `(C,1), (A,1), (B,2)}`.
 
-<br />
+<div class="divider"></div>
+
 ## Sorting Process <a id="example"></a>
 
 Merge Sort consists of following three steps:
@@ -41,7 +30,8 @@ Merge Sort consists of following three steps:
 
 ![merge sort](/assets/images/algorithm/sorting/merge_sort.png)
 
-<br />
+<div class="divider"></div>
+
 ## Time Complexity <a id="timecomp"></a>
 - Divide step
   * Find midpoint of sub-divided arrays. This operation costs **O(1)**.
@@ -67,99 +57,59 @@ The height of the tree is `logn + 1` and we repeat the operation `cn` times:
 `(logn + 1) * (cn)`. <br />
 Since `n logn` is greater than `n`, the time complexity of Merge sort becomes **O(n logn)**.
 
-<br />
+<div class="divider"></div>
+
 ## Implementation <a id="imp"></a>
-### C
 ```c
 void merge(int arr[], int left, int mid, int right)
 {
-	int sortedArr[SIZE] = {0};
-	int L = left;
-	int R = mid+1;
-	int K = left;
+    int sortedArr[SIZE] = {0};
+    int L = left;
+    int R = mid+1;
+    int K = left;
 
-	// combine two lists
-	while(L <= mid && R <= right)
-	{
-		if(arr[L] < arr[R])
-		{
-			sortedArr[K++] = arr[L++];
-		}
-		else
-		{
-			sortedArr[K++] = arr[R++];
-		}
-	}
+    // combine two lists
+    while(L <= mid && R <= right)
+    {
+        if(arr[L] < arr[R])
+        {
+            sortedArr[K++] = arr[L++];
+        }
+        else
+        {
+            sortedArr[K++] = arr[R++];
+        }
+    }
 
-	// Read all remaining data
-	while(L <= mid)
-	{
-		sortedArr[K++] = arr[L++];
-	}
+    // Read all remaining data
+    while(L <= mid)
+    {
+        sortedArr[K++] = arr[L++];
+    }
 
-	// copy over the data
-	for(int i=left; i<K; ++i)
-	{
-		arr[i] = sortedArr[i];
-	}
+    // copy over the data
+    for(int i=left; i<K; ++i)
+    {
+        arr[i] = sortedArr[i];
+    }
 }
 
 void mergeSort(int arr[], int left, int right)
 {
-	int mid;
+    int mid;
 
-	if(left < right)
-	{
-		mid = left + (right - left) / 2;
-		mergeSort(arr, left, mid);
-		mergeSort(arr, mid+1, right);
-		merge(arr, left, mid, right);
-	}
+    if(left < right)
+    {
+        mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid+1, right);
+        merge(arr, left, mid, right);
+    }
 }
 ```
 
-<br />
-### Python
+<div class="divider"></div>
 
-```python
-def merge(arr, left, mid, right):
-	L = left
-	R = mid+1
-	K = left
-	temp = [0]*(right+1)
-
-	while L <= mid and R <= right:
-		if arr[L] < arr[R]:
-			temp[K] = arr[L]
-			L += 1
-		else:
-			temp[K] = arr[R]
-			R += 1
-		K += 1
-
-	while L <= mid:
-		temp[K] = arr[L]
-		L += 1
-		K += 1
-
-	for i in range (left, K):
-		arr[i] = temp[i]
-
-def mergeSort(arr, left, right):
-	if left < right:
-		mid = left + (right - left) / 2
-		
-		mergeSort(arr, left, mid)
-		mergeSort(arr, mid+1, right)
-		merge(arr, left, mid, right)
-```
-
-<br />
-## Related Posts  <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
-
-<br />
 ## Reference <a id="ref"></a>
 - [[알고리즘] 합병 정렬(merge sort)이란](https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html)
 - [Wikipedia : John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann)
