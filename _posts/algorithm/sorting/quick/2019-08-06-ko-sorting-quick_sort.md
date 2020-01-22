@@ -1,35 +1,20 @@
 ---
 layout: post
-title: "[알고리즘] 퀵 정렬"
+title: "퀵 정렬 (Quick Sort)"
 ref: algorithm-quick-sort
 date: 2019-08-06 14:16:00
 categories: Algorithm
 tags: sorting
 lang: ko
-sitemap :
-  changefreq : daily
-  priority : 1.0
 ---
-
-# 목차
-- [소개](#concept)
-- [정렬 과정](#example)
-- [시간 복잡도](#timecomp)
-- [구현](#imp)
-  * C
-  * Python
-- [풀어 볼 문제](#try)
-- [관련 글](#related)	
-- [참조](#ref)
-<hr />
-<br />
 
 ## 소개 <a id="concept"></a>
 퀵 정렬(Quick Sort)는 **분할 정복 알고리즘**으로  영국의 컴퓨터 과학자인 [토니 호어](https://ko.wikipedia.org/wiki/%ED%86%A0%EB%8B%88_%ED%98%B8%EC%96%B4)(Tony Hoare)가 1959년에 고안하고 1961년에 공개된 알고리즘이다.
 
  구현된 알고리즘을 따라 리스트에서 피벗(pivot)을 정하고, 그 피벗을 기준으로 크고 작은 데이터들이 왼쪽과 오른쪽으로 **비균등**하게 분할된다. 그렇기 때문에 [합병 정렬](https://myoiwritescode.github.io/algorithm/2019/08/05/ko-sorting-merge_sort.html)(Merge Sort)과 다르게 퀵 정렬은 **불안정 정렬**에 속한다.
 
-<br />
+<div class="divider"></div>
+
 ## 정렬 과정 <a id="example"></a>
 
 참고로 이 글에서는 마지막 원소를 피벗으로 정하지만, 이는 구현 방식에 따라 달라질 수 있다.
@@ -47,7 +32,8 @@ sitemap :
 <br />
 ![quick sort](/assets/images/algorithm/sorting/quick_sort.png)
 
-<br />
+<div class="divider"></div>
+
 ## 시간 복잡도 <a id="timecomp"></a>
 시간 복잡도는 순환 호출의 깊이(`depth`)와 각 단계에서 이뤄지는 비교 연산(`ops`)에 의해 결정된다. <br />
 `T(n) = (depth * ops)`
@@ -73,11 +59,13 @@ n = k<sup>3</sup>, n = k<sup>2</sup>, n = k<sup>1</sup>, n = k<sup>0</sup>으로
 최악의 경우는 주어진 데이터가 이미 정렬이 되어있거나 모든 요소가 같을 경우 일어나게 된다.
 이를 방지하기 위해 피벗을 랜덤하게 선택하거나 부분 배열의 가운데를 선택하는 등의 방식으로 바꾸면 최악의 경우가 일어날 확률을 낮출수있다.
 
-<br />
-## 퀵 정렬 구현 <a id="imp"></a>
-### C언어
+
+<div class="divider"></div>
+
+## 구현 <a id="imp"></a>
 ```c
-#define SWAP(x,y) do {typeof(x) SWAP = x; x = y; y = SWAP;} while (0)
+#define SWAP(x,y) \ 
+    do {typeof(x) SWAP = x; x = y; y = SWAP;} while (0)
 
 int partition(int arr[], int low, int high)
 {
@@ -110,41 +98,15 @@ void quickSort(int arr[], int low, int high)
 }
 ```
 
-<br />
-### Python
-``` python
-def partition(arr, low, high):
-	pivot = arr[high]
-	index = low-1
+<div class="divider"></div>
 
-	for j in range(low, high):
-		if arr[j] <= pivot:
-			index += 1
-
-			arr[index], arr[j] = arr[j], arr[index]
-
-	arr[index+1], arr[high] = arr[high], arr[index+1]
-
-	return index+1
-
-def quicksort(arr, low, high):
-	if(low < high):
-		pi = partition(arr, low, high)
-
-		quicksort(arr, low, pi-1)
-		quicksort(arr, pi+1, high)
-```
-
-<br />
 ## 풀어 볼 문제 <a id="try"></a>
+From. @[acmicpc.net](https://www.acmicpc.net)
+
 - [수 정렬하기 2](https://www.acmicpc.net/problem/2751)
 
-<br />
-## 관련 글  <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
+<div class="divider"></div>
 
-<br />
 ## 참조 <a id="ref"></a>
 - [[알고리즘] 퀵 정렬(quick sort)이란](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/quick-sort/)
