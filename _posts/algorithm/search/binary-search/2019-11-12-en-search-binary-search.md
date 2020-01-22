@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Binary Search"
+title: "Search Algorithm - Binary Search"
 ref: search-binary-search
 date: 2019-11-12 7:00:00
 categories: Algorithm
@@ -8,27 +8,24 @@ tags: search
 lang: en
 ---
 
-## **What is Binary Search?**
+## What is Binary Search?
 
-Binary Search is a search algorithm that finds the target element from a **sorted list**.
+Binary Search is a logarithmic search algorithm that finds the target value from a **sorted list**.
 
-The algorithm first finds the midpoint of the list, compare its value with the target element and decide 
-which half (left or right) to proceed to compare.
+Binary Search compares the element in the middle of the list with the target value and either returns its position in the list or continues to search in the lower or upper half of the list.
 
 ![Binary Search](/assets/images/algorithm/search/search-binary-search-1.jpg)
 
 
-If our target number is greater than `5`, we can ignore the left half and vice versa. By  halving the 
-size of the list at every iteration, the speed of searching escalates substantially compare to
-Linear Search Algorithm.
+If the target value is greater than `5`, we can completely ignore the lower half and continue searching in the upper half.
+By halving the size of the list at every iteration, we can find the target value in a logarithmic runnnig time.
 
-Here's a simple comparison. <br>
-When we have 1000 data, linear search requires 1000 operations in worst case scenario to find the element.
-But with binary search, it only requires 10 operations at most.
+For example, given 1000 unique values, it takes at most 1000 operations to find the target value using linear search.
+But with binary search, it only takes 10 operations at most.
 
-<br>
+<div class="divider"></div>
 
-## **Implementation in Ruby**
+## Implementation
 
 ```rb
 def binarySearch(arr, val, low, high)
@@ -46,36 +43,23 @@ def binarySearch(arr, val, low, high)
 end
 ```
 
-[View C++ implementation](https://github.com/muicode/coding/blob/master/algorithm/search/binsearch.cpp)
+- Calculate the midpoint: `mid = low + (high - low) / 2;`
 
-<br>
+    You might be wondering why I'm not using `mid = (low + high) / 2`. You absolutely can; however, there's a potential risk here.
 
-## **Explanation**
+    We always want to keep our number smaller than `high` because <br>
+    `low + high` may cause overflow and our midpoint will no longer be the midpoint. 
+    So to prevent this risk, we take the half of distance between `high` and `low` and add it to `low`. This one extra step makes the algorithm more robust.
 
-_Assume the list is sorted in ascending order. If its in descending order, flip the comparison sign._
+- Compare the middle element (`arr[mid]`) with the target value (`target`). There are four possible cases.
+    1. `arr[mid] == target`  <br>
+      The target value matches the element, so return its position in the list.
 
-Find the midpoint: `mid = low + (high - low) / 2;`
+    2. `arr[mid] < target` <br>
+      The target value is greater than the element, so the search continues on the **upper half** ignoring the lower half.
 
-We can use `mid = (low + high) / 2` to find the midpoint, however, there's a potential risk of having 
-overflow-error. If you're using a language where integer overflow is handled automatically (e.g. Ruby), 
-you probably don't need to worry about it, but its still important to understand why we're using such formula.
+    3. `arr[mid] > target` <br>
+      The target value is smaller than the element, so the search continues on the **lower half** ignoring the upper half.
 
-Now we compare the middle element with the target element and there are 4 possible cases.
-1. middle element == `target`
-  + Simple.
-    Return the index.
-    ![Binary Search](/assets/images/algorithm/search/search-binary-search-2.jpg)
-
-2. middle element > `target`
-  + `target` is located on the **left half** of the list so change `high` to 
-     `middle - 1` and repeat the process.
-     ![Binary Search](/assets/images/algorithm/search/search-binary-search-3.jpg)
-
-3. middle element < `target`
-  + `target` is located on the **right half** of the list so change `low` to 
-     `middle + 1` and repeat the process.
-     ![Binary Search](/assets/images/algorithm/search/search-binary-search-4.jpg)
-
-4. `target` not in the list
-  + When we repeatedly halve the list, `low` will eventually become greater than `high`.
-    This means the `target` is not in the list. In this case return `-1` or whatever value you decided to reperesent DNE.
+    4. `low > high`  <br>
+      The target value does not exist. Return `-1` or `null`.
