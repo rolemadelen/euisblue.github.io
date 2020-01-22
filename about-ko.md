@@ -14,7 +14,7 @@ University of California, San Diego  (2019)<br>
 </div>
 
 <div class="code">
-<h3>기술 언어</h3>
+<h3>기술</h3>
 <ul style="padding-left: 35px; font-size: 13px">
 main language: C, C++ <br>
 conversational: Java, HTML/CSS <br>
