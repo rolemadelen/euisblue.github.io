@@ -15,6 +15,9 @@ University of California, San Diego  (2019)<br>
 
 <div class="divider"></div>
 
-<ul style="padding-left: 50px">
-<span style="color: #a4a4a4; font-style: italic;">아침에 뭘 마시고 뭘 읽는지 알면 네가 누구인지 난 알 수 있어</span>
+<ul class="center">
+<span style="color: #a4a4a4; font-style: italic;">
+"죽음 그 자체도, 몇 살에 죽느냐도 아니라 죽는 순간에 무엇을 하고 있었는가다." <br>
+- Paloma from Le Hérisson
+</span>
 </ul>
