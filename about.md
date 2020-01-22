@@ -17,7 +17,7 @@ University of California, San Diego  (2019)<br>
 <h3>Skills</h3>
 <ul style="padding-left: 35px; font-size: 13px">
 main language: C, C++ <br>
-conversational: Java, HTML/CSS <br>
+conversational: Java <br>
 tourist: Python, Ruby, C#
 <br>
 <br>
