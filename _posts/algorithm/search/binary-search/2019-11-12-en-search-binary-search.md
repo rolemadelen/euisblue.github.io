@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Search Algorithm - Binary Search"
+title: "Binary Search Algorithm"
 ref: search-binary-search
 date: 2019-11-12 7:00:00
 categories: Algorithm
