@@ -15,6 +15,8 @@ University of California, San Diego  (2019)<br>
 
 <div class="divider"></div>
 
-<ul style="padding-left: 50px">
-<span style="color: #a4a4a4; font-style: italic;">아침에 뭘 마시고 뭘 읽는지 알면 네가 누구인지 난 알 수 있어</span>
+<ul class="center">
+<span style="color: #a4a4a4; font-style: italic;">
+"Tell me and I forget. Teach me and I remember. Involve me and I learn" <br> - Benjamin Franklin
+</span>
 </ul>
