@@ -1,25 +1,12 @@
 ---
 layout: post
-title: "[알고리즘] 합병 정렬"
+title: "합병 정렬"
 ref: algorithm-merge-sort
 date: 2019-08-05 10:21:00
 categories: Algorithm
 tags: sorting
 lang: ko
 ---
-
-# 목차
-- [소개](#concept)
-- [정렬 과정](#example)
-- [시간 복잡도](#timecomp)
-- [구현](#imp)
-  * C
-  * Python
-- [풀어 볼 문제](#try)
-- [관련 글](#related)	
-- [참조](#ref)
-<hr />
-<br />
 
 ## 소개 <a id="concept"></a>
 합병 정렬은 **분할 정복 알고리즘**(Divide and Conquer Algorithm)의 하나로 1945년에 **[존 폰 노이만](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%8F%B0_%EB%85%B8%EC%9D%B4%EB%A7%8C)**(John Von Neumann)이 고안한 알고리즘이다.
@@ -32,7 +19,8 @@ lang: ko
 예를들어 `{(A, 1), (B, 2), (C, 1)}`이 있고 숫자를 기준으로 정렬을 한다고 할 때, 
 `A`는 언제나 `C`보다 먼저라는 것이 보장된다. 안전 정렬이 아닐 경우, 정렬의 결과가 `{(A,1), (C,1), (B,2)}` 또는 `{(C,1), (A,1), (B,2)}`이 되는데 어느 쪽 일지 알 수 없다.
 
-<br />
+<div class="divider"></div>
+
 ## 정렬 과정 <a id="example"></a>
 
 분할 정복은 다음의 세 단계를 거치며 진행된다:
@@ -42,7 +30,8 @@ lang: ko
 
 ![merge sort](/assets/images/algorithm/sorting/merge_sort.png)
 
-<br />
+<div class="divider"></div>
+
 ## 시간 복잡도 <a id="timecomp"></a>
 - 분할(Divide) 단계
   * 각 리스트에서 중점(midpoint)를 찾는 연산이 반복된다. 이 연산 시간은 **O(1)** 이다.
@@ -69,104 +58,67 @@ lang: ko
  `n logn`이 `n`보다 크므로 병합 정렬의 총 
 시간 복잡도는 **O(n logn)**이 된다.
 
-<br />
+<div class="divider"></div>
+
 ## 합병 정렬 구현 <a id="imp"></a>
-### C언어
 ```c
 void merge(int arr[], int left, int mid, int right)
 {
-	int sortedArr[SIZE] = {0};
-	int L = left;
-	int R = mid+1;
-	int K = left;
+    int sortedArr[SIZE] = {0};
+    int L = left;
+    int R = mid+1;
+    int K = left;
 
-	// combine two lists
-	while(L <= mid && R <= right)
-	{
-		if(arr[L] < arr[R])
-		{
-			sortedArr[K++] = arr[L++];
-		}
-		else
-		{
-			sortedArr[K++] = arr[R++];
-		}
-	}
+    // combine two lists
+    while(L <= mid && R <= right)
+    {
+        if(arr[L] < arr[R])
+        {
+            sortedArr[K++] = arr[L++];
+        }
+        else
+        {
+            sortedArr[K++] = arr[R++];
+        }
+    }
 
-	// Read all remaining data
-	while(L <= mid)
-	{
-		sortedArr[K++] = arr[L++];
-	}
+    // Read all remaining data
+    while(L <= mid)
+    {
+        sortedArr[K++] = arr[L++];
+    }
 
-	// copy over the data
-	for(int i=left; i<K; ++i)
-	{
-		arr[i] = sortedArr[i];
-	}
+    // copy over the data
+    for(int i=left; i<K; ++i)
+    {
+        arr[i] = sortedArr[i];
+    }
 }
 
 void mergeSort(int arr[], int left, int right)
 {
-	int mid;
+    int mid;
 
-	if(left < right)
-	{
-		mid = left + (right - left) / 2;
-		mergeSort(arr, left, mid);
-		mergeSort(arr, mid+1, right);
-		merge(arr, left, mid, right);
-	}
+    if(left < right)
+    {
+        mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid+1, right);
+        merge(arr, left, mid, right);
+    }
 }
 ```
 
-<br />
-### Python
+<div class="divider"></div>
 
-```python
-def merge(arr, left, mid, right):
-	L = left
-	R = mid+1
-	K = left
-	temp = [0]*(right+1)
-
-	while L <= mid and R <= right:
-		if arr[L] < arr[R]:
-			temp[K] = arr[L]
-			L += 1
-		else:
-			temp[K] = arr[R]
-			R += 1
-		K += 1
-
-	while L <= mid:
-		temp[K] = arr[L]
-		L += 1
-		K += 1
-
-	for i in range (left, K):
-		arr[i] = temp[i]
-
-def mergeSort(arr, left, right):
-	if left < right:
-		mid = left + (right - left) / 2
-		
-		mergeSort(arr, left, mid)
-		mergeSort(arr, mid+1, right)
-		merge(arr, left, mid, right)
-```
-
-<br />
 ## 풀어 볼 문제 <a id="try"></a>
-- [나이순 정렬](https://www.acmicpc.net/problem/10814)
-- [수 정렬하기 2](https://www.acmicpc.net/problem/2751)
+From. @[acmicpc.net](https://www.acmicpc.net)
 
-<br />
-## 관련 글  <a id="related"></a>
-{% assign tagParam = "sorting" %}
-{% include related-posts %}
+- [10814. 나이순 정렬](https://www.acmicpc.net/problem/10814)
+- [2751. 수 정렬하기 2](https://www.acmicpc.net/problem/2751)
 
-<br />
+<div class="divider"></div>
+
 ## 참조 <a id="ref"></a>
 - [[알고리즘] 합병 정렬(merge sort)이란](https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html)
 - [Wikipedia : John Von Neumann](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%8F%B0_%EB%85%B8%EC%9D%B4%EB%A7%8C)
