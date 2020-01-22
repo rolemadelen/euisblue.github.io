@@ -54,6 +54,5 @@ bool isPalindrome(string str)
 
 ## Exercises
 From. @[LeetCode](https://leetcode.com/problemset/all/?search=palindrome)
-
-• [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) <br>
-• [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)
+- [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 
+- [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)
