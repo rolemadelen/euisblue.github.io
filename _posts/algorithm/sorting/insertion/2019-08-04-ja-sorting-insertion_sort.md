@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "挿入ソート「Insertion Sort」"
+title: "挿入ソート・Insertion Sort"
 ref: algorithm-insertion-sort
 date: 2019-08-04 18:08:00
 categories: Algorithm
