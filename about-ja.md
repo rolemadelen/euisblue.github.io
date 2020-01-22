@@ -13,6 +13,32 @@ University of California, San Diego  (2019)<br>
 </ul>
 </div>
 
+<div class="code">
+<h3>技術</h3>
+<ul style="padding-left: 35px; font-size: 13px">
+main language: C, C++ <br>
+conversational: Java, HTML/CSS <br>
+tourist: Python, Ruby, C#
+<br>
+<br>
+OS: Linux, Windows
+</ul>
+</div>
+
+<div class="code">
+<h3>趣味</h3>
+<ul style="padding-left: 35px; font-size: 13px">
+Taiko, Japanese Drumming (2018 ~ present) <br>
+- Asayake Taiko - San Diego, CA <br>
+- LA Taiko Institute - Torrance, CA
+</ul>
+</div>
+
+<br>
+<div style="padding-left: 35px;">
+<img src="./assets/about/me.png" width="320px" height="450px" />
+</div>
+
 <div class="divider"></div>
 
 <ul class="center">
