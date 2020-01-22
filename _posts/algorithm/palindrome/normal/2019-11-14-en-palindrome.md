@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Palindrome"
+title: "Check if a String is Palindrome"
 ref: palindrome
 date: 2019-11-14 7:00:00
 categories: Algorithm
@@ -8,65 +8,52 @@ tags: palindrome
 lang: en
 ---
 
-## **What is Palindrome?**
+## What is Palindrome?
 
-Palindrome is a word or sentence that can be read forward or backward. For example, `racecar` is palindrome because
+Palindrome is a word or sentence that can be read forward or backward. 
+For example, `racecar` is palindrome because
 we can read from the either side and it still reads as `racecar`.
 
-Spaces and capitalized letters are often ignored; thus, `raceCAR` and `RACe  Ca r` are all considered as palindrome string.
+Often cases and spaces are ignored that
+`raceCAR` and `RACe Ca r` are all considered as `racecar`, which is palindrome.
 
-<br>
+![Palindrome](/assets/images/algorithm/palindrome/normal/palindrome-en.jpg)
 
-## **C++ Implementation**
+We can observe that the string `racecar` possess a mirror symmetry (`rac` and `car`). In fact, all palindromic strings are symmetrical.
 
-This is a straightforward basic palindrome algorith that checks whether a given string is palindrome. 
-We can improve this algorithm by including case-conversion (upper to lower or vice versa) and space-removal to make it little bit more robust.
+We can use this fact to implement a method that checks if a string is palindrome.
+
+<div class="divider"></div>
+
+## Implementation
+
+Since all palindromic strings are symmetrical, it's sufficient to compare the first half of the sttring with the latter half.
 
 ```cpp
 bool isPalindrome(string str)
 {
-    const int SIZE = str.size();
-    const int HALF = SIZE >> 1;
+    setCases(str, LOWERCASE);
+    ignoreSpaces(str);
+
+    const int SIZE = str.end() - str.begin();
+    const int HALF = SIZE >> 1;  // midpoint of the string
 
     for (int i=0; i<HALF; ++i)
     {
-        if (str[i] != str[SIZE - i - 1])
+        if (str[i] != str[SIZE - 1 - i])
         {
             return false;
-        }   
+        }
     }
 
     return true;
 }
 ```
 
-<br>
+<div class="divider"></div>
 
-## **Explanation**
+## Exercises
+From. @[LeetCode](https://leetcode.com/problemset/all/?search=palindrome)
 
-We have a string `racecar`.
-
-![Palindrome](/assets/images/algorithm/palindrome/normal/palindrome-en.jpg)
-
-From the picture above, we can see that every characters form a pair in palindrome with middle character being the exception in odd length string.
-
-Since palindrome strings are symmetrical, we only need to check up to the midway to determine the palindrome-ness.
-
-```cpp
-for (int i=0; i<HALF; ++i)
-{
-        if (str[i] != str[SIZE - i - 1]) 
-        { 
-            return false;
-        }
-}
-```
-
-If a string is asymmetrical, we simply return `false` and break.
-
-<br>
-
-## **Exercises**
-Try to solve these palindrome exercises from [LeetCode](https://leetcode.com/problemset/all/?search=palindrome).
-- [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
-- [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)
+• [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) <br>
+• [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)
