@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[알고리즘] 회문(Palindrome) 판별"
+title: "회문(Palindrome) 판별하기"
 ref: palindrome
 date: 2019-11-14 7:00:00
 categories: Algorithm
@@ -8,67 +8,52 @@ tags: palindrome
 lang: ko
 ---
 
-## **회문이란?**
+## 회문이란?
 
-회문(Palindrome)은 앞뒤 어느쪽으로 읽어도 똑같은 단어 혹은 문장을 의미한다. 단어 사이의 공백은 보통 무시한다.
-고로 `오디오`, `오 디오`, `오디 오`는 전부 회문이다.
+회문(Palindrome)은 앞뒤 어느쪽으로 읽어도 똑같은 단어 혹은 문장을 의미하며 
+단어 사이의 공백과 대소문자(영문)는 보통 무시한다.
 
-참고로 영어의 경우는 대소문자도 무시하므로 `RaceCar`, `R ACECAR`, `race car`은 전부 같은 단어로
-취급한다.
+예) `오디오`, `오 디오`, `오 디 오` == `오디오` <br>
+예) `RaceCar`, `R ACECAR`, `race car` == `racecar`
 
-<br>
+![Palindrome](/assets/images/algorithm/palindrome/normal/palindrome-ko.jpg)
 
-## **C++ 코드**
-가장 기본적인 형태의 회문 알고리즘으로 주어진 문자열이 회문인지 판별한다. 대소문자를 구분하거나 공백을 제거하는 부분은 없으므로 여기서 좀 더 보완이 가능하다.
+`수박이박수` 라는 문자열의 중간 지점인 `이`를 기점으로, 부분 문자열인 `수박`과 `박수`가 서로 대칭을 이루고 있다. 
+대칭은 회문과 절대 떼어놓을 수 없는 특징이므로 이를 이용해 회문 판별 프로그램을 구현 할 수 있다.
+
+<div class="divider"></div>
+
+## 구현
 
 ```cpp
 bool isPalindrome(string str)
 {
-    const int SIZE = str.size();
-    const int HALF = SIZE >> 1;
+    setCases(str, LOWERCASE);    // 모든 문자를 소문자로 변환
+    ignoreSpaces(str);           // 공백 제거
+
+    const int SIZE = str.end() - str.begin();
+    const int HALF = SIZE >> 1;  // 문자열의 중간 지점
 
     for (int i=0; i<HALF; ++i)
     {
-        if (str[i] != str[SIZE - i - 1])
+        if (str[i] != str[SIZE - 1 - i])
         {
+            // 비대칭
             return false;
-        }   
+        }
     }
 
+    // 대칭
     return true;
 }
 ```
 
-<br>
+<div class="divider"></div>
 
-## **설명**
+## 풀어 볼 문제
+From. @[acmicpc.net](https://www.acmicpc.net/problemset?search=%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC)
 
-`수박이박수`라는 문자열이 주어졌다.
-
-![Palindrome](/assets/images/algorithm/palindrome/normal/palindrome-ko.jpg)
-
-위 그림을 보면 문자열의 중간인 `이`를 기점으로 `수`와 `박`이 대칭을 이루고 있다. 
-그렇기 때문에  첫 문자(`수`)부터 가운데 문자(`이`)까지만 확인을 하면 회문인지 아닌지 판별할 수 있으며 이를 코드로 표현하면 아래와 같다.
-```cpp
-for (int i=0; i<HALF; ++i)
-{
-        if (str[i] != str[SIZE - i - 1]) 
-        { 
-            return false;
-        }
-}
-```
-
-만약 비대칭일 경우 회문이 아니므로 바로 `false`를 반환하여 반복문을 탈출한다.
-
-<br>
-
-## **풀어 볼 문제**
-[백준 온라인 저지](https://www.acmicpc.net/problemset?search=%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC)에서 간단한 회문 문제를 풀어보자.
-
-- [10988번](https://www.acmicpc.net/problem/10988), [13235번](https://www.acmicpc.net/problem/13235)
-  + 기본적인 회문 알고리즘을 작성할 수 있으면 풀수있는 문제.
-- [10174번](https://www.acmicpc.net/problem/10174)
-  + 대소문자를 구분하지 않지만 공백은 구분하는 문제.
-- [1259번](https://www.acmicpc.net/problem/1259)
-  + 주어진 수가 회문인지 판별하는 문제.
+• [10988. 팰린드롬인지 확인하기](https://www.acmicpc.net/problem/10988) <br>
+• [13235. 팰린드롬](https://www.acmicpc.net/problem/13235) <br>
+• [10174. 팰린드롬](https://www.acmicpc.net/problem/10174) <br>
+• [1259. 팰린드롬 수](https://www.acmicpc.net/problem/1259) <br>
