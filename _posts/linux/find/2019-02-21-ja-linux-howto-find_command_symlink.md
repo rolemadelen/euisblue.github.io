@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux・findコマンド [1]"
+title: "findコマンド [1]"
 ref: linux-find-1
 date: 2019-2-21 17:37:00
 categories: Linux
@@ -8,19 +8,16 @@ tags: linux-command
 lang: ja
 ---
 
-## 目次
-- [基本構造](#struct)
-- [シンボリックリンクの動作](#treatment)
-  + [-P](#popt)
-  + [-L](#lopt)
-  + [-H](#hopt)
-- [要約](#tldr)
-- [関連記事](#related)	
-- [参照](#ref)
-<hr />
-<br />
+## 要約
+```bash
+find [-H] [-L] [-P] test/ -type f
+```
+- **-P**: シンボリックリンクを辿らない。
+- **-L**: シンボリックリンクを辿る。
+- **-H**: 与えた経路がシンボリックリンクの場合辿る。
 
-## 基本構造 <a id="struct"></a>
+<div class="divider"></div>
+## 基本構造 
 
 findコマンドの基本構造は下記のような少し複雑な形をしている。
 
@@ -30,19 +27,14 @@ find [-H] [-L] [-P] [-D debug option] [-Olevel] [path] [expr]
 
 それぞれのオプションたちは下記のように考えたら簡単に理解できる：
 
-`-H`, `-L`, `-P` →  シンボリックリンクをどうように動作する？
-
-`-D` →  どんな作業をしてるか仮面に表示する？
-
-`-O` → どのように最適化する?
-
-`path` → どこから作業を始めようか？
-
+`-H`, `-L`, `-P` →  シンボリックリンクをどうように動作する？<br />
+`-D` →  どんな作業をしてるか仮面に表示する？<br />
+`-O` → どのように最適化する?<br />
+`path` → どこから作業を始めようか？<br />
 `expr` → どんな作業をすればいいの？
 
-<br />
-
-## シンボリックリンクの動作 <a id="treatment"></a>
+<div class="divider"></div>
+## シンボリックリンクの動作 
 
 `-H`, `-L`, `-P`このオプションたちはシンボリックリンクの動作と関連がある。<br />
 それぞれどのように動作するか調べてみよう。
@@ -79,8 +71,8 @@ test/blog.c
 `hello.c`と`blog.c`が出力された。<br />
 このディレクトリの中にあるシンボリックリンクは表示されてはない。
 
-<br />
-### -P オプション <a id="popt"></a>
+<div class="divider"></div>
+### -P オプション
 **-P**オプションを使って一度も実行してみよう。
 
 ```
@@ -94,8 +86,8 @@ test/blog.c
 
 これが`find`のディフォルトの動作で、**シンボリックリンクを全く辿らない**。
 
-<br />
-### -L オプション <a id="lopt"></a>
+<div class="divider"></div>
+### -L オプション
 **-L**の場合はどうだろ。
 
 ```
@@ -111,8 +103,8 @@ test/blog.c
 
 すべてのファイルが出力された。**-Lオプションはシンボリックリンクを辿る**。
 
-<br />
-### -H オプション <a id="hopt"></a>
+<div class="divider"></div>
+### -H オプション
 最後で**-H**オプションを見てみよう。
 ```
 $ find -H test/ -type f
@@ -137,20 +129,6 @@ test/blog.c
 
 **普通-Hは-Pと同じ方式で動作するけど、与えた経路がシンボリックリンクの場合-Lのように動作方式を変わる**。
 
-<br />
-## 要約 <a id="tldr"></a>
-```
-$ find -[P/L/H] test/ -type f
-```
-- **-P**: シンボリックリンクを辿らない。
-- **-L**: シンボリックリンクを辿る。
-- **-H**: 与えた経路がシンボリックリンクの場合辿る。
-
-<br />
-## 関連記事 <a id="related"></a>
-{% assign tagParam = "linux-command" %}
-{% include related-posts %}
-
-<br />
+<div class="divider"></div>
 ## 参照 <a id="ref"></a>
 - [find(1) - linux JP man page](https://linuxjm.osdn.jp/html/GNU_findutils/man1/find.1.html)
