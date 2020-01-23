@@ -1,4 +1,5 @@
 # Site Info
+name: Muicode
 title:  Muicode
 description:        "Programming Blog"
 author_name: 
@@ -44,7 +45,6 @@ exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "scr
 plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
-  - jekyll-feed
 
 remote_theme: muicode/the-plain
 
