@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Linux] find Command [2]"
+title: "find Command [2]"
 ref: linux-find-2
 date: 2019-02-21 22:00:00
 categories: Linux
@@ -8,35 +8,17 @@ tags: linux-command
 lang: en
 ---
 
-## Contents
-- [Basic Structure](#struct)
-- [Debug Options](#debugopt)
-  + [-D exec](#exec)
-  + [-D help](#help)
-  + [-D tree & -D opt](#treeopt)
-  + [-D rates](#rates)
-  + [-D search](#search)
-  + [-D stat](#stat)
-- [Optimizations](#olevel)
-  + [-O0 & -O1](#o01)
-  + [-O2](#o2)
-  + [-O3](#o3)
-- [Related Posts](#related)
-- [Reference](#ref)
-<hr />
-<br />
-
-## Basic Structure <a id="struct"></a>
+## Basic Structure
 
 ```bash
-find [-H] [-L] [-P] [-D debugopt] [-Olevel] [path] [expression]
+find [-H] [-L] [-P] [-D option] [-Olevel] [path] [expr]
 ```
 
 We examined first three options (H, L, and P) previously ([find Command \[1\]](../en-linux-howto-find_command_symlink)), which was about symbolic links.<br />
 In this post, We will go through the next two options: `-D`(debug) and `-O`(optimization).
 
-<br />
-## Debug Options <a id="debugopt"></a>
+<div class="divider"></div>
+## Debug Options
 
 Every examples shown under this section are executed on the following directory:
 
@@ -46,8 +28,7 @@ test/
 └── hello.c # "hello.c: hello world"
 ```
 
-<br />
-### -D exec <a id="exec"></a>
+### -D exec
 With every files or directories we found, we can use `-exec` or `-execdir` to execute some actions
 on each of the files or directories. When `exec` option is used, it examines all the tasks done by `-exec` or `-execdir`.
 
@@ -71,8 +52,7 @@ blog.c: hello world
  
 We can observe that `cat` command has been executed to files found by `find`.
 
-<br />
-### -D help <a id="help"></a>
+### -D help
 Simply shows all possible arguments for debug options.
 
 ```bash
@@ -84,8 +64,7 @@ help       Explain the various -D options
 ... 
 ```
 
-<br />
-### -D tree & -D opt <a id="treeopt"></a>
+### -D tree & -D opt
 `tree` option displays the expression tree in both normal and optimized version.
 
 `opt` option functions same as `tree` but it shows more detail information regarding optimizations.
@@ -105,8 +84,7 @@ Optimized command line:
 ./blog.c
 ```
 
-<br />
-### -D rates <a id="rates"></a>
+### -D rates
 
 Displays the rate of success and failure of predicate evaluation.
 
@@ -119,8 +97,7 @@ Predicate success rates after completion:
 [need type] -type f [est success rate 0.875] [real success rate 2/3=0.6667] -a [est success rate 0.875] [real success rate 2/3=0.6667] -print [est success rate 1] [real success rate 2/2=1]   
 ```
 
-<br />
-### -D search <a id="searh"></a>
+### -D search
 
 Navigates the tree verbosely.
 
@@ -134,34 +111,29 @@ consider_visiting (early): ‘test/hello.c’: fts_info=FTS_NSOK, fts_level= 1, 
 ...
 ```
 
-<br />
-## Optimizations <a id="olevel"></a>
+<div class="divider"></div>
+## Optimizations
 This option is used to optimize the query performance. It reorder tests to reduce the execution 
 time on each predicate while preserving the overall effect.
 	
-### -O0 & -O1 <a id="o01"></a>
+### -O0 & -O1
 `O0` has same effect as `O1` and this is the default optimization. <br />
 It evaluate tests based only on file names(e.g. `-name` and `-regex`) first.
 
-### -O2 <a id="o2"></a>
+### -O2
 `-type` or `-xtype` tests are evaluated after tests based only on file names are evaluated, but
 before any tests that require information from the inode.
 
-### -O3 <a id="o3"></a>
+### -O3
 Full cost-based optimization is enabled. It reorder predicates if needed so that the cheapest 
 (or fastest) predicates are evaluated earlier than the expensive one. Also predicates that are
-likely to succeed (e.g. `-o`) will be evaluated first than one likely to fail (e.g. `-a).
+likely to succeed (e.g. `-o`) will be evaluated first than one likely to fail (e.g. `-a`).
 
 If cost-based optimization does not improve any performance, it will be removed. In contrast, 
    optimizations that prove to improve the performance may be enabled 
    at lower optimization levels over time.
 
-<br />
-## Related Posts <a id="related"></a>
-{% assign tagParam = "linux-command" %}
-{% include related-posts %}
-
-<br />
-## Reference <a id="ref"></a>
-- [find(1) - linux man page](https://linux.die.net/man/1/find)
+<div class="divider"></div>
+## Reference
+- [find(1) - Linux man page](https://linux.die.net/man/1/find)
 - [Compiler Optimization](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
