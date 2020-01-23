@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="naver-site-verification" content="0da7b8dc0161c52317ef07c4067abdb367e3fcd1"/>
 
+
 {% if page.title %}
 	<title>{{ page.title[page.lang] }} · {{ site.title }}</title>
 {% else %}
@@ -16,6 +17,7 @@
 <link rel="stylesheet" href="{{ "/assets/core.css" | prepend: site.baseurl | prepend: site.url }}">
 <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+<link href='https://muicode.dev/feed.xml' rel='alternate' type='application/atom+xml'>
 
 {% if site.mathjax %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
