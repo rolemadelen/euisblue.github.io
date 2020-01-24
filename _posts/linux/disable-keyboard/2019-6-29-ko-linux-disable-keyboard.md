@@ -12,7 +12,7 @@ lang: ko
 - [실행파일 아이콘 만들기](#launcher)
   * [script](#script)
   * [.deskotp](#desktop)
-  * [도크에 프로그램 추가](#dock)
+  * [도크에 실행파일 추가](#dock)
 - [참조](#ref)
 
 <div class="divider"></div>
