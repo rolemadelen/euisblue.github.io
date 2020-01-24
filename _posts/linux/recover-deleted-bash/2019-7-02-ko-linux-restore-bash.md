@@ -1,62 +1,72 @@
 ---
 layout: post
-title: "[Ubuntu] /bin/bash 복구하기"
+title: "실수로 덮어쓴/bin/bash 복구한 방법"
 ref: linux-recover-deleted-bash
 date: 2019-07-02 17:54:00
+last_modified_at: 2020-01-23 22:44:00
 categories: Linux
 lang: ko
 ---
 
-## 목차
-- [먼저](#first)
-- [문제 해결 과정](#issue)
-- [해결 방법](#solution)
-- [참조](#ref)
-<hr />
-<br />
+## "내가 뭐하는지 알고있어"
+명령어를 입력해서 내장 키보드를 켜고 끌수있도록 [스크립트](./ko-linux-disable-keyboard#script)를 작성했었다.
+이를 실행하기 위해서는 항상 이 파일이 있는 디렉토리로 이동한 후 `./kbd-switch`를 입력해야 하는 번거로운 과정이 필요하다.
 
-## 먼저 <a id="first"></a>
-지난 번 [\[Ubuntu\] 노트북 내장 키보드 비활성화 하기](https://myoiwritescode.github.io/linux/2019/06/30/ko-linux-disable-keyboard.html) 포스트를 작성하면서 내장 키보드를 키고 끄는 스크립트 파일을 
-하나 만들었었다. 이 파일을 `/bin` 으로 옮기려고 하다가 실수로 아래와 같은 짓을 해버렸다:
-```
-$ sudo mv kbd-onoff.bat /bin/bash
+하지만 `ls`처럼 전역적으로 간편하게 사용하고 싶기 때문에, 이 스크립트를 `/bin` 디렉토리로 옮기기 위해 아래와 같이 입력했다.
+
+```bash
+mui:~$ sudo mv kbd.bat /bin
 ```
 
-(좀 오버해서) 카오스의 시작.
+이대로 엔터를 치려는 순간... 멍청한 *[오른쪽이](https://namu.wiki/w/%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%9D%B4)*가 
+멋대로 문자 다섯 개를 추가 입력했다 (~~근육 기억~~).
 
-<br />
-## 문제 해결 과정 <a id="issue"></a>
-문제가 있다는 건 바로 알아차렸다. 터미널을 더 이상 사용할 수 없었기 때문.
-
-![에러 이미지 1](/assets/images/linux/restore-bash/error1.png)
-
-구글링을 해 본 결과 bash를 재설치 하기만 하면 된다고 하니 그리 해봤다. 하지만 터미널을 사용할 수가
-없어 처음으로 터미널에 커스텀 커맨드 기능을 사용해봤다. 터미널 실행 시 쉘이 아닌 내가 입력한 
-명령어가 실행 되는 것이다.
-
-![커스텀 커맨드 이미지 1](/assets/images/linux/restore-bash/custom-command.png)
-
-뭔가 설치하는 것 같더니 오류가 뜨면서 실패했다. 자세히 보면 맨 처음 사진에 나오는 에러와 같다.
-
-![에러 이미지 2](/assets/images/linux/restore-bash/error2.png)
-
-<br />
-## 해결 방법 <a id="solution"></a>
-검색해서 알게 된 사실시지만 대부분의 시스템의 `/bin/bash`는 사실 `/bin/sh`의 심볼릭 링크라고 한다.
-그러면 `sh`를 이용해서 `bash`의 링크를 고치면 해결이 되지 않을까해서 아래와 같이 해봤다.
-
+```bash
+mui:~$ sudo mv kbd.bat /bin/bash
 ```
+
+무언가 잘못 되었다는 것을 느끼는데 걸린 시간은 찰나였다.
+
+![Error image 1](/assets/images/linux/recover-deleted-bash/error1.png)
+
+터미널이 위와 같은 오류를 뿜고 동작하지 않았으니까.
+
+<div class="divider"></div>
+
+## "아아, 걱정마. 별것 아니야"
+`bash`가 덮어씌여서 없어진거면, 그냥 재설치 하면 되는 간단한 문제아닌가.
+
+잠깐만, 재설치를 위한 명령어를 입력하기 위해 쉘(터미널)을 열어야 하는데 쉘(bash)이 동작 안하네?
+`csh`, `ksh`, 등등 이런저런 쉘을 다운받아 실행해봐도 동작을 안하는건 매한가지.
+
+어... 큰일났네?
+
+순간 평소에 사용하지는 않지만 터미널 옵션에 *custom command*라는 옵션이 있다는걸 생각해냈다. 
+터미널을 열면 가장 먼저 실행되는 것이 쉘인데, 이 쉘 대신 원하는 명령어를 먼저 실행하도록 설정할 수 있다.
+여기에다가 재설치 명령어를 입력하면 되지 않을까?
+
+그래서 `sudo apt-get install --reinstall bash`가 실행되도록 설정하고 터미널을 열었다.
+
+오! 설치가 된다.
+
+![Error image 2](/assets/images/linux/recover-deleted-bash/error2.png)
+
+중간에 오류 때문에 멈췄지만..
+
+<div class="divider"></div>
+
+## "음.. 저기요?" <a id="solution"></a>
+여기저기 묻고 검색해본 결과, 대부분의 시스템에서 `/bin/bash`는 사실 `/bin/sh`를 가리키는 심링크일 뿐이라는 것을 알았다.
+그래서 심링크를 새로 만들어주고, 혹시 모르니 bash를 재설치해서 필요한 것들이 추가되도록 했다.
+
+```sh
 rm -rf /bin/bash
 ln -s /bin/sh /bin/bash
 apt-get install --reinstall bash
 ```
 
-현재 망가진 `/bin/bash`를 지우고, `/bin/sh`의 심볼릭 링크를 `/bin/bash`로 다시 만든 다음 bash를 재설치 했다.
+결과는?
 
-![해결 이미지](/assets/images/linux/restore-bash/solution.png)
+![Solution image](/assets/images/linux/recover-deleted-bash/solution.png)
 
-짜잔! bash가 돌아왔다.
-
-<br />
-## 참조 <a id="ref"></a>
-- [삭제된 /bin/bash 복구하는 법?](https://serverfault.com/questions/451528/how-to-recover-from-a-deleted-bin-bash)
+성공!
