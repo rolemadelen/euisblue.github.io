@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Ubuntu] Disable Laptop Keyboard"
+title: "How to disable a Laptop Keyboard"
 ref: linux-disable-keyboard
 date: 2019-06-30 19:11:00
 categories: Linux
@@ -8,109 +8,100 @@ lang: en
 ---
 
 ## Contents
-- [Preface](#first)
-- [Disable Laptop Keyboard](#disable)
-  * [find the input device](#inputdev)
-  * [disabling](#disable2)
-  * [enabling](#enable)
-- [Create Launcher Icon](#launcher)
-  * [shell script](#script)
+- [Disabling Laptop Keyboard](#disable)
+- [Create a Launcher Icon](#launcher)
+  * [script](#script)
   * [.deskotp](#desktop)
-- [Attach to Dock](#dock)
+  * [attach to the Dock](#dock)
 - [Reference](#ref)
-<hr />
-<br />
 
-## Preface <a id="first"></a>
-I'm currently using HHKB Professional JP as an external keyboard with my laptop.
-Because of such small space I have on my desk, I lay the keyboard on top of my laptop where
-internal keyboard is located. Everything is good except random key presses and clicks on
-the touch pad; it really disturbes me. I realized I could disable the internal keyboard
-using command lines (perhaps the only way I believe) on Ubuntu.
+<div class="divider"></div>
+## Disabling Laptop Keyboard <a id="disable"></a>
+We can use `xinput` command to configure devices in linux. 
+Execute `xinput --list` command to list connected devices.
 
-<br />
-## Disable Laptop Keyboard <a id="disable"></a>
-### find the input device <a id="inputdev"></a>
-Open up the terminal and enter the following command `xinput --list`.
+```bash
+mui:~$ xinput --list
 
-![xniput --list result](/assets/images/linux/how-to/disable-keyboard/xinput--list.png)
-
-Then you'll see list of all input devices connected to you laptop. <br />
-`AT Translated Set 2 Keyboard` is the internal keyboard and its `id` is `14`.
-
-<br />
-### disabling <a id="disable2"></a>
->  **Warning: <br /> Unless you have an extra keyboard or a virtual keyboard, do not attempt to try this code.**
-
-```
-xinput set-int-prop 14 "Device Enabled" 8 0
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ Elan Touchpad                             id=14   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Asus Wireless Radio Control               id=7    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=8    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=9    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=10   [slave  keyboard (3)]
+    ↳ USB2.0 VGA UVC WebCam: USB2.0 V           id=13   [slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                          id=15   [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=16   [slave  keyboard (3)]
 ```
 
-<br />
-### enabling <a id="enable"></a>
-To enable your keyboard, use the following command: <br />
+Locate `AT Translated Set 2 keyboard`. This is the device we need, and we can use it to disable or enable the keyboard.
+
+To **disable** the keyboard, type:
+```bash
+xinput disable "AT Translated Set 2 keyboard"
 ```
-xinput set-int-prop 14 "Device Enabled" 8 1
+
+To **enable** it, type:
+```bash
+xinput enable "AT Translated Set 2 keyboard"
 ```
 
-<br />
-## Create Launcher Icon <a id="launcher"></a>
-Terminal commands may become problematic if you accidentally ran the command without having an
-extra keyboard. The only option is to reboot. Even if you had an extra one, it could be annoying
-to go get your keyboard and set it up just to type a command to enable your keyboard.
+<div class="divider"></div>
+## Create a Launcher Icon <a id="launcher"></a>
+Its too much work to type these commands everytime, so lets create a launcher where we can enable or disable the keyboard via a click.
 
-It would be nice to have an executable program where you can enable and disable with a click.
-So lets make one.
+### script <a id="script"></a>
 
-<br />
-### shell scripts <a id="script"></a>
-Below is the output from running the command `xinput --list --long` when your keyboard is disabled.
-
-![Disabled Message](/assets/images/linux/how-to/disable-keyboard/disabled-message.png)
-
-It actually tells you that _This device is disabled_. I'm going to use this fact to write a
-script file that works as a switch to enable/disable the keyboard.
+First we need to create a script that enables or disables the keyboard when its executed.
 
 ```bash
 #!/bin/bash
-# file: kbd-onoff
-kbd=`xinput --list --long | grep -A 1 "id=14" | grep disabled`
 
-if [ -z "$kbd" ]
+kbd=`xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"`
+kbd="${kbd: -1}"
+
+if [ $kbd -eq 1 ]
 then
-        echo "keyboard disabled"
-        `xinput set-int-prop 14 "Device Enabled" 8 0`
+   `xinput disable "AT Translated Set 2 keyboard"`
 else
-        echo "keyboard enabled"
-        `xinput set-int-prop 14 "Device Enabled" 8 1`
+   `xinput enable "AT Translated Set 2 keyboard"`
 fi
 ```
 
-The logic is straightforward. 
-`kbd` will either store `""` or `"This device is disabled"`. So if a variable 
-`kbd` is empty, then disable the keyboard because its currently enabled  and vice versa.
-
-<hr />
-<br />
-
-Turn the script file you created into an executable.
+The output of the command `xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"` is as follows:
 
 ```bash
-chmod u+x kbd-onoff
+# when enabled
+Device Enabled (168):   1
+
+# when disabled
+Device Enabled (168):   0
 ```
 
-You may try to run the program **ONLY** if you have an extra keyboard. Otherwise you will
-have to reboot or use a virtual keyboard.
+I grabbed the last character using `${kbd: -1}` and checked if its enabled or not.
+It's a simple script.
 
-<br />
+
+Now we need to make the script file executable to be able to run it with a click, then move
+the script to `/bin/`.
+
+```bash
+chmod u+x kbd-switch
+mv kbd-switch /bin/
+```
+
 ### .desktop <a id="desktop"></a>
-We will write `.desktop` file to create the launcher icon.
+We need to create `.desktop` file for the launcher icon.
 
-You'll need two things:
+We need two pieces of information:
 1. launcher icon's path: `/usr/share/icons/icon.png`
-2. script file's path  : `/bin/kbd-onoff`
+2. script file's path  : `/bin/kbd-switch`
 
-Open up your favorite text editor and copy below codes:
+Open up a text editor and copy below codes:
 
 ```bash
 #!/usr/bin/env xdg-open
@@ -118,26 +109,23 @@ Open up your favorite text editor and copy below codes:
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/bin/kbd-onoff
+Exec=/bin/kbd-switch
 Name=Keyboard On/Off
-Comment="Keyboard on/off runnnig"
+Comment="Keyboard On/Off Runnnig"
 Icon=/usr/share/icons/kbd.png
 ```
 
-Save the file as `kbd-onoff.desktop` and run the program.
+Save the file as `kbd-switch.desktop` and run the program.
+If prompted, click `Trust and Launch`.
 
-If you see an error (or a pop up screen) regarding running untrusted app, click `Trust and Launch`.
+### attach to the Dock <a id="dock"></a>
+Move `.desktop` file to either `/usr/share/applications/` or `~/.local/share/applications/` to let it visible on Applications dash bar.
 
-<br />
-## Attach to Dock <a id="dock"></a>
-In order to make the launcher icon visible in application dash bar, move `.desktop` file 
-to either `/usr/share/applications/` or `~/.local/share/applications/`.
-
-Then you'll be able to find the program in application dash with the name you used on `Name=` inside `.desktop` file. Right click on the icon and select `Add to Favorites` to add it to the dock.
+Go to the dash bar, search *Keyboard On/Off*, right click on it, then click *Add to Favorites*.
 
 ![dock image](/assets/images/linux/how-to/disable-keyboard/dock.png)
 
-<br />
+<div class="divider"></div>
 ## Reference <a id="ref"></a>
 - [Disable Laptop Keyboard in Ubuntu](https://blog.hostonnet.com/laptop-keyboard-ubuntu)
 - [Bash Shell : is a variable empty?](https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/)
