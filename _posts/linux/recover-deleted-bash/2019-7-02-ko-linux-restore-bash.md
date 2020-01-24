@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Ubuntu] /bin/bash 복구하기"
-ref: linux-restore-bash
+ref: linux-recover-deleted-bash
 date: 2019-07-02 17:54:00
 categories: Linux
 lang: ko
