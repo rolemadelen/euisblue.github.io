@@ -156,10 +156,11 @@ iframe {
 
 ul,
 ol {
-  margin: 5px 0;
+  margin: 3px 0 0 5px;
   padding-left: 10px;
   li {
     word-wrap: break-word;
+    padding: 1px 0;
   }
   img {
     margin: 40px 0;
