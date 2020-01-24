@@ -63,4 +63,4 @@ apt-get install --reinstall bash
 
 ![Solution image](/assets/images/linux/recover-deleted-bash/solution.png)
 
-Thanks Google.
+Voilà.
