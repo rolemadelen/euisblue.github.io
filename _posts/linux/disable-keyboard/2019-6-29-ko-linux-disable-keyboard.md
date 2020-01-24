@@ -3,6 +3,7 @@ layout: post
 title: "노트북 내장 키보드 비활성화하기"
 ref: linux-disable-keyboard
 date: 2019-06-30 19:11:00
+last_modified_at: 2020-01-23 17:36
 categories: Linux
 lang: ko
 ---
