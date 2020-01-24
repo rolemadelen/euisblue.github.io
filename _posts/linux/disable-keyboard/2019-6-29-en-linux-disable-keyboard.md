@@ -3,6 +3,7 @@ layout: post
 title: "How to disable a Laptop Keyboard"
 ref: linux-disable-keyboard
 date: 2019-06-30 19:11:00
+last_modified_at: 2020-01-23 17:36
 categories: Linux
 lang: en
 ---
