@@ -54,13 +54,16 @@ defaults:
       path:         ""
     values:
       layout:       "null"
+      author: muicode
   -
     scope:
       type:         "pages"
     values:
       layout:       "page"
+      author: muicode
   -
     scope:
       type:         "posts"
     values:
       layout:       "post"
+      author: muicode
