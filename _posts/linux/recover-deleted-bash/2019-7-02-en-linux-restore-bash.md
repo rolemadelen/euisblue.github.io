@@ -3,6 +3,7 @@ layout: post
 title: "How I recovered overwritten /bin/bash"
 ref: linux-recover-deleted-bash
 date: 2019-07-02 17:54:00
+last_modified_at: 2020-01-23 22:23:00
 categories: Linux
 lang: en
 ---
