@@ -25,7 +25,7 @@ feed:
 logo_url:           https://avatars3.githubusercontent.com/u/34954499?v=4 # Get it from GitHub API: https://api.github.com/users/<username>
 
 # Site Settings
-url:                https://muicode.dev # main url
+url:                https://www.muicode.dev # main url
 baseurl:            ""
 permalink:          /:title # Post permalink
 timezone:           America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -54,16 +54,16 @@ defaults:
       path:         ""
     values:
       layout:       "null"
-      author: muicode
+      author: Mui
   -
     scope:
       type:         "pages"
     values:
       layout:       "page"
-      author: muicode
+      author: Mui
   -
     scope:
       type:         "posts"
     values:
       layout:       "post"
-      author: muicode
+      author: Mui
