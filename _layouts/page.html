@@ -10,7 +10,9 @@ layout: default
     {% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
     {% for p in pages %}
         {% if p.lang != page.lang %}
-          <a href="{{ p.url | prepend: site.baseurl }}" style="border-bottom: 0px"> <img src="/assets/lang/{{p.lang}}.png" width="15px" height="15px" style="border-radius: 50%"/> {{site.language[page.lang][p.lang]}}</a>
+          <a href="{{ p.url | prepend: site.baseurl }}" style="border-bottom: 1px black solid"> 
+              <!--              <img src="/assets/lang/{{p.lang}}.png" width="15px" height="15px" style="border-radius: 50%"/>-->
+              {{site.language[page.lang][p.lang]}}</a>
         {% endif %}
     {% endfor %}
     </div>
