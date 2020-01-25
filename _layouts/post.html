@@ -19,7 +19,8 @@ layout: default
     {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
     {% for post in posts %}
         {% if post.ref == page.ref and post.lang != page.lang%}
-        <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.lang }} </a>
+          <a href="{{ post.url | prepend: site.baseurl }}" style="border: 0px">
+              <img src="/assets/lang/{{post.lang}}.png" width="15px" height="15px" style="border-radius: 50%"/> {{site.language[page.lang][post.lang]}}</a>
         {% endif %}
     {% endfor %}
     </div>
