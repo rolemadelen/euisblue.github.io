@@ -24,8 +24,8 @@ feed:
 
 language:
     en: 
-        ko: Korean
-        ja: Japanese
+        ko: kr
+        ja: ja
     ko:
         en: 영어
         ja: 일본어
