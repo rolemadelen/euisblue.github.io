@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data Structure] Singly Linked List"
+title: "Singly Linked List"
 ref: ds-singly-linkedlist
 date: 2019-03-27 15:15:00
 categories: 
