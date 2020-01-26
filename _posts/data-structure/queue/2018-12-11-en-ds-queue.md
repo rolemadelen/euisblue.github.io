@@ -16,7 +16,6 @@ lang: en
   * [LinkedList-based](#linkedlist)
   * [Array-based](#array)
 - [Applications](#app)
-- [Problems to Try](#try)
 
 <div class="divider"></div>
 ## Concept <a id="concept"></a>
@@ -226,7 +225,7 @@ public class Queue
 ```
 
 <div class="divider"></div>
-## Applications of Queue <a id="app"></a>
+## Applications <a id="app"></a>
 - BFS (Breadth First Search)
 - Customer Queue (market, bank, ..., etc)
 - Disk Scheduling
