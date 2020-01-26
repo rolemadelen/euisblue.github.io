@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data Structure] Queue"
+title: "Queue"
 ref: ds-queue
 date: 2018-12-11 23:59:00
 categories: 
