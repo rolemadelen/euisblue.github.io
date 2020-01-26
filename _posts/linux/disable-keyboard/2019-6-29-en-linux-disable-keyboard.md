@@ -18,7 +18,7 @@ lang: en
 
 <div class="divider"></div>
 ## Disabling Laptop Keyboard <a id="disable"></a>
-We can use `xinput` command to configure devices in linux. 
+We can use `xinput` command to configure devices in Linux. 
 Execute `xinput --list` command to list connected devices.
 
 ```bash
@@ -53,11 +53,11 @@ xinput enable "AT Translated Set 2 keyboard"
 
 <div class="divider"></div>
 ## Create a Launcher Icon <a id="launcher"></a>
-Its too much work to type these commands everytime, so lets create a launcher where we can enable or disable the keyboard via a click.
+It's too much work to type these commands every time, so lets create a launcher where we can enable or disable the keyboard via a click.
 
 ### script <a id="script"></a>
 
-First we need to create a script that enables or disables the keyboard when its executed.
+First, we need to create a script that enables or disables the keyboard when its executed.
 
 ```bash
 #!/bin/bash
@@ -73,7 +73,7 @@ else
 fi
 ```
 
-The output of the command `xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"` is as follows:
+The output of the command `xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"` is:
 
 ```bash
 # when enabled
@@ -83,11 +83,11 @@ Device Enabled (168):   1
 Device Enabled (168):   0
 ```
 
-I grabbed the last character using `${kbd: -1}` and checked if its enabled or not.
+I grabbed the last character using `${kbd: -1}` and checked if the internal keyboard is enabled or not.
 It's a simple script.
 
 
-Now we need to make the script file executable to be able to run it with a click, then move
+Now we need to make the script file executable to run it with a click, then move
 the script to `/bin/`.
 
 ```bash
@@ -100,7 +100,7 @@ We need to create `.desktop` file for the launcher icon.
 
 We need two pieces of information:
 1. launcher icon's path: `/usr/share/icons/icon.png`
-2. script file's path  : `/bin/kbd-switch`
+2. script file's path: `/bin/kbd-switch`
 
 Open up a text editor and copy below codes:
 
