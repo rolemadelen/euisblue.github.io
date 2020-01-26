@@ -16,7 +16,7 @@ lang: ko
   + [연결 리스트(Linked List) 기반](#linkedlist)
   + [배열(Array) 기반](#array)
 - [사용 사례](#app)
-- [풀어 볼 문제](#try)
+- [풀어볼 문제](#try)
 
 <div class="divider"></div>
 ## 스택(Stack) 이란? <a id="concept"></a>
@@ -208,7 +208,7 @@ public class Stack {
 - 수식 문제
 
 <div class="divider"></div>
-## 풀어 볼 문제 <a id="try"></a>
+## 풀어볼 문제 <a id="try"></a>
 From. @[acmicpc.net](https://www.acmicpc.net)
 
 - [스택](https://www.acmicpc.net/problem/10828)
