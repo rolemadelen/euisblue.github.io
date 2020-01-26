@@ -16,8 +16,7 @@ lang: en
   * [LinkedList-based](#linkedlist)
   * [Array-based](#array)
 - [Applications](#app)
-- [Problems to Try](#try)
-- [Reference](#ref)
+- [Practice](#try)
 
 <div class="divider"></div>
 
@@ -199,7 +198,7 @@ public class Stack {
 ```
 
 <div class="divider"></div>
-## Applications of Stack <a id="app"></a>
+## Applications <a id="app"></a>
 - Backtracking Algorithm
 - Editor - Redo & Undo
 - Graph Algorithm
@@ -207,6 +206,6 @@ public class Stack {
 - Web Browser
 
 <div class="divider"></div>
-## Problems to Try <a id="try"></a>
+## Practice <a id="try"></a>
 From. @[LeetCode](https://leetcode.com)  
 - [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
