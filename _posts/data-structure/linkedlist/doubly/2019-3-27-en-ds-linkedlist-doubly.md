@@ -9,163 +9,186 @@ lang: en
 ---
 
 ## Contents
-- [Concept](#concept)
+- [What is Doubly Linked List?](#concept)
 - [Operations](#op)
 - [Implementation](#implement)
 - [Applications](#app)
 - [Reference](#ref)
-<hr />
-<br />
 
-## Concept <a id="concept"></a>
-Doubly linked list can reference both next and previous nodes.
+<div class="divider"></div>
+## What is Doubly Linked List? <a id="concept"></a>
+Doubly Linked List is a linked list that has a reference to next and previous nodes.
 
-```c
-typedef struct node_t
-{
-	struct node_t *next;
-	struct node_t *prev;
-	elem data;
-} Node;
-```
+![Doubly Linked List](/assets/images/data-structure/linked-list/dll.png)
 
-The structure of doubly linked list is a bit safer than singly linked list in terms
-of data loss. If head node is lost in singly linked list, all data are potentially lost and
-there is no way to retrieve them. In doubly linked list however, it is possible to retrieve
-them by traversing backward from the tail node (if linked correctly). But additional node
-slightly increases the workload and size of the structure.
+The structure of Doubly Linked List is safer than Singly Linked List in terms
+of data loss. If we lose the address of head in a singly linked list, we have no way of accessing to other nodes 
+linked to the head. In a doubly linked list however, it is possible to access the head by 
+traversing the list backward and reconnect missing links. But these additional nodes
+increases the workload and size of the structure.
 
-Unlike singly linked list where it takes linear time to delete current node, 
-doubly linked list may perform the same task in constant time using previous and next nodes.
+Unlike Singly Linked List where it takes linear time to delete a node, 
+Doubly Linked List can delete a node in constant time using *previous* and *next* references.
 
-<br />
+<div class="divider"></div>
 ## Operations <a id="op"></a>
-- **pushFront(..)** : insert node at the beginning
-- **pushBack(..)** : insert node at the end
-- **popFront(..)** : remove first node
-- **popBack(..)** : remove last node
-- **insertAt(..)** : insert node to the list
-- **removeAt(..)** : remove node in the list
+- **insertFront** : inserts the element at the head (first element)
+- **insertLast** : inserts the element at the tail (last element)
+- **removeFront** : removes the first element
+- **removeLast** : removes the last element
+- **traverse** : print all elements from head to tail
+- **reverseTraverse** : print all elements from tail to head
 
-<br />
+<div class="divider"></div>
 ## Implementation <a id="implement"></a>
-Implemented using two sentinel nodes to distinguish the beginning and end of the list.
-```c
-typedef struct slinkedlist_t
+
+```java
+public class DoublyLinkedList
 {
-	// Sentinel nodes
-	Node *dummy_head;
-	Node *dummy_tail;
-	size_t size;
-} SLinkedList;
+    private Node head;
+    private Node tail;
+    private int length;
+    
+    public DoublyLinkedList()
+    {
+        head = new Node(null);
+        tail = new Node(null);
+        
+        head.setNext(tail);
+        tail.setPrev(head);
+        
+        length = 0;
+    }
+    
+    public void insertFront(int data)
+    {
+        Node node = new Node(data);
+        if (isEmpty())
+        {
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(tail);
+            tail.setPrev(node);
+        }
+        else
+        {
+            Node old = head.getNext();
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(old);
+            old.setPrev(node);
+        }
+        
+        ++length;
+    }
+    
+    public void insertLast(int data)
+    {
+        Node node = new Node(data);
+
+        if (isEmpty())
+        {
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(tail);
+            tail.setPrev(node);
+        }
+        else
+        {
+            Node old = tail.getPrev();
+            old.setNext(node);
+            node.setPrev(old);
+            node.setNext(tail);
+            tail.setPrev(node);         
+        }
+        
+        ++length;
+    }
+    
+    public Integer removeFront()
+    {
+        if (!isEmpty())
+        {
+            Node first = head.getNext();
+            int item = first.getData();
+            
+            head.setNext(first.getNext());
+            first.getNext().setPrev(head);
+            --length;
+            
+            return item;
+        }
+        
+        return null;
+    }
+    
+    public Integer removeLast()
+    {
+        if (!isEmpty())
+        {
+            Node last = tail.getPrev();
+            int item = last.getData();
+            
+            last.getPrev().setNext(tail);
+            tail.setPrev(last.getPrev());
+            --length;
+            
+            return item;
+        }
+        
+        return null;
+    }
+    
+    public boolean isEmpty()
+    {
+        return length == 0;
+    }
+    
+    public void traverse()
+    {
+        if (!isEmpty())
+        {
+            Node temp = head.getNext();
+            
+            while (temp.getNext() != tail)
+            {
+                System.out.print(temp.getData() + " --> ");
+                temp = temp.getNext();
+            }
+            System.out.println(temp.getData());
+        }
+        else
+        {
+            System.out.println("List is empty..");
+        }
+    }
+    
+    public void reverseTraverse()
+    {
+        if (!isEmpty())
+        {
+            Node temp = tail.getPrev();
+            
+            while (temp.getPrev() != head)
+            {
+                System.out.print(temp.getData() + " --> ");
+                temp = temp.getPrev();
+            }
+            System.out.println(temp.getData());
+        }
+        else
+        {
+            System.out.println("List is empty..");
+        }
+    }
+}
 ```
-
-``` c
-void pushFront(DLinkedList *list, elem data)
-{
-	Node *newNode = createNode(data);
-	connectLink(newNode, list->dummy_head->next);
-	connectLink(list->dummy_head, newNode);
-	
-	++list->size;
-}
-
-void pushBack(DLinkedList *list, elem data)
-{
-	Node *lastNode = list->dummy_tail->prev;
-	Node *newNode = createNode(data);
-	connectLink(lastNode, newNode);
-	connectLink(newNode, list->dummy_tail);
-
-	++list->size;
-}
-
-void popFront(DLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_head->next;
-		free(list->dummy_head);
-		temp->prev = NULL;
-		list->dummy_head = temp;
-
-		--list->size;
-	}
-}
-
-void popBack(DLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_tail->prev;
-		free(list->dummy_tail);
-		temp->next = NULL;
-		list->dummy_tail = temp;
-
-		--list->size;
-	}
-}
-
-void insertAt(DLinkedList *list, int pos, elem data)
-{
-	if(pos <= 1)
-	{
-		pushFront(list, data);
-	}
-	else if(pos > list->size)
-	{
-		pushBack(list, data);
-	}
-	else if(pos > 0 && pos <= list->size)
-	{
-		Node *newNode = createNode(data);
-		Node *temp = list->dummy_head;
-
-		while(--pos)
-		{
-			temp = temp->next;
-		}
-
-		connectLink(newNode, temp->next);
-		connectLink(temp, newNode);
-		++list->size;
-	}
-}
-
-void removeAt(DLinkedList *list, int pos)
-{
-	if(pos <= 1)
-	{
-		popFront(list);
-	}
-	else if(pos > list->size)
-	{
-		popBack(list);
-	}
-	else
-	{
-		Node *temp = list->dummy_head;
-		while(pos--)
-		{
-			temp = temp->next;
-		}
-
-		connectLink(temp->prev, temp->next);
-		free(temp);
-
-		--list->size;
-	}
-}
-```
-
-<br />
+<div class="divider"></div>
 ## Applications <a id="app"></a>
 - [Thread Scheduler](http://web.cecs.pdx.edu/~harry/Blitz/BlitzDoc/ThreadScheduler.htm)
-- Music Player
-  + next/prev features
-- Undo/Re-do features
+- Music Player - next & prev
+- Undo & Redo features
 
-<br />
+<div class="divider"></div>
 ## Reference <a id="ref"></a>
-- [Wikipedia : Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list)
-- [Namu Wiki : Doubly Linked List](https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8)
+- [https://en.wikipedia.org/wiki/Doubly_linked_list](https://en.wikipedia.org/wiki/Doubly_linked_list)
