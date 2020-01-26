@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[자료구조] 단일 연결 리스트"
+title: "단일 연결 리스트 (Singly Linked List)"
 ref: ds-singly-linkedlist
 date: 2019-03-27 15:15:00
 categories: 
@@ -9,26 +9,20 @@ lang: ko
 ---
 
 ## 목차
-- [기본 개념](#concept)
+- [단일 연결 리스트란?](#concept)
 - [연산](#op)
 - [구현](#implementation)
 - [사용 사례](#app)
-- [풀어 불 문제](#problem)
-- [Reference](#ref)
-<hr />
-<br />
+- [풀어볼 문제](#problem)
+- [참조](#ref)
 
-## 기본 개념 <a id="concept"></a>
+<div class="divider"></div>
+
+## 단일 연결 리스트란? <a id="concept"></a>
 단일 연결 리스트(Singly Linked List)는 가장 기본적인 형태의 연결 리스트로 오직 다음 
 노드의 참조만이 가능하다.
 
-```c
-typedef struct node_t
-{
-	struct node_t *next;
-	elem data;
-} Node;
-```
+![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
 
 단순한 형태의 자료구조지만 단순한 만큼 위험성 또한 존재한다.
 첫 노드의 주소를 잃어버리거나 실수로 덮어버릴 경우 모든 데이터의 접근이 불가능하다.
@@ -37,154 +31,217 @@ typedef struct node_t
 리스트의 장점으로는 빠른 데이터의 추가와 제거로 두 연산 모두 O(1)의 시간이 걸린다. <br />
 하지만 마지막 노드에 접근하기 위해서는 무조건 첫 노드부터 접근해야 되기때문에 O(n)의 시간이 걸린다.
 
-<br />
+<div class="divider"></div>
 ## 연산 <a id="op"></a>
-- **pushFront(..)** : 리스트 시작점에 노드를 추가한다.
-- **pushBack(..)** : 리스트 마지막에 노드를 추가한다.
-- **popFront(..)** : 리스트 첫 노드를 제거한다.
-- **popBack(..)** : 리스트 마지막 노드를 제거한다.
-- **insertAt(..)** : 원하는 위치의 노드를 추가한다.
-- **removeAt(..)** : 원하는 위치의 노드를 제거한다.
+- **insertFront** : 데이터를 리스트 앞에 추가.
+- **insertBack** : 데이터를 리스트 마지막 추가.
+- **insertAt** : 해당 위치에 데이터를 추가.
+- **removeFront** : 리스트 앞에 위치한 데이터를 삭제.
+- **removeBack** : 리스트 끝에 위치한 데이터를 삭제.
+- **removeAt** : 해당 위치의 데이터를 삭제.
 
-<br />
+<div class="divider"></div>
 ## 구현 <a id="implementation"></a>
 
-리스트 처음과 끝을 나타내는 더미 노드(Sentinel Node)를 사용하여 구현했다. 
-```c
-typedef struct slinkedlist_t
+```java
+public class SinglyLinkedList
 {
-	// Sentinel nodes
-	Node *dummy_head;
-	Node *dummy_tail;
-	size_t size;
-} SLinkedList;
+    private Node head;
+    private int length;
+
+    // Constructor
+    public SinglyLinkedList()
+    {
+        head = null;
+        length = 0;
+    }
+
+    // inserts the element at the front
+    public void insertFront(int data)
+    {
+        Node node = new Node(data);
+        node.setNext(head);
+        head = node;
+        ++length;
+    }
+
+    // inserts the element at the end
+    public void insertLast(int data)
+    {
+        Node node = new Node(data);
+        if (head == null)
+        {
+            head = node;
+        }
+        else
+        {
+            Node temp = head;
+            while (temp.getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+            temp.setNext(node);
+        }
+
+        ++length;
+    }
+
+    // inserts the element at the specified position
+    public void insertAt(int data, int position)
+    {
+        if (position > length)
+        {
+            insertLast(data);
+        }
+        else if (position <= 1)
+        {
+            insertFront(data);
+        }
+        else
+        {
+            Node node = new Node(data);
+
+            Node temp = head;
+            while (--position > 1)
+            {
+                temp = temp.getNext();
+            }
+
+            node.setNext(temp.getNext());
+            temp.setNext(node);
+
+            ++length;
+        }
+    }
+
+    // remove the head (first element)
+    public Integer removeFront()
+    {
+        if (head == null)
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        int item = head.getData();
+        head = head.getNext();
+        --length;
+
+        return item;
+    }
+
+    // remove the tail (last element)
+    public Integer removeLast()
+    {
+        int item;
+
+        if (head == null)
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        if (head.getNext() == null)
+        {
+            item = head.getData();
+            head = null;
+        }
+        else
+        {
+            Node temp = head;
+
+            while (temp.getNext().getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+
+            item = temp.getNext().getData();
+            temp.setNext(null);
+        }
+
+        --length;
+
+        return item;
+    }
+
+    // removes the element at the specified position
+    public Integer removeAt(int position)
+    {
+        int item;
+
+        if (isEmpty())
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        if (position >= length)
+        {
+            item = removeLast();
+        }
+        else if (position <= 1)
+        {
+            item = removeFront();
+        }
+        else
+        {
+            Node temp = head;
+            while (--position > 1)
+            {
+                temp = temp.getNext();
+            }
+
+            item = temp.getNext().getData();
+            temp.setNext(temp.getNext().getNext());
+            --length;
+        }
+
+        return item;
+    }
+
+    // print all elements in the list
+    public void traverse()
+    {
+        if (isEmpty())
+        {
+            System.out.println("List is empty..");
+            return;
+        }
+
+        Node temp = head;
+        for (int i=0; i<length-1; ++i)
+        {
+            System.out.print(temp.getData() + " ---> ");
+            temp = temp.getNext();
+        }
+        System.out.println(temp.getData());
+    }
+
+    public int getSize()
+    {
+        return length;
+    }
+
+    public boolean isEmpty()
+    {
+        return length == 0;
+    }
+}
 ```
 
-``` c
-void pushFront(SLinkedList *list, elem data)
-{
-	Node *newNode = createNode(data);
-	Node *temp = list->dummy_head->next;
-
-	connectLink(list->dummy_head, newNode);
-	connectLink(newNode, temp);
-	
-	++list->size;
-}
-
-void pushBack(SLinkedList *list, elem data)
-{
-	// locate the last node
-	Node *lastNode = list->dummy_head;
-	while(lastNode->next != list->dummy_tail)
-	{
-		lastNode = lastNode->next;
-	}
-
-	// add new node
-	Node *newNode = createNode(data);
-	connectLink(lastNode, newNode);
-	connectLink(newNode, list->dummy_tail);
-
-	++list->size;
-}
-
-void popFront(SLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_head->next->next;
-		free(list->dummy_head->next);
-		connectLink(list->dummy_head, temp);
-		--list->size;
-	}
-}
-
-void popBack(SLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		// locate the last node
-		Node *lastNode = list->dummy_head;
-		while(lastNode->next->next != list->dummy_tail)
-		{
-			lastNode = lastNode->next;
-		}
-
-		// remove the last node and reconnect links
-		free(lastNode->next);
-		connectLink(lastNode, list->dummy_tail);
-		--list->size;
-	}
-}
-
-void insertAt(SLinkedList *list, int pos, elem data)
-{
-	if(pos <= 0)
-	{
-		pushFront(list, data);
-	}
-	else if(pos > list->size)
-	{
-		pushBack(list, data);
-	}
-	else if(pos > 0 && pos <= list->size)
-	{
-		Node *temp = list->dummy_head;
-		for(size_t i=0; i<pos; ++i)
-		{
-			temp = temp->next;
-		}
-
-		Node *newNode = createNode(data);
-		connectLink(newNode, temp->next);
-		connectLink(temp, newNode);
-
-		++list->size;
-	}
-}
-
-void removeAt(SLinkedList *list, int pos)
-{
-	if(pos <= 0)
-	{
-		popFront(list);
-	}
-	else if(pos > list->size)
-	{
-		popBack(list);
-	}
-	else
-	{
-		Node *prev = list->dummy_head;
-		for(size_t i=0; i<pos-1; ++i)
-		{
-			prev = prev->next;
-		}
-
-		Node *temp = prev->next->next;
-		free(prev->next);
-		connectLink(prev, temp);
-
-		--list->size;
-	}
-}
-
-```
-
-<br />
+<div class="divider"></div>
 ## 사용 사례 <a id="app"></a>
-- 스택의 구현
-- 큐의 구현
+- 스택 구현
+- 큐 구현
 - 해시 체이닝
 - FAT 파일 시스템 - 청킹(chunking)
 
-<br />
-## 풀어 볼 문제 <a id="problem"></a>
- - [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
- - [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+<div class="divider"></div>
+## 풀어볼 문제 <a id="problem"></a>
+From. @[LeetCode](https://leetcode.com)
+ - [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+ - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-<br />
-## Reference <a id="ref"></a>
-- [Wikipedia : Linked list](https://en.wikipedia.org/wiki/Linked_list)
-- [Namu Wiki : Linked List](https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8)
+<div class="divider"></div>
+## 참조 <a id="ref"></a>
+- [https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
