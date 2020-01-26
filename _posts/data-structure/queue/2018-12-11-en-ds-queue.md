@@ -3,37 +3,37 @@ layout: post
 title: "Queue"
 ref: ds-queue
 date: 2018-12-11 23:59:00
+last_modified_at: 2020-01-25 16:44:00
 categories: 
  - Data Structure
 lang: en
 ---
 
 ## Contents
-- <a href="#concept">Concept</a>
-- <a href="#op">Operations</a>
-- <a href="#implementation">Implementations</a>
-  * <a href="#linkedlist">Linked List</a>
-  * <a href="#array">Array</a>
-- <a href="#app">Applications of Queue</a>
-- <a href="#problem">Problems to Try</a>
-- <a href="#ref">References</a>
-<hr />
-<br />
+- [What is Queue?](#concept)
+- [Operations](#op)
+- [Implementation](#implement)
+  * [LinkedList-based](#linkedlist)
+  * [Array-based](#array)
+- [Applications](#app)
+- [Problems to Try](#try)
 
+<div class="divider"></div>
 ## Concept <a id="concept"></a>
 A linear data structure that follows **FIFO**(First-In First-Out) design which an element that
 came in first is served first. An element can only be inserted/deleted at the one end of the container.
 
+<div class="divider"></div>
 ## Operations <a id="op"></a>
 The *front* refers to the *head* of the container and the *back* refers to the *tail* (or top) of the container.
  - **void enqueue(..)**: inserts a data.
  - **void dequeue(..)**: removes a data.
+ - **T peek(..)**: return recently added data.
  - **bool isEmpty(..)**: determine whether the container is empty.
- - **T front(..)**: return the first elmeent.
- - **T back(..)**: return the last element.
  - **int size(..)**: return the number of elements in the container.
 
-## Implementations <a id="implementation"></a>
+<div class="divider"></div>
+## Implementation <a id="implement"></a>
 Queue can be implemented using a linked list or an array and each system has both pros and cons.
 
 If Queue is implemented with a linked list,
@@ -46,136 +46,189 @@ But access can be done in O(1) time.
 
 If number of operations on insert/delete is dominating the number of operations on access, it is better to choose Linked List rather than Array and vice versa.
  
-### Linked List based Queue  <a id="linkedlist"></a>
+<div class="divider"></div>
+### LinkedList-based  <a id="linkedlist"></a>
 
-```c
-void enqueue(Queue *q, elem data)
+```java
+public class Queue
 {
-	Node *newNode = malloc(sizeof(*newNode));
-	newNode->next = NULL;
-	newNode->data = data;
+    private Node head;
+    private Node end;
+    int length;
 
-	if(q->tail == NULL)
-	{
-		q->head = q->tail = newNode;
-		return;
-	}
+    // Constructor
+    public Queue()
+    {
+        head = null;
+        end = null;
+        length = 0;
+    }
 
-	q->tail->next = newNode;
-	q->tail = newNode;
+    // Inserts an item to the queue
+    public void enqueue(int data)
+    {
+        Node node = new Node(data);
 
-	++(q->size);
-}
+        if (end == null)
+        {
+            head = node;
+            end = head;
+        }
+        else
+        {
+            end.next = node;
+            end = node;
+        }
 
-void dequeue(Queue *q)
-{
-	if(q->head == NULL)
-	{
-		printf("queue is empty\n");
-		assert(0);
-	}
-	
-	Node *temp = q->head;
-	q->head = q->head->next;
+        ++length;
+    }
 
-	if(q->head==NULL)
-	{
-		q->tail = NULL;
-	}
+    // Removes front element from the queue
+    public int dequeue()
+    {
+        if (end == null)
+        {
+            System.out.println("Underflow occurred..");
+            System.exit(1);
+        }
 
-	free(temp);
+        if (head == end)
+        {
+            end = null;
+        }
 
-}
+        --length;
+        int ret = head.data;
+        head = head.next;
+        return ret;
+    }
+    
+    public Integer peek()
+    {
+        if (end == null)
+        {
+            System.out.println("Queue is empty..");
+            return null;
+        }
 
-bool isEmpty(const Queue * const q)
-{
-	return q->size == 0;
-}
+        return head.data;
+    }
 
-elem front(const Queue * const q)
-{
-	assert(q->head!=NULL);
-	return q->head->data;
-}
+    public boolean isEmpty()
+    {
+        return length == 0;
+    }
 
-elem back(const Queue * const q)
-{
-	assert(q->tail!=NULL);
-	return q->tail->data;
-}
+    public int getSize()
+    {
+        return length;
+    }
 
-int size(const Queue * const q)
-{
-	return q->size;
-}
-```
+    // Helper class
+    class Node
+    {
+        private Integer data;
+        private Node next;
 
-### Array based Queue <a id="array"></a>
+        public Node(Integer data)
+        {
+            this.data = data;
+        }
+    }
 
-```c
-void enqueue(Queue *q, elem data)
-{
-	if(q->size >= q->capacity)
-	{
-		printf("Queue is full\n");
-		return;
-	}
-
-	q->queue[q->size] = data;
-	++(q->size);
-}
-
-void dequeue(Queue *q)
-{
-	if(q->size < 1)
-	{
-		printf("Queue is empty\n");
-		return;
-	}
-
-	--(q->size);
-}
-
-bool isEmpty(const Queue * const q)
-{
-	return q->size == 0;
-}
-
-elem front(const Queue * const q)
-{
-	if(q->size <= 0)
-	{
-		return -1;
-	}
-
-	return (q->queue)[0];
-}
-
-elem back(const Queue * const q)
-{
-	if(q->size <= 0)
-	{
-		return -1;
-	}
-	return (q->queue)[q->size-1];
-}
-
-int size(const Queue * const q)
-{
-	return q->size;
 }
 ```
 
+<div class="divider"></div>
+### Array-based <a id="array"></a>
+
+```java
+public class Queue
+{
+    private int[] queue;
+    private int front;    // points to front element
+    private int rear;     // points to last element 
+    private int size;     // maximum size of the queue
+    private int capacity; // current size of the queue
+
+    // Constructor
+    public Queue(int n)
+    {
+        queue = new int[n];
+        size = n;
+        front = 0;
+        rear = -1;
+        capacity = 0;
+    }
+
+    // Inserts an item to the queue
+    public void enqueue(int data)
+    {
+        if (isFull())
+        {
+            System.out.println("Overflow occurred..");
+            System.exit(1);
+        }
+
+        System.out.println("Inserting " + data);
+
+        rear = (rear + 1) % size;
+        queue[rear] = data;
+        ++capacity;
+    }
+
+    // Removes front element from the queue
+    public int dequeue()
+    {
+        if (isEmpty())
+        {
+            System.out.println("Underflow occurred..");
+            System.exit(1);
+        }
+
+
+        int item = queue[front];
+        System.out.println("Dequeue " + item);
+
+        front = (front + 1) % size;
+        --capacity;
+
+        return item;
+    }
+
+    // Return front element in the queue
+    public Integer peek()
+    {
+        if (isEmpty())
+        {
+            System.out.println("Queue is empty..");
+            return null;
+        }
+
+        return queue[front];
+    }
+
+    public boolean isEmpty()
+    {
+        return capacity == 0;
+    }
+
+    public boolean isFull()
+    {
+        return capacity == size;
+    }
+
+    public int getSize()
+    {
+        return size;
+    }
+}
+```
+
+<div class="divider"></div>
 ## Applications of Queue <a id="app"></a>
 - BFS (Breadth First Search)
-- OS Scheduling
-- Disk Scheduling
-- Print Queue
 - Customer Queue (market, bank, ..., etc)
-
-## Problems to Try <a id="problem"></a>
-- [Printer Queue](https://www.acmicpc.net/problem/1966)
-
-## References <a id="ref"></a>
-- [acmicpc.net](https://www.acmicpc.net/)
-- [cppreference : queue](https://en.cppreference.com/w/cpp/container/queue)
+- Disk Scheduling
+- OS Scheduling
+- Print Queue
