@@ -14,9 +14,18 @@
         {% endif %}
 	{% endif %}
 
-	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
+	<a class="mainlogo" href="{{ link | prepend: site.baseurl | prepend: site.url }}">
 		<img src="{{ site.logo_url }}" alt="" class="logo-avatar">
 	</a>
 	<span class="logo-prompt code">{{ prompt }}</span>
 
+    <div>
+    <a href="https://www.github.com/muicode" style="border-bottom: 0px;">
+    <img src="/assets/logo-github.png" width="18px" height="18px"/>
+    </a>
+    &nbsp;
+    <a href="https://twitter.com/_muicode" style="border-bottom: 0px;">
+    <img src="/assets/logo-twitter.png" width="18px" height="18px"/>
+    </div>
 </aside>
+
