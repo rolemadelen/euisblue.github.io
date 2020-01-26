@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data Structure] Circular Linked List"
+title: "Circular Linked List"
 ref: ds-circular-linkedlist
 date: 2019-04-01 10:36:00
 categories: 
