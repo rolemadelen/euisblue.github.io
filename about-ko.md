@@ -5,45 +5,22 @@ ref: about
 lang: ko
 ---
 
-<div class="code">
-<h3>학력</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-University of California, San Diego  (2019)<br>
- B.S. Cognitive Science w/ Spec. in HCI
-</ul>
+안녕하세요. Jii입니다.
+
+한국에서 태어나 초등학교 2~3학년까지 다니고, 후에 미국에 이민을 와서 (자다 일어났더니 공항->비행기->미국) 
+2019년에 [대학교](https://ucsd.edu/)를 졸업했습니다.
+
+고등학교 졸업하기 전까지 게임에 빠져 살다가 우연히 C언어를 접하게 됐고, 그때부터 프로그래밍 세계에 발을 들이게 됐습니다. 
+대학을 컴공과로 가지는 못했지만, 개발 수업도 들으면서 남는 거의 모든 시간을 프로그래밍에 할애했고, 웬만한 컴공과 학부생들보다 실력이 있다고 자부했습니다.
+
+하지만 대학교를 졸업한 지금의 저는, 개발자로서 취업에 실패한, 딱히 내세울 것 하나 없고 프로그래밍 조금 하는 비전공자에 불과하네요.
+
+실패라고 했지만 포기하지는 않았습니다. 저는 [안자이(안한수)](http://ohfun.net/contents/article/images/2017/0320/1489990520869627.jpeg) 선생님을 좋아하거든요.
+
+이번에 시작하게 될 일이 개발과는 전혀 상관이 없지만, 계속해서 개발 공부를 하며 포기하지 않고 소프트웨어 개발자를 목표로 할 생각입니다.
+
+<div class="center" style="color: #8f0000; font-style: italic; font-size:14px;">
+"중요한 것은 죽음 그 자체도, 몇 살에 죽느냐도 아니라<br> 죽는 순간에 무엇을 하고 있었는가다."
 </div>
 
-<div class="code">
-<h3>기술</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-main language: C, C++ <br>
-conversational: Java <br>
-tourist: Python, Ruby, C#
-<br>
-<br>
-os: Linux, Windows
-</ul>
-</div>
-
-<div class="code">
-<h3>취미</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-Taiko, Japanese Drumming (2018 ~ present) <br>
-- Asayake Taiko - San Diego, CA <br>
-- LA Taiko Institute - Torrance, CA
-</ul>
-</div>
-
-<br>
-<div style="padding-left: 35px;">
-<img src="./assets/about/me.png" width="320px" height="450px" />
-</div>
-
-<div class="divider"></div>
-
-<ul class="center">
-<span style="color: #a4a4a4; font-style: italic; font-size:10px;">
-"죽음 그 자체도, 몇 살에 죽느냐도 아니라 죽는 순간에 무엇을 하고 있었는가다." <br>
-- Paloma from Le Hérisson
-</span>
-</ul>
+언젠가 책에서 봤던 문구 중 하나로, 제가 가장 좋아하는 말입니다. 뭐가 됐든, 죽는 순간에 후회하지 않을 수 있으면 좋겠습니다.
