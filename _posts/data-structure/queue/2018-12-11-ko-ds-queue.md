@@ -16,7 +16,7 @@ lang: ko
   + [연결 리스트(Linked List) 기반](#linkedlist)
   + [배열(Array) 기반](#array)
 - [사용 사례](#app)
-- [풀어 볼 문제](#try)
+- [풀어볼 문제](#try)
 
 <div class="divider"></div>
 ## 큐(Queue) 란? <a id="concept"></a>
@@ -231,15 +231,15 @@ public class Queue
 ```
 
 <div class="divider"></div>
-## 큐의 사용 사례 <a id="app"></a>
+## 사용 사례 <a id="app"></a>
 - 너비 우선 탐색 (Breadth First Search)
 - OS 작업 일정
 - Disk 작업 일정
 - 대기열
 
 <div class="divider"></div>
-## 풀어 볼 문제 <a id="problem"></a>
+## 풀어볼 문제 <a id="try"></a>
 From. @[acmicpc.net](https://www.acmicpc.net/problem/10845)
 
-- [큐](https://www.acmicpc.net/problem/10845)
-- [프린터 큐](https://www.acmicpc.net/problem/10845)
+- [1966. 프린터 큐](https://www.acmicpc.net/problem/1966)
+- [10845. 큐](https://www.acmicpc.net/problem/10845)
