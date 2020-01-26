@@ -23,13 +23,10 @@ only reference the next node.
 
 ![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
 
-It is a simple data structure but does have risky parts to take care of. 
-If the address of the particular node is lost or overridden, you no longer have access 
-to any data linked by that node.
+It is a simple data structure but has risky parts to take care of. If we lose the address of head, then we have no way of accessing to other nodes linked to head.
 
-The **constant** time of insertion and deletion is the advantage of the list. 
-But it takes a **linear** time for access because you must traverse from the first node 
-to the target node.
+The **O(1)**  *insert* and *delete* is the advantage of the list. 
+But it takes **O(n)** for *access* because we need to traverse the list to locate that specific node.
 
 <div class="divider"></div>
 ## Operations <a id="op"></a>
