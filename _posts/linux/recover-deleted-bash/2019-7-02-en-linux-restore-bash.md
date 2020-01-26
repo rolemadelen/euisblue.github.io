@@ -9,16 +9,16 @@ lang: en
 ---
 
 ## "i know what i'm doing"
-For this [post](./en-linux-disable-keyboard) which is about activating/deactivating the
+For this [post](./en-linux-disable-keyboard), which is about activating and deactivating the
  internal keyboard, I created a script file that switches on and off the keyboard when executed.
-Wanting to run this script globally, I decided to move it to `/bin`.
+Wanting to run this script globally, I tried to move it to `/bin`.
 
-Moving a file from one to other location is easy, just use `mv`. So I typed
+Moving a file from one to other location is easy, just use `mv`. So I typed:
 ```bash
 mui:~$ sudo mv kbd.bat /bin
 ```
 
-which is right but before I press *enter*, my nitwit *[migi](https://hero.fandom.com/wiki/Migi)* 
+which is right, but before I press *enter*, my nitwit *[migi](https://hero.fandom.com/wiki/Migi)* 
 pressed extra keys and typed
 
 ```bash
@@ -34,14 +34,14 @@ My terminal. It crashed.
 <div class="divider"></div>
 
 ## "trust me, i know what i'm doing"
-Lets reinstall the bash. That's going to solve the problem.
+Lets reinstall the bash. That will solve the problem.
 
 Since I can't use my shell, I had to come up with other ways to type shell commands.
-I rememberd there's a *custom command* option that I can use that runs automatically when I open the shell.
+I remembered there's a *custom command* option that I can use that runs automatically when I open the shell.
 
-So I went to `Preference -> Command` and typed `sudo apt-get install --reinstall bash` as a custom command to be executed.
+So I went to `Preference -> Command` and filled in the custom command box with `sudo apt-get install --reinstall bash`.
 
-I launched a new shell and it executed my custom commands.
+Then I launched a new shell, and I see its executing my commands.
 
 It's working...
 
