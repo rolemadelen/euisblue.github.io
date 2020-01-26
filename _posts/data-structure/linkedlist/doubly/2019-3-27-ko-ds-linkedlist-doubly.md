@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[자료구조] 이중 연결 리스트"
+title: "이중 연결 리스트 (Doubly Linked List)"
 ref: ds-doubly-linkedlist
 date: 2019-03-27 16:18:00
 categories: 
@@ -9,25 +9,15 @@ lang: ko
 ---
 
 ## 목차
-- [기본 개념](#concept)
+- [이중 연결 리스트란?](#concept)
 - [연산](#op)
 - [구현](#implement)
 - [사용 사례](#app)
-- [Reference](#ref)
-<hr />
-<br />
+- [참조](#ref)
 
-## 기본 개념 <a id="concept"></a>
+<div class="divider"></div>
+## 이중 연결 리스트란? <a id="concept"></a>
 다음 노드뿐만 아니라 이전 노드의 참조도 가능한 이중 연결 리스트이다.
-
-```c
-typedef struct node_t
-{
-	struct node_t *next;
-	struct node_t *prev;
-	elem data;
-} Node;
-```
 
 이중으로 연결되어 있어 단일 리스트보다는 데이터 손상의 위험이 적다. 단일 리스트의 경우
 머리를 손상시키면 모든 데이터가 유실된다. 하지만 이중 리스트의 경우 꼬리에서부터 뒤로 
@@ -40,135 +30,166 @@ typedef struct node_t
 리스트의 장점으로는 빠른 데이터의 추가와 제거로 두 연산 모두 O(1)의 시간이 걸린다. <br />
 하지만 마지막 노드에 접근하기 위해서는 무조건 첫 노드부터 접근해야 되기때문에 O(n)의 시간이 걸린다.
 
-<br />
+<div class="divider"></div>
 ## 연산 <a id="op"></a>
-- **pushFront(..)** : 리스트 시작점에 노드를 추가한다.
-- **pushBack(..)** : 리스트 마지막에 노드를 추가한다.
-- **popFront(..)** : 리스트 첫 노드를 제거한다.
-- **popBack(..)** : 리스트 마지막 노드를 제거한다.
-- **insertAt(..)** : 원하는 위치의 노드를 추가한다.
-- **removeAt(..)** : 원하는 위치의 노드를 제거한다.
+- **insertFront** : 리스트 시작점에 데이터를 추가한다
+- **insertLast** : 리스트 끝에 데이터를 추가한다
+- **removeFront** : 리스트의 첫 노드를 제거한다
+- **removeLast** : 리스트의 마지막 노드를 제거한다
+- **traverse** : 리스트를 처음부터 순차적으로 출력한다
+- **reverseTraverse** : 리스트를 끝에서부터 순차적으로 출력한다
 
-<br />
+<div class="divider"></div>
 ## 구현 <a id="implement"></a>
-
-리스트 처음과 끝을 나타내는 더미 노드(Sentinel Node)를 사용하여 구현했다. 
-```c
-typedef struct slinkedlist_t
+```java
+public class DoublyLinkedList
 {
-	// Sentinel nodes
-	Node *dummy_head;
-	Node *dummy_tail;
-	size_t size;
-} SLinkedList;
+    private Node head;
+    private Node tail;
+    private int length;
+    
+    public DoublyLinkedList()
+    {
+        head = new Node(null);
+        tail = new Node(null);
+        
+        head.setNext(tail);
+        tail.setPrev(head);
+        
+        length = 0;
+    }
+    
+    public void insertFront(int data)
+    {
+        Node node = new Node(data);
+        if (isEmpty())
+        {
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(tail);
+            tail.setPrev(node);
+        }
+        else
+        {
+            Node old = head.getNext();
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(old);
+            old.setPrev(node);
+        }
+        
+        ++length;
+    }
+    
+    public void insertLast(int data)
+    {
+        Node node = new Node(data);
+
+        if (isEmpty())
+        {
+            head.setNext(node);
+            node.setPrev(head);
+            node.setNext(tail);
+            tail.setPrev(node);
+        }
+        else
+        {
+            Node old = tail.getPrev();
+            old.setNext(node);
+            node.setPrev(old);
+            node.setNext(tail);
+            tail.setPrev(node);         
+        }
+        
+        ++length;
+    }
+    
+    public Integer removeFront()
+    {
+        if (!isEmpty())
+        {
+            Node first = head.getNext();
+            int item = first.getData();
+            
+            head.setNext(first.getNext());
+            first.getNext().setPrev(head);
+            --length;
+            
+            return item;
+        }
+        
+        return null;
+    }
+    
+    public Integer removeLast()
+    {
+        if (!isEmpty())
+        {
+            Node last = tail.getPrev();
+            int item = last.getData();
+            
+            last.getPrev().setNext(tail);
+            tail.setPrev(last.getPrev());
+            --length;
+            
+            return item;
+        }
+        
+        return null;
+    }
+    
+    public boolean isEmpty()
+    {
+        return length == 0;
+    }
+    
+    public void traverse()
+    {
+        if (!isEmpty())
+        {
+            Node temp = head.getNext();
+            
+            while (temp.getNext() != tail)
+            {
+                System.out.print(temp.getData() + " --> ");
+                temp = temp.getNext();
+            }
+            System.out.println(temp.getData());
+        }
+        else
+        {
+            System.out.println("List is empty..");
+        }
+    }
+    
+    public void reverseTraverse()
+    {
+        if (!isEmpty())
+        {
+            Node temp = tail.getPrev();
+            
+            while (temp.getPrev() != head)
+            {
+                System.out.print(temp.getData() + " --> ");
+                temp = temp.getPrev();
+            }
+            System.out.println(temp.getData());
+        }
+        else
+        {
+            System.out.println("List is empty..");
+        }
+    }
+}
 ```
 
-``` c
-void pushFront(DLinkedList *list, elem data)
-{
-	Node *newNode = createNode(data);
-	connectLink(newNode, list->dummy_head->next);
-	connectLink(list->dummy_head, newNode);
-	
-	++list->size;
-}
-
-void pushBack(DLinkedList *list, elem data)
-{
-	Node *lastNode = list->dummy_tail->prev;
-	Node *newNode = createNode(data);
-	connectLink(lastNode, newNode);
-	connectLink(newNode, list->dummy_tail);
-
-	++list->size;
-}
-
-void popFront(DLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_head->next;
-		free(list->dummy_head);
-		temp->prev = NULL;
-		list->dummy_head = temp;
-
-		--list->size;
-	}
-}
-
-void popBack(DLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_tail->prev;
-		free(list->dummy_tail);
-		temp->next = NULL;
-		list->dummy_tail = temp;
-
-		--list->size;
-	}
-}
-
-void insertAt(DLinkedList *list, int pos, elem data)
-{
-	if(pos <= 1)
-	{
-		pushFront(list, data);
-	}
-	else if(pos > list->size)
-	{
-		pushBack(list, data);
-	}
-	else if(pos > 0 && pos <= list->size)
-	{
-		Node *newNode = createNode(data);
-		Node *temp = list->dummy_head;
-
-		while(--pos)
-		{
-			temp = temp->next;
-		}
-
-		connectLink(newNode, temp->next);
-		connectLink(temp, newNode);
-		++list->size;
-	}
-}
-
-void removeAt(DLinkedList *list, int pos)
-{
-	if(pos <= 1)
-	{
-		popFront(list);
-	}
-	else if(pos > list->size)
-	{
-		popBack(list);
-	}
-	else
-	{
-		Node *temp = list->dummy_head;
-		while(pos--)
-		{
-			temp = temp->next;
-		}
-
-		connectLink(temp->prev, temp->next);
-		free(temp);
-
-		--list->size;
-	}
-}
-```
-
-<br />
+<div class="divider"></div>
 ## 사용 사례<a id="app"></a>
 - [쓰레드 스케쥴러](http://web.cecs.pdx.edu/~harry/Blitz/BlitzDoc/ThreadScheduler.htm)
 - 음악 플레이어
   + 다음/이전 버튼
 - 실행취소/재실행 기능
 
-<br />
-## Reference <a id="ref"></a>
-- [Wikipedia : Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list)
-- [Namu Wiki : Doubly Linked List](https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8)
+<div class="divider"></div>
+## 참조 <a id="ref"></a>
+- [https://en.wikipedia.org/wiki/Doubly_linked_list](https://en.wikipedia.org/wiki/Doubly_linked_list)
