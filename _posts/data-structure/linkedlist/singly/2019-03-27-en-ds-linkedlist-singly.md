@@ -9,181 +9,239 @@ lang: en
 ---
 
 ## Contents
-- [Concept](#sll)
+- [What is Single Linked List?](#sll)
 - [Operations](#op)
-- [Implementations](#implementation)
+- [Implementation](#implementation)
 - [Applications](#app)
-- [Problems to Try](#problem)
+- [Pracitce](#try)
 - [Reference](#ref)
-<hr />
-<br />
 
-## Concept <a id="sll"></a>
-Singly Linked List is the most basic form of a linked list in which current node can 
+<div class="divider"></div>
+## What is Singly Linked List? <a id="sll"></a>
+Singly Linked List is the most basic form of a linked list in which the current node can 
 only reference the next node.
 
-```c
-typedef struct node_t
-{
-	struct node_t *next;
-	elem data;
-} Node;
-```
+![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
 
-It is a simple data structure but does have risky parts to take care of. <br />
-If address of the particular node is lost or overridden, you no longer have an access
+It is a simple data structure but does have risky parts to take care of. 
+If the address of the particular node is lost or overridden, you no longer have access 
 to any data linked by that node.
 
-The **constant** time of insertion and deletion is the advantage of the list. <br />
-But it takes **linear**time for an access because you must traverse from the first node 
+The **constant** time of insertion and deletion is the advantage of the list. 
+But it takes a **linear** time for access because you must traverse from the first node 
 to the target node.
 
-<br />
+<div class="divider"></div>
 ## Operations <a id="op"></a>
-- **pushFront(..)** : insert node at the beginning
-- **pushBack(..)** : insert node at the end
-- **popFront(..)** : remove first node
-- **popBack(..)** : remove last node
-- **insertAt(..)** : insert node to the list
-- **removeAt(..)** : remove node in the list
+- **insertFront** : inserts the element at the front
+- **insertLast** : inserts the element at the end
+- **insertAt** : inserts the element at the specified position
+- **removeFront** : remove the head (first element)
+- **removeLast** : removes the tail (last element)
+- **removeAt** : removes the element at the specified position
 
-<br />
+<div class="divider"></div>
 ## Implementation <a id="implementation"></a>
-This linked list use two sentinel nodes to distinguish the beginning and end of the list.
-```c
-typedef struct slinkedlist_t
+
+```java
+public class SinglyLinkedList
 {
-	// Sentinel nodes
-	Node *dummy_head;
-	Node *dummy_tail;
-	size_t size;
-} SLinkedList;
+    private Node head;
+    private int length;
+
+    // Constructor
+    public SinglyLinkedList()
+    {
+        head = null;
+        length = 0;
+    }
+
+    // inserts the element at the front
+    public void insertFront(int data)
+    {
+        Node node = new Node(data);
+        node.setNext(head);
+        head = node;
+        ++length;
+    }
+
+    // inserts the element at the end
+    public void insertLast(int data)
+    {
+        Node node = new Node(data);
+        if (head == null)
+        {
+            head = node;
+        }
+        else
+        {
+            Node temp = head;
+            while (temp.getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+            temp.setNext(node);
+        }
+
+        ++length;
+    }
+
+    // inserts the element at the specified position
+    public void insertAt(int data, int position)
+    {
+        if (position > length)
+        {
+            insertLast(data);
+        }
+        else if (position <= 1)
+        {
+            insertFront(data);
+        }
+        else
+        {
+            Node node = new Node(data);
+
+            Node temp = head;
+            while (--position > 1)
+            {
+                temp = temp.getNext();
+            }
+
+            node.setNext(temp.getNext());
+            temp.setNext(node);
+
+            ++length;
+        }
+    }
+
+    // remove the head (first element)
+    public Integer removeFront()
+    {
+        if (head == null)
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        int item = head.getData();
+        head = head.getNext();
+        --length;
+
+        return item;
+    }
+
+    // remove the tail (last element)
+    public Integer removeLast()
+    {
+        int item;
+
+        if (head == null)
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        if (head.getNext() == null)
+        {
+            item = head.getData();
+            head = null;
+        }
+        else
+        {
+            Node temp = head;
+
+            while (temp.getNext().getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+
+            item = temp.getNext().getData();
+            temp.setNext(null);
+        }
+
+        --length;
+
+        return item;
+    }
+
+    // removes the element at the specified position
+    public Integer removeAt(int position)
+    {
+        int item;
+
+        if (isEmpty())
+        {
+            System.out.println("List is empty..");
+            return null;
+        }
+
+        if (position >= length)
+        {
+            item = removeLast();
+        }
+        else if (position <= 1)
+        {
+            item = removeFront();
+        }
+        else
+        {
+            Node temp = head;
+            while (--position > 1)
+            {
+                temp = temp.getNext();
+            }
+
+            item = temp.getNext().getData();
+            temp.setNext(temp.getNext().getNext());
+            --length;
+        }
+
+        return item;
+    }
+
+    // print all elements in the list
+    public void traverse()
+    {
+        if (isEmpty())
+        {
+            System.out.println("List is empty..");
+            return;
+        }
+
+        Node temp = head;
+        for (int i=0; i<length-1; ++i)
+        {
+            System.out.print(temp.getData() + " ---> ");
+            temp = temp.getNext();
+        }
+        System.out.println(temp.getData());
+    }
+
+    public int getSize()
+    {
+        return length;
+    }
+
+    public boolean isEmpty()
+    {
+        return length == 0;
+    }
+}
 ```
 
-``` c
-void pushFront(SLinkedList *list, elem data)
-{
-	Node *newNode = createNode(data);
-	Node *temp = list->dummy_head->next;
-
-	connectLink(list->dummy_head, newNode);
-	connectLink(newNode, temp);
-	
-	++list->size;
-}
-
-void pushBack(SLinkedList *list, elem data)
-{
-	// locate the last node
-	Node *lastNode = list->dummy_head;
-	while(lastNode->next != list->dummy_tail)
-	{
-		lastNode = lastNode->next;
-	}
-
-	// add new node
-	Node *newNode = createNode(data);
-	connectLink(lastNode, newNode);
-	connectLink(newNode, list->dummy_tail);
-
-	++list->size;
-}
-
-void popFront(SLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		Node *temp = list->dummy_head->next->next;
-		free(list->dummy_head->next);
-		connectLink(list->dummy_head, temp);
-		--list->size;
-	}
-}
-
-void popBack(SLinkedList *list)
-{
-	if(list->size != 0)
-	{
-		// locate the last node
-		Node *lastNode = list->dummy_head;
-		while(lastNode->next->next != list->dummy_tail)
-		{
-			lastNode = lastNode->next;
-		}
-
-		// remove the last node and reconnect links
-		free(lastNode->next);
-		connectLink(lastNode, list->dummy_tail);
-		--list->size;
-	}
-}
-
-void insertAt(SLinkedList *list, int pos, elem data)
-{
-	if(pos <= 0)
-	{
-		pushFront(list, data);
-	}
-	else if(pos > list->size)
-	{
-		pushBack(list, data);
-	}
-	else if(pos > 0 && pos <= list->size)
-	{
-		Node *temp = list->dummy_head;
-		for(size_t i=0; i<pos; ++i)
-		{
-			temp = temp->next;
-		}
-
-		Node *newNode = createNode(data);
-		connectLink(newNode, temp->next);
-		connectLink(temp, newNode);
-
-		++list->size;
-	}
-}
-
-void removeAt(SLinkedList *list, int pos)
-{
-	if(pos <= 0)
-	{
-		popFront(list);
-	}
-	else if(pos > list->size)
-	{
-		popBack(list);
-	}
-	else
-	{
-		Node *prev = list->dummy_head;
-		for(size_t i=0; i<pos-1; ++i)
-		{
-			prev = prev->next;
-		}
-
-		Node *temp = prev->next->next;
-		free(prev->next);
-		connectLink(prev, temp);
-
-		--list->size;
-	}
-}
-```
-
-<br />
+<div class="divider"></div>
 ## Applications <a id="app"></a>
 - Stack
 - Queue
 - Hash Chaining
 - FAT File System - Chunking
 
-<br />
-## Problems to Try <a id="problem"></a>
- - [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
- - [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+<div class="divider"></div>
+## Practice <a id="try"></a>
+From. @[LeetCode](https://leetcode.com)
+ - [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+ - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-<br />
+<div class="divider"></div>
 ## Reference <a id="ref"></a>
-- [Wikipedia : Linked list](https://en.wikipedia.org/wiki/Linked_list)
-- [Namu Wiki : Linked List](https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8)
+- [https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
