@@ -18,32 +18,28 @@ lang: en
 - [Applications](#app)
 
 <div class="divider"></div>
-## Concept <a id="concept"></a>
-A linear data structure that follows **FIFO**(First-In First-Out) design which an element that
-came in first is served first. An element can only be inserted/deleted at the one end of the container.
+## What is Queue? <a id="concept"></a>
+Queue is a linear data structure that follows **FIFO**(First-In-First-Out) design in which the element that came in first
+is tested first. In Queue, the insertion and deletion happens only at the one end of the container.
 
 <div class="divider"></div>
 ## Operations <a id="op"></a>
 The *front* refers to the *head* of the container and the *back* refers to the *tail* (or top) of the container.
- - **void enqueue(..)**: inserts a data.
- - **void dequeue(..)**: removes a data.
- - **T peek(..)**: return recently added data.
- - **bool isEmpty(..)**: determine whether the container is empty.
- - **int size(..)**: return the number of elements in the container.
+ - **enqueue**: inserts the element
+ - **dequeue**: removes the element
+ - **peek**: returns the element recently added
 
 <div class="divider"></div>
 ## Implementation <a id="implement"></a>
-Queue can be implemented using a linked list or an array and each system has both pros and cons.
+We can implement Queue using a linked list or an array and each design has pros and cons.
 
-If Queue is implemented with a linked list,
-we can insert/delete elements in O(1) time, but access requires O(n) time.
+If we use a **linked list** to implement Queue,
+we can *insert* or *delete* elements in O(1), but it takes O(n) for *access*.
 
-If Queue is implemented with an array,
-we can insert elements in O(1) time, but
-deleting now takes O(n) due to shifting of elements.
-But access can be done in O(1) time.
+If we use an **array** to implement Queue, we can *insert* and *access* elements in O(1), but *deletion* becomes O(n) because of shifting.
 
-If number of operations on insert/delete is dominating the number of operations on access, it is better to choose Linked List rather than Array and vice versa.
+Use a linked list if the insert and delete operations are dominating the number of access operations. If it's other way around, use an array.
+
  
 <div class="divider"></div>
 ### LinkedList-based  <a id="linkedlist"></a>
