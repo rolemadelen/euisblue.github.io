@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data Structure] Doubly Linked List"
+title: "Doubly Linked List"
 ref: ds-doubly-linkedlist
 date: 2019-03-27 16:18:00
 categories: 

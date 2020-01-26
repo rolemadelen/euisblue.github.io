@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data Structure] Priority Queue"
+title: "Priority Queue"
 ref: ds-priority-queue
 date: 2019-04-03 08:30:00
 categories: 
