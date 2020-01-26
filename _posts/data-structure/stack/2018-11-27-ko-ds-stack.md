@@ -211,7 +211,7 @@ public class Stack {
 ## 풀어볼 문제 <a id="try"></a>
 From. @[acmicpc.net](https://www.acmicpc.net)
 
-- [스택](https://www.acmicpc.net/problem/10828)
-- [괄호](https://www.acmicpc.net/problem/9012)
-- [후위 표기식](https://www.acmicpc.net/problem/1918)
-- [키로거](https://www.acmicpc.net/problem/5397)
+- [1918. 후위 표기식](https://www.acmicpc.net/problem/1918)
+- [5397. 키로거](https://www.acmicpc.net/problem/5397)
+- [9012. 괄호](https://www.acmicpc.net/problem/9012)
+- [10828. 스택](https://www.acmicpc.net/problem/10828)
