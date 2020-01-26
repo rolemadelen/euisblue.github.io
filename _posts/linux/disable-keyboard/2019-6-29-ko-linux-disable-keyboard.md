@@ -10,10 +10,10 @@ lang: ko
 
 ## 목차
 - [키보드 비활성화하기](#disable)
-- [실행파일 아이콘 만들기](#launcher)
+- [실행 파일 아이콘 만들기](#launcher)
   * [script](#script)
   * [.deskotp](#desktop)
-  * [도크에 실행파일 추가](#dock)
+  * [도크에 실행 파일 추가](#dock)
 - [참조](#ref)
 
 <div class="divider"></div>
@@ -55,12 +55,12 @@ xinput enable "AT Translated Set 2 keyboard"
 
 <div class="divider"></div>
 
-## 실행파일 아이콘 만들기 <a id="launcher"></a>
+## 실행 파일 아이콘 만들기 <a id="launcher"></a>
 매번 터미널을 열고 명령어를 입력하는 과정이 번거로우니, 
 클릭 한 번으로 활성화/비활성화가 가능하도록 실행 파일을 만들어보자.
 
 ### script <a id="script"></a>
-첫 번째로, 실행파일을 클릭했을 때 실행될 코드를 작성해보자.
+첫 번째로, 실행 파일을 클릭했을 때 실행될 코드를 작성해보자.
 
 ```bash
 #!/bin/bash
@@ -90,8 +90,8 @@ Device Enabled (168):   0
 문자열 끝에 숫자만 알면 되기 때문에 `${kbd: -1}`을 사용해서 마지막 문자를 가져왔다. 
 이 값에 따라 알맞은 명령어를 실행하면 된다.
 
-스크립트를 작성 했으면 이를 실행 가능하도록 권한을 설정한 다음 `/bin/` 폴더로 옮겨준다.
-권한설정을 하지 않으면 후에 실행파일을 만들었을 때 클릭을 해도 반응을 하지 않는다.
+스크립트를 작성했으면 이를 실행 가능하도록 권한을 설정한 다음 `/bin/` 폴더로 옮겨준다.
+권한설정을 하지 않으면 후에 실행 파일을 만들었을 때 클릭을 해도 반응을 하지 않는다.
 
 ```bash
 chmod u+x kbd-switch
@@ -99,10 +99,10 @@ mv kbd-switch /bin/
 ```
 
 ### .desktop <a id="desktop"></a>
-실행파일의 아이콘을 만들기 위해 `.desktop` 파일을 만들어야 한다.
+실행 파일의 아이콘을 만들기 위해 `.desktop` 파일을 만들어야 한다.
 
 필요한 정보는 두 가지:
-1. 사용할 실행파일 아이콘의 경로: `/usr/share/icons/icon.png`
+1. 사용할 실행 파일 아이콘의 경로: `/usr/share/icons/icon.png`
 2. 스크립트 파일의 경로: `/bin/kbd-switch`
 
 준비가 되었다면 원하는 편집기를 열고 아래의 내용을 입력한다:
@@ -119,14 +119,14 @@ Comment="Keyboard On/Off Runnnig"
 Icon=/usr/share/icons/kbd.png
 ```
 
-`kbd-switch.desktop`라는 이름으로 저장 후 실행한다. 팝업 창이 뜰 경우 
+`kbd-switch.desktop`이라는 이름으로 저장 후 실행한다. 팝업 창이 뜰 경우 
 `Trust and Launch`를 클릭한다.
 
-### 도크에 실행파일 추가하기 <a id="dock"></a>
+### 도크에 실행 파일 추가하기 <a id="dock"></a>
 
-실행파일을 시작 어플리케이션에서 찾을 수 있도록 `.desktop`파일을 `/usr/share/applications/` 또는 `~/.local/share/applications/`으로 옮겨준다.
+실행 파일을 시작 애플리케이션에서 찾을 수 있도록 `.desktop`파일을 `/usr/share/applications/` 또는 `~/.local/share/applications/`으로 옮겨준다.
 
-시작 어플리케이션에서 실행파일을 찾아 마우스 오른쪽 버튼 클릭, `Add to Favorites`을 클릭하면 도크에 추가가 된다.
+시작 애플리케이션에서 실행 파일을 찾아 마우스 오른쪽 버튼 클릭, `Add to Favorites`를 클릭하면 도크에 추가가 된다.
 
 ![dock image](/assets/images/linux/how-to/disable-keyboard/dock.png)
 
