@@ -21,32 +21,28 @@ lang: en
 <div class="divider"></div>
 
 ## What is Stack? <a id="concept"></a>
-A linear data structure that follows **LIFO** (Last-In First-Out) or **FILO** (First-In Last-Out) design which an element that came in first is evaluated last. An element can only be inserted/deleted at the one end of the container.
+Stack is a linear data structure that follows **LIFO** (Last-In-First-Out) or **FILO** (First-In-Last-Out) design in which it tests an element that came in first, last. 
+In Stack, the insertion and deletion happens only at the end of the container.
 
 <div class="divider"></div>
 ## Operations <a id="op"></a>
-Due to the **LIFO** characteristic of Stack, the top element refers to the most recently added item in the container.
+For the **LIFO** characteristic of Stack, the top element refers to the most recently added item in the container.
 
- - **void push(..)**: inserts element at the top
- - **void pop(..)**: removes the top element
- - **T top(..)**: returns the top element
- - **boolean isEmpty(..)**: checks whether the container is empty
- - **int getSize(..)**: returns the number of elements.
+ - **push**: inserts element at the top
+ - **pop**: removes the top element
+ - **top**: returns the top element
+ - **isEmpty**: checks whether the container is empty
+ - **getSize**: returns the number of elements
 
 <div class="divider"></div>
 ## Implementation <a id="implement"></a>
- Stack can be implemented using a linked list or an array and each system has both pros and cons.
+We can implement Stack using a linked list or an array and each design has pros and cons.
 
- If Stack is implemented with a **linked list**,
- - we can insert/delete elements in O(1) time.
- - But access requires O(n) time.  
+If we implement Stack using a **linked list**, we can *insert* or *delete* elements in O(1), but *access* takes O(n).
 
- If Stack is implemented with an **array**,
- - we can insert elements in O(1) time, but
- - deleting now takes O(n) due to shifting of elements. 
- - But access can be done in O(1) time.
+If we implement Stack using an **array**, we can *insert* and *access* elements in O(1), but *deletion* becomes O(n) because of shifting.
 
- If number of operations on insert/delete is dominating the number of operations on access, it is better to choose Linked List rather than Array and vice versa.
+Use a linked list if the insert and delete operations are dominating the number of access operations. If it’s other way around, use an array.
 
 <div class="divider"></div>
 ### LinkedList-based <a id="linkedlist"></a>
