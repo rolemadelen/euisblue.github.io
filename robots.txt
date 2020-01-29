@@ -6,4 +6,4 @@ layout: null
 sitemap: {{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}
 
 User-agent: *
-disallow: /
+Allow: /
