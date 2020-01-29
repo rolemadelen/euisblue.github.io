@@ -34,11 +34,6 @@ Taiko, Japanese Drumming (2018 ~ present) <br>
 </ul>
 </div>
 
-<br>
-<div style="padding-left: 35px;">
-<img src="./assets/about/me.png" width="320px" height="450px" />
-</div>
-
 <div class="divider"></div>
 
 <ul class="center">
