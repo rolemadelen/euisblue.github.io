@@ -24,7 +24,7 @@ lang: ko
 ![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
 <br>
 <span class="image-source">
-[(사진 출처: https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
+[(사진 출처: https://en.wikipedia.org/wiki/Linked_list)](https://en.wikipedia.org/wiki/Linked_list)
 </span>
 
 단순한 형태인 만큼 위험성 또한 존재하는데, 노드의 주소를 잃어버릴 경우 답이 없다.
