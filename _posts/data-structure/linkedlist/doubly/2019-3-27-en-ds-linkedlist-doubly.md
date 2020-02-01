@@ -13,13 +13,15 @@ lang: en
 - [Operations](#op)
 - [Implementation](#implement)
 - [Applications](#app)
-- [Reference](#ref)
 
 <div class="divider"></div>
 ## What is Doubly Linked List? <a id="concept"></a>
 Doubly Linked List is a linked list that has a reference to next and previous nodes.
 
-![Doubly Linked List](/assets/images/data-structure/linked-list/dll.png)
+![Doubly Linked List](/assets/images/data-structure/linked-list/dll.png)<br>
+<span class="image-source">
+[(image source: https://en.wikipedia.org/wiki/Doubly_linked_list)](https://en.wikipedia.org/wiki/Doubly_linked_list)
+</span>
 
 The structure of Doubly Linked List is safer than Singly Linked List in terms
 of data loss. If we lose the address of head in a singly linked list, we have no way of accessing to other nodes 
@@ -185,7 +187,3 @@ public class DoublyLinkedList
 - [Thread Scheduler](http://web.cecs.pdx.edu/~harry/Blitz/BlitzDoc/ThreadScheduler.htm)
 - Music Player - next & prev
 - Undo & Redo features
-
-<div class="divider"></div>
-## Reference <a id="ref"></a>
-- [https://en.wikipedia.org/wiki/Doubly_linked_list](https://en.wikipedia.org/wiki/Doubly_linked_list)
