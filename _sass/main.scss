@@ -407,3 +407,9 @@ section {
     -webkit-transform: none;
   }
 }
+
+span.image-source > a{
+    font-size: 10px;
+    border: 0px !important;
+    text-decoration: none;
+}
