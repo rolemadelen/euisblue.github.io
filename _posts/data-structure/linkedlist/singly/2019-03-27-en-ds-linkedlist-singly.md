@@ -25,9 +25,6 @@ only reference the next node.
 
 It is a simple data structure but has risky parts to take care of. If we lose the address of head, then we have no way of accessing to other nodes linked to head.
 
-The **O(1)**  *insert* and *delete* is the advantage of the list. 
-But it takes **O(n)** for *access* because we need to traverse the list to locate that specific node.
-
 <div class="divider"></div>
 ## Operations <a id="op"></a>
 - **insertFront** : inserts the element at the front
