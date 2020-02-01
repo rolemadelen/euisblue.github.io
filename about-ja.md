@@ -18,10 +18,6 @@ University of California, San Diego  (2019)<br>
 <ul style="padding-left: 35px; font-size: 13px">
 main language: C, C++ <br>
 conversational: Java <br>
-tourist: Python, Ruby, C#
-<br>
-<br>
-os: Linux, Windows
 </ul>
 </div>
 
