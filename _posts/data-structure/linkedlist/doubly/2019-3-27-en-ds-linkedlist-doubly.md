@@ -27,9 +27,6 @@ linked to the head. In a doubly linked list however, it is possible to access th
 traversing the list backward and reconnect missing links. But these additional nodes
 increases the workload and size of the structure.
 
-Unlike Singly Linked List where it takes linear time to delete a node, 
-Doubly Linked List can delete a node in constant time using *previous* and *next* references.
-
 <div class="divider"></div>
 ## Operations <a id="op"></a>
 - **insertFront** : inserts the element at the head (first element)
