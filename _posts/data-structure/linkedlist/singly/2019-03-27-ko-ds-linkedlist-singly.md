@@ -14,7 +14,6 @@ lang: ko
 - [구현](#implementation)
 - [사용 사례](#app)
 - [풀어볼 문제](#problem)
-- [참조](#ref)
 
 <div class="divider"></div>
 
@@ -23,6 +22,10 @@ lang: ko
 노드의 참조가 가능하다.
 
 ![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
+<br>
+<span class="image-source">
+[(사진 출처: https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
+</span>
 
 단순한 형태인 만큼 위험성 또한 존재하는데, 노드의 주소를 잃어버릴 경우 답이 없다.
 예를들어, 위에서 `12`의 값을 가진 첫 번째 노드에 실수로 `null`을 대입할 경우, 그 노드와 이어져 있는 `99`또는 `37`에 접근 할 방법이 없어진다.
@@ -237,7 +240,3 @@ public class SinglyLinkedList
 From. @[LeetCode](https://leetcode.com)
  - [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
  - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
-
-<div class="divider"></div>
-## 참조 <a id="ref"></a>
-- [https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)

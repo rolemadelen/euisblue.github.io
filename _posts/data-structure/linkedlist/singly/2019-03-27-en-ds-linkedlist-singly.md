@@ -14,14 +14,16 @@ lang: en
 - [Implementation](#implementation)
 - [Applications](#app)
 - [Pracitce](#try)
-- [Reference](#ref)
 
 <div class="divider"></div>
 ## What is Singly Linked List? <a id="sll"></a>
 Singly Linked List is the most basic form of a linked list in which the current node can 
 only reference the next node.
 
-![Singly Linked List](/assets/images/data-structure/linked-list/sll.png)
+![Singly Linked List](/assets/images/data-structure/linked-list/sll.png) <br>
+<span class="image-source">
+[(image source: https://en.wikipedia.org/wiki/Linked_list)](https://en.wikipedia.org/wiki/Linked_list)
+</span>
 
 It is a simple data structure but has risky parts to take care of. If we lose the address of head, then we have no way of accessing to other nodes linked to head.
 
@@ -235,7 +237,3 @@ public class SinglyLinkedList
 From. @[LeetCode](https://leetcode.com)
  - [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
  - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
-
-<div class="divider"></div>
-## Reference <a id="ref"></a>
-- [https://en.wikipedia.org/wiki/Linked_list](https://en.wikipedia.org/wiki/Linked_list)
