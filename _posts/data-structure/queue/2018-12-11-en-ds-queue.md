@@ -28,6 +28,8 @@ The *front* refers to the *head* of the container and the *back* refers to the *
  - **enqueue**: inserts the element
  - **dequeue**: removes the element
  - **peek**: returns the element recently added
+ - **isEmpty**: returns true if the container is empty; else returns false
+ - **getSize**: returns the total number elements in the container
 
 <div class="divider"></div>
 ## Implementation <a id="implement"></a>
