@@ -13,14 +13,16 @@ lang: ko
 - [연산](#op)
 - [구현](#implement)
 - [사용 사례](#app)
-- [참조](#ref)
 
 <div class="divider"></div>
 ## 이중 연결 리스트란? <a id="concept"></a>
 이중 연결 리스트(Doubly Linked List)는 각 노드가 다음과 이전 노드의 참조가 가능한 형태의 
 자료구조이다.
 
-![Doubly Linked List](/assets/images/data-structure/linked-list/dll.png)
+![Doubly Linked List](/assets/images/data-structure/linked-list/dll.png)<br>
+<span class="image-source">
+[(사진 출처: https://en.wikipedia.org/wiki/Doubly_linked_list)](https://en.wikipedia.org/wiki/Doubly_linked_list)
+</span>
 
 단일 리스트에서는 각 노드가 다음 노드를 참조하기 때문에 노드 하나를 잃어버릴 경우 그 다음 데이터들에
 접근할 방도가 전혀 없었다. 하지만 이중 연결 리스트의 경우 앞뒤로 참조가 가능하기 때문에
@@ -189,6 +191,3 @@ public class DoublyLinkedList
   + 다음/이전 버튼
 - 실행취소/재실행 기능
 
-<div class="divider"></div>
-## 참조 <a id="ref"></a>
-- [https://en.wikipedia.org/wiki/Doubly_linked_list](https://en.wikipedia.org/wiki/Doubly_linked_list)
