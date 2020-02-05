@@ -9,171 +9,185 @@ lang: en
 ---
 
 ## Contents
-- [Concept](#concept)
+- [What is Circular Linked List?](#concept)
 - [Operations](#op)
 - [Implementation](#implement)
-- [Reference](#ref)
-<hr />
-<br />
 
-## Concept <a id="concept"></a>
+<div class="divider"></div>
+
+## What is Circular Linked List? <a id="concept"></a>
 If a last node of a particular list points back to the first node or vice versa (when its applicable
 like doubly linked list), it creates a cycle and hence we call this a circular linked list, 
 because one can start from any node in the list and can come back to it simply by
 going around the list in a circle.
 
-Since I'll be implementing a circular linked list that is unidirectional, the structure of the Node
-is same as singly linked list's Node structure.
-```c
-typedef struct node_t
-{
-	struct node_t *next;
-	elem data;
-} Node;
-```
+![Circular Linked List](/assets/images/data-structure/linked-list/cll.png)<br>
+<span class="image-source">
+[(image source: https://en.wikipedia.org/wiki/Linked_list)](https://en.wikipedia.org/wiki/Linked_list#Circular_linked_list)
+</span>
 
-<br />
+<div class="divider"></div>
 ## Operations <a id="op"></a>
-- **pushFront(..)** : insert node at the beginning
-- **pushBack(..)** : insert node at the end
-- **popFront(..)** : remove first node
-- **popBack(..)** : remove last node
-- **insertAt(..)** : insert node to the list
-- **removeAt(..)** : remove node in the list
+- **insertFront** : insert node at the beginning
+- **insertLast** : insert node at the end
+- **removeFront** : remove first node
+- **removeLast** : remove last node
+- **insertAt** : insert node to the list
+- **removeAt** : remove node in the list
 
-<br />
+<div class="divider"></div>
 ## Implementation <a id="implement"></a>
-This implementation is based upon singly linked list, therefore nodes can only reference 
-the next node.
-
-Added extra node called tail to remember the last node for my sake of simplicity
-for implementing popBack and pushBack operations, which is totally optional.
-
-```c
-typedef struct slinkedlist_t
+```java
+public class CircularLinkedList 
 {
-	Node *head;
-	Node *tail;
-	size_t size;
-} SLinkedList;
+    Node head;
+    Node tail;
+    int size;
+
+    public CircularLinkedList()
+    {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    public void insertFront(int data)
+    {
+        if (head == null)
+        {
+            head = new Node(data);
+            tail = head;
+
+            // connect head to tail
+            head.setNext(tail);
+            head.setPrev(tail);
+
+            // connect tail back to head
+            tail.setPrev(head);
+            tail.setNext(head);
+        }
+        else
+        {
+            Node newHead = new Node(data);
+            head.setPrev(newHead);
+            newHead.setPrev(tail);
+            newHead.setNext(head);
+            head = newHead;
+
+            // connect tail to the new head
+            tail.setNext(head);
+        }
+
+        ++size;
+    }
+
+    public void insertLast(int data)
+    {
+        if (tail == null)
+        {
+            tail = new Node(data);
+            head = tail;
+
+            // connect tail to head
+            tail.setNext(head);
+            tail.setPrev(head);
+
+            // connect head back to tail
+            head.setPrev(tail);
+            head.setNext(tail);
+        }
+        else
+        {
+            Node newTail = new Node(data);
+            tail.setNext(newTail);
+            newTail.setPrev(tail);
+            newTail.setNext(head);
+            tail = newTail;
+
+            // connect head to the new tail
+            head.setPrev(tail);
+        }
+
+        ++size;
+    }
+
+    public Integer removeFront()
+    {
+        if (size == 0)
+        {
+            System.out.println("List is empty");
+            return null;
+        }
+
+        int data = head.getData();
+
+        if (size == 1)
+        {
+            head = null;
+            tail = null;
+        }
+        else
+        {
+            head = head.getNext();
+            head.setPrev(tail);
+            tail.setNext(head);
+        }
+
+        --size;
+        return data;
+    }
+
+    public Integer removeLast()
+    {
+        if (size == 0)
+        {
+            System.out.println("List is empty");
+            return null;
+        }
+
+        int data = tail.getData();
+
+        if (size == 1)
+        {
+            head = null;
+            tail = null;
+        }
+        else
+        {
+            tail = tail.getPrev();
+            tail.setNext(head);
+            head.setPrev(tail);
+        }
+
+        --size;
+        return data;
+    }
+
+    public void traverse()
+    {
+        if (head == null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = head;
+
+        while(hasNext(temp))
+        {
+            System.out.print(temp.getData() + " --> ");
+            temp = temp.getNext();
+        }
+        System.out.println(temp.getData());
+    }
+
+    public int getSize()
+    {
+        return size;
+    }
+
+    public boolean hasNext(Node node)
+    {
+        return node.getNext() != head;
+    }
+}
 ```
-
-```c
-void pushFront(CLinkedList *list, elem data)
-{
-	Node *temp = createNode(data);
-
-	if(list->head == NULL)
-	{
-		list->head = list->tail = temp;
-		list->head->next = list->tail;
-		list->tail->next = list->head;
-	}
-	else
-	{
-		temp->next = list->head;
-		list->head = temp;
-		list->tail->next = list->head;
-	}
-	++list->size;
-}
-
-void pushBack(CLinkedList *list, elem data)
-{
-	Node *temp = createNode(data);
-
-	if(list->tail == NULL)
-	{
-		list->head = list->tail = temp;
-		list->head->next = list->tail;
-		list->tail->next = list->head;
-	}
-	else
-	{
-		list->tail->next = temp;
-		temp->next = list->head;
-		list->tail = temp;
-	}
-
-	++list->size;
-}
-
-void popFront(CLinkedList *list)
-{
-	Node *temp = list->head->next;
-	free(list->head);
-	list->tail->next = temp;
-	list->head = temp;
-	--list->size;
-}
-
-void popBack(CLinkedList *list)
-{
-	Node *temp = list->head;
-
-	while(temp->next != list->tail)
-	{
-		temp = temp->next;
-	}
-
-	temp->next = list->head;
-	free(list->tail);
-	list->tail = temp;
-	--list->size;
-}
-
-void insertAt(CLinkedList *list, int pos, elem data)
-{
-	if(pos <= 0)
-	{
-		pushFront(list, data);
-	}
-	else if(pos >= list->size)
-	{
-		pushBack(list, data);
-	}
-	else
-	{
-		Node *temp = list->head;
-		for(int i = pos-1; i>0; --i)
-		{
-			temp = temp->next;
-		}
-
-		Node *newNode = createNode(data);
-		newNode->next = temp->next;
-		temp->next = newNode;
-		++list->size;
-	}
-}
-
-void removeAt(CLinkedList *list, int pos)
-{
-	if(pos <= 0)
-	{
-		popFront(list);
-	}
-	else if(pos >= list->size)
-	{
-		popBack(list);
-	}
-	else
-	{
-		Node *temp = list->head;
-		for(int i = pos-1; i>0; --i)
-		{
-			temp = temp->next;
-		}
-
-		Node *remove = temp->next;
-		temp->next = temp->next->next;
-		free(remove);
-		--list->size;
-	}
-}
-```
-
-<br />
-## Reference <a id="ref"></a>
-- [Wikipedia : Circular Linked List](https://en.wikipedia.org/wiki/Linked_list#Circular_linked_list)
-- [Namu Wiki : Circular Linked List](https://namu.wiki/w/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8)
