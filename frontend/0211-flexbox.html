@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Flexbox</title>
+        <meta charset="utf-8">
+
+        <style>
+            body {
+                margin: 0;
+            }
+            
+            .bar-top {
+                height: 280px;
+                width: auto;
+                background-color: black;
+            }
+
+            .bar-bottom {
+                height: 150px;
+                width: auto;
+                background-color: black;
+            }
+
+            .bar-text {
+                font-family: BOLD-KR, Arial;
+                font-size: 100px;
+                color: white;
+
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            main {
+                text-align: center;
+            }
+
+            main div {
+                margin: 0 auto;
+            }
+
+            footer {
+                margin-top: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a:hover {
+                color: blue;
+            }
+
+            :root {
+                --box-width: 150px;
+                --box-height: 150px;
+                --flex-width: 300px;
+            }
+
+            .back {
+                margin: 15px 0;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .main-flex {
+                display: flexbox;
+            }
+
+            .flex {
+                border: 2px solid black;
+                display: flex;
+                width: 500px;
+            }
+            
+            .flex-start {
+                justify-content: flex-start;;
+            }
+
+            .flex-end {
+                justify-content: flex-end;
+            }
+
+            .space-between {
+                justify-content: space-between;
+            }
+
+            .space-around {
+                justify-content: space-around;
+            }
+
+            .space-evenly {
+                justify-content: space-evenly;
+            }
+
+            .center {
+                justify-content: center;
+            }
+
+            .row-reverse {
+                flex-direction: row-reverse;
+            }
+
+            .column {
+                flex-direction: column;
+            }
+
+            .column-reverse {
+                flex-direction: column-reverse;
+            }
+
+            .red-box {
+                width: var(--box-width, 250px);
+                height: var(--box-height, 250px);
+                background-color: #ff0000;
+            }
+
+            .blue-box {
+                width: var(--box-width, 250px);
+                height: var(--box-height, 250px);
+                background-color: #0000ff;
+            }
+
+            @font-face {
+                font-family: BOLD-KR;
+                src: url('./BlackHanSans-Regular.ttf') format('truetype');
+            }
+
+            @media only screen and (max-width: 600px) {
+                .red-box {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .blue-box {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .flex {
+                    width: 300px;
+                }
+
+                .bar-text {
+                    font-size: 68px;
+                    padding-top: 60px;
+                }
+
+                .bar-bottom {
+                    height: 250px;
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="bar-top">
+                <div class="bar-text">
+                    Flexbox를 <br>공부해봅시다.
+                </div>
+            </div>
+        </header>
+        <main>
+            <h2> Flex Direction </h2>
+            <p>
+                flex-direction: row (default)
+            </p>
+            <div class="flex">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row-reverse
+            </p>
+            <div class="flex row-reverse">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+            
+            <p>
+                flex-direction: column
+            </p>
+            <div class="flex column">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: column-reverse
+            </p>
+            <div class="flex column-reverse">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <h2>Justify Content</h2>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: flex-start (default)
+            </p>
+            <div class="flex">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: flex-end
+            </p>
+            <div class="flex flex-end">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <p>
+                flex-direction: row-reverse <br>
+                justify-content: flex-end
+            </p>
+            <div class="flex row-reverse flex-end">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: space-between
+            </p>
+            <div class="flex space-between">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row-reverse <br>
+                justify-content: space-between
+            </p>
+            <div class="flex row-reverse space-between">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: space-around
+            </p>
+            <div class="flex space-around">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row-reverse <br>
+                justify-content: space-around
+            </p>
+            <div class="flex row-reverse space-around">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: space-evenly
+            </p>
+            <div class="flex space-evenly">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row-reverse <br>
+                justify-content: space-evenly
+            </p>
+            <div class="flex row-reverse space-evenly">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <hr>
+
+            <p>
+                flex-direction: row (default) <br>
+                justify-content: center
+            </p>
+            <div class="flex center">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+
+            <p>
+                flex-direction: row-reverse <br>
+                justify-content: center
+            </p>
+            <div class="flex row-reverse center">
+                <div class="red-box"></div>
+                <div class="blue-box"></div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="bar-bottom">
+                <div class="bar-text">
+                    <a href="index.html">Back to Index</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
