@@ -1,11 +1,11 @@
 # Site Info
-name: Muicode
-title:  Muicode
+name: Muitain
+title:  Muitain
 description:        "Programming Blog"
 author_name: 
-    en: Mui (Jii Yoo)
-    ko: 무이 (Jii Yoo)
-    ja: ムイ (優 慈)
+    en: Jii Yoo
+    ko: Jii Yoo
+    ja: 優 慈
 
 index:
     en: /
@@ -51,7 +51,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
 
-remote_theme: muicode/the-plain
+remote_theme: muitain/the-plain
 
 defaults:
   -
