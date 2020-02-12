@@ -1,0 +1,147 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    background-color: white;
+}
+
+h1 {
+    font-family: 'Koharuiro Sunray';
+    font-size: 140px;
+}
+
+h2 {
+    font-family: 'Koharuiro Sunray';
+    font-size: 40px;
+    margin-top: -40px;
+    text-align: right;
+    margin-right: -1em;
+}
+
+#title {
+    padding-top: 3em;
+    padding-right: 6em;
+
+    position: absolute;
+    right: 1em;
+}
+
+#main {
+    background-image: url('../assets/image/asa.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    color: white;
+    height: 850px;
+}
+
+#tribute-info {
+    position: absolute;
+    right: 20px;
+    width: 650px;
+
+    margin-top: 225px;
+    background-color: rgba(0,0,0,0.85);
+}
+
+#tribute-info p {
+    font-family: Karla, serif;
+    padding: 15px;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#tribute-link {
+    text-align: right;
+    color: white;
+}
+
+#tribute-link a:hover {
+    color: #882020;
+}
+
+#footer {
+    background-color: white;
+}
+
+@font-face {
+    font-family: boldfont;
+    src: url('../assets//fonts/theboldfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Koharuiro Sunray';
+    src: url('../../GN-Koharuiro_Sunray.ttf') format('truetype');
+}
+
+@media (max-width: 1400px) {
+    h1 {
+        font-size: 130px;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    #tribute-info {
+        width: 600px;
+        margin-top: 200px;
+    }
+    
+    #tribute-info p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 100px;
+    }
+    
+    h2 {
+        font-size: 25px;
+        margin-top: -30px;
+        text-align: right;
+    }
+    
+    #tribute-info {
+        width: 460px;
+        margin-top: 170px;
+        right: 30px;
+    }
+    
+    #tribute-info p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    #title {
+        padding-right: 4em;
+    }
+
+    h1 {
+        font-size: 85px;
+    }
+    
+    h2 {
+        font-size: 23px;
+        margin-top: -23px;
+        text-align: right;
+    }
+    
+    #tribute-info {
+        width: 455px;
+        margin-top: 170px;
+        right: 10px;
+    }
+    
+    #tribute-info p {
+        font-size: 15px;
+    }
+}
