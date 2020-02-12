@@ -4,7 +4,7 @@
     <head>
         <title> HTML Practice </title>
         <meta charset="utf-8">
-
+        
         <style>
             * {
                 margin: 0;
@@ -41,7 +41,7 @@
 
             .date {
                 color: gray;
-                font-size: 25px;
+                font-size: 23px;
                 margin-right: 15px;
             }
 
@@ -61,6 +61,10 @@
                 padding-right: 0.7em;
             }
 
+            .ghost {
+                margin-left: 58px;
+            }
+
             @font-face {
                 font-family: 'Koharuiro Sunray';
                 src: url('./GN-Koharuiro_Sunray.ttf') format('truetype');
@@ -72,12 +76,16 @@
                 }
 
                 .date {
-                    font-size: 16px;
+                    font-size: 20px;
+                }
+
+                .ghost {
+                    margin-left: 51px;
                 }
 
                 main {
-                margin: 20px 0 0 0;
-            }
+                    margin: 20px 0 0 0;
+                }
             }
         </style>
     </head>
@@ -90,16 +98,19 @@
         <main>
             <ul>
                 <li>        
-                    <span class="date">0210</span> <a href="0210-boxmodel.html"> box model </a>
+                    <span class="date">02/10</span> <a href="0210-boxmodel.html"> box model </a>
                 </li>
                 <li>
-                    <span class="date">0210</span> <a href="0210-grid.html">grid</a>
+                    <span class="date ghost"></span> <a href="0210-grid.html">grid</a>
                 </li>
                 <li>
-                    <span class="date">0210</span> <a href="0210-media-query.html">media query</a>
+                    <span class="date ghost"></span> <a href="0210-media-query.html">media query</a>
                 </li>
                 <li>
-                    <span class="date">0211</span> <a href="0211-flexbox.html">flexbox: flex-direction, justify-content</a>
+                    <span class="date">02/11</span> <a href="0211-flexbox.html">flexbox: flex-direction, justify-content</a>
+                </li>
+                <li>
+                    <span class="date ghost"></span> <a href="./tribute/index.html">tribute page</a>
                 </li>
             </ul>
         </main>
