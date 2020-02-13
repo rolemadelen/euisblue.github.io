@@ -4,6 +4,8 @@
     <head>
         <title> Grid </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
         <style>
             footer {
                 text-align: center;
@@ -15,7 +17,7 @@
                 grid-template-columns: 1fr 3fr;
             }
             #grid ol {
-                border-right: 1px solid blue;
+                border-right: 1px solid black;
                 margin: 0;
                 padding-left: 35px;
                 padding-top: 20px;
@@ -29,7 +31,13 @@
                 text-align: center;
                 border-bottom: 1px solid grey;
                 margin: 0;
-                padding: ;
+                padding: 5px;
+            }
+
+            @media only screen and (max-width: 360px) {
+                li {
+                    padding-right: 5px;
+                }
             }
         </style>
     </head>
