@@ -4,6 +4,7 @@
     <head>
         <title>Flexbox</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
         <style>
             body {
@@ -149,7 +150,20 @@
                 .bar-bottom {
                     height: 250px;
                 }
+            }
 
+            @media only screen and (max-width: 360px) {
+                .bar-top {
+                    width: auto;
+                    height: auto;
+                }
+                .bar-text {
+                    padding: 20px 0;
+                    font-size: 40px;
+                }
+                .bar-bottom {
+                    height: auto;
+                }
             }
         </style>
     </head>

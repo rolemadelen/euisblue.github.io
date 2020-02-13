@@ -4,10 +4,15 @@
     <head>
         <title> HTML Practice </title>
         <meta charset="utf-8">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
         <style>
             * {
                 margin: 0;
+            }
+
+            body {
+                font-family: monospace;
             }
 
             .header {
@@ -21,7 +26,7 @@
             }
 
             main {
-                margin: 20px 0 0 15px;
+                margin: 25px 0 0 15px;
             }
 
             main ul {
@@ -29,20 +34,22 @@
             }
 
             a {
-                font-family: arial;
                 text-decoration: none;
                 color: black;
-                font-size: 15px;
+                font-size: 19px;
             }
 
             a:hover {
                 color: blue;
             }
 
-            .date {
+            li {
+                margin: 10px 0 10px 30px;
+            }
+
+            span.date {
                 color: gray;
-                font-size: 23px;
-                margin-right: 15px;
+                font-size: 30px;
             }
 
             footer {
@@ -61,30 +68,32 @@
                 padding-right: 0.7em;
             }
 
-            .ghost {
-                margin-left: 58px;
-            }
-
             @font-face {
                 font-family: 'Koharuiro Sunray';
                 src: url('./fonts/GN-Koharuiro_Sunray.ttf') format('truetype');
             }
 
-            @media(max-width: 650px) {
+            @media (max-width: 360px) {
                 .header {
-                    font-size: 60px;
+                    text-align: center;
+                    font-size: 50px;
+                    padding-left: 0;
                 }
 
-                .date {
+                span.date {
                     font-size: 20px;
                 }
 
-                .ghost {
-                    margin-left: 51px;
+                main {
+                    margin-left: 0;
                 }
 
-                main {
-                    margin: 20px 0 0 0;
+                a {
+                    font-size: 16px;
+                }
+                 
+                li {
+                    margin-left: 15px;
                 }
             }
         </style>
@@ -97,21 +106,14 @@
         </header>
         <main>
             <ul>
-                <li>        
-                    <span class="date">02/10</span> <a href="0210-boxmodel.html"> box model </a>
-                </li>
-                <li>
-                    <span class="date ghost"></span> <a href="0210-grid.html">grid</a>
-                </li>
-                <li>
-                    <span class="date ghost"></span> <a href="0210-media-query.html">media query</a>
-                </li>
-                <li>
-                    <span class="date">02/11</span> <a href="0211-flexbox.html">flexbox: flex-direction, justify-content</a>
-                </li>
-                <li>
-                    <span class="date ghost"></span> <a href="./tribute/index.html">tribute page</a>
-                </li>
+                <span class="date">0210</span> 
+                <li><a href="0210-boxmodel.html"> box model </a></li>
+                <li><a href="0210-grid.html">grid</a></li>
+                <li><a href="0210-media-query.html">media query</a></li>
+
+                <span class="date">0211</span>
+                <li><a href="0211-flexbox.html">flexbox</a></li>
+                <li><a href="./tribute/index.html">tribute page</a></li>
             </ul>
         </main>
         <footer>
