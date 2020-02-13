@@ -4,6 +4,9 @@
 }
 
 body {
+    background-image: url('../assets/image/asa.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
     background-color: black;
 }
 
@@ -33,9 +36,6 @@ h2 {
 }
 
 #main {
-    background-image: url('../assets/image/asa.jpg');
-    background-color: black;
-    background-repeat: no-repeat;
     color: white;
     height: 850px;
 }
@@ -79,7 +79,7 @@ h2 {
     src: url('../../fonts/GN-Koharuiro_Sunray.ttf') format('truetype');
 }
 
-@media (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
     h1 {
         font-size: 130px;
     }
@@ -98,7 +98,7 @@ h2 {
     }
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     h1 {
         font-size: 100px;
     }
@@ -120,7 +120,7 @@ h2 {
     }
 }
 
-@media (max-width: 520px) {
+@media only screen and (max-width: 520px) {
     #title {
         padding-right: 4em;
     }
@@ -143,5 +143,29 @@ h2 {
     
     #tribute-info p {
         font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #title {
+        padding-top: 2em;
+        padding-right: 3em;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+    
+    h2 {
+        font-size: 25px;
+        margin-top: -18px;
+        text-align: right;
+    }
+    
+    #tribute-info {
+        width: 330px;
+        margin-top: 140px;
+        right: 10px;
+        background-color: rgba(0,0,0,0.7);
     }
 }
