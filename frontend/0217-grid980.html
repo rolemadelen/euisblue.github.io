@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Grid 980px</title>
+        <meta charset="utf-8">
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #ff0;
+            }
+
+            p {
+                font-family: "Koharuiro Sunray", serif;
+                font-size: 6rem;
+                letter-spacing: 0.5rem;
+                text-align: center;
+                margin: 3rem 0;
+            }
+
+            p a {
+                text-decoration: none;
+                color: #0a009c;
+            }
+
+            .container {
+                width: 960px;
+                margin: 0 auto;
+            }
+
+            .layer {
+                padding: 1.5rem 0;
+                text-align: center;
+                color: #fff;
+                background: #000;
+                border-radius: 10px;
+                height: 4.0rem;
+                font-family: monospace;
+            }
+
+            [class*="col"] {
+                float: left;
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+
+            .row {
+                margin-bottom: 1.5rem;
+            }
+
+            .row::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .footer {
+                text-align: center;
+                margin: 2rem 0;
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            .col1 {width: 48px;}
+            .col2 {width: 128px;}
+            .col3 {width: 208px;}
+            .col4 {width: 288px;}
+            .col5 {width: 368px;}
+            .col6 {width: 448px;}
+            .col7 {width: 528px;}
+            .col8 {width: 608px;}
+            .col9 {width: 688px;}
+            .col10 {width: 768px;}
+            .col11 {width: 848px;}
+            .col12 {width: 928px;}
+
+            @font-face {
+                font-family: 'Koharuiro Sunray';
+                src: url('./fonts/GN-Koharuiro_Sunray.ttf') format('truetype');
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <p><a href="./index.html">グリド練習 ９６０ｐｘ</a></p>
+
+            <div class="row">
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1 </div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+                <div class="col1 layer">col 1</div>
+
+            </div>
+            <div class="row">
+                <div class="col2 layer">col 2</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col2 layer">col 2</div>
+
+            </div>
+            <div class="row">
+                <div class="col3 layer">col 3</div>
+                <div class="col3 layer">col 3</div>
+                <div class="col3 layer">col 3</div>
+                <div class="col3 layer">col 3</div>
+            </div>
+            <div class="row">
+                <div class="col4 layer">col 4</div>
+                <div class="col4 layer">col 4</div>
+                <div class="col4 layer">col 4</div>
+            </div>
+            <div class="row">  
+                <div class="col5 layer">col 5</div>
+                <div class="col5 layer">col 5</div>
+                <div class="col2 layer">col 2</div>
+            </div>
+            <div class="row">
+                <div class="col6 layer">col 6</div>
+                <div class="col6 layer">col 6</div>
+            </div>
+            <div class="row">
+                <div class="col7 layer">col 7</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col3 layer">col 3</div>
+            </div>
+            <div class="row">
+                <div class="col8 layer">col 8</div>
+                <div class="col4 layer">col 4</div>
+            </div>
+            <div class="row">
+                <div class="col9 layer">col 9</div>
+                <div class="col2 layer">col 2</div>
+                <div class="col1 layer">col 1</div>
+            </div>
+            <div class="row">
+                <div class="col10 layer">col 10</div>
+                <div class="col2 layer">col 2</div>
+            </div>
+            <div class="row">
+                <div class="col11 layer">col 11</div>
+                <div class="col1 layer">col 1</div>
+            </div>
+            <div class="row">
+                <div class="col12 layer">col 12</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Inspired by: Kim Bug: <a href="https://www.rohwoohyeon.com/fc-homework/0708-static-grid-system/static-grid-system.html">960 Grid System</a>
+        </div>
+    </body>
+</html>
