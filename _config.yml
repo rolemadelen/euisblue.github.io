@@ -1,6 +1,6 @@
 # Site Info
-name: Muicodes
-title:  Muicodes
+name: Muicode
+title:  Muicode
 description:        "Programming Blog"
 author_name: 
     en: Mui
@@ -51,7 +51,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
 
-remote_theme: muicodes/the-plain
+remote_theme: muicode/the-plain
 
 defaults:
   -
