@@ -1,34 +1,21 @@
 ---
 layout: page
-title: About
+title: Hello!
 ref: about
 lang: en
 ---
 
-<div class="code">
-<h3>Education</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-University of California, San Diego  (2019)<br>
- B.S. Cognitive Science w/ Spec. in HCI
-</ul>
-</div>
+I’m **Jii Yoo** who goes by the name of **Mui** (muicode) in online. 
 
-<div class="code">
-<h3>Skills</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-main language: C, C++ <br>
-conversational: Java <br>
-</ul>
-</div>
+I graduated from [UC San Diego](https://ucsd.edu/) with a degree in Cognitive Science Specialization in Human Computer Interaction on June 2019.
+Today, I’m pursuing to become a front-end engineer (software engineer ultimately).
 
-<div class="code">
-<h3>Hobbies</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-Taiko, Japanese Drumming (2018 ~ present) <br>
-- Asayake Taiko - San Diego, CA <br>
-- LA Taiko Institute - Torrance, CA
-</ul>
-</div>
+I have no talent in writing that I’m just running this blog as a learning journal of sorts. 
+Actually, this is the reason why I’m writing same posts in three different languages, because translating should help writing in one or the other, right?
+
+If you find any errors, typos, or awkward phrases on my posts, please points them out and let me know via [Twitter](https://twitter.com/_muicode).
+
+Thank you.
 
 <div class="divider"></div>
 
