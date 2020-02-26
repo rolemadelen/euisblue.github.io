@@ -7,7 +7,8 @@ lang: en
 
 I’m **Jii Yoo** who goes by the name of **Mui** (muicode) in online. 
 
-I graduated from [UC San Diego](https://ucsd.edu/) with a degree in Cognitive Science Specialization in Human Computer Interaction on June 2019.
+I graduated from [UC San Diego](https://ucsd.edu/) with a degree in 
+Cognitive Science Specialization in Human Computer Interaction in 2019.
 Today, I’m pursuing to become a front-end engineer (software engineer ultimately).
 
 I have no talent in writing that I’m just running this blog as a learning journal of sorts. 
