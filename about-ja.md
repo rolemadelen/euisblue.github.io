@@ -1,34 +1,23 @@
 ---
 layout: page
-title: About
+title: こんにちは！
 ref: about
 lang: ja
 ---
 
-<div class="code">
-<h3>学歴</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-University of California, San Diego  (2019)<br>
- B.S. Cognitive Science w/ Spec. in HCI
-</ul>
-</div>
+**Mui**(*muicode*)という名でネットで活動している**Jii Yoo**と申します。   
+どうしてもIDで*mui*はちょっと短くて「*mui*がコードを書く」という意味を持って*muicode*をIDで使っています。
 
-<div class="code">
-<h3>技術</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-main language: C, C++ <br>
-conversational: Java <br>
-</ul>
-</div>
+２０１９年６月 [UC San Diego](https://ucsd.edu/)から認知科学HCI学位を受けて卒業しました。
+今はフロントエンド・エンジニアに目覚めて一所懸命頑張って勉強しています。
 
-<div class="code">
-<h3>趣味</h3>
-<ul style="padding-left: 35px; font-size: 13px">
-Taiko, Japanese Drumming (2018 ~ present) <br>
-- Asayake Taiko - San Diego, CA <br>
-- LA Taiko Institute - Torrance, CA
-</ul>
-</div>
+文章を書けるのは苦手なので、今はただ勉強したものを記録するためこのブログを運営しています。
+３つの言語で記事を書く理由も文章をもっとうまく書けるようになるためです。
+
+作成した物の中で内容に誤謬及び文脈が変な部分があったら是非、
+私の[Twitter](https://twitter.com/_muicode){:target="\_blank"}でメッセージをしてください。
+
+よろしくお願いします。
 
 <div class="divider"></div>
 
