@@ -1,0 +1,86 @@
+#bg-color {
+    background-color: white;
+}
+
+.main {
+    width: 75%;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1920px) {
+.header {
+    height: 20rem;
+    font-family: 'BlackHanSans', Arial, Helvetica, sans-serif;
+    font-size: 10rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+input {
+    background: transparent;
+    color: black;
+    
+    font-family: 'BlackHanSans', Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+
+    border: 0;
+    border-bottom: 7px solid black;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+}
+
+@media (max-width: 1024px) {
+    .header {
+        height: 17rem;
+        font-size: 4.5rem;
+        padding-top: 3rem;
+    }
+
+
+    input {
+        font-size: 6rem;
+        letter-spacing: 3px;
+        border-bottom: 10px solid black;
+    }
+}
+
+
+@media (max-width: 798px) {
+    .header {
+        height: 22rem;
+        font-size: 10.5rem;
+        padding-top: 6rem;
+    }
+
+
+    input {
+        font-size: 4rem;
+        letter-spacing: 3px;
+        border-bottom: 7px solid black;
+    }
+}
+
+@media (max-width: 430px) {
+    .header {
+        height: 14rem;
+        font-size: 6rem;
+        padding-top: 3rem;
+    }
+
+
+    input {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        border-bottom: 4px solid black;
+    }
+}
+
+@font-face {
+    font-family: 'BlackHanSans';
+    src: url('../fonts/BlackHanSans-Regular.ttf') format('truetype');
+}
