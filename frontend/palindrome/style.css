@@ -1,86 +1,79 @@
 #bg-color {
-    background-color: white;
+    /* empty */
+    background-color: #fff;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+}
+
+.result {
+    /* empty */
 }
 
 .main {
-    width: 75%;
+    width: 90%;
 }
 
 .center {
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 1920px) {
 .header {
-    height: 20rem;
-    font-family: 'BlackHanSans', Arial, Helvetica, sans-serif;
-    font-size: 10rem;
+    height: 13rem;
+    font-family: MYFONT, Arial, Helvetica, sans-serif;
+    font-size: 5rem;
     text-align: center;
     padding-top: 3rem;
+    letter-spacing: 7px;
 }
+
 input {
     background: transparent;
     color: black;
     
-    font-family: 'BlackHanSans', Arial, Helvetica, sans-serif;
-    font-size: 3.5rem;
-    letter-spacing: 5px;
+    font-family: MYFONT, Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
 
     border: 0;
-    border-bottom: 7px solid black;
+    border-bottom: 5px solid black;
     outline: none;
     width: 100%;
     text-align: center;
 }
+
+@media only screen and (min-width: 640px) {
+    /* if [device width] is >= 640px */
 }
 
-@media (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    /* if [device width] is >= 768px */
     .header {
-        height: 17rem;
-        font-size: 4.5rem;
+        height: 25rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* if [device width] is >= 1024px */
+    .header {
+        height: 20rem;
+        font-size: 8rem;
         padding-top: 3rem;
+        letter-spacing: 7px;
     }
 
-
-    input {
-        font-size: 6rem;
-        letter-spacing: 3px;
-        border-bottom: 10px solid black;
-    }
-}
-
-
-@media (max-width: 798px) {
-    .header {
-        height: 22rem;
-        font-size: 10.5rem;
-        padding-top: 6rem;
-    }
-
-
-    input {
-        font-size: 4rem;
-        letter-spacing: 3px;
+    input {        
+        font-family: MYFONT, Arial, Helvetica, sans-serif;
+        font-size: 3.5rem;
         border-bottom: 7px solid black;
     }
 }
 
-@media (max-width: 430px) {
-    .header {
-        height: 14rem;
-        font-size: 6rem;
-        padding-top: 3rem;
-    }
-
-
-    input {
-        font-size: 2rem;
-        letter-spacing: 3px;
-        border-bottom: 4px solid black;
-    }
+@media only screen and (min-width: 1248px) {
+    /* if [device width] is >= 1248px */
 }
 
 @font-face {
-    font-family: 'BlackHanSans';
+    font-family: MYFONT;
     src: url('../fonts/BlackHanSans-Regular.ttf') format('truetype');
 }
