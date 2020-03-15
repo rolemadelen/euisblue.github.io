@@ -26,6 +26,6 @@ inputBox.onkeyup = function() {
         resultBox.textContent = "입니다";
    } else {
         bgColor.style.backgroundColor = '#f00';
-        resultBox.textContent = "이 아닙니다";
+        resultBox.textContent = "아닙니다";
     }
 }
