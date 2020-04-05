@@ -5,7 +5,7 @@ ref: about
 lang: en
 ---
 
-I’m **Jione Eu** who goes by the name of **Jii**. 
+Hi. I’m **Jione Eu** who goes by **Jii**. 
 
 I graduated from [UC San Diego](https://ucsd.edu/) with a degree in 
 Cognitive Science Specialization in Human Computer Interaction in 2019.
