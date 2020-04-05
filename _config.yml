@@ -1,11 +1,11 @@
 # Site Info
-name: Muicode
-title:  Muicode
+name: Jii
+title:  Jioneeu
 description:        "Programming Blog"
 author_name: 
-    en: Mui
-    ko: Mui (무이)
-    ja: Mui (無為)
+    en: Jii
+    ko: Jii
+    ja: 慈 (ジー)
 
 index:
     en: /
@@ -30,10 +30,10 @@ language:
 logo_url:           https://avatars3.githubusercontent.com/u/34954499?v=4 # Get it from GitHub API: https://api.github.com/users/<username>
 
 # Site Settings
-url:                https://www.muicode.dev # main url
+url:                https://www.jioneeu.dev # main url
 baseurl:            ""
 permalink:          /:title # Post permalink
-timezone:           America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           Japan # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
 # Site Build
@@ -51,7 +51,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
 
-remote_theme: muicode/the-plain
+remote_theme: jioneeu/the-plain
 
 defaults:
   -
@@ -59,16 +59,16 @@ defaults:
       path:         ""
     values:
       layout:       "null"
-      author: Mui
+      author: Jii
   -
     scope:
       type:         "pages"
     values:
       layout:       "page"
-      author: Mui
+      author: Jii
   -
     scope:
       type:         "posts"
     values:
       layout:       "post"
-      author: Mui
+      author: Jii
