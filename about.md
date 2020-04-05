@@ -5,7 +5,7 @@ ref: about
 lang: en
 ---
 
-I’m **Jii Yoo** who goes by the name of **Mui** (muicode) in online. 
+I’m **Jione Eu** who goes by the name of **Jii**. 
 
 I graduated from [UC San Diego](https://ucsd.edu/) with a degree in 
 Cognitive Science Specialization in Human Computer Interaction in 2019.
