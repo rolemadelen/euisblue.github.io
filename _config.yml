@@ -3,9 +3,9 @@ name: Jii
 title:  Jioneeu
 description:        "Programming Blog"
 author_name: 
-    en: Jione Eu
+    en: Jione (Jii) Eu
     ko: 유 지원
-    ja: 慈 (ジー)
+    ja: 慈 優 (ジー・ユウ)
 
 index:
     en: /
@@ -59,16 +59,16 @@ defaults:
       path:         ""
     values:
       layout:       "null"
-      author: Jii
+      author: Jii Eu
   -
     scope:
       type:         "pages"
     values:
       layout:       "page"
-      author: Jii
+      author: Jii Eu
   -
     scope:
       type:         "posts"
     values:
       layout:       "post"
-      author: Jii
+      author: Jii Eu
