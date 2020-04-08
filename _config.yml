@@ -36,10 +36,8 @@ permalink:          /:title # Post permalink
 timezone:           Japan # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
-comments:
-  provider          : "disqus"
-  disqus:
-    shortname       : "jioneeu"
+disqus:
+    shortname: "jioneeu"
 
 # Site Build
 highlighter:        rouge
