@@ -33,7 +33,7 @@ logo_url:           https://avatars3.githubusercontent.com/u/34954499?v=4 # Get 
 url:                https://www.jioneeu.com # main url
 baseurl:            ""
 permalink:          /:title # Post permalink
-timezone:           Japan # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           Asia/Tokyo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
 disqus:
