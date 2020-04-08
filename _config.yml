@@ -37,7 +37,7 @@ timezone:           Asia/Tokyo # https://en.wikipedia.org/wiki/List_of_tz_databa
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
 disqus:
-    shortname: "jioneeu"
+    shortname: jioneeu
 
 # Site Build
 highlighter:        rouge
