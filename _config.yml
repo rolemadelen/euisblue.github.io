@@ -17,6 +17,11 @@ about:
     ko: /about-ko
     ja: /about-ja
 
+toys:
+    en: /toys
+    ko: /toys-ko
+    ja: /toys-ja
+
 feed:
     en: /feed.xml
     ko: /feed-ko.xml
