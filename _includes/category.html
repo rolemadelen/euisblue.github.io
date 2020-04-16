@@ -4,6 +4,9 @@
     {% assign header = nil %}
     {% assign posted = nil %}
         {% for post in category[1] %}
+            {% if post.categories contains "Toys" %}
+                {% continue %}
+            {% endif %}
             {% if post.lang == page.lang %}
                 {% if header == nil %}
                     <h3 class="code">{{ category[0] }} </h3>
