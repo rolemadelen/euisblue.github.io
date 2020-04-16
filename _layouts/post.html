@@ -4,8 +4,10 @@ layout: default
 
 <article>
 	<div class="center code menu" style="word-spacing: 13px">
-        <a href="{{ site.index[page.lang] }}">Home </a>
+        <a href="{{ site.index[page.lang] }}">Home</a>
+
         <a href="{{ site.about[page.lang] }}">About</a>
+
         <a href="{{ site.toys[page.lang] }}">Toys</a>
 
         {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
