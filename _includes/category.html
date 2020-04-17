@@ -4,7 +4,10 @@
     {% assign header = nil %}
     {% assign posted = nil %}
         {% for post in category[1] %}
-            {% if post.categories contains "Toys" %}
+            {% if post.categories contains "Toys" or
+                  post.categories contains "AtCoder" or
+                  post.categories contains "Baekjoon" or
+                  post.categories contains "LeetCode" %}
                 {% continue %}
             {% endif %}
             {% if post.lang == page.lang %}
