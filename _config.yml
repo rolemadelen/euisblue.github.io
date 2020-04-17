@@ -17,6 +17,16 @@ about:
     ko: /about-ko
     ja: /about-ja
 
+dcp:
+    en: /dcp
+    ko: /dcp-ko
+    ja: /dcp-ja
+
+ps:
+    en: /ps
+    ko: /ps-ko
+    ja: /ps-ja
+
 toys:
     en: /toys
     ko: /toys-ko
