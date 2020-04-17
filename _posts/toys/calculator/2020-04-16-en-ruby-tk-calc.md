@@ -8,8 +8,8 @@ lang: en
 ---
 
 
-My intention is to bind each buttons with a correct number ('1' => 1, '2' => 2' .. and so on), but
-it doesn't work. why?
+My intention is to bind each button with a corresponding key ('1' => 1, '2' => 2' .. and so on).
+It's straightforward, BUT it doesn't work. why?
 ```rb
 for i in ["789/", "456*", "123-", "0+=C"]
     padnum += 1
