@@ -51,9 +51,6 @@ permalink:          /:title # Post permalink
 timezone:           Asia/Tokyo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
-disqus:
-    shortname: jioneeu
-
 # Site Build
 highlighter:        rouge
 markdown:           kramdown
