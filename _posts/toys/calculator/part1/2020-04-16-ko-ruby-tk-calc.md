@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Ruby/Tk・電卓"
-ref: toys-simple-calc
+title: "Ruby/Tk - 계산기"
+ref: toys-tk-calc-1
 date: 2020-04-16 10:01:00
 categories: Toys
-lang: ja
+lang: ko
 ---
 
-何が問題だろ。下記にように作成したけどちゃんと動かない。
+
+뭐가 문제일까. 아래처럼 작성하면 제대로 동작하지 않는다. 
 ```rb
 for i in ["789/", "456*", "123-", "0+=C"]
     padnum += 1
@@ -24,11 +25,11 @@ for i in ["789/", "456*", "123-", "0+=C"]
 end
 ```
 
-なんのボタンを押しても配列の最後の文字`C`が出てる。なんで？
+어떤 숫자를 눌러도 마지막 문자인 `C`가 계속 출력된다. 바인딩이 왜 안되는걸까?
 
-![tk-calc-fail](/assets/images/toys/ruby-tk-calc/tk-calc-fail.png)
+![tk-calc-fail](/assets/images/toys/ruby-tk-calc/part1/tk-calc-fail.png)
 
-今日は一応ハードコードでして明日考える。
+일단 처음이니까 하드코딩.
 ```rb
 require 'tk'
 
@@ -72,5 +73,5 @@ end
 Tk.mainloop
 ```
 
-![tk-calc-hardcode-expr](/assets/images/toys/ruby-tk-calc/tk-calc-hardcode-1.png)
-![tk-calc-hardcode-result](/assets/images/toys/ruby-tk-calc/tk-calc-hardcode-2.png)
+![tk-calc-hardcode-expr](/assets/images/toys/ruby-tk-calc/part1/tk-calc-hardcode-1.png)
+![tk-calc-hardcode-result](/assets/images/toys/ruby-tk-calc/part1/tk-calc-hardcode-2.png)

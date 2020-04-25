@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby/Tk - Calculator"
-ref: toys-simple-calc
+ref: toys-tk-calc-1
 date: 2020-04-16 10:01:00
 categories: Toys
 lang: en
@@ -28,7 +28,7 @@ end
 
 For some reason it binds with a last character in the list which is `C`.
 
-![tk-calc-fail](/assets/images/toys/ruby-tk-calc/tk-calc-fail.png)
+![tk-calc-fail](/assets/images/toys/ruby-tk-calc/part1/tk-calc-fail.png)
 
 I'm gonna hardcode them for now and come back to it tomorrow.
 
@@ -75,5 +75,5 @@ end
 Tk.mainloop
 ```
 
-![tk-calc-hardcode-expr](/assets/images/toys/ruby-tk-calc/tk-calc-hardcode-1.png)
-![tk-calc-hardcode-result](/assets/images/toys/ruby-tk-calc/tk-calc-hardcode-2.png)
+![tk-calc-hardcode-expr](/assets/images/toys/ruby-tk-calc/part1/tk-calc-hardcode-1.png)
+![tk-calc-hardcode-result](/assets/images/toys/ruby-tk-calc/part1/tk-calc-hardcode-2.png)
