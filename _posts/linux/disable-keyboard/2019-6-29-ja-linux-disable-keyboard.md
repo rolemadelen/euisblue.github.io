@@ -1,98 +1,106 @@
 ---
 layout: post
-title: "Ubuntu・内蔵キーボード非活性化する方法"
+title: "内蔵キーボード非活性化する方法"
 ref: linux-disable-keyboard
 date: 2019-06-30 19:11:00
+last_modified_at: 2020-05-04 07:00:00
 categories: Linux
 lang: ja
 ---
 
 ## 目次
-- [前振り](#first)
-- [キーボード非活性化する方法](#disable)
-	* [入力装置を探す](#inputdev)
-  * [非活性化](#disable2)
-  * [活性化](#enable)
-- [ランチャーアイコンを作る方法](#launcher)
-  * [shellスクリプト](#script)
+- [キーボード非活性化](#disable)
+- [実行アイコン作り](#launcher)
+  * [script](#script)
   * [.deskotp](#desktop)
-- [Dockにプログラム追加](#dock)
+  * [Dockにプログラム追加](#dock)
 - [参照](#ref)
-<hr />
-<br />
 
-## 前振り <a id="first"></a>
-最近「HHKB Professional JP」キーボードをノートパソコンに繋いで使っているけど、机の空間が狭くてHHKBをパソコンのキーボードの上に乗せて使っている。空間的には全然いいけど、たまにキーが押されて面倒な状況と向き合うことになる。実は内蔵キーボードを非活性化したら解決できる問題を今までやってなかった。非活性化する方法も思いより簡単で、この経験を記録しようと思った。
+<div class="divider"></div>
 
-<br />
-## キーボード非活性化する方法 <a id="disable"></a>
-### 入力装置を探す <a id="inputdev"></a>
-ターミナルを開いて`xinput --list`コマンドを入力する。
+## キーボード非活性化 <a id="disable"></a>
+`xinput`コマンドを使って入力装置たちを確認して設定できます。ターミナルに`xinput --list`を入力して繋がている装置たちを出力して見ましょう。
 
-![xniput --list result](/assets/images/linux/how-to/disable-keyboard/xinput--list.png)
+```bash
+mui:~$ xinput --list
 
-そうすると今繋いでる入力措置が全部出力される。 <br />
-内蔵キーボードの名は`AT Translated Set 2 Keyboard`で、この装置の`id`は`14`だ。
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ Elan Touchpad                             id=14   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Asus Wireless Radio Control               id=7    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=8    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=9    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=10   [slave  keyboard (3)]
+    ↳ USB2.0 VGA UVC WebCam: USB2.0 V           id=13   [slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                          id=15   [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=16   [slave  keyboard (3)]
+```
 
-<br />
-### 非活性化 <a id="disable2"></a>
->  **注意：<br /> 他のキーボードとか仮想キーボードがいない場合は真似しなくてください。**
+我らに必要な部分は`AT Translated Set 2 Keyboard`です。この名を使ってキーボードをon/offするのができます。
 
-`xinput set-int-prop 14 "Device Enabled" 8 0`
+キービード**非活性化**：
+```bash
+xinput disable "AT Translated Set 2 keyboard"
+```
 
-上のコマンドの中で`14`は僕の内蔵キーボードの`id`だ。この`id`を自分の内蔵キーボードの`id`で直して入力する。そうしたら非活性化になってキーを押してもなんの反応しない。
+キービード**活性化**：
+```bash
+xinput enable "AT Translated Set 2 keyboard"
+```
 
-<br />
-### 活性化 <a id="enable"></a>
-非活性化したキーボードをまた活性化したい場合、コマンドの最後の数字`0`を`1`に治すと活性化になる：`xinput set-int-prop 14 "Device Enabled" 8 1`
+<div class="divider"></div>
 
-<br />
-## ランチャーアイコンを作る方法 <a id="launcher"></a>
-他のキーボードがない状態で間違えて内向キーボードを非活性化する場合、活性化する方法はリブートしか無い。入力できないからしょうがない。 もし他のキーボードを持っていっても、キーボードを持って来て、パソコンに繋いで、コマンドを入力して、〜して。。まぁ、面倒くさい。
+## 実行アイコン作り <a id="launcher"></a>
+毎回ターミナルからコマンドを入力する過程は面倒だからクリックでon/offできる実装ファイルを作ってみましょう。
 
-でも実行ファイルがあったらマウスクリックでOn/Offができる。じゃ、ランチャーアイコンを作ってみよう。
-
-<br />
-### shellスクリプト <a id="script"></a>
-どうやってOn/Offするスクリプトを作成したらいいのかな？
-
-内蔵キーボードが非活性化できた状態で`xinput --list --long`コマンドを入力してみた。
-
-![Disabled Message](/assets/images/linux/how-to/disable-keyboard/disabled-message.png)
-
-<em>This device is disabled</em>という文句が出力されるのを確認した。活性化中にはこの文句がない。この事実を利用してOn/Offするスクリプトを作ってみようと思う。
+### script <a id="script"></a>
+まず、実行するとキーボードをon/offするスクリプトを作成します。
 
 ```bash
 #!/bin/bash
-# file: kbd-onoff
-kbd=`xinput --list --long | grep -A 1 "id=14" | grep disabled`
 
-if [ -z "$kbd" ]
+kbd=`xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"`
+kbd="${kbd: -1}"
+
+if [ $kbd -eq 1 ]
 then
-        echo "keyboard disabled"
-        `xinput set-int-prop 14 "Device Enabled" 8 0`
+   `xinput disable "AT Translated Set 2 keyboard"`
 else
-        echo "keyboard enabled"
-        `xinput set-int-prop 14 "Device Enabled" 8 1`
+   `xinput enable "AT Translated Set 2 keyboard"`
 fi
 ```
 
-変数`kbd`に`This device is disabled`という文句が貯蔵されてあるかどうかを確認する。もし`kbd`が空文字列だったらキーボードが活性化されていることが分かる。逆の場合はもう非活性化されている状態だから、また活性化したらいい。
+`xinput list-props "AT Translated Set 2 keyboard" | grep "Device Enabled"`コマンドは`$kbd`に下記のような文字列が保存されます。
 
-スクリプトを作成したら実行権限を与える。
 ```bash
-chmod u+x kbd-onoff
+# 活性化された場合
+Device Enabled (168):   1
+
+# 非活性化された場合
+Device Enabled (168):   0
 ```
 
-<br />
+文字列の最後の数字だけ必要なので`${kbd: -1}`をします。この値を使って活性化とか非活性化することができます。
+
+スクリプトを作成したら実行できるように権限設定して`/bin/`に移します。
+権限設定をしないとクリックしても反応しません。
+
+```bash
+chmod u+x kbd-switch
+mv kbd-switch /bin/
+```
+
 ### .desktop <a id="desktop"></a>
-`.desktop`ファイルはランチャーアイコンを作るため必要なファイルだ。
+実行アイコンを作りため`.desktop`ファイルを作ります。
 
-ここで必要な準備物が２つある：
- 1. ランチャーアイコンの経路: `/usr/share/icons/icon.png`
- 2. スクリプトファイルの経路: `/bin/kbd-onoff`
+必要な情報は２つです:
+1. 使用する実行ファイルアイコンの経路：`/usr/share/icons/icon.png`
+2. スクリプトファイルの経路：`/bin/kbd-switch`
 
-準備できたら好きな編集機を開いて下の内容を入力する。
+準備できたら編集機(vim, nano, etc..)を開いて下記の内容をコピします。
 
 ```bash
 #!/usr/bin/env xdg-open
@@ -100,24 +108,24 @@ chmod u+x kbd-onoff
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/bin/kbd-onoff
+Exec=/bin/kbd-switch
 Name=Keyboard On/Off
-Comment="Keyboard on/off runnnig"
+Comment="Keyboard On/Off Runnnig"
 Icon=/usr/share/icons/kbd.png
 ```
 
-`kbd-onoff.desktop`の名で貯蔵して実行する。
+ファイルを`kbd-switch.desktop`でセーブして実行します。ポップアップがでるかもしれませんがその時は`Trust and Launch`をクリックします。
 
-はじめに実行する時、信じられないプログラムというポップアップスクリンが表示されるかもしれない。この時は`Trust and Launch`をクリックしたら大丈夫。
+### Dockにプログラム追加 <a id="dock"></a>
 
-<br />
-## Dockにプログラム追加 <a id="dock"></a>
+実行ファイルをスタートメニュから探すように`.desktop`ファイルを`/usr/share/applications/`または`~/.local/share/applications/`に移します。
 
-`.desktop`ファイルを`/usr/share/applications/`または`~/.local/share/applications/`に移動する。`.desktop`フィアルの中で`Name=`に該当する部分がプログラムの名前になるので、アプリリストからその名前を使って探したらいい。見つけたらマウスの右クリックして`Add to Favorites`を選ぶとdockに追加される。
+メニュから実行ファイルを探してマウスのミギボタンをクリック、`Add to Favorites`を選ぶとDockに追加できます。
 
 ![dock image](/assets/images/linux/how-to/disable-keyboard/dock.png)
 
-<br />
+<div class="divider"></div>
+
 ## 参照 <a id="ref"></a>
 - [Disable Laptop Keyboard in Ubuntu](https://blog.hostonnet.com/laptop-keyboard-ubuntu)
 - [Bash Shell : is a variable empty?](https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/)
