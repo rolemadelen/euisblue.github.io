@@ -16,7 +16,7 @@ lang: ja
 ３つの言語で記事を書く理由も文章をもっとうまく書けるようになるためです。
 
 作成した記事の中で内容に誤字脱字及び文脈が変な部分がありましたら是非、
-私の[Twitter](https://twitter.com/_muicode){:target="\_blank"}にメッセージをしてください。
+私の[Twitter](https://twitter.com/jioneeu){:target="\_blank"}にメッセージをしてください。
 
 よろしくお願いします。
 
