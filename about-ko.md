@@ -15,7 +15,7 @@ lang: ko
 [Ruby](https://www.ruby-lang.org/ja/) 언어의 기술 문서들을 원서로 읽고 싶어서 시작).
 
 작성한 기록 중 내용에 오류, 오타, 또는 문맥이 어색한 부분을 발견하신다면,
-제 [트위터](https://twitter.com/_muicode){:target="\_blank"}로 꼭 지적해주시길 바라겠습니다.
+제 [트위터](https://twitter.com/jioneeu){:target="\_blank"}로 꼭 지적해주시길 바라겠습니다.
 
 잘 부탁드립니다!
 
