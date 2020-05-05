@@ -4,12 +4,12 @@ title: "9. Palindrome Number"
 ref: leetcode-9
 date: 2020-05-06 01:15:00 +0900
 categories: LeetCode
-lang: en
+lang: ko
 ---
 
-## Problem
-- **Difficulty**: Easy
-- **Related Topic**: Implement
+## 문제
+- **난이도**: Easy
+- **관련 주제**: Implement
 
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
@@ -20,7 +20,7 @@ Coud you solve it without converting the integer to a string?
 
 <div class="divider"></div>
 
-## Code
+## 구현
 
 - Runtime: 48 ms, faster than 89.84%
 - Memory Usage: 9.3 MB, less than 100.00%
@@ -32,7 +32,7 @@ def is_palindrome(x)
 end
 ```
 
-- Without converting to a string
+- 문자열 사용하지 않고 구현
 - Runtime: 40ms, faster than 98.35%
 - Memory: 9.2 MB, less than 100.00%
 
@@ -48,13 +48,14 @@ def is_palindrome(x)
     rev == x
 end
 ```
+
 <div class="divider"></div>
 
-## Complextiy
-### With a string
-`String#reverse` takes linear time (n/2 to be specific) so the time complexity is O(n).
-The space complexity is constant.
+## 복잡도
+### 문자열 O
+`String#reverse`가O(n)의 시간 (정확히는 n/2)의 시간이 걸리므로 최종 시간복잡도는 O(n),
+공간복잡도는 O(1)입니다.
 
-### Without a string
-`while` loop depends on the length of `x`, so the time complexity is O(S), where `S = length of x`.
-The space complexity is also constant.
+### 문자열 X
+`while`문은 `x`의 길이만큼 실행이 되므로 `S`가 `x`의 길이라고 했을 때 시간복잡도는 O(S)가 됩니다.
+공간복잡도는 마찬가지로 O(1)입니다.
