@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "9. Palindrome Number"
+title: "【9】Palindrome Number"
 ref: leetcode-9
 date: 2020-05-06 01:15:00 +0900
 categories: LeetCode
-lang: en
+lang: ja
 ---
 
-## Problem
-- **Difficulty**: Easy
-- **Related Topic**: Implement
+## 問題
+- **難易度**: Easy
+- **関連主題**: Implement
 
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
@@ -20,7 +20,7 @@ Coud you solve it without converting the integer to a string?
 
 <div class="divider"></div>
 
-## Code
+## 実装
 
 - Runtime: 48 ms, faster than 89.84%
 - Memory Usage: 9.3 MB, less than 100.00%
@@ -32,7 +32,7 @@ def is_palindrome(x)
 end
 ```
 
-- Without converting to a string
+- 文字列を使わず実装
 - Runtime: 40ms, faster than 98.35%
 - Memory: 9.2 MB, less than 100.00%
 
@@ -50,11 +50,9 @@ end
 ```
 <div class="divider"></div>
 
-## Complextiy
-### With a string
-`String#reverse` takes linear time (n/2 to be specific) so the time complexity is O(n).
-The space complexity is constant.
+## 複雑度
+### 文字列 O
+`String#reverse`がO(n)なので時間複雑度はO(n)になります。空間複雑度はO(1)です。
 
-### Without a string
-`while` loop depends on the length of `x`, so the time complexity is O(S), where `S = length of x`.
-The space complexity is also constant.
+### 文字列 X
+`while`ループは`x`の長さだけ実行されますので時間複雑度はO(`xの長さ`)です。空間複雑度はO(1)です。
