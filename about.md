@@ -14,7 +14,7 @@ Today, I’m pursuing to become a front-end engineer (software engineer ultimate
 I have no talent in writing that I’m just running this blog as a learning journal of sorts. 
 Actually, this is the reason why I’m writing same posts in three different languages, because translating should help writing in one or the other, right?
 
-If you find any errors, typos, or awkward phrases on my posts, please points them out and let me know via [Twitter](https://twitter.com/_muicode).
+If you find any errors, typos, or awkward phrases on my posts, please points them out and let me know via [Twitter](https://twitter.com/jioneeu){:target="\_blank"}.
 
 Thank you.
 
