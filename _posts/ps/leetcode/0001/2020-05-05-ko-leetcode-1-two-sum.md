@@ -8,8 +8,8 @@ lang: ko
 ---
 
 ## 문제
-- 난이도: **Easy**
-- 관련 주제: **배열**, **해시 테이블**
+- **난이도**: **Easy**
+- **관련 주제**: 배열, 해시 테이블
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
