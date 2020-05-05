@@ -8,8 +8,8 @@ lang: en
 ---
 
 ## Problem
-- Difficulty: **Easy**
-- Related Topic: **Implement**
+- **Difficulty**: Easy
+- **Related Topic**: Implement
 
 Given a 32-bit signed integer, reverse digits of an integer.
 
