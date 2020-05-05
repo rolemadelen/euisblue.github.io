@@ -8,8 +8,8 @@ lang: en
 ---
 
 ## Problem
-- Difficulty: **Easy**
-- Related Topics: **Array**, **Hash Table**
+- **Difficulty**: Easy
+- **Related Topics**: Array, Hash Table
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
