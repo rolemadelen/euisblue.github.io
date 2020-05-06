@@ -4,12 +4,12 @@ title: "13. Roman to Integer"
 ref: leetcode-13
 date: 2020-05-06 01:15:00 +0900
 categories: LeetCode
-lang: en
+lang: ko
 ---
 
-## Problem
-- **Difficulty**: Easy
-- **Related Topic**: Math, String
+## 문제
+- **난이도**: Easy
+- **관련 문제**: Math, String
 
 Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 
@@ -17,7 +17,7 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 
 <div class="divider"></div>
 
-## Code
+## 구현
 
 - Runtime: 40 ms, faster than 100.00%
 - Memory Usage: 9.3 MB, less than 100.00%
@@ -61,8 +61,7 @@ end
 
 <div class="divider"></div>
 
-## Complextiy
-For every iteration of size of the given string, it reads a value from the hash which is constant. 
-So the time complexity is O(n).
+## 복잡도
+해시를 사용했기 때문에 탐색은 O(1)의 시간이 걸립니다. 그 외 모든 연산들도 O(1)이기 때문에 최종 시간복잡도는 O(n)이 됩니다.
 
-Although we're using the hash, the values are hardcoded and it's not depend upon by the size of the given string. Thus, the space complexity is constant.
+hash를 사용했지만 입력에 상관없이 고정된 크기를 가지기 때문에 공간복잡도는 O(1)이 됩니다.
