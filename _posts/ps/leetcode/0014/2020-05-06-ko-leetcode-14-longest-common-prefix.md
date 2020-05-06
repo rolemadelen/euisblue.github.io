@@ -9,7 +9,7 @@ lang: ko
 
 ## 문제
 - **난이도**: Easy
-- **관련 주제**: String
+- **관련 주제**: 문자열
 
 Write a function to find the longest common prefix string amongst an array of strings.
 If there is no common prefix, return an empty string `""`.
