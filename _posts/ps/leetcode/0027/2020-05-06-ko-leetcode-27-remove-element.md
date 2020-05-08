@@ -2,7 +2,7 @@
 layout: post
 title: "27. Remove Element"
 ref: leetcode-27
-date: 2020-05-06 15:50:00 +0900
+date: 2020-05-08 21:00:00 +0900
 categories: LeetCode
 lang: ko
 ---
