@@ -36,6 +36,29 @@ feed:
     en: /feed.xml
     ko: /feed-ko.xml
     ja: /feed-ja.xml
+   
+ps-post:
+  en:
+    problem: "Problem"
+    level: "Difficulty"
+    related: "Related Topics"
+    code: "Code"
+    ref: "Reference"
+    comp: "Complexity"
+  ko:
+    problem: "문제"
+    level: "난이도"
+    related: "관련 주제"
+    code: "구현"
+    ref: "참조"
+    comp: "복잡도"
+  ja:
+    problem: "問題"
+    level: "難易度"
+    related: "関連主題"
+    code: "実装"
+    ref: "参照"
+    comp: "複雑度"
 
 language:
         en: eng
