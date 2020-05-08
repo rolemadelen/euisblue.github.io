@@ -9,7 +9,7 @@ lang: ko
 
 ## 문제
 - **난이도**: Easy
-- **관련 문제**: 스택, 문자열
+- **관련 주제**: 스택, 문자열
 
 Given a string containing just the characters `(`, `)`, `{`, `}`, `[` and `]`, determine if the input string is valid.
 
