@@ -9,7 +9,7 @@ lang: ja
 
 ## 問題
 - **難易度**: Easy
-- **関連問題**: スタック、文字列
+- **関連主題**: スタック、文字列
 
 Given a string containing just the characters `(`, `)`, `{`, `}`, `[` and `]`, determine if the input string is valid.
 
