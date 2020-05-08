@@ -2,7 +2,7 @@
 layout: post
 title: "20. Valid Parentheses"
 ref: leetcode-20
-date: 2020-05-06 14:55:00 +0900
+date: 2020-05-08 18:50:00 +0900
 categories: LeetCode
 lang: en
 ---
