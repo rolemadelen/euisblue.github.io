@@ -53,6 +53,6 @@ end
 I created an array called `op` and used it like a stack. Whenever I encounter an open parentheses,
 I push the character into an array and pop it when it is a close parentheses to check if it's a 
 valid parentheses. All these operations (`push()` and `pop()`) are done in O(1), and I repeat
-these operations for the whole length of a string. The time complexity is O(n).
+these operations for the whole length of a string. The time complexity is **O(n)**.
 
-I used an array to store the open parentheses so the space complexity is also O(n).
+I used an array to store the open parentheses so the space complexity is also **O(n)**.
