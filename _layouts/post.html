@@ -8,6 +8,7 @@ layout: default
         <a href="{{ site.dcp[page.lang] }}">dcp</a>
         <a href="{{ site.ps[page.lang] }}">ps</a>
         <a href="{{ site.toys[page.lang] }}">toys</a>
+        <a href="/til">TIL</a>
 
         {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
         {% for post in posts %}
