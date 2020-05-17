@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(#1) Towers of Hanoi"
+title: "Towers of Hanoi pt. 1"
 ref: toys-towers-of-hanoi
 date: 2020-05-12 22:50:00 +0900
 categories: Toys
