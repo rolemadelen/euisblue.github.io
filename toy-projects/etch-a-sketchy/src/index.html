@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style/style.css">
+		<title>Etch-A-Sketchy</title>
+	</head>
+	<body>
+		<header>Etch-A-Sketchy</header>
+		<main>
+			<div class="option">
+				<button id="btn-clear">Clear</button>
+				<button id="btn-new">New</button>
+				<div class="color">
+					<input type="radio" name="color" value="pencil-color" checked> 
+					<label for="pencil-color"><input id="pencil-color" type="color"></label>
+					<input type="radio" name="color" value="random">
+					<label for="random">random</label>
+				</div>
+			</div>
+			<div class="container"></div>
+		</main>
+	</body>
+	<script src="../js/logic.js"></script>
+</html>
