@@ -9,10 +9,16 @@ categories:
 lang: ja
 ---
 
+<div class="updated">
+修正 (2020年6月11日) : DFS & BFS gif 追加
+</div>
+
 <center>
-<img src="/assets/images/algorithm/graph/dfs/dfs.gif" width="250px" height="250px"> <br>
-<span style="font-size:11px"><i>gif source: <a href="https://en.wikipedia.org/wiki/Depth-first_search">Wikipedia - DFS</a></i></span>
+<img src="/assets/images/algorithm/graph/dfsbfs.gif"> <br>
+<span style="font-size:11px"><i>gif source: <a href="https://twpower.github.io/73-how-to-implement-dfs-and-bfs-in-cpp">TWpower's Tech Blog</a></i></span>
 </center>
+
+<div class="divider"></div>
 
 ## 深さ優先探索（Depth First Search)
  
