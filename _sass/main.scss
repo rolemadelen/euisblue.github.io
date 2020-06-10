@@ -243,6 +243,13 @@ article {
     text-align: center;
     font-size: 1.4em;
   }
+  .updated {
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
   .divider {
     background: #ddd;
     background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
