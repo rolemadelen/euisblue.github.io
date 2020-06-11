@@ -1,14 +1,13 @@
 ---
 layout: post
-title: "그래프 - 넓이 우선 탐색 (BFS)"
+title: "グラフ・幅優先探索（BFS）"
 ref: algorithm-bfs
 date: 2020-06-11 05:00:00 +0900
 published: true
 categories:
  - "Algorithm"
-lang: ko
+lang: ja
 ---
-
 
 <center>
 <img src="/assets/images/algorithm/graph/dfsbfs.gif"> <br>
@@ -17,15 +16,15 @@ lang: ko
 
 <div class="divider"></div>
 
-## 넓이 우선 탐색 (BFS)
-넓이 우선 탐색 (BFS) 알고리즘은 가장 깊이 탐색하는 [DFS](./ko-algorithm-graph-dfs)와는 반대로 현재 정점에 연결된 가까운 노드들 부터
-탐색합니다. 첫 번째 정점과 연결되 있는 노드가 3개 있다면, 이 노드들을 먼저 전부 탐색합니다.
+## 幅優先探索（Breadth First Search)
+ 
+幅優先探索（BFS）アルゴリズムは[DFS](./ja-algorithm-graph-dfs)とは逆に元ノードから繋いでる、近隣のノードたちから探索をします。例えば、最初のノードと繋いでるノードが３つあったら、この３つをまず探索します。
 
-BFS는 큐를 사용해서 구현할 수 있습니다.
+BFSはqueueを使って実装できます。
 
 <div class="divider"></div>
 
-## 구현
+## 実装
 
 ```cpp
 #define vi vector<int>

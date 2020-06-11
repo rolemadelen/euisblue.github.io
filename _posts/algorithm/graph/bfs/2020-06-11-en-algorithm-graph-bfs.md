@@ -22,6 +22,8 @@ vertex first. So if 3 nodes are connected to the current vertex, it explores all
 
 BFS can be implemented using a queue.
 
+<div class="divider"></div>
+
 ## Implementation
 
 ```cpp
