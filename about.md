@@ -9,7 +9,7 @@ Hi. I’m **Jione Eu** who goes by **Jii**.
 
 I graduated from [UC San Diego](https://ucsd.edu/) with a degree in 
 Cognitive Science Specialization in Human Computer Interaction in 2019.
-Today, I’m pursuing to become a front-end engineer (software engineer ultimately).
+Today, I’m pursuing to become a Rails developer.
 
 I have no talent in writing that I’m just running this blog as a learning journal of sorts. 
 Actually, this is the reason why I’m writing same posts in three different languages, because translating should help writing in one or the other, right?
