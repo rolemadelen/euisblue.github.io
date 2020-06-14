@@ -43,7 +43,7 @@ void dfs(vector<vi > &graph, vb &visited, int start)
   {
     if(visited[neighbors[i]] == false) 
     {
-      dfs(graph, visited, start);
+      dfs(graph, visited, neighbors[i]);
     }
   }
 }
