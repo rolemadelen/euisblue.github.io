@@ -64,5 +64,5 @@ void insertionSort(int *arr, const int SIZE)
 
 <div class="divider"></div>
 
-## Reference
+## 参照
 - Introduction to Algorithms (CLRS) 3rd Edition
