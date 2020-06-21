@@ -5,18 +5,15 @@ ref: about
 lang: ja
 ---
 
-こんにちは。
+こんにちは。**jioneeu**と言う名でネットで活動している**Jione Eu**です。
 
-**Jii**という名でネットで活動している**Jione Eu**と申します。   
+２０１９年[UC San Diego](https://ucsd.edu/)から[認知科学HCI](http://cogsci.ucsd.edu/undergraduates/major/design-interaction.html)学位を受けて卒業しました。
 
-２０１９年６月 [UC San Diego](https://ucsd.edu/)から認知科学HCI学位を受けて卒業しました。
-今はRails開発者を目指して一所懸命勉強しています。
+韓国生まれで、アメリカで育ちました。今は日本の小学校で英語の先生で働いていますが、RoR開発者の目指して一生懸命勉強しています。
 
-文章を書くのが苦手なので、今はただ勉強したものを記録するためこのブログを運営しています。
-３つの言語で記事を書く理由も文章をもっとうまく書けるようになるためです。
+私自分の動機付けのため[Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber)チャンネルを運営しています。開発の勉強ではなくても大丈夫なので、一緒に勉強したいと思う方はいつでも見に来てください。
 
-作成した記事の中で内容に誤字脱字及び文脈が変な部分がありましたら是非、
-私の[Twitter](https://twitter.com/jioneeu){:target="\_blank"}にメッセージをしてください。
+作成した記事の内容に誤字脱字及び文脈が変な部分がありましたら是非、 私の[Twitter](https://twitter.com/jioneeu){:target="\_blank"}にメッセージをしてください。
 
 よろしくお願いします。
 
