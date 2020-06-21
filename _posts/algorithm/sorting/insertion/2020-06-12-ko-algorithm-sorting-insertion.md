@@ -70,7 +70,7 @@ void print(int arr[])
   {
     printf("%d ", arr[i]);
 
-    // 한 줄에 15개씩 숫자를 출력
+    // 한 줄에 15개씩 데이터를 출력
     if((i+1)%15==0)
     {
       printf("\n");
@@ -124,6 +124,5 @@ int main(void)
 <div class="divider"></div>
 
 ## Reference
-- Introduction to Algorithms (CLRS) 3rd Edition
 - [CS3 Data Structures & Algorithms](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/InsertionSort.html)
 - [삼입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
