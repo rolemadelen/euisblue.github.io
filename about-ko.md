@@ -5,19 +5,18 @@ ref: about
 lang: ko
 ---
 
-안녕하세요 **유 지원**입니다. 온라인에서는 영어 이름인 **Jii**로 활동하고 있습니다.
+안녕하세요. **jioneeu**라는 이름으로 활동하고 있는 **유 지원**입니다. 
 
-2019년 6월 [UC San Diego](https://ucsd.edu/)에서 인지과학 HCI 석사 학위를 받고 졸업했으며,  
-현재는 Rails 개발자를 목표로 혼자 공부하고 있는 중입니다.
+2019년 [UC San Diego](https://ucsd.edu/)에서 [인지과학 HCI](http://cogsci.ucsd.edu/undergraduates/major/design-interaction.html) 학사 학위를 받았습니다.
 
-글쓰는 재주가 없다보니 일단은 공부한걸 기록하는 용도로 이 블로그를 사용하고 있습니다.
-3개 국어로 블로그를 운영하는 이유도 글을 더 잘쓰기 위해서 입니다 (사실 일본어는 
-[Ruby](https://www.ruby-lang.org/ja/) 언어의 기술 문서들을 원서로 읽고 싶어서 시작).
+한국에서 태어나 미국에서 대부분의 시간을 보냈고, 지금은 일본에서 초등학교 외국어 선생님으로 일하고 있지만, Rails 개발자를 목표로 출근 전/퇴근 후 틈틈히 개발, 알고리즘, 자료구조, 등등을 공부하고 있습니다.
 
-작성한 기록 중 내용에 오류, 오타, 또는 문맥이 어색한 부분을 발견하신다면,
+개인적으로 동기부여를 위해 [Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber) 채널을 운영하고 있으니, 같이 공부하고 싶으신 분들은 참여해주세요 :)
+
+작성한 내용 중에서 오류, 오타, 또는 어색한 부분이 있다면
 제 [트위터](https://twitter.com/jioneeu){:target="\_blank"}로 꼭 지적해주시길 바라겠습니다.
 
-잘 부탁드립니다!
+잘 부탁드립니다.
 
 <div class="divider"></div>
 
