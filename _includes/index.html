@@ -1,5 +1,8 @@
 <section>
 {% for post in site.posts %}
+    {% if post.categories contains "TIL" %}
+      {% continue %}
+    {% endif %}
     {% if post.lang == page.lang %}
         <h3 class="code">{{ category[0] }} </h3>
         <ul>

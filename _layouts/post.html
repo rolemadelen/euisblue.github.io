@@ -5,9 +5,9 @@ layout: default
 <article>
 	<div class="center code menu" style="word-spacing: 13px">
         <a href="{{ site.about[page.lang] }}">about</a>
-        <a href="{{ site.dcp[page.lang] }}">dcp</a>
         <a href="{{ site.ps[page.lang] }}">ps</a>
-        <a href="{{ site.toys[page.lang] }}">toys</a>
+        <a href="{{ site.ruby[page.lang] }}">ruby</a>
+        <a href="{{ site.rails[page.lang] }}">rails</a>
         <a href="/til">TIL</a>
 
         {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
