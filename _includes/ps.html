@@ -6,10 +6,11 @@
         {% for post in category[1] %}
             {% if post.categories contains "AtCoder" or
                   post.categories contains "Baekjoon" or
-                  post.categories contains "LeetCode") %}
+                  post.categories contains "LeetCode" or
+                  post.categories contains "DCP") %}
                 {% if post.lang == page.lang %}
                     {% if header == nil %}
-                        <h3 class="code">{{ category[0] }} </h3>
+                        <h3 class="updated" style="text-align: left">{{ category[0] }} </h3>
                         {% assign header = true %}
                         {% assign posted = true %}
                     {% endif %}
