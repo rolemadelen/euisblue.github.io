@@ -17,20 +17,20 @@ about:
     ko: /about-ko
     ja: /about-ja
 
-dcp:
-    en: /dcp
-    ko: /dcp-ko
-    ja: /dcp-ja
+ruby:
+    en: /ruby
+    ko: /ruby-ko
+    ja: /ruby-ja
+
+rails:
+    en: /rails
+    ko: /rails-ko
+    ja: /rails-ja
 
 ps:
     en: /ps
     ko: /ps-ko
     ja: /ps-ja
-
-toys:
-    en: /toys
-    ko: /toys-ko
-    ja: /toys-ja
 
 feed:
     en: /feed.xml
