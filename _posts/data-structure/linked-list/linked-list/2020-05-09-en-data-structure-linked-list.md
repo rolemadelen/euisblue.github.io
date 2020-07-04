@@ -3,11 +3,13 @@ layout: post
 title: "What is Linked List?"
 ref: ds-linked-list
 date: 2020-05-09 07:50:00 +0900
-published: false
+published: true
 categories:
  - "Data Structure"
 lang: en
 ---
+
+<div class="updated"> updated (2020-07-04): published set to true </div>
 
 # Linked List
 Linked List is a linear data structure like arrays where data are not stored
@@ -52,7 +54,7 @@ the `head` node. `head` is `nil` if the list is empty.
 
 Each node consists of at least two parts: `value`, which is the data stored in the node and `next` which is a pointer/reference to the next node.
 
-## Simple Linked List Example
+## Simple Linked List
 ```rb
 class Node
   attr_accessor :data, :next
@@ -71,7 +73,7 @@ head.next = second    # [head, 1] -> [second, 2] -> nil
 second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
-## Traversal
+## Linked List Traversal
 ```rb
 def print_list(node)
   while node != nil
