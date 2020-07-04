@@ -3,7 +3,7 @@ layout: post
 title: "[Ruby] Singly Linked List"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
-published: false
+published: true
 categories:
  - "Data Structure"
 lang: en
