@@ -17,6 +17,11 @@ about:
     ko: /about-ko
     ja: /about-ja
 
+dsalgo:
+    en: /dsalgo
+    ko: /dsalgo-ko
+    ja: /dsalgo-ja
+
 ruby:
     en: /ruby
     ko: /ruby-ko
