@@ -167,7 +167,7 @@ int main(void)
   + 배열의 중간 위치를 계산: **O(1)**
   + 배열을 계속해서 반으로 분할: **O(log n)**
 - 통합 과정
-  + n개의 원소를 통합: O(n-1) = **O(n)**
+  + `n`개의 원소를 통합: O(n-1) = **O(n)**
 - <b>T(n) = O(n*log n)</b>
 
 <div class="divider"></div>
