@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "합병 정렬(Merge Sort)이란"
+title: "병합 정렬(Merge Sort)이란"
 ref: algorithm-sort-merge
 date: 2020-06-26 05:00:00 +0900
 published: true
