@@ -9,15 +9,28 @@ categories:
 lang: en
 ---
 
+<div class="updated">update (2020-07-05): divide and conquer pros/cons added</div>
+
 ## Merge Sort
-This algorithm is known as the **divide-and-conquer** algorithm. It breaks the problem into several subproblems
-that are similar to the original larger problem but smaller in size. It solve subproblems recursively and then 
-combine these solutions to create a solution to the original problem. Merge sort is also a stable sort.
+This algorithm is known as the **divide-and-conquer** algorithm. It breaks the problem into several
+ subproblems that are similar to the original larger problem but smaller in size.
+ It solve subproblems recursively and then combine these solutions to create a solution to the
+ original problem.
 
 Divide and Conquer approach involves three steps:
 1. **Divide** the problem into several subproblems.
 2. **Conquer** the subproblems by solving them recursively.
 3. **Combine** the solutions to the subproblems into the solution for the original problem.
+
+The **advantage** of Divide and Conquer algorithm.
+- Can solve a difficult problem by dividing into smaller sub-problems.
+  + for example) Tower of Hanoi
+- It usses cache effectively.
+  + When the problem becomes simple enough to conquer it, it can be solved within the cache without accessing the slower main memory.
+
+The **disadvantage** of Divide and Conquer algorithm.
+- This algorithm uses recursion and recursion is slow.
+- Recursive call stacks the stack frame which increases the memory usage.
 
 <div class="divider"></div>
 
@@ -123,7 +136,8 @@ int main(void)
 - Divide process
   + Dividing arrays into half in every step: **O(log n)**
   + finding the mid: **O(1)**
-- Merge process: **O(n)**
+- Merge process
+  + merge `n` elements: O(n-1) =  **O(n)**
 - <b>T(n) = O(n*log n)</b>
 
 <div class="divider"></div>
