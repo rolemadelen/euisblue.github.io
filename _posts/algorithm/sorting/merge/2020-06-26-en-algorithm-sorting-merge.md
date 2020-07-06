@@ -2,14 +2,17 @@
 layout: post
 title: "Merge Sort"
 ref: algorithm-sort-merge
-date: 2020-06-26 05:00:00 +0900
+date: 2020-07-05 05:00:00 +0900
 published: true
 categories:
  - "Algorithm"
 lang: en
 ---
 
-<div class="updated">update (2020-07-05): divide and conquer pros/cons added</div>
+<div class="updated">
+2020-06-26: post published<br>
+2020-07-05: divide and conquer pros/cons added
+</div>
 
 ## Merge Sort
 This algorithm is known as the **divide-and-conquer** algorithm. It breaks the problem into several
