@@ -56,12 +56,11 @@ lang: ko
 
 <div class="divider"></div>
 
-## 연결 리스트의 구현
+### 연결 리스트의 기본 구조
 연결 리스트에서 사용되는 노드는 다음과 같은 정보를 저장한다:
 - 다음 노드를 가리킬 포인터
 - 현재 노드가 나타내는 자료의 값 
 
-### 연결 리스트의 기본 구조
 ```rb
 class Node
   attr_accessor :data, :next
@@ -81,6 +80,7 @@ second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
 ### 연결 리스트 순회
+첫 번째 노드에서 시작해 순차적으로 마지막 노드까지 방문한다.
 ```rb
 def print_list(node)
   while node != nil
