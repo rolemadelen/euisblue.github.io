@@ -2,14 +2,18 @@
 layout: post
 title: "マージソート「Merge Sort」とは"
 ref: algorithm-sort-merge
-date: 2020-06-26 05:00:00 +0900
+date: 2020-07-05 05:00:00 +0900
 published: true
 categories:
  - "Algorithm"
 lang: ja
 ---
 
-<div class="updated">修正(2020年7月05日): 記事published</div>
+<div class="updated">
+<br>
+2020-06-26: 原文アップロード<br>
+2020-07-05: 記事の構造変更＆翻訳完了
+</div>
 
 ## マージソート
 
