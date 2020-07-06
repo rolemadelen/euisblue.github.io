@@ -1,66 +1,67 @@
 ---
 layout: post
-title: "What is Linked List?"
+title: "DS - 연결 리스트(Linked List)란"
 ref: ds-linked-list
 date: 2020-05-09 07:50:00 +0900
-published: false
+published: true
 categories:
  - "Data Structure"
 lang: ko
 ---
 
-# Linked List
-연결 리스트는 배열과 같은 선형 자료구조이지만 자료들이 메모시상에 순차적으로 저장되지 않고 
-노드라는 것들로 서로 연결되어 있습니다.
+<div class="updated">  
+2020-07-06: 재번역 & 연결 리스트 이미지 추가 <br>
 
-Linked List is a linear data structure like arrays where data are not stored
-contiguously in the memory like arrays. The elements in a linked list are linked using pointers.
+</div>
 
-연결 리스트의 장점으로는 데이터의 삽입과 삭제가 O(1)에 가능하다는 점이고, 단점으로는 배열처럼 
-리스트 중간에 바로 접근 할 수 없다는 것입니다. 무조건 첫 번째 노드에서 부터 순차적으로 접근을 해야
-하므로 접근에는 O(n)의 시간이 걸립니다. 추가적인 메모리가 소모된다는 것 또한 연결 리스트의 
-단점입니다.
+## 연결 리스트란
+
+연결 리스트(Linked List)는 배열과 같은 선형 자료구조이지만 자료가 메모리에 저장되는 방식이 다르다. 
+배열의 경우 자료들이 메모리에 나란히 일렬로 저장되는 반면, 연결 리스트의 자료들은 이곳저곳 떨어져있다. 
+
+![Linked List image](assets/images/data-structure/linked-list/linkedlist.png)
+<div style="font-size: 10px; text-align: center;">Source: https://dev.to/swarup260/data-structures-algorithms-in-javascript-single-linked-list-part-1-3ghg</div>
+
+연결 리스트의 각 자료들을 노드(_node_)라고 부르는데, 각 노드에는 다음 노드를 참조할 수 있는 포인터(_pointer_)가
+존재한다. 이 포인터를 사용해서 여기저기 떨어져있는 노드들에 접근할 수가 있다.
 
 <div class="divider"></div>
 
-## Linked List vs. Array
-Arrays are used to store linear data of same types, but they have the following limitations:
-1. The size of the arrays is fixed.
-2. Inserting and deleting an element is expensive because we first need to create a room for the 
-new element, and then shift all elements.
+## 연결 리스트와 배열
+배열은 같은 자료형의 데이터를 저장할 때 사용되지만 아래의 한계를 가진다:
+- 배열의 크기가 변할 수 없다.
+- 정렬된 자료의 경우, 삽입과 제거의 비용이 크다.
+  + **삽입**: 새로운 자료를 삽입할 위치를 찾고 그 위치부터 뒤에 있는 모든 자료들을 한 칸씩 옮겨주는 과정이 필요. 
+  + **제거**: 제거된 자료의 공백을 메우기 위해 자료들을 한 칸씩 옮겨주는 과정이 필요.
 
-For example, let say we have a sorted list of IDs<br>
-`id[] = [1000, 1010, 1050, 2000, 2040]`.
+<div class="divider"></div>
 
-To insert a new id `1001` in a **sorted list**, we need to shift every elements after `id[0]` to
-the right to maintain its order. 
+## 연결 리스트의 장점
+- 배열과 다르게 연결 리스트의 크기는 동적이다.
+  + 새로운 데이터 추가/제거 후 요소들의 위치를 앞뒤로 옮길 필요가 없다.
+- 추가와 제거의 연산이 빠르다.
 
-| Operations| Array | Linked List|
+## 연결 리스트의 단점
+- 요소에 접근을 하기 위해서는 무조건 첫 번째 노드에서부터 탐색을 해야한다.
+- 새로운 요소마다 노드를 만들어야 하기 때문에 메모리의 사용량이 증가한다.
+- 배열과 다르게 연속된 메모리에 자료가 존재하지 않기 때문에 지역성이 떨어진다.
+  +  캐시(cache) 친화적이지 않다.
+
+| 연산 | 배열 | 연결 리스트 |
 |:---:|:---:|:---:|
-|**Access**| O(1) | O(n) |
-|**Search**| O(n) | O(n) |
-|**Insert**| O(n) | O(1) |
-|**Delete**| O(n) | O(1) |
+|**접근**| O(1) | O(n) |
+|**탐색**| O(n) | O(n) |
+|**삽입/추가**| O(n) | O(1) |
+|**삭제/제거**| O(n) | O(1) |
 
-## Advantages of Linked List
-1. Unlike the arrays, the size of the linked lists is dynamic. You can insert or delete elements
-without resizing or shiftin.
-2. Linked lists have faster insert and delete operations.
+<div class="divider"></div>
 
-## Drawbacks
-1. Random access is not allowed. We have to access elements sequentially starting from the 
-first node.
-2. Every time we create a new node to link, we're using that much more memory space.
-3. Linked Lists are not cache friendly. Array elements are located contiguously in a memory, 
-so there's locality of reference.
+## 연결 리스트의 구현
+연결 리스트에서 사용되는 노드는 다음과 같은 정보를 저장한다:
+- 다음 노드를 가리킬 포인터
+- 현재 노드가 나타내는 자료의 값 
 
-## Representation
-A linked list is represented by a pointer to the first node or the linked list, which is called 
-the `head` node. `head` is `nil` if the list is empty.
-
-Each node consists of at least two parts: `value`, which is the data stored in the node and `next` which is a pointer/reference to the next node.
-
-## Simple Linked List Example
+### 연결 리스트의 기본 구조
 ```rb
 class Node
   attr_accessor :data, :next
@@ -79,7 +80,7 @@ head.next = second    # [head, 1] -> [second, 2] -> nil
 second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
-## Traversal
+### 연결 리스트 순회
 ```rb
 def print_list(node)
   while node != nil
