@@ -2,7 +2,7 @@
 layout: post
 title: "DS・連結リスト「Linked List」とは"
 ref: ds-linked-list
-date: 2020-05-09 07:50:00 +0900
+date: 2020-07-07 05:00:00 +0900
 published: true
 categories:
  - "Data Structure"
@@ -10,6 +10,7 @@ lang: ja
 ---
 
 <div class="updated"> 
+2020-05-09: 記事アップロード<br>
 2020-07-07: 日本語翻訳完了
 </div>
 
