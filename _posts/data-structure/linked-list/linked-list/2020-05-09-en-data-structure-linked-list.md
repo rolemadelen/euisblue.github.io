@@ -2,7 +2,7 @@
 layout: post
 title: "DS - What is Linked List?"
 ref: ds-linked-list
-date: 2020-07-06 05:00:00 +0900
+date: 2020-05-09 05:00:00 +0900
 published: true
 categories:
  - "Data Structure"
@@ -10,7 +10,6 @@ lang: en
 ---
 
 <div class="updated"> 
-2020-05-09: post published<br>
 2020-07-05: typo fixed & wording modified <br>
 2020-07-06: linked list image added
 </div>
