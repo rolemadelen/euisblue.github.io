@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What is Linked List?"
+title: "DS - What is Linked List?"
 ref: ds-linked-list
 date: 2020-05-09 07:50:00 +0900
 published: true
@@ -9,25 +9,46 @@ categories:
 lang: en
 ---
 
-<div class="updated"> updated (2020-07-04): published set to true </div>
+<div class="updated"> 
+2020-07-05: typo fixed & wording modified <br>
+2020-07-06: linked list image added
+</div>
 
-# Linked List
-Linked List is a linear data structure like arrays where data are not stored
-contiguously in the memory like arrays. The elements in a linked list are linked using pointers.
+## Linked List
+Linked List is a linear data structure in which data are not stored
+contiguously in the memory. Each element in a linked list is called a _node_. 
+These nodes are linked together via _pointers_ referencing different nodes.
+
+![Linked List image](assets/images/data-structure/linked-list/linkedlist.png)
+<div style="font-size: 10px; text-align: center;">Source: https://dev.to/swarup260/data-structures-algorithms-in-javascript-single-linked-list-part-1-3ghg</div>
 
 <div class="divider"></div>
 
 ## Linked List vs. Array
 Arrays are used to store linear data of same types, but they have the following limitations:
-1. The size of the arrays is fixed.
-2. Inserting and deleting an element is expensive because we first need to create a room for the 
-new element, and then shift all elements.
+1. The size of the array is fixed.
+2. Inserting and deleting an element is expensive, because we first need to create a room for the 
+new element and then shift all elements.
 
-For example, let say we have a sorted list of IDs<br>
+For example, let's say we have a sorted list of IDs:<br>
 `id[] = [1000, 1010, 1050, 2000, 2040]`.
 
-To insert a new id `1001` in a **sorted list**, we need to shift every elements after `id[0]` to
+To insert a new id (`1001`) in a **sorted list**, we need to shift every elements after `id[0]` to
 the right to maintain its order. 
+
+<div class="divider"></div>
+
+## Advantages of Linked List
+- Unlike the arrays, the size of the linked lists is dynamic. You can insert or delete elements
+without resizing or shifting its elements.
+- Linked lists have faster insert and delete operations.
+
+## Disadvantages of Linked List
+- Random access is not allowed. We have to access elements sequentially starting from the 
+first node.
+- Every time we create a new node to link, we're using that much more memory space.
+- Linked Lists are not cache friendly. Array elements are located contiguously in a memory, 
+so there's locality of reference.
 
 | Operations| Array | Linked List|
 |:---:|:---:|:---:|
@@ -36,23 +57,15 @@ the right to maintain its order.
 |**Insert**| O(n) | O(1) |
 |**Delete**| O(n) | O(1) |
 
-## Advantages of Linked List
-1. Unlike the arrays, the size of the linked lists is dynamic. You can insert or delete elements
-without resizing or shiftin.
-2. Linked lists have faster insert and delete operations.
-
-## Drawbacks
-1. Random access is not allowed. We have to access elements sequentially starting from the 
-first node.
-2. Every time we create a new node to link, we're using that much more memory space.
-3. Linked Lists are not cache friendly. Array elements are located contiguously in a memory, 
-so there's locality of reference.
+<div class="divider"></div>
 
 ## Representation
 A linked list is represented by a pointer to the first node or the linked list, which is called 
 the `head` node. `head` is `nil` if the list is empty.
 
 Each node consists of at least two parts: `value`, which is the data stored in the node and `next` which is a pointer/reference to the next node.
+
+<div class="divider"></div>
 
 ## Simple Linked List
 ```rb
