@@ -2,7 +2,7 @@
 layout: post
 title: "DS - 연결 리스트(Linked List)란"
 ref: ds-linked-list
-date: 2020-07-07 05:00:00 +0900
+date: 2020-05-09 05:00:00 +0900
 published: true
 categories:
  - "Data Structure"
@@ -10,7 +10,6 @@ lang: ko
 ---
 
 <div class="updated">  
-2020-05-09: 원문 업로드<br>
 2020-07-06: 재번역 & 연결 리스트 이미지 추가 
 </div>
 
