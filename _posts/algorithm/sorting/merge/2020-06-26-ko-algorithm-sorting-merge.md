@@ -2,14 +2,17 @@
 layout: post
 title: "병합 정렬(Merge Sort)이란"
 ref: algorithm-sort-merge
-date: 2020-06-26 05:00:00 +0900
+date: 2020-07-05 05:00:00 +0900
 published: true
 categories:
  - "Algorithm"
 lang: ko
 ---
 
-<div class="updated">update (2020-07-05): post published</div>
+<div class="updated">
+2020-06-26: 원문 업로드<br>
+2020-07-05: 글 구조 변경 & 번역 완료
+</div>
 
 ## 병합 정렬
 
