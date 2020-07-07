@@ -1,92 +1,65 @@
 ---
 layout: post
-title: "[Ruby] 단일 연결 리스트"
+title: "DS - 단일 연결 리스트(Singly Linked List)란"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
-published: false
+published: true
 categories:
  - "Data Structure"
 lang: ko
 ---
 
-If you need a recap, please read <i>[What is Linked List?](./en-data-structure-linked-list)</i>.
+<div class="updated">2020-07-08: 글 구조 변경</div>
+
+연결 리스트가 뭐지? 하는 생각이 든다면 우선 <i>[연결 리스트(Linked List)란](./en-data-structure-linked-list)</i> 
+글을 보고 오기를 권장한다.
+
+<div class="divider"></div>
 
 ## 단일 연결 리스트란?
-단일 연결 리스트(Singly Linked List)는 선형 자료구조로써 모든 노드들이 순차적으로 연결되어 있습니다.
-노드의 구조는 값을 저장하는 변수 `value`와 다음 노드를 가리키는 노드 `next`로 이루어져 있습니다. 
+단일 연결 리스트(Singly Linked List)는 모든 노드들이 순차적으로 연결되어 있다. 
+또한 단방향의 연결 리스트이기 때문에 오직 앞으로만 이동할 수 있다.
 
-## 데이터 추가
-These are basic operations of Singly Linked List.
+![Linked List image](assets/images/data-structure/linked-list/linkedlist.png)
+<div style="font-size: 10px; text-align: center;">Source: https://dev.to/swarup260/data-structures-algorithms-in-javascript-single-linked-list-part-1-3ghg</div>
 
-- `add()` adds a node to a list
+단일 연결 리스트의 노드는 기본적으로 두 개의 정보를 가진다.
+1. 다음 노드를 가리키는 포인터
+2. 데이터의 값
 
+<div class="divider"></div>
+
+## 연산
+
+단일 연결 리스트에서는 기본적으로 아래 세 개의 연산이 가능하다.
+- `add()`: 리스트에 데이터를 추가
+- `remove(n)`: <i>n</i>번째 노드를 리스트에서 삭제. 
+- `search_node_at(n)`: <i>n</i>번째 노드를 탐색.
+
+<div class="divider"></div>
+
+## 연결 리스트 Ruby 코드
+
+우선 연결 리스트에서 사용 할 노드의 클래스를 구현해야 한다.
+노드를 생성할때 `@data`는 인자로 넘어온 값으로 초기화하고, `@next`는 가리키는 노드가 없기 때문에 null로 초기화 한다.
 ```rb
-def add(value)
-  new_node = Node.new(value)
-  if @head == nil
-    @head = new_node
-  else
-    curr = @head
-    while curr.next != nil
-      curr = curr.next
-    end
-
-    curr.next = new_node
-  end
-
-  @length += 1
-end
-```
-
-## 데이터 삭제
-- `remove()` removes a node from a list
-
-```rb
-# first node => position 1
-def remove(pos)
-  return -1 if pos < 1 or pos > @length
-  if pos==1
-    @head = @head.next
-  else
-    curr = @head
-    for i in 1...(pos-1)
-      curr = curr.next
-    end
-
-    curr.next = curr.next.next
-  end
-```
-
-## 탐색
-- `search_node_at()` searches for a node at nth position from a list
-
-```rb
-# first node => position 1
-def search_node_at(pos)
-  if @head == nil
-    puts "---- list is empty"
-    return 
-  elsif pos < 1 or pos > @length
-    puts "---- invalid position"
-    return
-  else
-    curr = @head
-    for i in 1...pos
-      curr = curr.next
-    end
-    return curr
+class Node
+  attr_accessor :data, :next
+  
+  def initialize(data)
+    @data = data
+    @next = nil
   end
 end
 ```
 
-## 구현 예시
-
-This is one possible implementation.
+그럼 이제 노드 를래스를 사용하여 연결 리스트를 구현할 수 있다.
 
 ```rb
 class SinglyLinkedList
   attr_reader :head, :length
 
+  ## at first, @head is not pointing anything so it's set to null
   def initialize()
     @head = nil
     @length = 0
@@ -157,36 +130,26 @@ class SinglyLinkedList
 end
 ```
 
-Here's the `Node` class.
-```rb
-class Node
-  attr_accessor :data, :next
-  
-  def initialize(data)
-    @data = data
-    @next = nil
-  end
-end
-```
-
-You can use it like this.
+### 사용 예제
 
 ```rb
-# create an instance of Singly Linked List
+# 단일 연결 리스트의 인스턴스를 생성
 root = SinglyLinkedList.new()
 
-# insert nodes with a data 1 to 5
+# 각각 1부터 5의 값을 가진  5개의 노드를 추가
 1.upto(5) do |x|
   root.add(x)
 end
 
+# 리스트의 길이와 모든 요소를들 출력
 puts "len: #{root.length}"
 root.print_list
 
-# remove the first node
+# 첫 번째 노드를 삭제
 root.remove(1)
 puts "len: #{root.length}"
 root.print_list
 
+# 두 번째 노드를 탐색, 값을 출력
 puts "search_node_at(2): #{root.search_node_at(2).data}"
 ```
