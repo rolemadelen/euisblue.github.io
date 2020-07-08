@@ -11,7 +11,7 @@ lang: ko
 
 <div class="updated">2020-07-08: 글 구조 변경</div>
 
-연결 리스트가 뭐지? 하는 생각이 든다면 우선 <i>[연결 리스트(Linked List)란](./en-data-structure-linked-list)</i> 
+연결 리스트가 뭐지? 하는 생각이 든다면 우선 <i>[연결 리스트(Linked List)란](./ko-data-structure-linked-list)</i> 
 글을 보고 오기를 권장한다.
 
 <div class="divider"></div>
