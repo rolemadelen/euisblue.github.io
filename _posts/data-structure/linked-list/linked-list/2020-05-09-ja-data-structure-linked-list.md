@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DS・連結リスト「Linked List」とは"
+title: "連結リスト「Linked List」とは"
 ref: ds-linked-list
 date: 2020-05-09 05:00:00 +0900
 published: true
