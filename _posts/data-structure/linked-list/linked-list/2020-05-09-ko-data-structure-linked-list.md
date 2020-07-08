@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DS - 연결 리스트(Linked List)란"
+title: "연결 리스트(Linked List)란"
 ref: ds-linked-list
 date: 2020-05-09 05:00:00 +0900
 published: true
