@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DS - What is Linked List?"
+title: "What is Linked List?"
 ref: ds-linked-list
 date: 2020-05-09 05:00:00 +0900
 published: true
