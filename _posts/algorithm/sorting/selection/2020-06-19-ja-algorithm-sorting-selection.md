@@ -9,6 +9,10 @@ categories:
 lang: ja
 ---
 
+<div class="updated">
+2020-07-10: Cコード、Rubyコードに変更。
+</div>
+
 ## 選択ソート
 - データを一個ずつ比較しながら位置を捜す[挿入ソート](./ja-algorithm-sorting-insertion)とは違う。
 - 入れる位置はもう決めて、そこに来るデータだけを捜す。
@@ -26,77 +30,34 @@ lang: ja
 
 ## 選択ソートC言語実装
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def selection_sort(arr)
+  n = arr.size
 
-#define SIZE 10
+  for i in (0 ... n - 1)
+    min = i
 
-void selectionSort(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    // データを入れる位置
-    int pos = i;
+    # i番目に小さいデータを捜す
+    for j in (i+1 ... n)
+      if arr[j] < arr[min]
+        min = j
+      end
+    end
 
-    // i番目に小さいデータを捜す
-    for(int j=i+1; j<SIZE; ++j) 
-    {
-      if(arr[j] < arr[pos])
-      {
-        pos = j;
-      }
-    }
+    # データを配列のi番目に入れる
+    arr[i], arr[min] = arr[min], arr[i]
+  end
+end
 
-    // データを配列のi番目に入れる
-    int temp = arr[pos];
-    arr[pos] = arr[i];
-    arr[i] = temp;
-  }
-}
+arr = [*1 ... 100].shuffle
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
-    
-    // １行に15個ずつ出力
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
+print arr
+puts
 
-  printf("\n");
-}
+selection_sort(arr)
 
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-
-  // 乱数を生成
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand()%SIZE+1;
-  }
-
-  printf("Before Sorting\n");
-  print(arr);
-
-  // データを整列する
-  selectionSort(arr);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
 
 <div class="divider"></div>
