@@ -9,6 +9,10 @@ categories:
 lang: ko
 ---
 
+<div class="updated">
+2020-07-10: C코드 Ruby코드로 변경
+</div>
+
 ## 선택 정렬
 - 데이터의 위치를 한 칸씩 옮기면서 올바른 위치를 찾는 [삼입 정렬](ko-algorithm-sorting-insertion)과는 달리, 정해진 위치에 와야할 데이터를 찾는다.
 
@@ -24,77 +28,34 @@ lang: ko
 
 ## 선택 정렬 C언어 구현
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def selection_sort(arr)
+  n = arr.size
 
-#define SIZE 10
+  for i in (0 ... n - 1)
+    min = i
 
-void selectionSort(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    // 원소를 삽입할 위치
-    int pos = i;
+    # i번째로 작은 원소를 찾는다
+    for j in (i+1 ... n)
+      if arr[j] < arr[min]
+        min = j
+      end
+    end
 
-    // i번째로 작은 원소를 찾는다
-    for(int j=i+1; j<SIZE; ++j) 
-    {
-      if(arr[j] < arr[pos])
-      {
-        pos = j;
-      }
-    }
+    # i번째로 작은 원소를 i번째 위치로 옮긴다
+    arr[i], arr[min] = arr[min], arr[i]
+  end
+end
 
-    // i번째로 작은 원소를 i번째 위치로 옮긴다
-    int temp = arr[pos];
-    arr[pos] = arr[i];
-    arr[i] = temp;
-  }
-}
+arr = [*1 ... 100].shuffle
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
+print arr
+puts
 
-    // 한 줄에 15개씩 출력
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
+selection_sort(arr)
 
-  printf("\n");
-}
-
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-
-  // 난수 생성
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand()%SIZE+1;
-  }
-
-  printf("Before Sorting\n");
-  print(arr);
-
-  // 정렬 알고리즘 호출
-  selectionSort(arr);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
 
 <div class="divider"></div>
