@@ -14,7 +14,7 @@ lang: ko
 </div>
 
 ## 선택 정렬
-- 데이터의 위치를 한 칸씩 옮기면서 올바른 위치를 찾는 [삼입 정렬](ko-algorithm-sorting-insertion)과는 달리, 정해진 위치에 와야할 데이터를 찾는다.
+- 데이터의 위치를 한 칸씩 옮기면서 올바른 위치를 찾는 [삽입 정렬](ko-algorithm-sorting-insertion)과는 달리, 정해진 위치에 와야할 데이터를 찾는다.
 
 <div class="divider"></div>
 
@@ -26,7 +26,7 @@ lang: ko
 
 <div class="divider"></div>
 
-## 선택 정렬 C언어 구현
+## 선택 정렬 코드
 
 ```rb
 def selection_sort(arr)
