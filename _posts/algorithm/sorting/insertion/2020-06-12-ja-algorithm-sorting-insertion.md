@@ -33,76 +33,37 @@ updated (2020-06-20): 記事の構造変更
 
 <div class="divider"></div>
 
-## 選択ソートC言語実装 
+## 選択ソートのコード
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def insertion_sort(arr)
+  n = arr.size
 
-#define SIZE 100
+  # 2番目から始め
+  for i in (1 ... n)
+    index = i
+    key = arr[i]
 
-void insertionSort(int arr[])
-{
-  // 2番目から始め
-  for(int i=1; i<SIZE; ++i)
-  {
-    int index = i;
-    int key = arr[index];
+    while index > 0 and key < arr[index-1]
+      # データの位置をswapする
+      arr[index] = arr[index - 1]
+      index -= 1
+    end
 
-    while(index>0 && key < arr[index-1])
-    {
-      // データの位置をswapする
-      arr[index] = arr[index-1];
-      --index;
-    }
+    # データを挿入する
+    arr[index] = key
+  end
+end
 
-    // データを挿入する
-    arr[index] = key;
-  }
-}
+arr = [*1 ... 100].shuffle
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
-    
-    // １行に15個ずつ出力する
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
+print arr
+puts
 
-  printf("\n");
-}
+insertion_sort(arr)
 
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-  
-  // 乱数を生成する
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand() % SIZE;
-  }
-
-  printf("Before Sorting:\n");
-  print(arr);
-
-  // 整列
-  insertionSort(arr);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
 
 <div class="divider"></div>
@@ -123,4 +84,4 @@ int main(void)
 ## Reference
 - [Introduction to Algorithms 3rd edition](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
 - [CS3 Data Structures & Algorithms](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/InsertionSort.html)
-- [삼입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
+- [삽입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
