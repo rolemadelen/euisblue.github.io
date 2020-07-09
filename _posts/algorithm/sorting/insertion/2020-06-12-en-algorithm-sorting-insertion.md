@@ -33,75 +33,36 @@ updated (2020-06-20): post structures modified
 
 <div class="divider"></div>
 
-## Insertion Sort Implementation in C
+## The code
+```rb
+def insertion_sort(arr)
+  n = arr.size
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+  # start from the 2nd element
+  for i in (1 ... n)
+    index = i
+    key = arr[i]
 
-#define SIZE 100
+    while index > 0 and key < arr[index-1]
+      # shift one space to the right
+      arr[index] = arr[index - 1]
+      index -= 1
+    end
 
-void insertionSort(int arr[])
-{
-  // start from the 2nd element
-  for(int i=1; i<SIZE; ++i)
-  {
-    int index = i;
-    int key = arr[index];
+    # insert the key at the right position
+    arr[index] = key
+  end
+end
 
-    while(index > 0 && key < arr[index-1])
-    {
-      // shift one space to the right
-      arr[index] = arr[index-1];
-      --index;
-    }
+arr = [*1 ... 100].shuffle
 
-    // insert the key at the right position
-    arr[index] = key;
-  }
-}
+print arr
+puts
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
+insertion_sort(arr)
 
-    // print 15 data per line
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
-
-  printf("\n");
-}
-
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-
-  // generate random numbers
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand() % SIZE;
-  }
-
-  printf("Before Sorting:\n");
-  print(arr);
-
-  insertionSort(arr);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
 
 <div class="divider"></div>
@@ -122,4 +83,4 @@ int main(void)
 ## Reference
 - [Introduction to Algorithms 3rd edition](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
 - [CS3 Data Structures & Algorithms](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/InsertionSort.html)
-- [삼입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
+- [삽입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
