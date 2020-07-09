@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "삼입 정렬(Insertion Sort)이란"
+title: "삽입 정렬(Insertion Sort)이란"
 ref: algorithm-sort-insertion
 date: 2020-06-12 05:00:00 +0900
 published: true
@@ -34,78 +34,38 @@ updated (2020-06-20): 글 구조 변경
 
 <div class="divider"></div>
 
-## 삼입 정렬 C언어 구현 
+## 삽입 정렬 코드
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def insertion_sort(arr)
+  n = arr.size
 
-#define SIZE 100
+  # 두 번째 자료부터 시작
+  for i in (1 ... n)
+    index = i
+    key = arr[i]
 
-void insertionSort(int arr[])
-{
-  // 두 번째 자료부터 시작
-  for(int i=1; i<SIZE; ++i)
-  {
-    int index = i;
-    int key = arr[index];
+    # 비교할 값이 없거나 앞의 값이 key보다 작을때까지 반복
+    while index > 0 and key < arr[index-1]
+      # 앞 자료의 값을 한 칸 뒤로 민다
+      arr[index] = arr[index - 1]
+      index -= 1
+    end
 
-    // 비교할 값이 없거나 앞의 값이 key보다 작을때까지 반복
-    while(index > 0 && key < arr[index-1])
-    {
-      // 앞 자료의 값을 한 칸 뒤로 민다
-      arr[index] = arr[index-1];
-      --index;
-    }
+    # key를 올바른 위치에 삼입한다.
+    arr[index] = key
+  end
+end
 
-    // key를 올바른 위치에 삼입한다.
-    arr[index] = key;
-  }
-}
+arr = [*1 ... 100].shuffle
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
+print arr
+puts
 
-    // 한 줄에 15개씩 데이터를 출력
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
+insertion_sort(arr)
 
-  printf("\n");
-}
-
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-
-  // 랜덤 숫자 생성
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand() % SIZE;
-  }
-
-  // 정렬 전, 자료 출력
-  printf("Before Sorting:\n");
-  print(arr);
-
-  insertionSort(arr);
-
-  // 정렬 후, 자료 출력
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
 
 <div class="divider"></div>
@@ -126,4 +86,4 @@ int main(void)
 ## Reference
 - [Introduction to Algorithms 3rd edition](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
 - [CS3 Data Structures & Algorithms](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/InsertionSort.html)
-- [삼입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
+- [삽입 정렬(insertion sort)이란](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
