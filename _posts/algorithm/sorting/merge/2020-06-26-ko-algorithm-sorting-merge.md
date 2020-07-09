@@ -77,7 +77,7 @@ lang: ko
 
 <div class="divider"></div>
 
-## 병합정렬 코드
+## 병합 정렬 코드
 ```rb
 def merge(arr, left, mid, right)
   sorted_arr = [0]*right
