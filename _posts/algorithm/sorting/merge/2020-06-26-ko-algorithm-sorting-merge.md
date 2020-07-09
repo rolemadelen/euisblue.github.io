@@ -10,7 +10,8 @@ lang: ko
 ---
 
 <div class="updated">
-2020-07-05: 글 구조 변경 & 번역 완료
+2020-07-05: 글 구조 변경 & 번역 완료<br>
+2020-07-10: C코드 Ruby코드로 변경
 </div>
 
 ## 병합 정렬
@@ -76,90 +77,57 @@ lang: ko
 
 <div class="divider"></div>
 
-## 병합 정렬 C언어 구현
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+## 병합정렬 코드
+```rb
+def merge(arr, left, mid, right)
+  sorted_arr = [0]*right
+  p = left
+  q = mid+1
+  k = left  # sorted_arr의 인덱스
 
-#define SIZE 15
-
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
-
-    // 한 줄에 15개의 데이터를 출력
-    if((i+1)%15==0)
-      printf("\n");
-  }
-
-  printf("\n");
-}
-
-void merge(int arr[], int left, int mid, int right)
-{
-  int sortedArr[SIZE] = {0};
-  int L = left;
-  int R = mid+1;
-  int K = left;
-
-  // 두 개의 리스트를 병합하는 과정
-  while(L <= mid && R <= right)
-  {
-    if(arr[L] < arr[R])
-      sortedArr[K++] = arr[L++];
+  # 두 개의 리스트를 병합하는 과정
+  while (p <= mid and q <= right)
+    if arr[p] < arr[q]
+      sorted_arr[k] = arr[p];
+      p += 1
     else
-      sortedArr[K++] = arr[R++];
-  }
+      sorted_arr[k] = arr[q]
+      q += 1
+    end
+    k += 1
+  end
 
-  // 병합 후, 왼쪽 리스트에 남아있는 값들을 전부 복사
-  while(L <= mid)
-    sortedArr[K++] = arr[L++];
-  
-  // 오른쪽은 이미 정럴이 되어 있기 때문에 위 복사하는 과정은 필요없음
+  # 병합 후, 왼쪽 리스트에 남아있는 값들을 전부 복사
+  while p <= mid
+    sorted_arr[k] = arr[p];
+    p += 1
+    k += 1
+  end
 
-  // 병합한 리스트의 값들은 출력배열에 저장
-  for(int i=left; i<K; ++i)
-    arr[i] = sortedArr[i];
-}
+  # 병합한 리스트의 값들은 출력배열에 저장
+  for i in (left...k) do
+    arr[i] = sorted_arr[i]
+  end
 
-void mergeSort(int arr[], int left, int right)
-{
-  int mid;
+  arr
+end
 
+def merge_sort(arr, left, right)
+  mid = 0
   if(left < right)
-  {
-    mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid+1, right);
-    merge(arr, left, mid, right);
-  }
-}
+    mid = left + (right-left)/2
+    merge_sort(arr, left, mid)
+    merge_sort(arr, mid+1, right)
+    merge(arr, left, mid, right)
+  end
+end
 
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
+arr = [1, 9, 7, 10, 8, 2, 51]
+size = arr.size
 
-  unsigned seed = time(0);
-  srand(seed);
-
-  // 난수 생성
-  for(size_t i=0; i<SIZE; ++i)
-    arr[i] = rand()%SIZE+1;
-
-  printf("Before Sorting\n");
-  print(arr);
-  
-  mergeSort(arr, 0, SIZE-1);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+p arr
+ merge_sort(arr, 0, size-1)
+p arr
 ```
 
 <div class="divider"></div>

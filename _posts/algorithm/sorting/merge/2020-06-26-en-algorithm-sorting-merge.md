@@ -10,7 +10,8 @@ lang: en
 ---
 
 <div class="updated">
-2020-07-05: divide and conquer pros/cons added
+2020-07-05: divide and conquer pros/cons added <br>
+2020-07-10: C code replaced with Ruby
 </div>
 
 ## Merge Sort
@@ -46,90 +47,58 @@ The **disadvantage** of Divide and Conquer algorithm.
 
 <div class="divider"></div>
 
-## Merge Sort Implementation in C
+## The code
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def merge(arr, left, mid, right)
+  sorted_arr = [0]*right
+  p = left
+  q = mid+1
+  k = left  # index of sorted_arr
 
-#define SIZE 15
-
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
-
-    if((i+1)%15==0)
-      printf("\n");
-  }
-
-  printf("\n");
-}
-
-void merge(int arr[], int left, int mid, int right)
-{
-  int sortedArr[SIZE] = {0};
-  int L = left;
-  int R = mid+1;
-  int K = left;  // index of sortedArr
-
-  // combine two lists
-  while(L <= mid && R <= right)
-  {
-    if(arr[L] < arr[R])
-      sortedArr[K++] = arr[L++];
+  # combine two lists
+  while (p <= mid and q <= right)
+    if arr[p] < arr[q]
+      sorted_arr[k] = arr[p];
+      p += 1
     else
-      sortedArr[K++] = arr[R++];
-  }
+      sorted_arr[k] = arr[q]
+      q += 1
+    end
+    k += 1
+  end
 
-  // Read all remaining data on the left
-  while(L <= mid)
-    sortedArr[K++] = arr[L++];
-  
-  // Right is already sorted; no need to copy again
+  # read all remaining data on the left
+  while p <= mid
+    sorted_arr[k] = arr[p];
+    p += 1
+    k += 1
+  end
 
-  // copy over the data
-  for(int i=left; i<K; ++i)
-    arr[i] = sortedArr[i];
-}
+  # copy over sorted data
+  for i in (left...k) do
+    arr[i] = sorted_arr[i]
+  end
 
-void mergeSort(int arr[], int left, int right)
-{
-  int mid;
+  arr
+end
 
+def merge_sort(arr, left, right)
+  mid = 0
   if(left < right)
-  {
-    mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid+1, right);
-    merge(arr, left, mid, right);
-  }
-}
+    mid = left + (right-left)/2
+    merge_sort(arr, left, mid)
+    merge_sort(arr, mid+1, right)
+    merge(arr, left, mid, right)
+  end
+end
 
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
+arr = [1, 9, 7, 10, 8, 2, 51]
+size = arr.size
 
-  unsigned seed = time(0);
-  srand(seed);
-
-  // generate random numbers
-  for(size_t i=0; i<SIZE; ++i)
-    arr[i] = rand()%SIZE+1;
-
-  printf("Before Sorting\n");
-  print(arr);
-
-  mergeSort(arr, 0, SIZE-1);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+p arr
+ merge_sort(arr, 0, size-1)
+p arr
 ```
 
 <div class="divider"></div>

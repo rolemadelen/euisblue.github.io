@@ -11,7 +11,8 @@ lang: ja
 
 <div class="updated">
 <br>
-2020-07-05: 記事の構造変更＆翻訳完了
+2020-07-05: 記事の構造変更＆翻訳完了<br>
+2020-07-10: Cコード削除;Rubyコード追加
 </div>
 
 ## マージソート
@@ -75,90 +76,57 @@ lang: ja
 
 <div class="divider"></div>
 
-## マージソートC言語実装
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+## マージソートのコード
+```rb
+def merge(arr, left, mid, right)
+  sorted_arr = [0]*right
+  p = left
+  q = mid+1
+  k = left  # sorted_arrのインデックス
 
-#define SIZE 15
-
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
-    
-    // 一行に15個ずつ出力
-    if((i+1)%15==0)
-      printf("\n");
-  }
-
-  printf("\n");
-}
-
-void merge(int arr[], int left, int mid, int right)
-{
-  int sortedArr[SIZE] = {0};
-  int L = left;
-  int R = mid+1;
-  int K = left;
-
-  // リストをマージする過程
-  while(L <= mid && R <= right)
-  {
-    if(arr[L] < arr[R])
-      sortedArr[K++] = arr[L++];
+  # リストをマージする過程
+  while (p <= mid and q <= right)
+    if arr[p] < arr[q]
+      sorted_arr[k] = arr[p];
+      p += 1
     else
-      sortedArr[K++] = arr[R++];
-  }
+      sorted_arr[k] = arr[q]
+      q += 1
+    end
+    k += 1
+  end
 
-  // 左のリストに残っているデータすべてをコピーする
-  while(L <= mid)
-    sortedArr[K++] = arr[L++];
-  
-  // 右のリストはもう整列されているので、コピーしなくでもいい
+  # 左のリストに残っているデータすべてをコピーする
+  while p <= mid
+    sorted_arr[k] = arr[p];
+    p += 1
+    k += 1
+  end
 
-  // 整列終わったリストを新しい配列にコピーする
-  for(int i=left; i<K; ++i)
-    arr[i] = sortedArr[i];
-}
+  # 整列終わったリストを新しい配列にコピーする
+  for i in (left...k) do
+    arr[i] = sorted_arr[i]
+  end
 
-void mergeSort(int arr[], int left, int right)
-{
-  int mid;
+  arr
+end
 
+def merge_sort(arr, left, right)
+  mid = 0
   if(left < right)
-  {
-    mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid+1, right);
-    merge(arr, left, mid, right);
-  }
-}
+    mid = left + (right-left)/2
+    merge_sort(arr, left, mid)
+    merge_sort(arr, mid+1, right)
+    merge(arr, left, mid, right)
+  end
+end
 
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
+arr = [1, 9, 7, 10, 8, 2, 51]
+size = arr.size
 
-  unsigned seed = time(0);
-  srand(seed);
-
-  // 乱数生成
-  for(size_t i=0; i<SIZE; ++i)
-    arr[i] = rand()%SIZE+1;
-
-  printf("Before Sorting\n");
-  print(arr);
-
-  mergeSort(arr, 0, SIZE-1);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+p arr
+ merge_sort(arr, 0, size-1)
+p arr
 ```
 
 <div class="divider"></div>
