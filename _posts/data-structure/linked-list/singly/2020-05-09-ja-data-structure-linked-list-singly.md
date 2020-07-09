@@ -1,93 +1,61 @@
 ---
 layout: post
-title: "【Ruby】片方向リスト(Singly Linked List)"
+title: "単方向リスト(Singly Linked List)とは"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
-published: false
+published: true
 categories:
  - "Data Structure"
 lang: ja
 ---
 
-If you need a recap, please read <i>[What is Linked List?](./en-data-structure-linked-list)</i>.
+<div class="updated">2020-07-09: 日本語翻訳完了</div>
+
+連結リストが何か分からん！って思っている方たちは、この[連結リスト「Linked List」とは](./ja-data-structure-linked-list) 記事を先に読んでください。
+
+<div class="divider"></div>
 
 
-## 片方向リストとは？
-Singly Linked List, or SLL, is a list where data can only be accessed sequentially. SLL's node
-consists of two parts: `value`, which represents the value of a data, and `next`, which 
-is a pointer or reference to the next node.
+## 単方向リストとは？
+単方向リスト「Singly Linked List」はすべてのノード「node」たちが順次につながっている。そして単方向なので片方にだけ移動できる。
+
+![Linked List image](assets/images/data-structure/linked-list/linkedlist.png)
+<div style="font-size: 10px; text-align: center;">Source: https://dev.to/swarup260/data-structures-algorithms-in-javascript-single-linked-list-part-1-3ghg</div>
+
+単方向リストは基本的に下記の2つの情報を持つ。<br>1. 他のノードを指すポインタ<br>2. データの値
+
+ノードのクラスはだいたいこういう姿をしている。
+```rb
+class Node
+  attr_accessor :data, :next
+  
+  def initialize(data)
+    @data = data
+    @next = nil
+  end
+end
+```
+
+生成されたノードは、最初何も指してないので`@next`はnullの値を持つ。
+
+<div class="divider"></div>
 
 ## 機能
-These are basic operations of Singly Linked List.
 
-- `add()` adds a node to a list
+単方向リストはこの3つの演算が基本的にできる。
+- `add()`: リストにでーたを追加。
+- `remove(n)`: <i>n</i>番目のデータを除去。
+- `search_node_at(n)`: <i>n</i>番目のデータを捜す。
 
-```rb
-def add(value)
-  new_node = Node.new(value)
-  if @head == nil
-    @head = new_node
-  else
-    curr = @head
-    while curr.next != nil
-      curr = curr.next
-    end
+<div class="divider"></div>
 
-    curr.next = new_node
-  end
-
-  @length += 1
-end
-```
-
-- `remove()` removes a node from a list
-
-```rb
-# first node => position 1
-def remove(pos)
-  return -1 if pos < 1 or pos > @length
-  if pos==1
-    @head = @head.next
-  else
-    curr = @head
-    for i in 1...(pos-1)
-      curr = curr.next
-    end
-
-    curr.next = curr.next.next
-  end
-```
-
-
-- `search_node_at()` searches for a node at nth position from a list
-
-```rb
-# first node => position 1
-def search_node_at(pos)
-  if @head == nil
-    puts "---- list is empty"
-    return 
-  elsif pos < 1 or pos > @length
-    puts "---- invalid position"
-    return
-  else
-    curr = @head
-    for i in 1...pos
-      curr = curr.next
-    end
-    return curr
-  end
-end
-```
-
-## Implementation
-
-This is one possible implementation.
+## 単方向リストRubyコード
 
 ```rb
 class SinglyLinkedList
   attr_reader :head, :length
 
+  ## 最初のリストにはノードが1個も存在しないので@headはnilである
   def initialize()
     @head = nil
     @length = 0
@@ -109,7 +77,7 @@ class SinglyLinkedList
     @length += 1
   end
 
-  # first node => position 1
+  # 1番目のノードのインデックス --> index 1
   def remove(pos)
     return -1 if pos < 1 or pos > @length
     if pos==1
@@ -126,7 +94,7 @@ class SinglyLinkedList
     @length -= 1
   end
 
-  # first node => position 1
+  # 1番目のノードのインデックス --> index 1
   def search_node_at(pos)
     if @head == nil
       puts "---- list is empty"
@@ -158,36 +126,26 @@ class SinglyLinkedList
 end
 ```
 
-Here's the `Node` class.
-```rb
-class Node
-  attr_accessor :data, :next
-  
-  def initialize(data)
-    @data = data
-    @next = nil
-  end
-end
-```
-
-You can use it like this.
+### 使用例
 
 ```rb
-# create an instance of Singly Linked List
+# 単方向リストのインスタンスを生成
 root = SinglyLinkedList.new()
 
-# insert nodes with a data 1 to 5
+# 1から5の数の値を持つノード5個をリストに追加
 1.upto(5) do |x|
   root.add(x)
 end
 
+# リストの長さとすべてのノードの値を出力
 puts "len: #{root.length}"
 root.print_list
 
-# remove the first node
+# １番目のノードを除去
 root.remove(1)
 puts "len: #{root.length}"
 root.print_list
 
+# 2番目のノードを捜して、その値を出力。
 puts "search_node_at(2): #{root.search_node_at(2).data}"
 ```
