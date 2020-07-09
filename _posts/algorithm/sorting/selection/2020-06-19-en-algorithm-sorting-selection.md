@@ -9,6 +9,10 @@ categories:
 lang: en
 ---
 
+<div class="updated">
+2020-07-10: C code replaced with Ruby
+</div>
+
 ## Selection Sort
 - Unlike [insertion sort](./en-algorithm-sorting-insertion) where you find the correct position by shifting its data one by one, selection sort selects the data that goes to position 1, 2, ..., n.
 
@@ -22,80 +26,38 @@ lang: en
 
 <div class="divider"></div>
 
-## Selection Sort Implementation in C
+## The code
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+```rb
+def selection_sort(arr)
+  n = arr.size
 
-#define SIZE 10
+  for i in (0 ... n - 1)
+    min = i
 
-void selectionSort(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    // position to insert the ith element
-    int pos = i;
+    # find the ith smallest element
+    for j in (i+1 ... n)
+      if arr[j] < arr[min]
+        min = j
+      end
+    end
 
-    // find the ith smallest element
-    for(int j=i+1; j<SIZE; ++j) 
-    {
-      if(arr[j] < arr[pos])
-      {
-        pos = j;
-      }
-    }
+    # insert the found data into a correct position
+    arr[i], arr[min] = arr[min], arr[i]
+  end
+end
 
-    // insert the found data into a correct position
-    int temp = arr[pos];
-    arr[pos] = arr[i];
-    arr[i] = temp;
-  }
-}
+arr = [*1 ... 100].shuffle
 
-void print(int arr[])
-{
-  for(int i=0; i<SIZE; ++i)
-  {
-    printf("%d ", arr[i]);
+print arr
+puts
 
-    // print 15 data per line
-    if((i+1)%15==0)
-    {
-      printf("\n");
-    }
-  }
+selection_sort(arr)
 
-  printf("\n");
-}
-
-int main(void)
-{ 
-  int arr[SIZE];
-  int select;
-
-  unsigned seed = time(0);
-  srand(seed);
-
-  // generate random data
-  for(size_t i=0; i<SIZE; ++i)
-  {
-    arr[i] = rand()%SIZE+1;
-  }
-
-  printf("Before Sorting\n");
-  print(arr);
-
-  // sort data
-  selectionSort(arr);
-
-  printf("\nAfter Sorting\n");
-  print(arr);
-
-  return 0;
-}
+print arr
+puts
 ```
+
 
 <div class="divider"></div>
 
