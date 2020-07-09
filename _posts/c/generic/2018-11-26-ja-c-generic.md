@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "【C言語】変数のデータ型出力する方法"
+title: "C言語・変数のデータ型出力する方法"
 ref: c-generic
 date: 2018-11-26 19:15:00
 last_modified_at: 2020-05-04 18:00:00
