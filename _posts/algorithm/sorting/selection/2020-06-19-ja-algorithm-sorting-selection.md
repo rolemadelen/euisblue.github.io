@@ -28,7 +28,7 @@ lang: ja
 
 <div class="divider"></div>
 
-## 選択ソートC言語実装
+## 選択ソートのコード
 
 ```rb
 def selection_sort(arr)
