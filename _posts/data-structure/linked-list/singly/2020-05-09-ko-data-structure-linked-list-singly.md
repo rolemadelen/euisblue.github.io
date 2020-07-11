@@ -27,6 +27,21 @@ lang: ko
 1. 다음 노드를 가리키는 포인터
 2. 데이터의 값
 
+노드를 코드로 구현했을 때의 모습은 대체적으로 아래와 같다.
+
+```rb
+class Node
+  attr_accessor :data, :next
+  
+  def initialize(data)
+    @data = data
+    @next = nil
+  end
+end
+```
+
+처음 생성한 노드의 경우 가리키고 있는 노드가 없기 때문에 `@next` -- 현재 노드가 가리키고 있는 다음 노드 -- 는 null로 초기화 한다.
+
 <div class="divider"></div>
 
 ## 연산
@@ -40,26 +55,10 @@ lang: ko
 
 ## 연결 리스트 Ruby 코드
 
-우선 연결 리스트에서 사용 할 노드의 클래스를 구현해야 한다.
-노드를 생성할때 `@data`는 인자로 넘어온 값으로 초기화하고, `@next`는 가리키는 노드가 없기 때문에 null로 초기화 한다.
-```rb
-class Node
-  attr_accessor :data, :next
-  
-  def initialize(data)
-    @data = data
-    @next = nil
-  end
-end
-```
-
-그럼 이제 노드 를래스를 사용하여 연결 리스트를 구현할 수 있다.
-
 ```rb
 class SinglyLinkedList
   attr_reader :head, :length
 
-  ## at first, @head is not pointing anything so it's set to null
   def initialize()
     @head = nil
     @length = 0
