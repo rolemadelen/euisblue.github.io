@@ -66,12 +66,12 @@ puts
 
 #### best case
 - 比較回数: `n*(n-1)/2`回
-- 交感回数: `0`回
+- 交換回数: `0`回
 - <b>T(n) = O(n<sup>2</sup>)</b>
 
 #### worst case
 - 比較回数: `n*(n-1)/2`回
-- 交感回数: `n-1`回
+- 交換回数: `n-1`回
 - <b>T(n) = O(n<sup>2</sup>)</b>
 
 <div class="divider"></div>
