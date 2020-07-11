@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Singly Linked List"
+title: "Ruby・Singly Linked List"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
 published: true
