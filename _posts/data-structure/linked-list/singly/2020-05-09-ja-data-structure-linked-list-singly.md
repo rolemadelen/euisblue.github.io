@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "単方向リスト「Singly Linked List」とは"
+title: "Ruby・単方向リスト「Singly Linked List」とは"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
 published: true
@@ -49,7 +49,7 @@ end
 
 <div class="divider"></div>
 
-## 単方向リストRubyコード
+## 単方向リストのコード
 
 ```rb
 class SinglyLinkedList
