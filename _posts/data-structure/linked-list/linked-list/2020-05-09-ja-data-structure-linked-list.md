@@ -76,7 +76,7 @@ head.next = second    # [head, 1] -> [second, 2] -> nil
 second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
-## 連結リストの走査
+## 走査
 
 順次に最初のノードから最後のノードまで訪問しながら値を出力する。
 ```rb
