@@ -11,6 +11,9 @@ layout: default
         <a href="{{ site.rails[page.lang] }}">rails</a>
         <a href="/til">TIL</a>
 
+    <br>
+    <br>
+
         {% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
         {% for post in posts %}
             {% if post.ref == page.ref and post.lang != page.lang %}
