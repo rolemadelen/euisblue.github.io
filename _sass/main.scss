@@ -193,9 +193,9 @@ pre,
   font-family: Consolas, monaco, monospace;
 }
 code {
-  color: #f14e32;
-  background: #eee;
-  padding: 2px 6px;
+  color: #9a0000;
+  background: #eeeeee59;
+  padding: 2px 3px;
   font-size: 13px;
 }
 pre {
@@ -236,7 +236,7 @@ iframe {
   width: 100%;
 }
 article {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   h1.title {
     line-height: 1.4em;
@@ -326,7 +326,7 @@ article {
 .page-navigation,
 .footer {
   text-align: center;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 0.8rem;
 }
@@ -350,7 +350,7 @@ article {
   }
 }
 section {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto 50px auto;
   ul {
     list-style: none;
