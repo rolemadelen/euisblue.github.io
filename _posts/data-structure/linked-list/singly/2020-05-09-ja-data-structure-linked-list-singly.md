@@ -49,7 +49,7 @@ end
 
 <div class="divider"></div>
 
-## 単方向リストのコード
+## 単方向リストRubyコード
 
 ```rb
 class SinglyLinkedList
