@@ -250,10 +250,13 @@ def remove_at(index)
 
     curr.prev.next = curr.next
     curr.next.prev = curr.prev
-    curr = nil
+    curr = curr.prev = curr.next = nil
   end
 
   @length -= 1
+
+  @head = @tail = nil if @length == 0
+
   return data
 end
 ```
