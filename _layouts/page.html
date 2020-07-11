@@ -13,6 +13,8 @@ layout: default
     <a href="{{ site.ruby[page.lang] }}">ruby</a>
     <a href="{{ site.rails[page.lang] }}">rails</a>
     <a href="/til">TIL</a>
+    <br>
+    <br>
     
     {% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
     {% for p in pages %}
