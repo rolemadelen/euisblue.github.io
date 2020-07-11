@@ -78,7 +78,7 @@ end
 
 ### 생성자 (initialize)
 ```rb
-def initialize()
+def initialize
   @head = @tail = nil
   @length = 0
 end
