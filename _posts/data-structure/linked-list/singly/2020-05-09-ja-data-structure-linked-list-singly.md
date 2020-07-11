@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "単方向リスト「Singly Linked List」とは"
+title: "Ruby・単方向リスト「Singly Linked List」とは"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
 published: true
