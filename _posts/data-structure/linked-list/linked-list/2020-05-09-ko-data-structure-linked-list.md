@@ -78,7 +78,7 @@ head.next = second    # [head, 1] -> [second, 2] -> nil
 second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
-## 연결 리스트 순회
+## 순회
 첫 번째 노드에서 시작해 순차적으로 마지막 노드까지 방문한다.
 ```rb
 def print_list(node)
