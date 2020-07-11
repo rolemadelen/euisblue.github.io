@@ -86,7 +86,7 @@ head.next = second    # [head, 1] -> [second, 2] -> nil
 second.next = third   # [head, 1] -> [second, 2] -> [third, 3]
 ```
 
-## Linked List Traversal
+## Traversal
 ```rb
 def print_list(node)
   while node != nil
