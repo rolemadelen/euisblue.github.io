@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "단일 연결 리스트(Singly Linked List)란"
+title: "[Ruby] 단일 연결 리스트(Singly Linked List)란"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
 published: true
@@ -53,7 +53,7 @@ end
 
 <div class="divider"></div>
 
-## 단일 연결 리스트 Ruby 코드
+## 단일 연결 리스트 코드
 
 ```rb
 class SinglyLinkedList
