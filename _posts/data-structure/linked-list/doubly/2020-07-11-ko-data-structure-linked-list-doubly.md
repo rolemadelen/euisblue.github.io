@@ -280,7 +280,7 @@ curr = get_node_at(index)
 <img src="assets/images/data-structure/linked-list/dll-remove_at2.png" alt="three nodes linked together">
 </div>
 
-그 다음 `curr`의 `prev`와 `next`를 이용해 연결된 링크들을 끊는다.
+그 다음 `curr`의 `prev`와 `next`를 이용해 A노드와 C노드에서 연결된 링크들을 끊는다.
 ```rb
 curr.prev.next = curr.next
 curr.next.prev = curr.prev
