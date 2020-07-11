@@ -52,7 +52,7 @@ def bubble_sort(arr)
     isSwapped = false
 
     for j in (0 ... n - i - 1)
-      # 왼쪽 원소가 더 작을 경우 위치를 교한
+      # 왼쪽 원소가 더 클 경우 위치를 교한
       if arr[j] > arr[j+1]   
         # 플래그를 세운다
         isSwapped = true
