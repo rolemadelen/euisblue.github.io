@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Singly Linked List"
+title: "[Ruby] Singly Linked List"
 ref: ds-linked-list-singly
 date: 2020-05-09 07:50:00 +0900
 published: true
@@ -35,7 +35,7 @@ These are basic operations of Singly Linked List.
 
 <div class="divider"></div>
 
-## Implementation in Ruby
+## Implementation
 
 First we need a `Node` class to be used inside the singly linked list.
 It initializes the `@data` with a given `data` and `next` as null because it's not pointing to anything.
