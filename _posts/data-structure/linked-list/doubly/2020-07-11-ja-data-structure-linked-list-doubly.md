@@ -14,10 +14,7 @@ lang: ja
 
 ![Linked List image](assets/images/data-structure/linked-list/dll.png)
 
-双方向リストのノードは基本的に下記の3つの情報を持つ。
-1. データの値
-3. 前のノードのポインタ -- `prev`
-2. 次のノードのポインタ -- `next`
+双方向リストのノードは基本的に3つの情報を保存している。<br>1. データの値<br>2. 前のノードのポインタ -- `prev`<br>3. 次のノードのポインタ -- `next`
 
 ```rb
 class Node
@@ -32,7 +29,7 @@ class Node
 end
 ```
 
-最初ノードを生成するとき`prev`と`next`が指しているノードはないので媒介変数が別に与えられていない以上、nilを基本値にする。
+最初ノードを生成するとき`prev`と`next`が指しているノードはないので、媒介変数が別に与えられていない以上、nilを基本値にする。
 
 <div class="divider"></div>
 
@@ -116,8 +113,7 @@ end
 <img src="assets/images/data-structure/linked-list/dll-insert1.png" alt="head and tail pointing to the node">
 </div>
 
-空いていない場合は`@tail`の次のノード「`next`」が新しいノード「`new_node`」を指すようにする。
-そして`new_node`の前のノード「`prev`」が現在`tail`を指すようにする。
+空いていない場合は`@tail`の次のノード「`next`」が新しいノード「`new_node`」を指すようにする。そして`new_node`の前のノード「`prev`」が現在の`tail`を指すようにする。
 
 <div style="text-align: center">
 <img src="assets/images/data-structure/linked-list/dll-insert2.png" alt="tail pointing to the new node">
@@ -169,17 +165,17 @@ def insert_at(index, value)
 end
 ```
 
-ノードを挿入する位置のindexをメソッドの媒介変数に送って、ノードを挿入する。このとき、考慮する部分は3つがある。
+ノードを挿入する位置のindexをメソッドの媒介変数に送って、ノードを挿入する。このとき、考慮する部分は3つある。
 
 <div style="text-align: center">
 <img src="assets/images/data-structure/linked-list/dll-insert_at1.png" alt="two nodes connected to each other">
 </div>
 
-1. Cノード次に追加：最後に追加するのと同じ -- `insert`メソッドを呼び出す
-2. Aノード前に追加：実装は`insert`とほとんど同じ
-3. AとCの間に追加
+1. Cノード次に追加：リストの最後に追加する場合と同じ -- `insert`メソッドを呼び出す。
+2. Aノード前に追加。
+3. AとCの間に追加。
 
-2番の場合は`insert`のコード見れば分かると思うので、3番だけ説明する。
+2番の場合は`insert`のコードを見れば分かると思うので、3番だけ説明する。
 
 ```rb
 new_node = Node.new(value)
@@ -200,7 +196,7 @@ new_node.prev = curr
 <img src="assets/images/data-structure/linked-list/dll-insert_at2.png" alt="new nodes next/prev linked to A and C">
 </div>
 
-`new_node`はAとCの間に位置する。でもまだAとCがつながっているので、このリンクを切らなければならない。
+確かに`new_node`はAとCの間に位置している。でもまだAとCがつながっているので、このリンクを切らなければならない。
 
 ```rb
 curr.next.prev = new_node   # c.prev = new_node
@@ -219,7 +215,7 @@ def get_node_at(index)
   return @tail if index+1 == @length
 
   curr = @head
-  for i in 0...index
+  index.times do
     curr = curr.next
   end
 
@@ -227,7 +223,7 @@ def get_node_at(index)
 end
 ```
 
-`insert_at`メソッドで使ったhelperメソッド。与えられたindexの位置にあるノードを返すメソッドだ。
+`insert_at`メソッドで使ったhelperメソッド。与えられたindexの位置にあるノードを返す。
 
 ### ノードの削除「remove\_at」
 ```rb
@@ -310,7 +306,7 @@ curr = curr.prev = curr.next = nil
 ```rb
 def search(data)
   curr = @head
-  for i in 0...@length
+  @length.times do |i|
     # データが一致するとき
     if curr.data == data
       puts "'#{data}' is located at index '#{i}'"
@@ -325,7 +321,7 @@ def search(data)
 end
 ```
 
-`head`から始めてすべてのノードと`data`が一致するかどうか確認する。一致すれば該当indexを返す。もしリストに`data`がない場合は`false`を返す。
+`head`から始めてすべてのノードを順次訪問しながらノードが持っている値が`data`と一致するかどうか確認する。一致すれば該当indexを返す。もしリストに`data`がない場合は`false`を返す。
 
 ### リスト走査「print\_list」
 ```rb
@@ -336,14 +332,14 @@ def print_list
   end
 
   curr = @head
-  for i in 0...@length-1
+  (@length-1).times do
     print "#{curr.data} -> "
     curr = curr.next
   end
   puts "#{curr.data}"
 end
 ```
-`haed`を`curr`に保存する。そして`curr`を利用してすべてのノードの値を出力する。もし`@length`のメタデータを持ってない場合は`curr.next`が`nil`になるまで繰り返す。これができる理由は`curr`が`nil`になる瞬間は`tail`の次、つまりリストの最後だけだ。
+`haed`を`curr`に保存する。そして`curr`を利用してすべてのノードの値を出力する。もし`@length`のメタデータを持ってない場合は`curr.next`が`nil`になるまで繰り返す。これができる理由は`curr`が`nil`になる瞬間は`tail`の次、つまりリストの最後だけだからだ。
 
 ### テストコード
 ```rb
