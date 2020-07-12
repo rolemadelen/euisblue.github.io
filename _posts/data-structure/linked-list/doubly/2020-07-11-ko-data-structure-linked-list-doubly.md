@@ -293,9 +293,9 @@ curr.next.prev = curr.prev
 <img src="assets/images/data-structure/linked-list/dll-remove_at3.png" alt="three nodes linked together">
 </div>
 
-마지막으로 `curr`을 지운다.
+마지막으로 `curr`에서 이어진 링크들을 끊고, 노드를 지운다.
 ```rb
-curr = nil
+curr = curr.prev = curr.next = nil
 ```
 
 <div style="text-align: center">
