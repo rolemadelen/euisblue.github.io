@@ -218,7 +218,7 @@ def get_node_at(index)
   return @tail if index+1 == @length
 
   curr = @head
-  for i in 0...index
+  index.times do
     curr = curr.next
   end
 
@@ -306,7 +306,7 @@ curr = nil
 ```rb
 def search(data)
   curr = @head
-  for i in 0...@length
+  @length.times do |i|
     # 일치할 경우
     if curr.data == data
       puts "'#{data}' is located at index '#{i}'"
@@ -333,7 +333,7 @@ def print_list
   end
 
   curr = @head
-  for i in 0...@length-1
+  (@length-1).times do
     print "#{curr.data} -> "
     curr = curr.next
   end
