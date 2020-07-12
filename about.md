@@ -11,7 +11,7 @@ I graduated from [UC San Diego](https://ucsd.edu/) in 2019 with [B.S. Cognitive 
 
 I was born in Korea, raised in the States, and now working in Japan as a Foreign Language Teacher in elementary school.
 
-Today, I’m pursuing to become a Ruby/Rails developer. So, I'm spending rest of my free time before and after work studying the language, algorithm, and data structures and doing side projects.
+Today, I’m pursuing to become a Ruby/RoR developer. So, I'm spending rest of my free time before and after work studying the language, algorithm, and data structures and doing side projects.
 
 I'm trying to motivate myself by running a [Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber) channel. Feel free to join and study with me :)
 
