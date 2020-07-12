@@ -307,7 +307,7 @@ curr = nil
 def search(data)
   curr = @head
   for i in 0...@length
-    # data found 
+    # 일치할 경우
     if curr.data == data
       puts "'#{data}' is located at index '#{i}'"
       return i
@@ -315,6 +315,7 @@ def search(data)
     curr = curr.next
   end
 
+  # 리스트에 데이터가 없는 경우
   puts "'#{data}' is not in the list"
   return false
 end
