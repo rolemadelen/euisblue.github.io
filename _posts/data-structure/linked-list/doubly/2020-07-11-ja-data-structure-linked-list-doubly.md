@@ -10,7 +10,7 @@ lang: ja
 ---
 
 ## 双方向リストとは?
-双方向リスト「Doublly Linked List」は一方向だけでつながっている[単方向リスト](/ja-data-structure-linked-list-singly)とは違い、ノードが両方向でつながっているリストだ。
+双方向リスト「Doubly Linked List」は一方向だけでつながっている[単方向リスト](/ja-data-structure-linked-list-singly)とは違い、ノードが両方向でつながっているリストだ。
 
 ![Linked List image](assets/images/data-structure/linked-list/dll.png)
 
