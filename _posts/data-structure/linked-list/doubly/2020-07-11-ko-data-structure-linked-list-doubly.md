@@ -10,7 +10,7 @@ lang: ko
 ---
 
 ## 이중 연결 리스트란?
-이중 연결 리스트(Doublly Linked List)는 노드들이 한 방향으로만 연결된 [단일 리스트](/ko-data-structure-linked-list-singly)와는 달리, 노드가 양쪽 방향으로 연결된 연결 리스트이다.
+이중 연결 리스트(Doubly Linked List)는 노드들이 한 방향으로만 연결된 [단일 리스트](/ko-data-structure-linked-list-singly)와는 달리, 노드가 양쪽 방향으로 연결된 연결 리스트이다.
 
 ![Linked List image](assets/images/data-structure/linked-list/dll.png)
 
