@@ -177,7 +177,7 @@ end
   @last.next = new_node
 ```
 
-새로운 노드가 리스트의 새로운 머리가 된다. 먼저 `new_node`가 현재 현재 리스트의 머리인 `@last.next`를 가리키도록 한다.
+새로운 노드가 리스트의 새로운 머리가 된다. 먼저 `new_node`가 현재 리스트의 머리인 `@last.next`를 가리키도록 한다.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert_at1.png" alt="circular doubly linked list picture">
