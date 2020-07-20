@@ -93,6 +93,7 @@ exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "scr
 plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
+  - jemoji
 
 remote_theme: jioneeu/the-plain
 
