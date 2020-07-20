@@ -86,8 +86,7 @@ def initialize
 end
 ```
 
-일반적인 이중 연결 리스트는 리스트의 처음과 끝인 `@head`와 `@tail`의 노드를 가진다. 하지만 원형 리스트의 
-특성상 `@head.prev`가 마지막 노드를 가리키기 때문에 `@head`하나만 사용한다.
+원형 이중 연결 리스트의 경우 `@head.prev`가 마지막 노드인 `@tail`을 가리키는 것과 같기 때문에 `@head`하나만 사용한다.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert1.png" alt="circular doubly linked list picture">
