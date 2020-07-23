@@ -1,35 +1,35 @@
 ---
 layout: post
-title: "Ruby・循環リスト「Circular Linked List」とは"
+title: "Ruby・Circular Linked List?"
 ref: ds-linked-list-circular
 date: 2020-07-18 05:00:00 +0900
 published: true
 categories:
  - "Data Structure"
-lang: ja
+lang: en
 ---
 
 <div class="updated">
 2020-07-24: typo fixed & more figures added
 </div>
 
-## 循環リストとは?
-一般的に連結リストの最後のノードの次は「これがラストです」っと言う意味で`nil`を指す。[双方向リスト](/ja-data-structure-linked-list-doubly)の場合最後のノードの次「`next`」だけじゃなく、最初のノードの以前「`prev`」も`nil`を指す。
+## What is Circular Linked List?
+The end of the linked lists are normally defined by the tail node pointing to `nil`. In the case of [Doubly Linked List](/en-data-structure-linked-list-doubly) both the `head.prev` and `tail.next` points to `nil`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-example.png" alt="Linked list picture">
 </div>
 
-だが循環リストの最後のノードの`next`は最初を指して、最初のノードの`prev`が最後を指す。循環する構造だ。
+In the circular linked list, however, `tail.next` points to the head node and `head.prev` points back to the tail node.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly.png" alt="Linked list picture">
 </div>
 
-### :bulb: ノードの構造
-普通のリストと循環リストの違いはノードの追加及び除去部分にあるので、ノードの構造は普通の連結リストと同じだ。
+### :bulb: Node Structure
+The difference of circular list and other linked lists are in adding and removing nodes; thus, the structure of the Node of the circular list is same with other typical linked lists' structures of the Node.
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
 class Node
@@ -42,7 +42,7 @@ class Node
 end
 ```
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
 class Node
@@ -58,11 +58,11 @@ end
 
 <div class="divider"></div>
 
-## 循環リスト実装
+## Circular Linked List Implementation
 
-### :bulb: initialize：コンストラクタ
+### :bulb: initialize: Constructor
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
 def initialize
@@ -71,15 +71,15 @@ def initialize
 end
 ```
 
-連結リストのコンストラクタには最初のノードのアドレスを保存している`@head`ノードが存在する。でも、単方向循環リストの場合は`@last`ノードを使って最後のノードのアドレスを保存する。
+In a singly linked list, normally `@head` -- a node which holds the address of the first node -- is used. In a circular singly list, however, we use `@last` which is a node that holds the last element of a linked list.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert1.png" alt="circular singly list image">
 </div>
 
-普通のリストように`@head`で始めてもいいんだが、`@last`と`@last.next`でリストの最後と最初、両方接近できるという点で`@last`を使う方がいいと思う。ノードを追加するときにも`@last`を持っている方が便利。
+We can still use `@head`, but it is better to use `@last` because by doing it this way, we have a direct access to the tail (`@last`) and the head (`@last.next`). Also in some insert/remove operations, it is more efficient and time saving to know the last node rather than the first node.
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
 def initialize
@@ -88,16 +88,18 @@ def initialize
 end
 ```
 
-双方向循環リストの場合`@head.prev`が`@tail`になるので`@head`だけ使う。
+In Circular Doubly Linked List, we can access the tail node with `@head.prev`, so we only define and use `@head`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert1.png" alt="circular doubly linked list picture">
 </div>
 
 
-### :bulb: insert：リスト最後にノード追加
+### :bulb: insert
 
-**単方向循環リスト**
+`insert` method adds a node at the back of the list.
+
+**Circular Singly Linked List**
 
 ```rb
   new_node = Node.new(data)
@@ -106,25 +108,25 @@ end
   @last = new_node
 ```
 
-まずは新しいノード「`new_node`」を現在最後ノードの次「`@last.next`」指すようにする。
+First, let the `new_node` point at the head node which is `@last.next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert2.png" alt="circular singly list image">
 </div>
 
-そして`A`を指している`@last.next`を`new_node`と連結する。
+Now we need to update the link of `@last` so that it's pointing at the `new_node` or the new last node.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert3.png" alt="circular singly list image">
 </div>
 
-最後にリストの`last`更新する。
+Now `new_node` is the last node so update the `@last` so that it actaully holds the address of the last node.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert4.png" alt="circular singly list image">
 </div>
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
   new_node = Node.new(data)
@@ -134,42 +136,44 @@ end
   @head.prev = new_node
 ```
 
-まず`new_node`を連結してみよう。説明する前、下記の表を確認しよう。
+In circular doubly list, we need to to take care of both `prev` and `next` which makes it a bit more complex than the circular singly list. 
+
+Lets take a look at the `new_node` part first. Our new node will be the new last node, so let `new_node.prev` and `new_node.next` point to the current last node (`B` node in the figure below) and the current head node respectively.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert2.png" alt="circular doubly linked list picture">
 </div>
 
-現在`B`がリストの`head.prev`つまり`tail`だ。`new_node`を追加した後は`head.prev`が`new_node`、`new_node.prev`は`B`になるはず。なので今`new_node`を`head`と`B`の間にくるように連結した。
-
-その後`@head.prev.next`(`B.next`)が`new_node`を指すようにする。
+Now let `B.next` (`@head.prev.next`) point to the new last node.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert3.png" alt="circular doubly linked list picture">
 </div>
 
-最後に`@head.prev`が新しい最後のノード「`new_node`」を指すようにする。
+And last but not least, let `@head.prev` be theh new last node (`new_node`).
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert4.png" alt="circular doubly linked list picture">
 </div>
 
 
-### :bulb: insert\_at：ノード挿入
+### :bulb: insert\_at
 
-#### :pencil2: リスト最後に挿入
+#### :pencil2: Inserting a node at the back of the list
 
-**単方向・双方向循環リスト**
+**Circular Singly/Doubly Linked List**
 
 ```rb
-  insert(data)
+  if @length == 0 or index == @length
+    insert(data)
+  end
 ```
 
-リストの最後に追加する時には先に実装した`insert`メソッドを使う。
+When inserting a node at the back, simply call `insert` method that we implemented earlier.
 
-#### :pencil2: リスト最初に挿入
+#### :pencil2: Inserting a node at the front of the list
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
   new_node = Node.new(data)
@@ -177,19 +181,19 @@ end
   @last.next = new_node
 ```
 
-この演算が終わったら`new_node`が新しい`head`になる。まず`new_node`が`@last.next`(現head)を指すようにする。
+Our `new_node` will become the new head. Since we need to place this node in between the current last and head node, first link `new_node` with the current head, `@last.next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert_at1.png" alt="circular doubly linked list picture">
 </div>
 
-その後`@last`を新しいhead「`new_node`」と連結する。
+And let `@last` point to the new head.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert_at2.png" alt="circular doubly linked list picture">
 </div>
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
   new_node = Node.new(data)
@@ -201,27 +205,27 @@ end
   @head = new_node
 ```
 
-`new_node`の`prev`と`next`をまず繋ぐ。
+The idea is pretty much the same. Lets first connect `new_node`'s `prev` and `next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at3.png" alt="circular doubly linked list picture">
 </div>
 
-`head.prev.next`(`last.next`)と`head.prev`がちゃんと新しいhead「`new_node`」を指すようにする。
+Currently `last.next` is pointing at the old head. We need to fix this link so that it's pointing to the new head (`new_node`). 
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at4.png" alt="circular doubly linked list picture">
 </div>
 
-そして最後に`@head.prev`が`new_node`を指すようにする。
+And finally, we update `head.prev` so that it's pointing to our new head.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at5.png" alt="circular doubly linked list picture">
 </div>
 
-#### :pencil2: リスト中間に挿入
+#### :pencil2: Inserting a node in between nodes
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
   curr = get_node_at(index-1)
@@ -231,19 +235,19 @@ end
   curr.next = new_node
 ```
 
-ノードとノードの間に挿入するとき、挿入する位置前にあるノードが必要だ。下記の表をみよう。
+When we're inserting a new node at index `i`, we need to have an access to a node located at `i-1`. We save this node at `curr` and let new node point to `curr.next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert_at3.png" alt="circular doubly linked list picture">
 </div>
 
-`A`と`last`の間`new_node`を挿入するとしている。まず`A`ノードを`curr`に保存する。そして`new_node`が`curr.next`を指すようにする。そして、`curr.next`を`new_node`と連結すると終わり。
+And we connect `curr.next` with `new_node` and we're done.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-insert_at4.png" alt="circular doubly linked list picture">
 </div>
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
   curr = get_node_at(index)
@@ -256,23 +260,23 @@ end
   curr.prev = new_node
 ```
 
-挿入する位置にあるノード(下記の表では`B`)を`curr`に保存する。そして`new_node.prev`は`curr.prev`を、`new_node.next`は`curr`を指すようにする。
+Save the node located at the index we're going to insert a new node to `curr` -- `B` node in the figure below -- and link `new_node.prev` and `new_node.next` to `curr.prev` and `curr.next` respectively.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at1.png" alt="circular doubly linked list picture">
 </div>
 
-そして`curr.prev.next`(`head.next`)と`curr.prev`を`new_node`と連結する。
+And let `curr.prev.next` -- `head.next` -- and `curr.prev` point to `new_node`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at2.png" alt="circular doubly linked list picture">
 </div>
 
-### :bulb: remove\_at：ノード削除
+### :bulb: remove\_at
 
-#### :pencil2: 最初のノード削除
+#### :pencil2: Removing the head node
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
 def remove_front
@@ -282,13 +286,13 @@ def remove_front
 end
 ```
 
-`@last.next`が`head`なので`@last.next.next`を指すようにすると簡単に除去することができる。
+Since `@last.next` points to the head node, we can simply re-link this node to `@last.next.next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-remove-at1.png" alt="circular doubly linked list picture">
 </div>
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
 def remove_front
@@ -300,52 +304,55 @@ def remove_front
 end
 ```
 
-`@head`からつながっているリンクたちをまず切る。
-
+We need to dislink all nodes connected to `@head`.
 ```rb
   @head.next.prev = @head.prev  # B.next
   @head.prev.next = @head.next  # C.next
 ```
 
-上のコードを実行した後の様子は下記のどおりだ。
+Below figure shows the state of our circular linked list after above two lines are executed.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-remove-at1.png" alt="circular doubly linked list picture">
 </div>
 
-最後に`@head`を更新する。
+And then we move the `@head` to its next node (`@head.next`).
+
+```rb
+  @head = @head.next
+```
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-remove-at2.png" alt="circular doubly linked list picture">
 </div>
 
-#### :pencil2: 最後のノード削除
+#### :pencil2: Removing the tail node
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
 def remove_last
-  curr = get_node_at(@length-2)  # B (curr) node
+  curr = get_node_at(@length-2) 
   temp = curr.next
-  curr.next = @last.next         # curr.next = A
+  curr.next = @last.next    # curr.next = A
   @last = curr
   temp = temp.next = nil
 end
 ```
 
-`@last`を削除するには`@last`前のノード(`B`)が必要なので、そのノードを`curr`に保存する。そして`curr.next`が`@last.next`を指すようにする。
+In order to remove the `@last` node, we need to have an access to its previous node (`B` node in the figure below). We save this node to `curr` and let `curr.next` point to `@last.next`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-remove-at2.png" alt="circular doubly linked list picture">
 </div>
 
-最後に`@last`を更新すると終わり。
+And then we update the `@last`.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-remove-at3.png" alt="circular doubly linked list picture">
 </div>
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
 def remove_last
@@ -356,24 +363,25 @@ def remove_last
 end
 ```
 
-除去方法は単方向リストと同じだ。`head.prev.prev`に接近して最後のノードとつながっているすべてのリンクを全部切る。
+The idea is same as the circular singly list except that it's much easier.
+Since we can access to its previous node using `prev`, we can access tail's previous node using `@head.prev.prev`. Once we're there, we simply disconnect the link from the current tail and re-link it to the head.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-remove-at3.png" alt="circular doubly linked list picture">
 </div>
 
-#### :pencil2: 中間のノード削除
+#### :pencil2: Removing the node in between two nodes
 
-**単方向循環リスト**
+**Circular Singly Linked List**
 
 ```rb
   curr = get_node_at(index-1)
   curr.next = curr.next.next
 ```
 
-削除するノードの位置が違うだけで、コードは最初のノードを削除するのとおなじだ。
+The code basically same as removing the first node except that the position is different.
 
-**双方向循環リスト**
+**Circular Doubly Linked List**
 
 ```rb
   curr = get_node_at(index)
@@ -381,10 +389,10 @@ end
   curr.prev.next = curr.next
 ```
 
-これも同じくて、最初のノードを削除するコードとほとんど一緒だ。ただ、headを除去するのではないので`@head`を更新する部分だけはしない。
+Same as above. The idea is exactly same with the one removing the first node except that we don't update the `@head` since we're not changing the head of the list.
 
 <div class="divider"></div>
 
-### 実装コード
-- [循環リストすべてのコード](https://github.com/jioneeu/coding/blob/master/data_structure/ruby/linked-list/circular/cll.rb)
-- [循環リストテストコード](https://github.com/jioneeu/coding/blob/master/data_structure/ruby/linked-list/circular/test.rb)
+### Source code
+- [Circular Linked List full implementation source code](https://github.com/jioneeu/coding/blob/master/data_structure/ruby/linked-list/circular/cll.rb)
+- [Circular Linked List testing code](https://github.com/jioneeu/coding/blob/master/data_structure/ruby/linked-list/circular/test.rb)
