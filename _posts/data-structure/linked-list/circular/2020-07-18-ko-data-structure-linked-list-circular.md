@@ -9,6 +9,10 @@ categories:
 lang: ko
 ---
 
+<div class="updated">
+2020-07-24: typo fixed & more figures added
+</div>
+
 ## 원형 연결 리스트란?
 일반적으로 연결 리스트에서 마지막 노드는 '이 노드가 마지막입니다'라는 의미로 `nil`을 가리킨다. [이중 연결 리스트](/ko-data-structure-linked-list-doubly)의 경우 마지막 노드의 `next`와 더불어 첫 번째 노드의 `prev`도 `nil`을 가리킨다.
 
@@ -206,10 +210,16 @@ end
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at3.png" alt="circular doubly linked list picture">
 </div>
 
-그림으로 봤을 때, 현재 꼬리(`B`)의 다음 노드(`B.next`)가 `new_node`를 가리키도록 한 다음, 머리의 이전(`@head.prev`) 노드가 `B`가 아닌 `new_node`를 가리키도록 한다.
+그림으로 봤을 때, 현재 꼬리(`last`)의 다음 노드(`last.next`)가 `new_node`를 가리키도록 한다.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at4.png" alt="circular doubly linked list picture">
+</div>
+
+그 다음 `@head.prev`가 `last`가 아닌 `new_node`를 가리키도록 한다.
+
+<div style="text-align: center">
+  <img src="assets/images/data-structure/linked-list/cll-doubly-insert_at5.png" alt="circular doubly linked list picture">
 </div>
 
 #### :pencil2: 리스트 중간에 노드 삽입
@@ -323,13 +333,17 @@ def remove_last
 end
 ```
 
-마지막 노드를 삭제하려면 `@last`를 가리키고 있는 이전 노드(`A`)가 필요한데 이 노드를 `curr`에 저장한다. 그 다음 `curr.next`가 `@last.next`를 가리키도록 한 다음, `@last`를 `curr`로 이동시킨다.
+마지막 노드를 삭제하려면 `@last`를 가리키고 있는 이전 노드(`B`)가 필요한데 이 노드를 `curr`에 저장한고 `curr.next`가 `@last.next`를 가리키도록 한다.
 
 <div style="text-align: center">
   <img src="assets/images/data-structure/linked-list/cll-singly-remove-at2.png" alt="circular doubly linked list picture">
 </div>
 
-<br>
+그리고 마지막으로 `@last`를 `curr`로 이동시킨다.
+
+<div style="text-align: center">
+  <img src="assets/images/data-structure/linked-list/cll-singly-remove-at3.png" alt="circular doubly linked list picture">
+</div>
 
 **원형 이중 연결 리스트**
 
