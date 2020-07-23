@@ -9,6 +9,10 @@ categories:
 lang: ko
 ---
 
+<div class="updated">
+2020-07-24: 연결 리스트 표(figure) 업데이트
+</div>
+
 ## 이중 연결 리스트란?
 이중 연결 리스트(Doubly Linked List)는 노드들이 한 방향으로만 연결된 [단일 리스트](/ko-data-structure-linked-list-singly)와는 달리, 노드가 양쪽 방향으로 연결된 연결 리스트이다.
 
@@ -278,12 +282,7 @@ end
 curr = get_node_at(index)
 ```
 
-우선 삭제할 위치에 있는 노드를 가져와 `curr`에 대입한다.
-<div style="text-align: center">
-<img src="assets/images/data-structure/linked-list/dll-remove_at2.png" alt="three nodes linked together">
-</div>
-
-그 다음 `curr`의 `prev`와 `next`를 이용해 A노드와 C노드에서 연결된 링크들을 끊는다.
+우선 삭제할 위치에 있는 노드를 가져와 `curr`에 대입하고, `curr`의 `prev`와 `next`를 이용해 A노드와 C노드에서 연결된 링크들을 끊는다.
 ```rb
 curr.prev.next = curr.next
 curr.next.prev = curr.prev
