@@ -9,6 +9,10 @@ categories:
 lang: ja
 ---
 
+<div class="updated">
+2020-07-24: リストの表(figure)のアップデート
+</div>
+
 ## 双方向リストとは?
 双方向リスト「Doubly Linked List」は一方向だけでつながっている[単方向リスト](/ja-data-structure-linked-list-singly)とは違い、ノードが両方向でつながっているリストだ。
 
@@ -279,10 +283,6 @@ curr = get_node_at(index)
 ```
 
 まず、除去する位置にあるノードを`curr`に保存する。
-<div style="text-align: center">
-<img src="assets/images/data-structure/linked-list/dll-remove_at2.png" alt="three nodes linked together">
-</div>
-
 そして`curr`の`prev`と`next`を利用して、AとCからつながっているリンクを全部切る。
 ```rb
 curr.prev.next = curr.next
