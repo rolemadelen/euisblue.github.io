@@ -9,6 +9,10 @@ categories:
 lang: en
 ---
 
+<div class="updated">
+2020-07-24: figures modified
+</div>
+
 ## What is Doubly Linked List?
 Unlike [Singly Linked List](en-data-structure-linked-list-singly) where nodes are linked in one direction, Doubly Linked List is a linear data structure where a node can be linked bidiretionally.
 
@@ -285,13 +289,8 @@ Let's take a look at the 3rd case.
 curr = get_node_at(index)
 ```
 
-We need to get a node that we're going to remove. We can use the helper method `get_node_at`.
-
-<div style="text-align: center">
-<img src="assets/images/data-structure/linked-list/dll-remove_at2.png" alt="three nodes linked together">
-</div>
-
-Now we use `curr.prev` and `curr.next` to disconnect links from the node A and C.
+Use the helper method `get_node_at` to get the node we're going to remove and save it to `curr`.
+Now use `curr.prev` and `curr.next` to disconnect links from the node A and C.
 
 ```rb
 curr.prev.next = curr.next
