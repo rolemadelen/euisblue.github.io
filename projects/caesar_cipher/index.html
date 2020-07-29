@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Caesar Cipher</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="root">
+      <div class="nes-container with-title is-centered">
+        <p class="title">Caesar Cipher</p>
+
+        <div id="shift-wrapper">
+          <span class="nes-text is-warning">* Press enter...</span> <br>
+          <span>Shift: </span>
+          <input type="text" @keyup.enter="caesarCipher" v-model="shift"> 
+          <span>A -&gt {{ String.fromCharCode(convertToAscii('A')) }}</span>
+        </div>
+
+        <br>
+
+        <div id="text-wrapper">
+          <span>Text: </span> <br>
+          <input type="text" v-model="word" @keyup="caesarCipher" @keyup.enter="addHistory">
+        </div>
+
+        <br>
+
+        <div id="cipher-wrapper">
+          <span>Ciphered: </span> <br>
+          <span class="nes-text is-disabled">{{ ciphered }}</span>
+          <br>
+          
+          <ul>
+            <li class="nes-text is-disabled" v-for="hist in history"> {{ hist.text }}</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
