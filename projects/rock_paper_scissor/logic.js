@@ -24,7 +24,7 @@ async function playRound(str) {
 	let p = str[0];
 	let result = '';
 
-	img.src = '../assets/' + computer + '.png';
+	img.src = './assets/' + computer + '.png';
 	running = false;
 
 	if(p=='r' && c=='r') {
@@ -65,7 +65,7 @@ function sleep(ms) {
 function computerImageRandom() {
 	if(running) {
 		let hand = ['rock', 'paper', 'scissor'];
-		img.src = '../assets/' + hand[Math.floor(Math.random()*3)] + '.png';
+		img.src = './assets/' + hand[Math.floor(Math.random()*3)] + '.png';
 		timer = setTimeout(play, 200);
 	}
 }
