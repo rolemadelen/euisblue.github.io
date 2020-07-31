@@ -22,15 +22,10 @@ dsalgo:
     ko: /dsalgo-ko
     ja: /dsalgo-ja
 
-ruby:
-    en: /ruby
-    ko: /ruby-ko
-    ja: /ruby-ja
-
-rails:
-    en: /rails
-    ko: /rails-ko
-    ja: /rails-ja
+toy-projects:
+    en: /toy-projects
+    ko: /toy-projects-ko
+    ja: /toy-projects-ja
 
 ps:
     en: /ps
