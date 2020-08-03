@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ruby・Circular Linked List?"
+title: "Ruby・Circular Linked List"
 ref: ds-linked-list-circular
 date: 2020-07-18 05:00:00 +0900
 published: true
