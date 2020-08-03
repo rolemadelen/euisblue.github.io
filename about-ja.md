@@ -9,7 +9,7 @@ lang: ja
 
 ２０１９年[UC San Diego](https://ucsd.edu/)から[認知科学HCI](http://cogsci.ucsd.edu/undergraduates/major/design-interaction.html)学位を受けて卒業しました。
 
-韓国生まれで、アメリカで育ちました。今は日本の小学校で英語の先生で働いていますが、Ruby/RoR開発者の目指して一生懸命勉強しています。
+韓国生まれで、アメリカ育ちです。今は日本の小学校で英語の先生で働いていますが、software developerを目指して一生懸命勉強しています。
 
 私自分の動機付けのため[Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber)チャンネルを運営しています。開発の勉強ではなくても大丈夫なので、一緒に勉強したいと思う方はいつでも見に来てください。
 
