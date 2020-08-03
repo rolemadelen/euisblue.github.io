@@ -11,11 +11,11 @@ I graduated from [UC San Diego](https://ucsd.edu/) in 2019 with [B.S. Cognitive 
 
 I was born in Korea, raised in the States, and now working in Japan as a Foreign Language Teacher in elementary school.
 
-Today, I’m pursuing to become a Ruby/RoR developer. So, I'm spending rest of my free time before and after work studying the language, algorithm, and data structures and doing side projects.
+Today, I’m spending all my spare times in programming, algorithms, data structures, and doing side projects pursuing to become a software developer.
 
-I'm trying to motivate myself by running a [Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber) channel. Feel free to join and study with me :)
+I'm running a [Study with me](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q?view_as=subscriber) channel as a form of motivation to myself. Feel free to join and study with me :)
 
-If you find any errors, typos, or awkward phrases on my posts, please point them out and let me know via [Twitter](https://twitter.com/jioneeu){:target="\_blank"}.
+If you find any errors or typos on any of the posts, please leave a comment or let me know via [Twitter](https://twitter.com/jioneeu){:target="\_blank"}.
 
 Thank you.
 
