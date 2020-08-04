@@ -230,4 +230,4 @@ arr[1] << 4   # => [[1], [4], []]
 arr[2] << 7   # => [[1], [4], [7]]
 ```
 
-In Ruby, multi-dimensional array is really just an array with its element being an array. So as we saw earlier from the 1-D array, same access, insert, and delete methods can be used here in 2-D or 3-D or higher dimensions.
+In Ruby, multi-dimensional array is really just an array with its element being an array. So as we saw earlier from the 1-D array, same access, insert, and delete methods can be applied in 2-D or 3-D or higher dimensional arrays.
