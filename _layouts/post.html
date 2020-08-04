@@ -39,7 +39,13 @@ layout: default
 
   <div class="divider"></div>
   <div class="typo">
-  오류 및 오탈자는 댓글 또는 <a href="https://www.twitter.com/jioneeu">트위터</a>로 지적바랍니다.
+    {% if page.lang == "ko"  %}
+      오류 및 오탈자는 댓글 또는 <a href="https://www.twitter.com/jioneeu">트위터</a>로 알려주시길 바랍니다.
+    {% elsif page.lang == "en" %}
+      If there're any errors or typos on the post, please leave a comment or let me know via <a href="https://www.twitter.com/jioneeu">Twitter</a>.
+    {% elsif page.lang == "ja" %}
+    誤字脱字及び変な文脈を見つけたら、 コメントとか<a href="https://www.twitter.com/jioneeu">Twitter</a>にメッセージをしてください。
+    {% endif %}
   </div>
 
 </article>
