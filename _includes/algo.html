@@ -4,8 +4,7 @@
     {% assign header = nil %}
     {% assign posted = nil %}
         {% for post in category[1] %}
-            {% if post.categories contains "Algorithm" or
-                  post.categories contains "Data Structure") %}
+            {% if post.categories contains "Algorithm" %}
                 {% if post.lang == page.lang %}
                     {% if header == nil %}
                         <h3 class="updated" style="text-align: left">{{ category[0] }} </h3>
