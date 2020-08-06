@@ -17,10 +17,15 @@ about:
     ko: /about-ko
     ja: /about-ja
 
-dsalgo:
-    en: /dsalgo
-    ko: /dsalgo-ko
-    ja: /dsalgo-ja
+ds:
+    en: /ds
+    ko: /ds-ko
+    ja: /ds-ja
+
+algo:
+    en: /algo
+    ko: /algo-ko
+    ja: /algo-ja
 
 toy-projects:
     en: /toy-projects
