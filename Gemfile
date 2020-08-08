@@ -8,3 +8,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'jekyll-remote-theme'
 gem 'jemoji'
+# livereloaod
+gem 'guard'
+gem 'guard-jekyll-plus'
+gem 'guard-livereload'
