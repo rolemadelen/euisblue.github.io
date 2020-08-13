@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What is Tree?"
-ref: ds-tree
+ref: ds-binarytree
 date: 2020-08-12 05:00:00 +0900
 published: false
 categories:
