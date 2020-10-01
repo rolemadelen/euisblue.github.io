@@ -419,6 +419,9 @@ a {
   color: #119bdf;
   text-decoration: none;
 }
+a.control  {
+  color: black;
+}
 a:hover {
   color: #29aeef;
   text-decoration: underline;
@@ -514,7 +517,7 @@ code {
 #content {
   padding: 20px;
   padding-left: 260px;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 #content .control {
@@ -575,6 +578,13 @@ code {
 #content article a h2 code b {
   background: #657e8b;
   text-transform: uppercase;
+}
+
+#content article.certificate a h2 code {
+  color: rgb(205, 116, 245);
+}
+#content article.certificate a h2 code b {
+  background: rgb(146, 59, 185);
 }
 
 /* GET */
