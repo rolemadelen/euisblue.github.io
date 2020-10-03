@@ -2,7 +2,7 @@
 category: JavaScript
 url_path: ''
 title: 'JavaScript Basic Notes'
-type: 'JS'
+type: 'js'
 published: false
 
 layout: null
