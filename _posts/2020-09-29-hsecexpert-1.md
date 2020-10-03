@@ -1,7 +1,7 @@
 ---
 title: '해킹 보안 전문가 1급'
 category: '한검평'
-url_path: ''
+url_path: '/ethical-hacker'
 type: 'certificate'
 
 layout: null
