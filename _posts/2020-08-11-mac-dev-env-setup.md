@@ -1,8 +1,8 @@
 ---
 category: etc
-url_path: ''
+url_path: '/mac'
 title: 'Setting up Dev Env in Mac'
-type: 'ETC'
+type: 'etc'
 
 layout: null
 ---
