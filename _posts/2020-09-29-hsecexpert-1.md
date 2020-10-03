@@ -7,7 +7,6 @@ type: 'certificate'
 layout: null
 ---
 
-<div class="right">October 1st, 2020</div>
 ## 1. 해킹 개념
 ### 해킹의 정의
 
