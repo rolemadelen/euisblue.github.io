@@ -4,6 +4,8 @@ permalink: ':title'
 highlighter: rouge
 safe: false
 title: 'Today I Learned'
+baseurl: '/#'
+
 
 plugins:
   - jekyll-feed
