@@ -173,6 +173,7 @@ samp {
 
 pre {
     white-space: pre-wrap;
+    padding: 15px;
 }
 
 /**
@@ -438,7 +439,7 @@ code {
 }
 
 code {
-  font-family: 'Monaco', monospace, sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 /* SIDEBAR */
@@ -617,8 +618,8 @@ code {
 }
 
 /* Reference's body */
-#content h3 {
-}
+/* #content h3 {
+} */
 
 #content .body {
   -moz-box-sizing: border-box;
@@ -632,19 +633,20 @@ code {
 
 #content .body code {
   border: 1px solid #e2e7ea;
-  background: #eef1f2;
+  background: #f8f8f8;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-  color: #546974;
-  padding: 0 1px;
+ 
+  color: #4e4e4e;
+  padding: 0 5px; 
 }
 
-#content .body p > code {
+/* #content .body p > code {
   display: block;
   padding: 15px;
   white-space: pre;
-}
+} */
 
 /* ==========================================================================
    Custom by Jii
