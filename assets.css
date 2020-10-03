@@ -580,13 +580,6 @@ code {
   text-transform: uppercase;
 }
 
-#content article.certificate a h2 code {
-  color: rgb(205, 116, 245);
-}
-#content article.certificate a h2 code b {
-  background: rgb(146, 59, 185);
-}
-
 /* GET */
 #content article.GET a h2 code {
   color: #119bdf;
@@ -651,4 +644,22 @@ code {
   display: block;
   padding: 15px;
   white-space: pre;
+}
+
+/* ==========================================================================
+   Custom by Jii
+   ========================================================================== */
+
+/**
+ * certificate tag + path
+ */
+ #content article.certificate a h2 code {
+  color: rgb(205, 116, 245);
+}
+#content article.certificate a h2 code b {
+  background: rgb(146, 59, 185);
+}
+
+.right {
+  text-align: right;
 }
