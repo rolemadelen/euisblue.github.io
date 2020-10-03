@@ -1,8 +1,8 @@
 ---
 category: etc
-url_path: ''
+url_path: '/vs-code'
 title: 'VS Code - Preview markdown'
-type: 'ETC'
+type: 'etc'
 
 layout: null
 ---
