@@ -643,11 +643,18 @@ code {
 #content article.git a h2 code {
   color: #eb8b52;
 }
-
 #content article.git a h2 code b {
   background: #d25c15;
 }
 
+/* javascript */
+#content article.javascript a h2 code {
+  color: #dfe35d;
+}
+#content article.javascript a h2 code b {
+  background: #e2e114;
+  color: #000;
+}
 
 .right {
   text-align: right;
