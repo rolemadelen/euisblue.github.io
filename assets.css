@@ -522,6 +522,10 @@ code {
   max-width: 800px;
 }
 
+#content ol li {
+  line-height: 25px;
+}
+
 #content .control {
   cursor: pointer;
   font-size: 12px;
