@@ -582,42 +582,6 @@ code {
   text-transform: uppercase;
 }
 
-/* GET */
-#content article.GET a h2 code {
-  color: #119bdf;
-}
-
-#content article.GET a h2 code b {
-  background: #119bdf;
-}
-
-/* POST */
-#content article.POST a h2 code {
-  color: #52ce0e;
-}
-
-#content article.POST a h2 code b {
-  background: #52ce0e;
-}
-
-/* PUT */
-#content article.PUT a h2 code {
-  color: #e08f10;
-}
-
-#content article.PUT a h2 code b {
-  background: #e08f10;
-}
-
-/* DELETE */
-#content article.DELETE a h2 code {
-  color: #e02a10;
-}
-
-#content article.DELETE a h2 code b {
-  background: #e02a10;
-}
-
 /* Reference's body */
 /* #content h3 {
 } */
@@ -663,15 +627,23 @@ code {
   background: rgb(146, 59, 185);
 }
 
-/**
- * unix tag + path
- */
-#content article.unix a h2 code {
+/* unix */
+ #content article.unix a h2 code {
   color: rgb(88, 209, 113);
 }
 #content article.unix a h2 code b {
   background: rgb(53, 140, 55);
 }
+
+/* git */
+#content article.git a h2 code {
+  color: #eb8b52;
+}
+
+#content article.git a h2 code b {
+  background: #d25c15;
+}
+
 
 .right {
   text-align: right;
