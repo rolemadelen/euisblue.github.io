@@ -663,6 +663,16 @@ code {
   background: rgb(146, 59, 185);
 }
 
+/**
+ * unix tag + path
+ */
+#content article.unix a h2 code {
+  color: rgb(88, 209, 113);
+}
+#content article.unix a h2 code b {
+  background: rgb(53, 140, 55);
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
