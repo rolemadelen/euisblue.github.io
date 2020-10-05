@@ -7,6 +7,8 @@ type: 'certificate'
 layout: null
 ---
 
+### September 29, 2020
+
 ## 1. 해킹 개념
 ### 해킹의 정의
 
