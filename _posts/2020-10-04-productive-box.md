@@ -1,7 +1,7 @@
 ---
 category: etc
 url_path: '/gist'
-title: "I'm an early bird? owl?"
+title: "I'm an early bird? night owl?"
 type: 'etc'
 
 layout: null
