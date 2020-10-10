@@ -656,6 +656,14 @@ code {
   color: #000;
 }
 
+/* css */
+#content article.css a h2 code {
+  color: #a8ddff;
+}
+#content article.css a h2 code b {
+  background: #007cff;
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
