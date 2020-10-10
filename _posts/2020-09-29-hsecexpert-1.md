@@ -36,7 +36,7 @@ layout: null
    * 기술적인 방법이 아닌 사람들간의 기본적인 신뢰를 기반으로 사람을 속여가며 비밀 정보를 획득하는 기법. 보안 시스템에 권한이 있는 담당자와 친분을 쌓고 전화나 이메일을 통해 그들의 약점과 도움을 이용한다. 해커 관련 영화를 보면 청소부 또는 무슨무슨 보안사, 점검, 등등으로 잡입하여 정보를 빼내고는 하는데 이도 사회공학의 예다. 아주 흔한걸로는 보이스피싱이 있다.
 
 ### 해커의 종류
-<img src="/images/types-of-hackers.png" width="800px"/> (출처: https://searchsecurity.techtarget.com/answer/What-is-red-and-white-hat-hacking)
+<img src="/assets/images/types-of-hackers.png" width="800px"/> (출처: https://searchsecurity.techtarget.com/answer/What-is-red-and-white-hat-hacking)
 + Hacker (해커)
   * 컴퓨터 전반, 특히 정보 보안에 능통한 전문가.
   * '해커' 낱말 자체는 선악의 개념이 없는 가치중립적 의미를 가지고 있지만 일반적으로 부정적인 의미로 사용되고 있다.
