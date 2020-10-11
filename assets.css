@@ -664,6 +664,14 @@ code {
   background: #007cff;
 }
 
+/* ps */
+#content article.ps a h2 code {
+  color: #ffa8a8;
+}
+#content article.ps a h2 code b {
+  background: #d03d3d;
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
