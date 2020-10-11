@@ -36,4 +36,4 @@ CSS 적용 전.
   transform: scale(1.05);
 }
 ```
-![Card gif](/assets/images/css/card.gif)
+![Card gif](/assets/gifs/card.gif)
