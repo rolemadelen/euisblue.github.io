@@ -671,6 +671,14 @@ code {
   background: #d03d3d;
 }
 
+/* ds */
+#content article.ds a h2 code {
+  color: #2bdad1
+}
+#content article.ds a h2 code b {
+  background: #528a87;
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
