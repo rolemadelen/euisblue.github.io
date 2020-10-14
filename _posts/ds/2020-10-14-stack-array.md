@@ -20,6 +20,9 @@ So in Stack, delete operation removes the most recently added item in the set; h
 <a href="https://www.vectorstock.com/royalty-free-vector/paper-sticker-on-stylish-background-stack-of-books-vector-16581812">Vector image by VectorStock / Anastasia8</a>
 
 ### empty()
+
+Returns `true` if a stack is empty else `false`.
+
 ```cpp
 bool empty()
 {
@@ -28,6 +31,9 @@ bool empty()
 ```
 
 ### push(x)
+
+Inserts an element to the set. If `top == capacity`, print the error message that the set overflowed.
+
 ```cpp
 void push(int val)
 {
@@ -44,6 +50,9 @@ void push(int val)
 ```
 
 ### pop()
+
+Removes an element from the stack. If `pop` is attempted when the stack is empty, print the error message that it underflowed.
+
 ```cpp
 int pop() 
 {
@@ -59,6 +68,9 @@ int pop()
   }
 }
 ```
+
+[View](https://github.com/jioneeu/ds-algo/tree/master/stack/array/stack.cpp) full source code of Stack implementation using an array.
+
 
 ## Reference
 - Introduction to Algorithms, 3rd Edition (CLRS)
