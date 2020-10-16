@@ -39,7 +39,6 @@ template <class T>
 void StackQueue<T>::enqueue(T val) 
 {
   stackA.push(val);
-  ++nElems;
 }
 
 template <class T> 
