@@ -52,3 +52,4 @@ void QueueStack<T>::pop()
 
 ## Reference
 - Introduction to Algorithms, 3rd Edition (CLRS)
+- [Implement Stack using Queues](https://www.geeksforgeeks.org/implement-stack-using-queue/)
