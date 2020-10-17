@@ -25,7 +25,7 @@ Pop the data from stack B and return it.
 
 I used the second method to implement a queue using two stacks since it's clearly better than the first method.
 Method 1 moves all the elements twice while method 2 only moves the elements once
-only if stack `B` is empty. So the amortized complexity of queue's insert and delete is O(1).
+only if stack `B` is empty. **So the amortized complexity of queue's insert and delete is O(1)**.
 
 ## Implementation
 Supoose we have a stack `A` and `B`. 
