@@ -679,6 +679,14 @@ code {
   background: #528a87;
 }
 
+/* ds */
+#content article.algorithm a h2 code {
+  color: #f75cc1;
+}
+#content article.algorithm a h2 code b {
+  background: #e44b97;
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
