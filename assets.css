@@ -679,12 +679,21 @@ code {
   background: #528a87;
 }
 
-/* ds */
+/* algorithm */
 #content article.algorithm a h2 code {
   color: #f75cc1;
 }
 #content article.algorithm a h2 code b {
   background: #e44b97;
+}
+
+/* math */
+#content article.math a h2 code {
+  color: rgb(236, 236, 236)
+}
+#content article.math a h2 code b {
+  background: #fff;
+  color: #000;
 }
 
 .right {
