@@ -1,11 +1,17 @@
----
-exclude: ['README.markdown']
-permalink: ':title'
-highlighter: rouge
-safe: false
+name: Jii Eu
 title: 'Today I Learned'
 baseurl: '/#'
 
+exclude: ['README.markdown']
+permalink: ':title'
+safe: false
+timezone: Asia/Tokyo
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 plugins:
   - jekyll-feed
