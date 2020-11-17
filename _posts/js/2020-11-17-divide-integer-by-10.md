@@ -1,7 +1,7 @@
 ---
 category: javascript
 url_path: '/arithmetic'
-title: "Dividing number by 10"
+title: "Proper way to divide an integer by 10"
 type: 'javascript'
 
 layout: null
