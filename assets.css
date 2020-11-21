@@ -696,6 +696,11 @@ code {
   color: #000;
 }
 
+/* nodejs */
+#content article.node-js a h2 code b {
+  background: #506550;
+}
+
 .right {
   text-align: right;
   margin-bottom: 20px;
