@@ -1,6 +1,6 @@
 ---
 category: database
-url_path: '/mysql'
+url_path: '/mysql-schema'
 title: "MySQL - DATABASE basic commands"
 type: 'mysql'
 date: '2020-11-22 08:00:00 +0900'
