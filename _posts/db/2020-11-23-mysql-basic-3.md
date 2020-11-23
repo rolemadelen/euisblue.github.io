@@ -1,7 +1,7 @@
 ---
 category: database
 url_path: '/mysql-table-read'
-title: "MySQL - Reading data"
+title: "MySQL - Read data"
 type: 'mysql'
 date: '2020-11-23 19:20:00 +0900'
 
