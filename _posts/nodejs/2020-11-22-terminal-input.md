@@ -3,6 +3,7 @@ category: nodejs
 url_path: '/nodejs'
 title: "Reading terminal inputs"
 type: 'node-js'
+date: '2020-11-22 06:00:00 +0900'
 
 layout: null
 ---
