@@ -1,7 +1,7 @@
 ---
 category: database
-url_path: '/mysql'
-title: "MySQL - Create a new table and insert & read a data"
+url_path: '/mysql-table-write'
+title: "MySQL - Create a new table and insert a data"
 type: 'mysql'
 date: '2020-11-22 08:30:00 +0900'
 
