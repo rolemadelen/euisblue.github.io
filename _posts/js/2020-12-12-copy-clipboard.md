@@ -3,6 +3,7 @@ category: javascript
 url_path: '/clipboard'
 title: "Copy strings to the clipboard"
 type: 'javascript'
+date: '2020-12-12 14:20:00 +0900'
 
 layout: null
 ---
@@ -44,3 +45,6 @@ let dummy = document.getElementById('dummy');
 ```
 
 I got an error saying that `.select()` is not a funciton.. so I had used the first solution.
+
+### Reference
+- [Copy outpot of a JS variable to the clipboard](https://stackoverflow.com/questions/33855641/copy-output-of-a-javascript-variable-to-the-clipboard)
