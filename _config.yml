@@ -1,6 +1,6 @@
 name: Jii Eu
 title: 'Today I Learned'
-baseurl: '/#'
+# baseurl: '/#'
 
 exclude: ['README.markdown']
 permalink: ':title'
