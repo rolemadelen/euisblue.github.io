@@ -16,7 +16,7 @@ plugins:
 
 # Details for the RSS feed generator
 url: "https://imeubug.github.io/"
-author: "Jii Eu"
+author: "Eubug"
 
 # SNS config
 twitter: imeubug
