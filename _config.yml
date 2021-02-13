@@ -6,10 +6,10 @@ markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: /kasper/
+baseurl: '/'
 domain_name: "https://imeubug.github.io"
 google_analytics: "UA-XXXXXXXX-X"
-plugins: [jekyll-paginate]
+plugins: [jekyll, jekyll-paginate]
 
 # Details for the RSS feed generator
 url: ""
