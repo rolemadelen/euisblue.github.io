@@ -205,6 +205,10 @@ h4, h5, h6 {
     font-family: "Open Sans", sans-serif;
 }
 
+h1.page-title {
+    color: rgba(255, 255, 255, 0.85);
+}
+
 h1 {
     font-size: 5rem;
     letter-spacing: -2px;
@@ -230,6 +234,10 @@ h5 {
 
 h6 {
     font-size: 2rem;
+}
+
+.page-description a {
+    color: rgba(255, 255, 255, 0.70);
 }
 
 a {
@@ -665,7 +673,8 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: 'Roboto', 'Amiri', 'Galada', sans-serif;
     color: #fff;
 }
 
