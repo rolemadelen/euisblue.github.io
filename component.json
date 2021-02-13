@@ -1,7 +1,0 @@
-{
-    "name": "TIL",
-    "description": "Today I Learned",
-    "version": "0.0.1",
-    "local": ["boot"],
-    "paths": ["lib"]
-}
