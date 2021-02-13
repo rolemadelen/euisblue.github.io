@@ -1,5 +1,5 @@
 name: I'm Eubug
-description: Programming blog
+description: ''
 meta_description: "Personal Notes | TIL | Blog"
 
 markdown: kramdown
@@ -9,10 +9,13 @@ paginate: 15
 baseurl: '/'
 domain_name: "https://imeubug.github.io"
 google_analytics: "UA-XXXXXXXX-X"
-plugins: [jekyll, jekyll-paginate]
+plugins: 
+  - jekyll
+  - jekyll-paginate
+  - jekyll-feed
 
 # Details for the RSS feed generator
-url: ""
+url: "https://imeubug.github.io/"
 author: "Jii Eu"
 
 # SNS config
