@@ -3,6 +3,8 @@ layout: post
 title:  "React basic: Starting & Introducing  JSX"
 date:   2021-01-31 07:00:00
 category: React
+permalink: /react-basic/starting
+lang: en
 ---
 
 Starting React and introducing JSX.
