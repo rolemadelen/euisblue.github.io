@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 5.2: Numbers"
 date:   2021-02-03 07:00:00
 category: JavaScript
+permalink: /modern-js/numbers
+lang: en
 ---
 
 There are two types of numbers in modern JavaScript:

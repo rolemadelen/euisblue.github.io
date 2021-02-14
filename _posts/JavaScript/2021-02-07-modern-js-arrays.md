@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 5.4: Arrays"
 date:   2021-02-07 07:00:00
 category: JavaScript
+permalink: /modern-js/arrays
+lang: en
 ---
 
 Objects serve good purpose for storing keyed collections of values; however, it is not a good solution to store something in order. Objects are not meant for such use. Instead, we have `Array` structure.
