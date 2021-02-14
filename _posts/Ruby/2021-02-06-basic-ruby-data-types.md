@@ -3,6 +3,8 @@ layout: post
 title:  "Basic Ruby: Data Types"
 date:   2021-02-06 07:00:00
 category: Ruby
+permalink: /ruby-basic/data-types
+lang: en
 ---
 
 Ruby has 8 primitive types and 3 more data types derived from the Numeric superclass. Everything has a class in Ruby.
