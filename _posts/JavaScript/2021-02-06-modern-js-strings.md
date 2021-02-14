@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 5.3: Strings"
 date:   2021-02-06 07:00:00
 category: JavaScript
+permalink: /modern-js/strings
+lang: en
 ---
 
 Unlike other type languages where they have two different types to represent a *character* and a *string*, in JavaScript all characters are of type `String` and its internal format for strings is always [UTF-16](https://en.wikipedia.org/wiki/UTF-16); it is not tied to the page encoding.
