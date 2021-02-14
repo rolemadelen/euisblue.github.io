@@ -178,7 +178,7 @@ body {
     max-height: 100%;
     font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.75em;
     color: #3A4145;
     -webkit-font-feature-settings: 'kern' 1;
@@ -728,7 +728,7 @@ margin on the iframe, cause it breaks stuff. */
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    padding-bottom: 4rem;
+    /* padding-bottom: 4rem; */
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -754,7 +754,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 body:not(.post-template) .post-title {
-    font-size: 3.6rem;
+    font-size: 3.0rem;
 }
 
 .post-title a {
@@ -1386,7 +1386,7 @@ body:not(.post-template) .post-title {
     }
 
     body:not(.post-template) .post-title {
-        font-size: 3.2rem;
+        font-size: 2.6rem;
     }
 
     hr {
@@ -1403,23 +1403,23 @@ body:not(.post-template) .post-title {
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 3.0rem;
     }
 
     h3 {
-        font-size: 3.1rem;
-    }
-
-    h4 {
         font-size: 2.5rem;
     }
 
+    h4 {
+        font-size: 2.0rem;
+    }
+
     h5 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     h6 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .author-profile {
@@ -1617,11 +1617,11 @@ body:not(.post-template) .post-title {
     }
 
     h6 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     body:not(.post-template) .post-title {
-        font-size: 2.5rem;
+        font-size: 2.0rem;
     }
 
     .post-template .post {
