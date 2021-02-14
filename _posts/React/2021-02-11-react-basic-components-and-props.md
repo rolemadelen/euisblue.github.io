@@ -3,6 +3,8 @@ layout: post
 title:  "React basic: Components and Props"
 date:   2021-02-11 07:00:00
 category: React
+permalink: /react-basic/components-and-props
+lang: en
 ---
 
 Components lets you split the UI into independent, reusable pieces, think about each piece in isolation.
