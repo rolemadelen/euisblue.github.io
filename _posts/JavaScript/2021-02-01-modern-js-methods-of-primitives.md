@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 5.1: Methods of Primitives"
 date:   2021-02-01 07:00:00
 category: JavaScript
+permalink: /modern-js/methods-of-primitives/
+lang: en
 ---
 
 In JavaScript we can work with primitives as if they're objects.
