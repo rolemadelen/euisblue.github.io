@@ -3,6 +3,8 @@ layout: post
 title:  "React basic: Rendering Elements"
 date:   2021-02-01 07:00:00
 category: React
+permalink: /react-basic/rendering-elements
+lang: en
 ---
 
 An element describes what you want to see on the screen
