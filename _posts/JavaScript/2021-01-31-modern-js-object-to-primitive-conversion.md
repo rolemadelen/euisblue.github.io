@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 4.8: Object to Primitive Conversion"
 date:   2021-01-31 07:00:00
 category: JavaScript
+permalink: /modern-js/object-to-primitive-conversion/
+lang: en
 ---
 
 When we perform arithmetic operations with objects, it will be converted into primitives. For example, results of the following code will be a primitive: `obj + obj`, `obj - obj`, or `alert(obj)`.

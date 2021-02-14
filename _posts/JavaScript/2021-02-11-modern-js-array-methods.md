@@ -3,6 +3,8 @@ layout: post
 title:  "Modern JS 5.5: Array methods"
 date:   2021-02-11 07:00:00
 category: JavaScript
+permalink: /modern-js/array-methods
+lang: en
 ---
 
 We've seen couple methods that add/remove in the previous chapter (check the related post).
