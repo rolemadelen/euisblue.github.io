@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Modern JS: 5.5] Array methods"
+title:  "Modern JS 5.5: Array methods"
 date:   2021-02-11 07:00:00
 category: JavaScript
 ---
