@@ -3,6 +3,8 @@ layout: post
 title:  "React basic: State and Lifecycle"
 date:   2021-02-13 07:00:00
 category: React
+permalink: /react-basic/state-and-lifecycle
+lang: en
 ---
 
 Learn how to make a component truly reusable and encapsulated. We'll use `Clock` component as an example here.
