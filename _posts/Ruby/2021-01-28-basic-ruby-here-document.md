@@ -9,7 +9,7 @@ lang: en
 
 `<<` operator is followed by an identifier that marks the end of the here document. The end mark is called the terminator.
 
-```ruby
+{% highlight ruby %}
 puts <<GROCERY_LIST
 Grocery List
 _____________
@@ -20,11 +20,11 @@ _____________
 
 * Organic
 GROCERY_LIST
-```
+{% endhighlight %}
 
 result:
 
-```
+{% highlight shell %}
 Grocery List
 _____________
 1. Salad mix
@@ -33,13 +33,13 @@ _____________
 4. Milk.*
 
 * Organic
-```
+{% endhighlight %}
 
 We can pass multiple arguments to `puts`. The string literal created from the here-document is inserted into the argument list wherever the `<<` operator appears.
 
 In the code below, the here-document is passed in as the 3rd argument. We get the same output as above.
 
-```ruby
+{% highlight ruby %}
 puts 'Grocery list', '------------', <<GROCERY_LIST, '* Organic'
 1. Salad mix.
 2. Strawberries.*
@@ -47,11 +47,11 @@ puts 'Grocery list', '------------', <<GROCERY_LIST, '* Organic'
 4. Milk.*
 
 GROCERY_LIST
-```
+{% endhighlight %}
 
 ## Multiple here documents
 
-```ruby
+{% highlight ruby %}
 puts 'Computer Language', '-------------', <<COMPLANG, "\\nLanguage", '------------', <<LANGUAGE
 1. C/C++
 2. Ruby
@@ -61,11 +61,11 @@ COMPLANG
 2. Korean
 3. Japanese
 LANGUAGE
-```
+{% endhighlight %}
 
 result:
 
-```
+{% highlight shell %}
 Computer Language
 -------------
 1. C/C++
@@ -77,13 +77,13 @@ Language
 1. English
 2. Korean
 3. Japanese
-```
+{% endhighlight %}
 
 ## Indenting
 
 Any spaces or indents will be preserved inside the here document, but there must not be any spaces before the terminator.
 
-```ruby
+{% highlight ruby %}
 puts 'Computer Language', '-------------', <<COMPLANG, "\\nLanguage", '------------', <<LANGUAGE
   1. C/C++
   2. Ruby
@@ -93,11 +93,11 @@ COMPLANG
    2. Korean
     3. Japanese
 LANGUAGE
-```
+{% endhighlight %}
 
 result:
 
-```
+{% highlight shell %}
 Computer Language
 -------------
   1. C/C++
@@ -109,7 +109,7 @@ Language
   1. English
    2. Korean
     3. Japanese
-```
+{% endhighlight %}
 
 ### indent the terminator
 
@@ -127,13 +127,13 @@ You can also explicitly put double quotes around the identifier but it's not rec
 
 To apply single quoting rules to the here document, place single quotes around the identifier.
 
-```ruby
+{% highlight ruby %}
 puts <<'FOOD_LIST'
 1. Hamburger
 2. Kimchi
 3. Takoyaki
 FOOD_LIST
-```
+{% endhighlight %}
 
 ## Reference
 - [Ruby Programming/Here documents](https://en.wikibooks.org/wiki/Ruby_Programming/Here_documents)
