@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Basic Ruby: Intro to Objects"
-date:   2021-01-31 07:00:00
+date:   2021-01-31 07:00:00 +1400
 category: Ruby
 permalink: /ruby-basic/intro-to-objects
 lang: en

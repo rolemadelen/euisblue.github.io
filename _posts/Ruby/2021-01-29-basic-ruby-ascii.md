@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Basic Ruby: ASCII"
-date:   2021-01-29 07:00:00
+date:   2021-01-29 07:00:00 +1400
 category: Ruby
 permalink: /ruby-basic/ascii
 lang: en
