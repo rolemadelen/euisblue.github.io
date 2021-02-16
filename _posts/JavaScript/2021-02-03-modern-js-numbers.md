@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Modern JS 5.2: Numbers"
-date:   2021-02-03 07:00:00
+date:   2021-02-03 07:00:00 +1400
 category: JavaScript
 permalink: /modern-js/numbers
 lang: en

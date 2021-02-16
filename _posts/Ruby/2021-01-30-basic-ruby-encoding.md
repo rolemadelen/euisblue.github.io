@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Basic Ruby: Encoding"
-date:   2021-01-30 07:00:00
+date:   2021-01-30 07:00:00 +1400
 category: Ruby
 permalink: /ruby-basic/encoding
 lang: en
