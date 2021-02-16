@@ -7,8 +7,6 @@ permalink: /ruby-basic/helloworld
 lang: en
 ---
 
-## Hello World
-
 Create a `hello.rb` file and type the following:
 
 {% highlight ruby %}
