@@ -364,6 +364,7 @@ pre code, tt {
     background: transparent;
     border: none;
     padding: 0;
+    tab-size: 4;
 }
 
 kbd {
