@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React basic: Rendering Elements"
-date:   2021-02-01 07:00:00
+date:   2021-02-01 07:00:00 +1400
 category: React
 permalink: /react-basic/rendering-elements
 lang: en

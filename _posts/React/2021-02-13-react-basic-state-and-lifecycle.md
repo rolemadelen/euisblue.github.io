@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React basic: State and Lifecycle"
-date:   2021-02-13 07:00:00
+date:   2021-02-13 07:00:00 +1400
 category: React
 permalink: /react-basic/state-and-lifecycle
 lang: en
