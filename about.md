@@ -3,6 +3,8 @@ layout: post
 title: "about me"
 ---
 
+[Résumé](../resume)
+
 I'm a ~~future~~ developer working in Japan as a foreign language teacher in public elementary schools. I love to break things, analyze things, and look deep into the bottom layer of things.
 
 When I was 10, my sister showed me this little program that she wrote. She told me to click this one button and something popped up; a black screen with two words, `You idiot`. 
