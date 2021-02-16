@@ -6,6 +6,7 @@ markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 100
+url: 'https://www.eubug.spcae'
 baseurl: ''
 domain_name: "https://imeubug.github.io"
 google_analytics: "UA-XXXXXXXX-X"
