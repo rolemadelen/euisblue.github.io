@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Basic Ruby: Writing methods"
-date:   2021-02-11 07:00:00
+date:   2021-02-11 07:00:00 +1400
 category: Ruby
 permalink: /ruby-basic/writing-methods
 lang: en
