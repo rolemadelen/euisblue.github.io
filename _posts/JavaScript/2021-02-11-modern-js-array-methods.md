@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Modern JS 5.5: Array methods"
-date:   2021-02-11 07:00:00
+date:   2021-02-11 07:00:00 +1400
 category: JavaScript
 permalink: /modern-js/array-methods
 lang: en

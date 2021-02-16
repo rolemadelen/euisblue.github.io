@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[MacOS] Adding bits/stdc++.h"
-date:   2021-01-31 07:00:00
+date:   2021-01-31 07:00:00 +1400
 category: PS
 permalink: /ps/adding-bits-stdcpph
 lang: en
