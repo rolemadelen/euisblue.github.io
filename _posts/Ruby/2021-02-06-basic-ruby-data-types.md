@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Basic Ruby: Data Types"
-date:   2021-02-06 07:00:00
+date:   2021-02-06 07:00:00 +1400
 category: Ruby
 permalink: /ruby-basic/data-types
 lang: en
