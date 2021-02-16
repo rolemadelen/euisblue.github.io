@@ -21,7 +21,7 @@ To make an object iterable, we need to declare `Symbol.iterator` method to the o
 3. When `for..of` wants the next value, it calls `next()` on that object.
 4. The result of `next()` must have the form `{done: Boolean, value: any}`, where `done = true` means that the iteration is finished, otherwise `value` is the next value.
 
-```js
+{% highlight js %}
 let range = {
     from: 1,
     to: 5
@@ -50,7 +50,7 @@ range[Symbol.iterator] = function() {
 for (let num of range) {
 	console.log(num); // 1, 2, 3, 4, 5
 }
-```
+{% endhighlight %}
 
 ### core feature of iterables
 **Separation of concerns**.
@@ -59,16 +59,16 @@ for (let num of range) {
 
 ## String is iterable
 For a string, `for..of` loops over its characters:
-```js
+{% highlight js %}
 for (let char of "test") {
     console.log( char ); // t, e, s, t
 }
-```
+{% endhighlight %}
 
 ## Calling an iterator explicitly
 Besides using the `for..of`, there's another way to iterate an object. We call the iterator directly:
 
-```js
+{% highlight js %}
 let str = "Hello";
 
 let iterator = str[Symbol.iterator]();
@@ -78,7 +78,7 @@ while (true) {
     if (result.done) break;
     console.log(result.value);
 }
-```
+{% endhighlight %}
 
 This reminds of iterators in C++. Anyway, this direct calls are rarely needed in JavaScript but it does gives you more control over the process than `for..of`.
 
@@ -97,7 +97,7 @@ But an iterable object may be not array-like and vice versa.
 ## Array.from
 `Array.from` takes an iterable or array-like value and makes a *"real"* `Array` from it. Then we can call array methods on it.
 
-```js
+{% highlight js %}
 let arrayLike = {
     0: "Hello",
     1: "World",
@@ -106,29 +106,29 @@ let arrayLike = {
 
 let arr = Array.from(arrayLike); // (*)
 console.log(arr.pop()); // World (method works)
-```
+{% endhighlight %}
 
 The line `(*)` takes the object and examines it for being an iterable or array-like, then makes a new array and copies all items to it.
 
 The same happens for an iterable:
-```js
+{% highlight js %}
 let arr = Array.from(range); // 'range' from the example above
 console.log(arr); // [1, 2, 3, 4, 5]
-```
+{% endhighlight %}
 
 The `Arry.from` syntax allows us to provide an optional *"mapping"* function.
 
-```js
+{% highlight js %}
 Array.from(obj,[, mapFn, thisArg])
-```
+{% endhighlight %}
 
 The `mapFn` can be a function that will be applied to each element before adding it to the array, and  `thisArg` allows us to set `this` for it.
 
-```js
+{% highlight js %}
 // square each number
 let arr = Array.from(range, num => num * num);
 console.log(arr); // [1, 4, 9, 16, 25]
-```
+{% endhighlight %}
 
 ## Reference
 - https://javascript.info/iterable
