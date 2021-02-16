@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React basic: Handling Events"
-date:   2021-02-16 21:55:00
+date:   2021-02-16 21:55:00 +1400
 category: React
 permalink: /react-basic/handling-events
 lang: en
