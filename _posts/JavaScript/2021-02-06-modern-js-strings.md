@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Modern JS 5.3: Strings"
-date:   2021-02-06 07:00:00
+date:   2021-02-06 07:00:00 +1400
 category: JavaScript
 permalink: /modern-js/strings
 lang: en
