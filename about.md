@@ -3,7 +3,7 @@ layout: post
 title: "about me"
 ---
 
-[Résumé](../resume)
+[Résumé](../resume) *(WIP)*
 
 I'm a ~~future~~ developer working in Japan as a foreign language teacher in public elementary schools. I love to break things, analyze things, and look deep into the bottom layer of things.
 
