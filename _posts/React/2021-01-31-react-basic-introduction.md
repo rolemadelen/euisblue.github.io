@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React basic: Starting & Introducing  JSX"
-date:   2021-01-31 07:00:00
+date:   2021-01-31 07:00:00 +1400
 category: React
 permalink: /react-basic/starting
 lang: en
