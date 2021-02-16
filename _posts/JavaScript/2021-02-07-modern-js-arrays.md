@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Modern JS 5.4: Arrays"
-date:   2021-02-07 07:00:00
+date:   2021-02-07 07:00:00 +1400
 category: JavaScript
 permalink: /modern-js/arrays
 lang: en
