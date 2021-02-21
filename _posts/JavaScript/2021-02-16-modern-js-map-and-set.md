@@ -75,7 +75,7 @@ There are 3 methods to iterate maps:
 - `map.entries()` - returns an iterable for entries `[key, value]`, it's used by default in `for..of`.
 
 {% highlight js %}
-let map = enw Map([
+let map = new Map([
     ['name', 'Eubug'],
     [true, 'boolTrue'],
     [1, "num1"]
