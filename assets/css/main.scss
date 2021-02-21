@@ -12,3 +12,100 @@
 @import
 	"syntax"
 ;
+
+// language switch
+#language-switch .circle-img{
+	width: 50px;
+	height: 50px;
+	bottom: 40px;
+	object-fit: cover;
+	background-size:cover;
+	background-position:center;
+	border-radius:50%;
+}
+
+#language-switch .eubug-float{
+	position:fixed;
+	width:50px;
+	height:50px;
+	bottom:40px;
+	right:40px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:1000;
+	animation: bot-to-top 2s ease-out;
+}
+
+#language-switch ul{
+	position:fixed;
+	right:40px;
+	padding-bottom:30px;
+	bottom:40px;
+	z-index:100;
+}
+
+#language-switch ul li{
+	list-style:none;
+	margin-bottom:15px;
+}
+
+#language-switch ul li a{
+	background-color:rgba(255, 255, 255, 1.0);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	width:50px;
+	height:50px;
+	display:block;
+	text-decoration: none;
+}
+
+#language-switch  ul:hover{
+	visibility:visible!important;
+	opacity:1!important;
+}
+
+
+#language-switch .my-float{
+	font-size:24px;
+	margin-top:10px;
+}
+
+#language-switch a#menu-share + ul{
+  visibility: hidden;
+}
+
+#language-switch a#menu-share:hover + ul{
+  visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+#language-switch a#menu-share i{
+	animation: rotate-in 0.5s;
+}
+
+#language-switch a#menu-share:hover > i{
+	animation: rotate-out 0.5s;
+}
+
+@keyframes bot-to-top {
+    0%   {bottom:-40px}
+    50%  {bottom:40px}
+}
+
+@keyframes scale-in {
+    from {transform: scale(0);opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+}
+
+@keyframes rotate-in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
