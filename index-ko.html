@@ -3,8 +3,8 @@ layout: default
 title: Home
 cover: '/assets/images/main-header.png/'
 about: 'about.html'
-permalink: '/'
-lang: 'en'
+permalink: '/ko/'
+lang: 'ko'
 ---
 
 <header class="main-header" style="background-image: url('/assets/images/main-header.png')">
@@ -21,7 +21,7 @@ lang: 'en'
             <h1 class="page-title">{{ site.name }}</h1>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }} {% endif %}
-                {% if page.about %} <a href='./about'> about me </a> {% endif %}
+                {% if page.about %} <a href='../about'> about me </a> {% endif %}
             </h2>
         </div>
     </div>
@@ -34,6 +34,7 @@ lang: 'en'
         {% include pagination.html %}
     </div>
 
+    {{ paginator.posts }}
     {% for post in paginator.posts %}
         {% if post.lang == page.lang %}
         <article class="post">
