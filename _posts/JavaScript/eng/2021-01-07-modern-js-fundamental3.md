@@ -11,20 +11,16 @@ lang: en
 
 ## terms
 
-- operand → what operators are applied to.
-
+- operand → what operators are applied to. <br/>
     ex) in `A * B` both `A` and `B` are operands.
 
-- unary operator → an operation with a singly operand.
-
+- unary operator → an operation with a singly operand. <br/>
     ex) the negation operator(`-`) requires only one operand like `-5`.
 
-- binary operator → an operation with two operands.
-
+- binary operator → an operation with two operands. <br/>
     ex) `A - B`. Binary `-` operator subtracts values.
 
 ## math: arithmetic operators
-
 - addition `+`
 - subtraction `-`
 - multiplication `*`
@@ -99,7 +95,7 @@ console.log(+""); // 0
 It has same effect as `Number(...)`
 
 {% highlight jsx %}
-*let apples = "2";
+let apples = "2";
 let oranges = "3";
 
 console.log(apples + oranges); // 23 
