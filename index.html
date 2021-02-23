@@ -3,7 +3,7 @@ layout: default
 title: Home
 cover: '/assets/images/main-header.png/'
 about: 'about.html'
-permalink: '/'
+permalink: '/en/'
 lang: 'en'
 ---
 
@@ -18,10 +18,10 @@ lang: 'en'
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
+            <h1 class="page-title">{{ site.name.en }}</h1>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }} {% endif %}
-                {% if page.about %} <a href='./about'> about me </a> {% endif %}
+                {% if page.about %} <a href='/en/about'> about me </a> {% endif %}
             </h2>
         </div>
     </div>
