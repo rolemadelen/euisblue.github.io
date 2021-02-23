@@ -3,7 +3,7 @@ layout: post
 title:  "Basic Algorithm & Data Structure Group Study"
 date:   2021-02-23 07:00:00 +1400
 category: PS
-permalink: /ps/group-studp/
+permalink: /ps/group-study/
 lang: en
 ---
 
