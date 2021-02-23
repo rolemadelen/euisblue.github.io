@@ -9,7 +9,7 @@ lang: en
 
 같이 공부를 하고 관련 문제를 풀면서 서로의 코드를 리뷰하고 질문하면서 성장할 스터디원을 구합니다.
 
-지원 구글 폼: [https://forms.gle/pW18zpSCWt1mNrJ6A](https://forms.gle/pW18zpSCWt1mNrJ6A])
+지원 구글 폼: [지원하기!](https://docs.google.com/forms/d/e/1FAIpQLSdDOrfkf2AZbv_qCPd0DzHPnJOwHBu9Ebvto0h0bOdGriWj9g/viewform?usp=sf_link])
 
 ## 스터디 기간
 03월 01일 ~ 05월 01일.
