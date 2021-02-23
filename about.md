@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "about me"
+permalink: /en/about/
 ---
 
 [Résumé](../resume) *(WIP)*
