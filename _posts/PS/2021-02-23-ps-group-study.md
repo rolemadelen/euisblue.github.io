@@ -7,7 +7,7 @@ permalink: /ps/group-study/
 lang: en
 ---
 
-같이 공부를 하고 관련 문제를 풀면서 서로의 코드를 리뷰하고 질문하면서 성장할 스터디원을 구합니다.
+같이 공부하고 관련 문제를 풀면서 서로의 코드를 리뷰하고 질문하면서 성장할 스터디원을 구합니다.
 
 Google Form -> [스터디 지원하기!](https://docs.google.com/forms/d/e/1FAIpQLSdDOrfkf2AZbv_qCPd0DzHPnJOwHBu9Ebvto0h0bOdGriWj9g/viewform?usp=sf_link])
 
