@@ -4,7 +4,7 @@ title: Home
 cover: '/assets/images/main-header.png/'
 about: 'about.html'
 permalink: '/ko/'
-lang: 'en'
+lang: 'ko'
 ---
 
 <header class="main-header" style="background-image: url('/assets/images/main-header.png')">
@@ -18,10 +18,10 @@ lang: 'en'
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
+            <h1 class="page-title">{{ site.name.ko }}</h1>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }} {% endif %}
-                {% if page.about %} <a href='./about'> about me </a> {% endif %}
+                {% if page.about %} <a href='/en/about'> about me </a> {% endif %}
             </h2>
         </div>
     </div>
@@ -30,12 +30,8 @@ lang: 'en'
 
 
 <main id="content" class="content" role="main">
-    <div class="extra-pagination inner">
-        {% include pagination.html %}
-    </div>
-
-    {% for post in paginator.posts %}
-        {% if post.lang == 'en' %}
+    {% for post in site.posts %}
+        {% if post.lang == page.lang %}
         <article class="post">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
@@ -56,10 +52,7 @@ lang: 'en'
                 </time> 
             </footer>
         </article>
-        {% endif %}
+       {% endif %}
 
     {% endfor %}
-
-    {% include pagination.html %}
-    
 </main>
