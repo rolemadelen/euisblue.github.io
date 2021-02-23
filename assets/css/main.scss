@@ -15,8 +15,8 @@
 
 // language switch
 #language-switch .circle-img{
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	bottom: 40px;
 	object-fit: cover;
 	background-size:cover;
@@ -26,8 +26,8 @@
 
 #language-switch .eubug-float{
 	position:fixed;
-	width:50px;
-	height:50px;
+	width:40px;
+	height:40px;
 	bottom:40px;
 	right:40px;
 	border-radius:50px;
@@ -40,14 +40,14 @@
 #language-switch ul{
 	position:fixed;
 	right:40px;
-	padding-bottom:30px;
+	padding-bottom:15px;
 	bottom:40px;
 	z-index:100;
 }
 
 #language-switch ul li{
 	list-style:none;
-	margin-bottom:15px;
+	margin-bottom:20px;
 }
 
 #language-switch ul li a{
@@ -56,8 +56,8 @@
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
-	width:50px;
-	height:50px;
+	width:40px;
+	height:40px;
 	display:block;
 	text-decoration: none;
 }
