@@ -18,10 +18,10 @@ lang: 'ja'
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
+            <h1 class="page-title">{{ site.name.ja }}</h1>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }} {% endif %}
-                {% if page.about %} <a href='../about'> about me </a> {% endif %}
+                {% if page.about %} <a href='/en/about'> about me </a> {% endif %}
             </h2>
         </div>
     </div>
@@ -30,12 +30,7 @@ lang: 'ja'
 
 
 <main id="content" class="content" role="main">
-    <div class="extra-pagination inner">
-        {% include pagination.html %}
-    </div>
-
-    {{ paginator.posts }}
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
         {% if post.lang == page.lang %}
         <article class="post">
             <header class="post-header">
@@ -57,10 +52,7 @@ lang: 'ja'
                 </time> 
             </footer>
         </article>
-        {% endif %}
+       {% endif %}
 
     {% endfor %}
-
-    {% include pagination.html %}
-
 </main>
