@@ -35,7 +35,7 @@ lang: 'en'
     </div>
 
     {% for post in paginator.posts %}
-        {% if post.lang == page.lang %}
+        {% if post.lang == 'en' %}
         <article class="post">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
@@ -63,7 +63,3 @@ lang: 'en'
     {% include pagination.html %}
     
 </main>
-
-<footer>
-    {% include language-switch.html %}
-</footer>
