@@ -12,7 +12,7 @@ permalink: "/en/resume/"
  💼  [LinkedIn](https://www.linkedin.com/in/eujii/) <br />
  👨🏻‍💻  [GitHub](https://github.com/imeubug)  <br />
  🐦  [Twitter](https://twitter.com/imeubug) <br />
- 📺  [YouTube](https://www.youtube.com/channel/UC8hY3wjYlK2U9W4fqKN598Q)
+ 📺  [YouTube](https://www.youtube.com/channel/UCzDdw85J6F6Kt_SPBUBffog)
 
 ---
 
