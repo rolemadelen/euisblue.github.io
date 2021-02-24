@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Basic Algorithm & Data Structure Group Study"
+title:  "기초 알고리즘 & 자료구조 스터디 인원모집"
 date:   2021-02-23 07:00:00 +1400
 category: PS
-permalink: /ps/group-study/
-lang: en
+permalink: /ko/ps/group-study/
+lang: ko
 ---
 
 같이 공부하고 관련 문제를 풀면서 서로의 코드를 리뷰하고 질문하면서 성장할 스터디원을 구합니다.
 
-Google Form -> [스터디 지원하기!](https://docs.google.com/forms/d/e/1FAIpQLSdDOrfkf2AZbv_qCPd0DzHPnJOwHBu9Ebvto0h0bOdGriWj9g/viewform?usp=sf_link])
+Google Form -> ~~스터디 지원하기!~~ **모집 완료 되었습니다**.
 
 ## 스터디 기간
 03월 01일 ~ 05월 01일.
