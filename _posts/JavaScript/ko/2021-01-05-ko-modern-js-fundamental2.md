@@ -146,6 +146,6 @@ console.log(3 < 5);  // true
 - `false` → 숫자 0, 빈 문자열, `NaN`, `undefined`
 - `true` → 위 `false`에 해당하지 않는 모든 값
 
-## 참조 링크
+## 참조
 - 2.6: [https://ko.javascript.info/alert-prompt-confirm](https://ko.javascript.info/alert-prompt-confirm)
 - 2.7: [https://ko.javascript.info/type-conversions](https://ko.javascript.info/type-conversions)
