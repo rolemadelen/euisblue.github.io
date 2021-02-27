@@ -7,6 +7,8 @@ permalink: /ko/studygroup/algo-and-ds/curriculum/
 lang: ko
 ---
 
+씹어먹는 알고리즘과 자료구조 스터디의 대략적인 커리큘럼을 소개합니다.
+
 ## 스터디 그룹
 - [씹어먹는 알고리즘](https://github.com/devouring-algorithm/algorithm-study-s1)
 
