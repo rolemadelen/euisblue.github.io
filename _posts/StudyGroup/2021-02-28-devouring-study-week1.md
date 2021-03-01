@@ -3,7 +3,7 @@ layout: post
 title:  "씹어먹는 스터디 week1: 배열과 연결리스트"
 date:   2021-02-28 07:00:00 +1400
 category: Study
-permalink: /ko/studygroup/algo-and-ds/week1/
+permalink: /ko/devouring-study/week1/
 lang: ko
 ---
 
