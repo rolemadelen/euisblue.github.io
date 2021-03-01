@@ -3,7 +3,7 @@ layout: post
 title:  "기초 알고리즘 & 자료구조 스터디 커리큘럼"
 date:   2021-02-27 07:00:00 +1400
 category: TIL
-permalink: /ko/studygroup/algo-and-ds/curriculum/
+permalink: /ko/devouring-study/curriculum/
 lang: ko
 ---
 
