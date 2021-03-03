@@ -100,11 +100,11 @@ def insertFront()
 end
 ```
 
-### insertLast()
+### insertBack()
 리스트 끝에 노드를 추가하는 함수.
 
 ```rb
-def insertLast() 
+def insertBack() 
 	# 1. 새로운 노드 생성 (newNode)
 	# 2. head를 담을 임시 변수 생성(temp)
 	# 3. temp를 사용해 마지막 노드까지 이동
@@ -112,11 +112,11 @@ def insertLast()
 end
 ```
 
-### removeFront()
+### removeFirst()
 리스트 맨 처음 노드를 삭제하는 함수.
 
 ```rb
-def removeFront() 
+def removeFirst() 
 	# 1. head의 다음 노드를 임시 변수(temp)에 저장
 	# 2. head를 삭제
 	# 3. temp를 head로 갱신
