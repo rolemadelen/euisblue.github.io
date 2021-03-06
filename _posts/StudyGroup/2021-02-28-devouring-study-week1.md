@@ -62,7 +62,7 @@ Week 1: 배열과 연결리스트에 대해 공부합니다.
 
 ## 연결 리스트의 종류
 - 단일 연결 리스트 (Sigly Linked List)
-![singly linked list](/assets/images/studygroup/week1/slist2.png)
+![singly linked list](/assets/images/studygroup/week1/slist1.png)
 
 - 이중 연결 리스트 (Doubly Linked List)
 ![doubly linked list](/assets/images/studygroup/week1/dlist1.png)
