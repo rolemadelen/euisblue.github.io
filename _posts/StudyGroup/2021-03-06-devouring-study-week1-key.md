@@ -7,7 +7,7 @@ permalink: /ko/devouring-study/week1/key/
 lang: ko
 ---
 
-이번 주 [배열과 연결리스트](/ko/devouring-study/week1/) 부분 마지막에 생각해볼 문제로 `insertAt(pos)`함수와 `removeAt(pos)`함수의 구현이 문제로 나갔었습니다.
+이번 주 [배열과 연결리스트](/ko/devouring-study/week1/) 부분 마지막에 생각해볼 문제였던 `insertAt(pos)`와 `removeAt(pos)`함수에 대해 살펴봅시다.
 
 이 두 함수의 구현 방법을 살펴보도록 합시다.
 
