@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "씹어먹는 스터디 week2: 이중 & 원형 연결리스트"
-date:   2021-03-06 07:00:00 +1400
+date:   2021-03-07 07:00:00 +1400
 category: Study
 permalink: /ko/devouring-study/week2/
 lang: ko
