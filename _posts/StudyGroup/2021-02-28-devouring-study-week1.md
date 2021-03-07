@@ -68,7 +68,7 @@ Week 1: 배열과 연결리스트에 대해 공부합니다.
 ![doubly linked list](/assets/images/studygroup/week1/dlist1.png)
 
 - 원형 연결 리스트 (Circular Linked List)
-![circular linked list](/assets/images/studygroup/week1/clist1.png)
+![circular linked list](/assets/images/studygroup/week1/cdlist1.png)
 
 ## 단일 연결 리스트 구현 
 의사코드(pseudo-code)를 사용합니다.
@@ -146,4 +146,4 @@ end
 
 ---
 
-[GitHub: 씹어먹는 스터디](https://github.com/devouring-algorithm-ds/algorithm-study-s1/tree/main/eubug)
+[GitHub: 씹어먹는 스터디](https://github.com/devouring-algorithm-ds)
