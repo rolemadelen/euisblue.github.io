@@ -123,9 +123,11 @@ Week 2: [Doubly & Circular Linked List](/ko/devouring-study/week2/)
 3. 스택으로 후위표기법(postfix) 계산기를 구현해보세요.
 
 ## 문제 풀어보기
-
 + 백준: 
-+ Leetcode:
+    - [괄호 (Silver IV)](https://www.acmicpc.net/problem/9012)
+    - [스택 수열 (Silver III)](https://www.acmicpc.net/problem/1874)
+    - [카드2 (Silver IV)](https://www.acmicpc.net/problem/2164)
+    - [요세푸스 문제 (Silver IV)](https://www.acmicpc.net/problem/11866)
 
 ---
  
