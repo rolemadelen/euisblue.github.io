@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "씹어먹는 스터디 week3: 스택 & 큐"
-date:   2021-03-12 07:00:00 +1400
+date:   2021-03-14 07:00:00 +1400
 category: Study
 permalink: /ko/devouring-study/week3/
 lang: ko
@@ -22,7 +22,7 @@ Week 2: [Doubly & Circular Linked List](/ko/devouring-study/week2/)
 ## 스택(Stack) 이란
 한 쪽 끝에서만 자료의 추가와 제거가 가능한 LIFO (Last-In First-Out) 형식으로 저장하는 자료구조.
 
-<img src="/assets/images/studygroup/week3/stack1.png/" alt="stack picture" />
+![stack figure](/assets/images/studygroup/week3/stack1.png)
 
 - `push(data)`: data를 스택 가장 위에 추가한다.
    ```rb
@@ -65,7 +65,7 @@ Week 2: [Doubly & Circular Linked List](/ko/devouring-study/week2/)
 ## 큐(Queue) 란
 먼저 집어넣은 자료가 먼저 나오는 FIFO (First-In First-Out) 형식의 자료구조.
 
-<img src="/assets/images/studygroup/week3/queue1.png/" alt="queue picture" />
+![queue figure](/assets/images/studygroup/week3/queue1.png)
 
 - `enqueue(data)`: data를 큐 맨뒤에 추가한다.
    ```rb
