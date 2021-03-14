@@ -152,7 +152,7 @@ Step 3: `temp.next`의 링크를 제거
 - 이중 연결리스트 구현 후, 이를 기반으로 원형 이중 연결리스트를 구현해보세요.
 
 ## 문제 풀어보기
-+ 배열:
++ 백준:
   - [요세푸스 문제 (Silver V)](https://www.acmicpc.net/problem/1158)
   - [에디터 (Silver III)](https://www.acmicpc.net/problem/1406)
 + Leetcode:
