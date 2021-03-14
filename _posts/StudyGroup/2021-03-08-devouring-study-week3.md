@@ -22,7 +22,7 @@ Week 2: [Doubly & Circular Linked List](/ko/devouring-study/week2/)
 ## 스택(Stack) 이란
 한 쪽 끝에서만 자료의 추가와 제거가 가능한 LIFO (Last-In First-Out) 형식으로 저장하는 자료구조.
 
-![Stack example](/assets/images/studygroup/week3/stack1.png/)
+<img src="/assets/images/studygroup/week3/stack1.png/" alt="stack picture" />
 
 - `push(data)`: data를 스택 가장 위에 추가한다.
    ```rb
@@ -65,7 +65,7 @@ Week 2: [Doubly & Circular Linked List](/ko/devouring-study/week2/)
 ## 큐(Queue) 란
 먼저 집어넣은 자료가 먼저 나오는 FIFO (First-In First-Out) 형식의 자료구조.
 
-![Queue example](/assets/images/studygroup/week3/queue1.png/)
+<img src="/assets/images/studygroup/week3/queue1.png/" alt="queue picture" />
 
 - `enqueue(data)`: data를 큐 맨뒤에 추가한다.
    ```rb
