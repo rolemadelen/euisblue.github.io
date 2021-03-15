@@ -4,7 +4,7 @@ title: "Résumé"
 permalink: "/en/resume/"
 ---
 
-## 👨🏻‍💻 **Jii Eu (劉 智道)**
+## 👨🏻‍💻 **Jii Eu (優 智道)**
 
 📍 Kanagawa, Japan <br />
 ✉️  eu.j.jii@gmail.com <br />
