@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Résumé"
-permalink: "/en/resume/"
+permalink: "/resume/"
 ---
 
 ## 👨🏻‍💻 **Jii Eu (優 智道)**
