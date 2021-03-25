@@ -1,7 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
+gem 'jekyll-paginate'
 
-# to publich without github page
-gem "jekyll"
-gem "jekyll-paginate"
-gem "jekyll-feed"
-gem "jekyll-sitemap"
+gem "jekyll", "~> 4.0"
+gem "rake"
