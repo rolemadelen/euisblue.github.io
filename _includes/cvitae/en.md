@@ -11,7 +11,7 @@
 <li> interested in both <b>Frontend</b> and <b>Backend</b></li>
 </ul>
 </div>
-<div style="float: left; margin-left: 25px;">
+<div>
 <ul> 
 📍 Kanagawa, Japan <br />
 ✉️ <a href = "mailto: im.eubug@gmail.com">im.eubug@gmail.com</a> <br />
