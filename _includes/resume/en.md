@@ -2,7 +2,7 @@
 ## 👨🏻‍💻 Jii Eu (劉 智道)
 
 📍 Kanagawa, Japan <br />
-✉️  eu.j.jii@gmail.com <br />
+✉️  im.eubug@gmail.com <br />
 
 ## 🎓 Education
 
