@@ -1,64 +1,46 @@
 ---
-layout: default
-title: Home
-cover: '/assets/images/main-header.png/'
-about: 'about.html'
-lang: 'en'
+layout: page
+description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
 ---
 
-<header class="main-header" style="background-image: url('/assets/images/main-header.png')">
-    <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-        <a class="subscribe-button icon-feed" href="{{'feed.xml' | relative_url }} ">Subscribe</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name.en }}</h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }} {% endif %}
-                {% if page.about %} <a href='/en/about'> about me </a> {% endif %}
-            </h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
-
-
-<main id="content" class="content" role="main">
-    <div class="extra-pagination inner">
-        {% include pagination.html %}
-    </div>
-
-    {% for post in paginator.posts %}
-        {% if post.lang == 'en' %}
-        <article class="post">
-            <header class="post-header">
-                <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            </header>
-            <section class="post-excerpt">
-                {{ post.excerpt }} <a class="read-more" href="{{ post.url | relative_url }}">&raquo;</a>
-            </section>
-            <footer class="post-meta">
-                {% if site.author %}
-                    <img class="author-thumb" src="{{'/assets/images/profile.png' | relative_url}}" alt="Author's profile picture" nopin="nopin" />
-                    {{ site.author }}
-                {% endif %}
-                {% if post.categories.size > 0 %} 
-                    {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
-                {% endif %}
-                <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-                    {{ post.date | date_to_string }}
-                </time> 
-            </footer>
-        </article>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
 
-    {% endfor %}
-
-    {% include pagination.html %}
-    
-</main>
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
