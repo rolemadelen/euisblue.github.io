@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Résumé"
+header-style: "text"
+permalink: "/resume/"
+---
+
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include resume/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
