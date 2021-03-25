@@ -1,4 +1,4 @@
-2.1 Hello, World!
+## 2.1 Hello, World!
 
 `Node.js` 와 같은 서버 사이드 환경이라면 `node` 명령어를 사용해서 js 스크립트를 실행 시킬 수 있다. 
 
@@ -26,27 +26,20 @@ $ node test.js
 
 ### 모던 마크업
 
-- `type` 속성
+- `type` 속성: <br>
+    HTML4 에서는 `<script type='text/javascript'>` 와 같이 명시해주어야 했다. 모던 HTML 표준에선 의미가 바뀌어 자바스크립트 모듈에 사용된다.
 
-HTML4 에서는 `<script type='text/javascript'>` 와 같이 명시해주어야 했다. 
-
-모던 HTML 표준에선 의미가 바뀌어 자바스크립트 모듈에 사용된다.
-
-- `language` 속성
-
+- `language` 속성: <br>
 `<script language="javascirpt">` 와 같이 현재 사용하고 있는 언어를 나타낼 때 사용되었으나, 지금은 기본형이 자바스크립트이므로 사실 상 의미가 없는 속성이다.
 
-- 주석
-
-만약 아래와 같은 코드를 본다면, 이건 아주 오래된 코드라는 것.
-
-```html
-<script type="text/javascript"><!--
-...
-//---></script>
-```
-
-예전에 해당 브라우저가 `script` 태그를 읽지 못 할 경우를 대비해서 저렇게 주석 처리를 했다. 하지만 지금 `script` 태그를 지원하지 않는 브라우저는 거의 없다 (지난 15년간 출시된 브라우저라면 🆗).
+- 주석 (comments): <br>
+    스크립트 안에 주석이 달린 코드를 마주하게 될수도 있다.
+    ```html
+    <script type="text/javascript"><!--
+    ...
+    //---></script>
+    ```
+    위 코드는 브라우저가 `script` 태그를 읽지 못 할 경우를 대비해서 스크립트의 실행을 막기위해 주석 처리를 한것이다. 하지만 지금 `script` 태그를 지원하지 않는 브라우저는 거의 없기 때문에 위와 같은 방식의 코드를 보게된다면 아주 오래된 코드라는 사실을 알 수 있다.
 
 ### 외부 스크립트
 
@@ -65,23 +58,20 @@ HTML4 에서는 `<script type='text/javascript'>` 와 같이 명시해주어야 
 
 브라우저는 다운 받은 스크립트를 캐시(cache)에 저장하기 때문에 성능에 이점도 있다. 쉽게 말해, 여러 페이지에서 동일한 스크립트를 사용하는 경우, 브라우저는 매번 다운을 받지 않고 캐시에 저장된 스크립트를 사용하게 된다.
 
----
-
 ## 2.2 코드  구조
 
 ### 문 (statements)
 
 - 문법 구조(syntax constract)와 명령어(command)를 의미.
 - 각각의 문은 `;` 세미콜론으로 구분한다.
+    ```js
+    // 2개의 alert를 세미콜론으로 구분했다.
+    alert('hello'); alert('world');
 
-```js
-// 2개의 alert를 세미콜론으로 구분했다.
-alert('hello'); alert('world');
-
-// 가독성이 안좋으니 아래와 같이 작성.
-alert('hello');
-alert('world');
-```
+    // 가독성이 안좋으니 아래와 같이 작성.
+    alert('hello');
+    alert('world');
+    ```
 
 ### 세미콜론(semicolons)
 
@@ -99,23 +89,18 @@ alert('world');
 ### 주석 (comments)
 
 - 한 줄 주석 →  `//`
-- 여러 줄 주석 → `/* .... */`
-
+- 여러 줄 주석 → `/* .... */` <br>
     중첩 주석은 지원하지 않는다 → `/*  /* ... */ */`
+    ```js
+    // 한 줄 주석
+    alert ('this one is printed');
 
-```js
- // 한 줄 주석
-alert ('this one is printed');
-
-/* 여러 줄 주석
-   alert('this one wont be printed');
-*/
-```
-
----
+    /* 여러 줄 주석
+    alert('this one wont be printed');
+    */
+    ```
 
 ## 2.3. 엄격 모드
-
 [JavaScript ES5](https://www.w3schools.com/js/js_es5.asp)
 
 - 2009년 ECMAScript5(ES5)가 등장 하기 전까지 JS는 호환성 이슈없이 잘 커왔다.
@@ -130,13 +115,11 @@ Chrome Dev Tools와 같은 개발자 콘솔은 기본적으로 `use strict` 가 
 
 ### 'use state' 꼭 사용해야 하나?
 
-꼭 그렇지는 않다. modern JS는 클래스와 모듈이라는 구조를 제공하는데 이 둘을 사용할 때 자동으로 `use strict` 가 적용된다.
+modern JS는 클래스와 모듈이라는 구조를 제공하는데 이 둘을 사용할 때 자동으로 `use strict` 가 적용된다.
 
----
+## 2.4 변수와 상수
 
-# 2.4 변수와 상수
-
-## 변수 (variable)
+### 변수 (variable)
 
 데이터를 저장할 때 쓰이는 **이름이 붙은 저장소**. `let` 키워드를 쓰며 `=` 연산자를 사용해서 데이터를 저장한다. 
 
@@ -161,24 +144,22 @@ console.log('age: ' + age); // age: 24
 
 1. 변수명에는 오직 문자와 숫자, 그리고 `$` 와 `_` 만 들어갈 수 있다.
 2. 첫 글자는 숫자가 될 수 없다.
+    ```js
+    let userName1 = 'eubug';
+    let userName2 = 'eubug';
 
-```js
-let userName1 = 'eubug';
-let userName2 = 'eubug';
+    let $ = 'dollar';
+    let _ = 'underscore';
 
-let $ = 'dollar';
-let _ = 'underscore';
-
-let 1abc; // 오류. 숫자로 시작할 수 없다.
-```
+    let 1abc; // 오류. 숫자로 시작할 수 없다.
+    ```
 
 3. 대소문자를 구분한다. `apple` 과 `Apple` 은 두 개의 다른 변수이다.
 4. **예약어(keyword)**를 변수명으로 사용할 수 없다.
-
-```js
-let let = 5;  // 불가능
-let var = 3;  // 불가능
-```
+    ```js
+    let let = 5;  // 불가능
+    let var = 3;  // 불가능
+    ```
 
 ### 상수 (constant)
 
@@ -194,17 +175,13 @@ console.log(myColor); // #F00
 ```
 
 - 위 색깔 처럼 처음부터 값을 알고있는, 하드코딩한 상수는 대문자로 표기한다.
-- 런타임에 값을 계산하지만 최초 할당 이후 값이 변하지 않는 상수는 일반적인 방식으로 변수명을 짓는다 
-(ex. `const pageLoadTime = /* 페이지를 로드하는데 걸린 시간 */`)
-
----
+- 런타임에 값을 계산하지만 최초 할당 이후 값이 변하지 않는 상수는 일반적인 방식으로 변수명을 짓는다 (ex. `const pageLoadTime = /* 페이지를 로드하는데 걸린 시간 */`).
 
 ## 2.5 자료형
 
 자바스크립트는 C++ 또는 Java와는 달리 **동적 타입 (dynamically typed)** 언어이다.
 
-- 동적 타입
-→ 데이터 자체의 자료형은 존재하지만 값을 저장하는 변수는 타입이 없어서 언제든지 숫자에서 문자열로, 문자열에서 숫자로 바뀔수가 있다.
+동적 타입이란 데이터 자체의 자료형은 존재하지만 값을 저장하는 변수는 타입이 없어서 언제든지 숫자에서 문자열로, 문자열에서 숫자로 바뀔수가 있다.
 
 ```js
 let storage = "문자열"
@@ -213,9 +190,7 @@ storage = "다시 문자열"
 storage = 1;
 ```
 
-8가지 기본 자료형 (primitive data types)을 소개한다.
-
-### 1. 숫자형 (number)
+### 1. 숫자형
 
 ```js
 let num = 123;
@@ -223,14 +198,12 @@ num = 3.14159;
 ```
 
 정수와 부동소수점(floating point number)을 나타내며 IEEE-754 방식으로 저장한다.
-
 IEEE-754 방식이기 때문에 2<sup>53</sup> - 1의 값을 나타낼 수 있다.
 
-- 특수 숫자 값 (special numeric value)
-    - `Infinity` → 어떤 숫자보다 큰 값 (+∞)
-    - `-Infinity` → 어떤 숫자보다 작은 값 (-∞)
-    - `NaN` → 'Not a Number'의 약자로 부정확하거나 정의되지 않은 수학 연산을 사용하면 NaN을 반환한다.
-
+특수 숫자 값 (special numeric value) <br>
+→ `Infinity`: 어떤 숫자보다 큰 값 (+∞) <br>
+→ `-Infinity`: 어떤 숫자보다 작은 값 (-∞) <br>
+→ `NaN`: 'Not a Number'의 약자로 부정확하거나 정의되지 않은 수학 연산을 사용하면 NaN을 반환한다.
 ```js
 console.log(1/0); // Infinity
 console.log(-1/0); // -Infinity
@@ -240,10 +213,9 @@ console.log('abc' / 2); // NaN
 ### 2. bigint
 
 [ES2020 (ES11)](https://carloscaballero.io/es2020-features-in-simple-examples/) 에서 추가된 문법이며 현재 (2021-01) IE를 제외한 모든 브라우저에서 호환이 된다.
-
 숫자형으로는 2<sup>53</sup> - 1 범위 밖의 숫자는 표현할 수가 없는데 BigInt를 사용하면 제한없이 표현이 가능하다.
 
-- 정수 리터럴 끝에 `n` 을 붙인다.
+`bigint`를 나타내기 위해 정수 리터럴 끝에 `n` 을 붙인다.
 
 ```js
 const bigNumber = 1234567890123456789012345678901234567890n;
@@ -279,9 +251,9 @@ console.log(isGreater); // false;
 
 아래 세 가지를 의미하는 자료형으로 `null`값은 오로지 `null`만 표현할 수 있다.
 
-- nothing → 존재하지 않는 값
-- empty → 비어 있는 값
-- unknown → 알 수 없는 값
+→ nothing: 존재하지 않는 값 <br>
+→ empty: 비어 있는 값 <br>
+→ unknown: 알 수 없는 값
 
 ```js
 let age = null; // 나이를 알 수 없음 
@@ -291,7 +263,7 @@ let age = null; // 나이를 알 수 없음
 
 `null` 과 마찬가지로 오로지 `undefined`만 표현할 수 있는 자료형. 
 
-- 값이 할당되지 않은 상태
+→ 값이 할당되지 않은 상태를 의미
 
 ```js
 let age;
@@ -329,11 +301,9 @@ typeof alert // 'function'
 
 `function` 자료형은 따로 존재하지 않는다. 하지만 `typeof`의 피연산자가 함수일 경우 (형식 상 잘못 되었지만) 함수를 의미하는 `function` 을 반환하도록 설계가 되었다. 원래 함수는 객체형에 속한다.
 
----
-
-## 참조
-- 2.1: [https://javascript.info/hello-world](https://javascript.info/hello-world)
-- 2.2: [https://javascript.info/structure](https://javascript.info/structure)
-- 2.3: [https://javascript.info/strict-mode](https://javascript.info/strict-mode)
-- 2.4: [https://javascript.info/variables](https://javascript.info/variables)
-- 2.5: [https://javascript.info/types](https://javascript.info/types)
+## Reference
+- [2.1 Hello, world!](https://ko.javascript.info/hello-world)
+- [2.2: 코드 구조](https://ko.javascript.info/structure)
+- [2.3: 엄격 모드](https://ko.javascript.info/strict-mode)
+- [2.4: 변수와 상수](https://ko.javascript.info/variables)
+- [2.5: 자료형](https://ko.javascript.info/types)
