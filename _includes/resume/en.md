@@ -4,8 +4,6 @@
 📍 Kanagawa, Japan <br />
 ✉️  eu.j.jii@gmail.com <br />
 
-{% include sns-links.html %}
-
 ## 🎓 Education
 
 ### University of California, San Diego
