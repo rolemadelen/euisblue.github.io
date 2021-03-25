@@ -1,9 +1,10 @@
-[Résumé](/en/resume/) *(WIP)*
+Hi, I'm [@imeubug](https://github.com/imeubug) (Eu, Jii), a doodler, lifelong learner, cat lover, 
+sometime procrastinator and a former elementary school English teacher in Japan. 
 
-I'm a ~~future~~ developer working in Japan as a foreign language teacher in public elementary schools. I love to break things, analyze things, and look deep into the bottom layer of things.
+I'm currently working at a startup company based in Yokohama as a junior frontend engineer. 
 
-When I was 10, my sister showed me this little program that she wrote. She told me to click this one button and something popped up; a black screen with two words, `You idiot`. 
+I stuided [Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/) at [University of California, San Diego](https://ucsd.edu) (UCSD)
+but switched to Cognitive Science during my 3rd year at UCSD and graduated with [B.S. Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html).
 
-This is how I entered the world of IT, and fortunately, I'll soon work as a frontend developer in Japan.
-
-Please reach out if you have any questions 🙂
+> 🤖 Fun fact: when I switched my major to HCI, I thought HCI was machine learning related and was expecting to 
+> learn about robotics and AI but nope. It was UI/UX 😝 and I just sticked with it and graduated.
