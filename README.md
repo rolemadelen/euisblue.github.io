@@ -1,10 +1,11 @@
-[I'm Eubug](https://eubug.space)
+## [I'm Eubug](https://eubug.space)
 
 License
 -------
 
 Apache License 2.0. Copyright (c) 2021 imeubug
 
-Eubug Blog is derived from [Hux Blog (Apache License)](https://github.com/Huxpro/huxpro.github.io) and 
-[Clean Blog Jekyll Theme (MIT License)](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll) 
+Eubug Blog is derived from 
+- [Hux Blog (Apache License)](https://github.com/Huxpro/huxpro.github.io)
+- [Clean Blog Jekyll Theme (MIT License)](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll) 
 Copyright (c) 2013-2016 Blackrock Digital LLC.
