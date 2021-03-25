@@ -5,7 +5,7 @@ header-img: img/home-bg.png
 email: im.eubug@gmail.com
 description: "개발 블로그 | Junior Frontend Engineer | Check how @imeubug make mistakes and learn."
 keyword: "Frontend, Engineer, Developer, Eubug, imeubug, @imeubug, Web, 웹, 프로그래밍, 개발자, 프론트엔드, 유버그, ウェブ, エンジニア, プログラミング, ユウバグ"
-url: "https://eubug.space"              # your host, for absolute URL
+url: "https://www.eubug.space"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
