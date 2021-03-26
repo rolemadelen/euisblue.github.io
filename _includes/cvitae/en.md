@@ -24,23 +24,18 @@
   - A.S. Computer Science
 
 ## 💼 Work Experience
-
-### Foreign Language Teacher
-- <b>Borderlink, Inc.</b> `03.2020 - 03.2021`
+- **Foreign Language Teacher** `03.2020 - 03.2021` &nbsp;&nbsp; <i>Borderlink, Inc.</i>
   - T1 main English teacher.
   - Taught 3rd ~ 6th grade elementary school students with my original lesson plan.
   - Studied basic consideration of nonverbal communication.
   - `Team work` `Communication` `Problem Solving` `Planning` `Time Management`
 
-### Intern, Front-end Developer
-- <b>FASTech, LLC.</b> `12.2016 - 03.2017`
+- **Intern, Front-end Developer** `12.2016 - 03.2017` &nbsp;&nbsp; <i>FASTech, LLC.</i>
   - Analyzed JavaScript and PHP code used in given pages.
   - Developed and deployed a page that is introducing the new product of the company.
   - `HTML` `CSS` `JavaScript` `PHP` `AWS EC2` `Chrome Developer Tool` 
 
-### Computer Lab Aide
-
-- <b>Riverside City College</b> `09.2014 - Apr 2016`
+- **Computer Lab Aide** `09.2014 - Apr 2016` &nbsp;&nbsp; <i>Riverside City College</i>
   - Assisted students with programming assignments and projects.
   - Tutored CS and CIS (Word, Excel, PowerPoint, and Access).
   - `C++` `Java` `Data Structure` `Algorithm` `Debugging` `Cygwin` `Eclipse` `Visual Studio` `Vim` `Git`
