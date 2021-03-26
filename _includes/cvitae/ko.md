@@ -3,14 +3,14 @@
 <ul style="float: left;"> 
 <li> 이름: <b>유지이</b>(Jii Eu; <a href="https://github.com/imeubug">@imeubug</a>)</li>
 <li> 하는 일: <b>주니어 프론트엔드 개발자</b></li>
-<li> 현재 주요 관심사: <b>Design/UI/UX/FE/BE</b></li>
+<li> 주요 관심사: <b>Design/UI/UX/FE/BE</b></li>
 <li> 취미 (1): <b>🤖 코드 분석</b></li>
 <li> 취미 (2): <b>🥁 와다이코</b>(태고) </li>
 <li> 취미 (3): <b>👨🏼‍🎨 그림 그리기</b> (<a href="https://www.instagram.com/jiidraws/">@jiidraws</a>)</li>
 </ul>
 
 <ul style="float: left;"> 
-📍 Kanagawa, Japan <br />
+📍 일본 가나가와현 <br />
 ✉️ <a href = "mailto: im.eubug@gmail.com">im.eubug@gmail.com</a>
 </ul>
 <div style="clear: both;"></div>
@@ -23,30 +23,20 @@
   - A.S. Computer Science
 
 ## 💼 경력
+- **초등학교 영어 교사** `03.2020 - 03.2021` &nbsp;&nbsp; <i>Borderlink, Inc.</i>
+  - 일본 초등학교 3~6학년 과정 영어수업을 구상하고 T1 교사로 수업을 진행.
+  - 수업에서는 영어만 사용. 아이들 눈높이에 맟춰 이해할 수 있도록 간단한 영어를 사용.
+  - 비언어적 의사소통에 관한 기본적 고찰.
+  - `Team work` `Communication` `Problem Solving` `Planning` `Time Management`
 
-### 초등학교 영어 교사
-🏢  Borderlink, Inc. <br />
-📅  Mar 2020 - Mar 2021 <br />
+- **프론트엔드 개발자 인턴** `12.2016 - 03.2017` &nbsp;&nbsp; <i>FASTech, LLC.</i>
+  - 구축되어 있는 페이지의 자바스크립트와 PHP 코드 분석.
+  - 디자이너와 협업, 회사 제품 소개 페이지를 새로이 생성. 
+  - `HTML` `CSS` `JavaScript` `PHP` `AWS EC2` `Chrome Developer Tool` 
 
-◦ 일본 초등학교 3~6학년 과정 영어수업을 구상하고 T1 교사로 수업을 진행. <br />
-◦ 수업에서는 영어만 사용. 아이들 눈높이에 맟춰 이해할 수 있도록 간단한 영어를 사용. <br />
-◦ 비언어적 의사소통에 관한 기본적 고찰. <br />
-◦ `Team work` `Communication` `Problem Solving` `Planning` `Time Management`
-
-### 프론트엔드 개발자 인턴
-🏢  FASTech, LLC. <br />
-📅  Dec 2016 - Mar 2017 <br />
-
-◦ 구축되어 있는 페이지의 자바스크립트와 PHP 코드 분석. <br />
-◦ 디자니어와 협업, 회사 제품 소개 페이지를 새로이 생성. <br />
-◦ `HTML` `CSS` `JavaScript` `PHP` `AWS EC2` `Chrome Developer Tool` 
-
-### 프로그래밍 랩 조교
-🏢  Riverside City College <br />
-📅  Sept 2014 - Apr 2016 <br />
-
-◦ 프로그래밍 관련 장애를 겪고있는 학생들의 코드를 분석하고 디버깅하며 이해를 도움.<br /> 
-◦ `C++` `Java` `Data Structure` `Algorithm` `Debugging` `Cygwin` `Eclipse` `Visual Studio` `Vim` `Git`
+- **프로그래밍 랩 조교** `09.2014 - 04.2016` &nbsp;&nbsp; <i>Riverside City College</i>
+  - 프로그래밍 관련 장애를 겪고있는 학생들의 코드를 분석하고 디버깅하며 이해를도움.
+  - `C++` `Java` `Data Structure` `Algorithm` `Debugging` `Cygwin` `Eclipse` `Visual Studio` `Vim` `Git`
 
 ## 🧸 토이 프로젝트
 
