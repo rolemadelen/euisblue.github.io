@@ -1,13 +1,21 @@
 ---
-layout: post
+layout: page
 title: "CVITAE"
 date:   2021-03-25 07:00:00 +1400
-header-style: "text"
 permalink: "/resume/"
+multilingual: true
 ---
+
+{% include multilingual-sel.html %}
 
 <!-- English Version -->
 <div class="en post-container">
     {% capture about_en %}{% include cvitae/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
+</div>
+
+<!-- Korean Version -->
+<div class="ko post-container">
+    {% capture about_ko %}{% include cvitae/ko.md %}{% endcapture %}
+    {{ about_ko | markdownify }}
 </div>
