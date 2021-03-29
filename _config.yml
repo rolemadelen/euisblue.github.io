@@ -1,6 +1,6 @@
 # Site settings
 title: I'm Eubug
-SEOTitle: 유버그의 개발 블로그 | I'm Eubug
+SEOTitle: Eubug's Programming Blog | 유버그의 개발 블로그
 header-img: img/home-bg.png
 email: im.eubug@gmail.com
 description: "개발 블로그 | Junior Frontend Engineer | Check how @imeubug make mistakes and learn."
@@ -76,7 +76,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "🇰🇷 born 🇺🇸 raised 🇯🇵 working | Junior Frontend Engineer | Ravenclaw"
+sidebar-about-description: "🇰🇷 born 🇺🇸 raised 🇯🇵 working | Junior Frontend Engineer | Doodler | Ravenclaw "
 sidebar-avatar: /img/avatar-eubug.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
