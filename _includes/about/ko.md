@@ -9,3 +9,5 @@
 전공은 [University of California, San Diego](https://ucsd.edu)에서 [Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/)를 공부하다, 3학년 때에 전공을 바꾸고 [B.S. Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html) 학위를 받고 졸업했습니다.
 
 > 🤖 재밌는 사실: 처음에 HCI로 전공을 바꿨을때는 HCI가 머신러닝 관련 부서인줄 알고 로보틱스나 인공지능 관련 수업을 기대했었는데 UI/UX 관련 전문이었습니다 😝
+
+잘 부탁 드립니다.
