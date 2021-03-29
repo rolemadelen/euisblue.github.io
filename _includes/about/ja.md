@@ -1,11 +1,13 @@
-こんにちは👋🏼 [@imeubug](https://github.com/imeubug)（劉 智道; ユウ ジイ）です。 
+んにちは👋🏼 [@imeubug](https://github.com/imeubug)（劉 智道; ユウ ジイ）です。 
 
-私は新しいことに挑戦して学び、成長することが好きな永遠な学生で、こつこつ絵を描いたり、
-コーヒーが大好きなのでいろんなカフェーでお作業したり、たまに面倒くさがり屋になったりする、元小学校英語の先生です。
+私は、新しいことに挑戦しいろいろなことを学び、常に挑戦することが好きな、永遠に学生のような人です。
+コーヒーが好きなので、よくいろんなカフェで、コツコツ絵を描いたり作業をしたりします。（でも、たまにめんどくさがり屋になるのですが...）
+少し前までは、日本の小学校で英語の先生をしていました。
 
 2021年現在、日本のスタートアップでフロントエンドエンジニアとして働いてます。
 
+大学は[カリフォルニア大学サンディエゴ校](https://ucsd.edu)で[Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/)(数学コンピュータサイエンス)を専攻していましたが、３年生になった時、専攻変更して[Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html)（ヒューマンコンピュータインタラクション）を学び、学位を取得、卒業しました。
 
-大学は[カリフォルニア大学サンディエゴ校](https://ucsd.edu)から[Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/)を専門として勉強しましたが、３年生になった時専攻を変えて[B.S. Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html)学位をもらって卒業しました。
+> 🤖 面白い事実：最初HCIに専攻変えたとき、HCIはマシンラーニングとかA.I.系だと思ってドキドキしていたのですが、入ってみたら実は、UI/UX関連の学科で、少し想像とは違いました😝
 
-> 🤖 面白い事実：最初HCIに専攻変えたときはHCIがマシンランニングとかA.I.系だと思ってドキドキしましたがUI/UX関連専攻でした😝
+よろしくお願いします。
