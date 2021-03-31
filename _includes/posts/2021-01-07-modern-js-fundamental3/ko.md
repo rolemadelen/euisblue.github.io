@@ -25,11 +25,11 @@
 
 나머지 연산자 (modulus operator)는 두 수를 나누었을 때의 나머지를 반환한다.
 
-{% highlight js %}
+```js
 let a = 5;
 let b = 3;
 console.log(a % b); // 2
-{% endhighlight %}
+```
 
 ### 거듭제곱 연산자 **
 
@@ -39,31 +39,31 @@ console.log(a % b); // 2
 
 덧셈 연사자를 사용해서 문자열을 합칠 수 있다.
 
-{% highlight js %}
+```js
 let name = 'Eubug';
 let s = 'my name is ';
 console.log(s + name); // my name is Eubug
-{% endhighlight %}
+```
 
 두 피연산자 중 하나라도 문자열이면, 결과는 문자열이 된다.
 
-{% highlight js %}
+```js
 console.log("1" + 2); // 12
 console.log(1 + "2"); // 12
 console.log(1 + 2); // 3
 console.log(1 + 2 + "9") // 39
-{% endhighlight %}
+```
 
 이렇듯 문자열을 더하는 것은 가능하지만 빼는것과 나누는 것은 불가능하다.
 
 그렇기 때문에 뺄셈과 나눗셈의 경우는 문자열이 아닌 숫자로 묵시적 형변환이 이루어진다.
 
-{% highlight js %}
+```js
 console.log("1" - 2); // -1
 console.log(1 - "2"); // -1
 console.log(1 - 2); // -1
 console.log(1 + 2 - "9") // -6 
-{% endhighlight %}
+```
 
 ### 단항 연산자 +와 숫자형으로의 변환
 
@@ -73,33 +73,33 @@ console.log(1 + 2 - "9") // -6
 
 음수에 `+` 를 한다고 해서 양수가 되는 것이 아님을 아래 코드에서 확인하자.
 
-{% highlight js %}
+```js
 let a = 1;
 console.log(+a); // 1
 
 let b = -1;
 console.log(+b); // -1 (+1 이 아니다)
-{% endhighlight %}
+```
 
 하지만 피연산자가 숫자가 아닌 경우에는, 숫자로의 형변환이 이루어진다.
 
-{% highlight js %}
+```js
 console.log(+true); // 1
 console.log(+false); // 0
 console.log(+""); // 0
-{% endhighlight %}
+```
 
 `Number(...)` 와 동일한 일을 한다.
 
 아래와 같은 일을 할 수 있다.
 
-{% highlight js %}
+```js
 let apples = "2";
 let oranges = "3";
 
 console.log(apples + oranges); // 23 
 console.log(+apples + +oranges); // 5*
-{% endhighlight %}
+```
 
 ## 연산자 우선순위
 
@@ -113,13 +113,13 @@ console.log(+apples + +oranges); // 5*
 
 할당 연산자의 특성을 사용 하여 여러 개를 연결(체이닝)할 수도 있다.
 
-{% highlight js %}
+```js
 let a, b, c;
 a = b = c = 2;
 console.log(a); // 2
 console.log(b); // 2
 console.log(c); // 2
-{% endhighlight %}
+```
 
 ### 복합 할당 연산자
 
@@ -128,12 +128,12 @@ console.log(c); // 2
 - `a += 5` → `a = a + 5` 와 같다.
 - `b *= 2` → `b = b * 2`
 
-{% highlight js %}
+```js
 let n = 2;
 n *= 3 + 5; // n *= 8
 
 console.log(n); // 16
-{% endhighlight %}
+```
 
 ### 증가·감소 연산자
 
@@ -145,21 +145,21 @@ console.log(n); // 16
 
 값을 증가시키고, 변화한 값으로 연산을한다.
 
-{% highlight js %}
+```js
 let x = 2;
 console.log(++x); // 3
 console.log(x); // 3
-{% endhighlight %}
+```
 
 - 후위 증감 (post-increment) → `x++`
 
 연산을 끝낸 후에, 값을 증가시킨다.
 
-{% highlight js %}
+```js
 let x = 2;
 console.log(x++); // 2 ; 출력 연산이 끝난 뒤, 증감.
 console.log(x); // 3
-{% endhighlight %}
+```
 
 #### 전위형 & 후위형 `--`
 
@@ -171,10 +171,10 @@ console.log(x); // 3
 1. 가독성이 떨어진다.
 2. 결과값을 알 수가 없다. (Undefined Behavior)
 
-{% highlight js %}
+```js
 let x;
 console.log(2 * ++x - x--);
-{% endhighlight %}
+```
 
 ## 비트 연산자
 
