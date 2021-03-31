@@ -1,0 +1,1 @@
+[2.8 演算子](https://ja.javascript.info/operators)
