@@ -154,8 +154,7 @@ end
 ```
 
 ## 생각해 볼 문제
-1. 현재 `insertNode(...)`의 경우 왼쪽에서 오른쪽 차례대로 삽입이 되는데요. 왼쪽 자식에 노드를 추가하는 `insertLeft(...)`함수와 오른쪽 자식에 노드를 추가하는 `insertRight(...)`함수를 구현해보세요.
-2. 트리의 마지막 (가장 깊이 있는 오른쪽 노드)를 삭제하는 `deleteNode(...)`함수를 구현해보세요.
+1. 트리의 마지막 (가장 깊이 있는 오른쪽 노드)를 삭제하는 `deleteNode(...)`함수를 구현해보세요.
 
 ## Reference
 - [https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
