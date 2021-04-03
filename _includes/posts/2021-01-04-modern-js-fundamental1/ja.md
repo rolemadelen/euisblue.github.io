@@ -186,7 +186,7 @@ const pageLoadTime = /*ページをロードするのにかかる時間 */;
 
 JavaScriptはC++またはJavaなどとは違い、**動的タイプ(dynamically typed)言語**です.
 
-動的タイプというのはデータを保存する変数のコンテーナーにはデータ型がないので同じコンテーナーに数字、文字列、Booleanなどを全部保存することができます。
+動的タイプというのはデータを保存する変数のコンテナにはデータ型がないので同じコンテナに数字、文字列、Booleanなどをすべて保存することができます。
 
 ```js
 let storage = "文字列";
@@ -280,7 +280,7 @@ console.log(age); // undefined
 
 ### typeof 演算子
 
-`typeof`演算しはデータの資料型を返します。
+`typeof`演算子はデータの資料型を返します。
 
 ```js
 typeof undefined // 'undefined'
@@ -295,11 +295,11 @@ typeof null // 'object'
 typeof alert // 'function'
 ```
 
-`typeof Math`の場合数学演算をサポータする内蔵オブジェクトなので`object`が返されます。
+`typeof Math`の場合、数学演算をサポータする内蔵オブジェクトなので`object`が返されます。
 
-`typeof null`の結果をは`object`ですがこれは実はJSの設計の問題です。下位互換性を保つため修正せずに残しておいただけで、オブジェクトではありません。
+`typeof null`の結果は`object`ですが、これは実は、JSの設計の問題です。下位互換性を保つため修正せずに残しておいただけで、オブジェクトではありません。
 
-`function`資料型はないです。でも`typeof`で関数を確認すると`function`を返すように設計ができています。本来関数はオブジェクトに属します。
+`function`資料型はないです。しかし、`typeof`で関数を確認するとfunctionを返すように設計ができています。（本来関数はオブジェクトに属します）
 
 ## Reference
 - [2.1・Hello, World!](https://ja.javascript.info/hello-world)
