@@ -98,6 +98,62 @@
 
 [전체 코드](https://github.com/eubug17/ds-algo/blob/master/algorithm/stack/infix2postfix/infix2postfix.rb)
 
-## 문제 풀어보기
-- [1918번: 후위 표기식](https://www.acmicpc.net/problem/1918)
-- [1935번: 후위 표기식2](https://www.acmicpc.net/problem/1935)
+## 후위표현 수식 계산 (Evaluating Postfix Expression)
+
+반대로 후위 표현식을 계산하는 방법은 간단합니다.
+
+1. 후위 표현식을 왼쪽부터 한 글자씩 읽는다.
+2. 피연산자이면, 스택에 `push`한다.
+3. 연산자를 만나면 스택에서 `A = pop()`, `B = pop()`.
+    - `A [연산] B`를 계산, 계산 결과를 스택에 `push`한다.
+4. 수식의 끝에 도달하면, 스택에서 남아있는 값이 계산 결과가 된다.
+
+```cpp
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+#include "stack.hpp"
+
+int main()
+{
+  Stack<int> *numbers = new Stack<int>();
+  string expr;
+
+  getline(cin, expr);
+
+  for(size_t i=0; i<expr.size(); ++i) {
+    if(isdigit(expr[i])) {
+      numbers->push(expr[i]-'0');
+    } else if(expr[i] == ' ') {
+      continue;
+    } else {
+      int a = numbers->pop();
+      int b = numbers->pop();
+
+      cout << "a: " << a << ' ' << "b: " << b << endl;
+
+      switch(expr[i]) {
+        case '+':
+          numbers->push(b+a);
+          break;
+        case '-':
+          numbers->push(b-a);
+          break;
+        case '/':
+          numbers->push(b/a);
+          break;
+        case '*':
+          numbers->push(b*a);
+          break;
+      }
+    }
+  }
+
+  cout << "Result: " << numbers->pop() << endl;
+  delete numbers;
+
+  return 0;
+}
+```
