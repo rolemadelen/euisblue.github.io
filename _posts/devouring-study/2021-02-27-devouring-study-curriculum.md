@@ -4,7 +4,7 @@ title:  "Devouring Study Curriculum"
 subtitle: "씹어먹는 기초 알고리즘과 자료구조 스터디 커리큘럼"
 date:   2021-02-27 07:00:00 +1400
 author: "Eubug"
-header-img: "img/post-bg-devouring-study.jpg"
+header-img: "img/post-bg-study.jpg"
 header-mask: 0.5
 permalink: /devouring-study/curriculum/
 hidden: true
