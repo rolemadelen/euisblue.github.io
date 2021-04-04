@@ -4,7 +4,7 @@ title:  "Devouring Study Group: Join Us"
 subtitle:  "기초 알고리즘 & 자료구조 스터디 인원모집"
 date:   2021-02-27 07:00:00 +1400
 author: "Eubug"
-header-img: "img/post-bg-devouring-study.jpg"
+header-img: "img/post-bg-study.jpg"
 header-mask: 0.5
 permalink: /devouring-study/recruit/
 hidden: true
