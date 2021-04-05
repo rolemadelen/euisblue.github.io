@@ -171,7 +171,7 @@ console.log(x); // 3
 2. 결과값을 알 수가 없다. (Undefined Behavior)
 
 ```js
-let x;
+let x = 3;
 console.log(2 * ++x - x--);
 ```
 
