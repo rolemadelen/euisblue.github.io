@@ -151,7 +151,7 @@ let b = 2;  // b = 2
 b = b * 10; // b = 20
 ```
 
-This notation can be shortened usingg the compond assignment operators.
+This notation can be shortened using the compond assignment operators.
 
 ```js
 lat a = 0;
@@ -195,7 +195,7 @@ It's not ideal to use multiple increment/decrement in between expressions for tw
 2. the result is unknown => undefined behavior.
 
 ```js
-let x;
+let x = 3;
 console.log(2 * ++x - x--);
 ```
 
