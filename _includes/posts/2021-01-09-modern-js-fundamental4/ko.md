@@ -5,20 +5,20 @@
 비교 연산자는 로직을 다루기 때문에 그 결과값은 `true` 또는 `false` 입니다.
 
 ```js
-console.log(2 > 1); // true ;
-console.log(2 < 1); // false ;
+console.log(2 > 1); // true
+console.log(2 < 1); // false
 
 let isSame = 2 == 1;
-console.log(isSame); // false ;
+console.log(isSame); // false
 ```
 ### 문자열 비교
 
 문자열 비교는 '사전순', 정확하게는 유니코드에 등록된 각 문자의 숫자 순으로 비교됩니다.
 
 ```js
-console.log('A' > 'Z'); // false ;
-console.log('Java' < 'JavaScript'); // true ; 
-console.log('A' > 'a'); // false ;
+console.log('A' > 'Z'); // false
+console.log('Java' < 'JavaScript'); // true 
+console.log('A' > 'a'); // false
 ```
 마지막 줄인 `A` 와 `a` 의 비교결과는 왜 `false`일까?
 
@@ -35,29 +35,29 @@ console.log('A' > 'a'); // false ;
 
 ```js
 console.log('2' > 1);    // true: 2 > 1 으로 변환된다 ;
-console.log(true == 1);  // true ;
-console.log(false == 0); // true ; 
+console.log(true == 1);  // true
+console.log(false == 0); // true 
 ```
 ### 일치 연산자
 
 동등 연산자 (`==`) 는 두 피연산자의 타입형은 무시하고 자료를 비교한다.
 
 ```js
-console.log('0' == 0);   // true ;
-console.log(false == 0); // true ;
-console.log('' == 0);    // true ;
+console.log('0' == 0);   // true
+console.log(false == 0); // true
+console.log('' == 0);    // true
 ```
 자료와 타입형 둘 다 확인하는 연산자를 **일치 연산자 (strict equality operator)**라고 부르며 연산자 표기는 `===`이다.
 
 ```js
-console.log('0' === 0);   // false ;
-console.log(false === 0); // false ;
-console.log('' === 0);    // false ;
+console.log('0' === 0);   // false
+console.log(false === 0); // false
+console.log('' === 0);    // false
 ```
 ### null이나 undefined와 비교하기
 
-- `nul` 과 `undefined` 는 서로 비교하지 말 것 (`===` 는 나름 안전(?)하기 때문에 괜찮지만 그 외 연산자는 No!)
-- `null` 이나 `undefined` 가 될 가능성이 변수가 비교 연산자에 오지 않도록 주의.
+- `null` 과 `undefined` 는 서로 비교하지 말 것 (`===` 는 나름 안전(?)하기 때문에 괜찮지만 그 외 연산자는 No!)
+- `null` 이나 `undefined` 가 될 가능성이 있는 변수와는 비교 연산자를 사용하지 않도록 주의.
 
 ## 2.10 조건문
 
@@ -124,35 +124,36 @@ console.log( (x == 7) ? 'luky seven!' : 'just a number' );
 인수 중 하나라도 `true` 라면 `true` 를 반환한다.
 
 ```js
-console.log(true  || true);  // true  ;
-console.log(true  || false); // true  ;
-console.log(false || true);  // true  ;
-console.log(false || false); // false ;
+console.log(true  || true);  // true
+console.log(true  || false); // true
+console.log(false || true);  // true
+console.log(false || false); // false
 ```
 ### && (AND)
 
 인수가 전부 참 일때 `true` 를 반환한다.
 
 ```js
-console.log(true  || true);  // true  ;
-console.log(true  || false); // false ;
-console.log(false || true);  // false ;
-console.log(false || false); // false ;
+console.log(true  && true);  // true
+console.log(true  && false); // false
+console.log(false && true);  // false
+console.log(false && false); // false
 ```
+
 ### 자바스크립트의 추가 기능
 
 - OR 연산자를 체이닝할 경우, 첫 번째 `true` 인 값을 반환한다. 만약 모든 값이 거짓일 경우, 마지막 값을 반환한다.
     ```js
-    console.log( 1 || 0 );    // 1 ;
-    console.log( null || 1 ); // 1 ;
-    console.log( undefined || null || 0 ); // 0 ; 모두 거짓이어서 마지막 값인 0을 반환 ;
+    console.log( 1 || 0 );    // 1
+    console.log( null || 1 ); // 1
+    console.log( undefined || null || 0 ); // 0 ; 모두 거짓이어서 마지막 값인 0을 반환
     ```
 - AND 연산자를 체이닝할 경우, 첫 번째 `false` 인 값을 반환한다. falsy가 없다면 마지막 값을 반환한다.
     ```js
-    console.log( 1 && true ); // true ; falsy가 없기 때문에 마지막 값을 반환 ;
-    console.log( 1 && 0 );    // 0 ;
-    console.log( null && 1 ); // null ;
-    console.log( undefined && null && 0 ); // undefined ;
+    console.log( 1 && true ); // true falsy가 없기 때문에 마지막 값을 반환
+    console.log( 1 && 0 );    // 0 
+    console.log( null && 1 ); // null
+    console.log( undefined && null && 0 ); // undefined
     ```
 
 ### 단락 평가(short circuit evaluation)
@@ -165,13 +166,13 @@ console.log(false || false); // false ;
 
 ```js
 let result = true || ('... 뭐든 간에 상관없다'); 
-console.log( result ); // true ;
+console.log( result ); // true
 ```
 **AND**의 경우 거짓을 만나게 되면 무조건 `false` 이기 때문에 평가를 종료하고 바로 거짓을 반환합니다.
 
 ```js
 let result = false && ('... 뭐든 간에 상관없다');
-console.log( result ); // false ;
+console.log( result ); // false
 ```
 
 ### ! (NOT)
@@ -186,8 +187,8 @@ console.log( result ); // false ;
 NOT을 연달아 사용하면 값을 불린형으로 변환할 수 있다.
 
 ```js
-console.log(!!"string"); // true ;
-console.log(!!null);     // false ;
+console.log(!!"string"); // true
+console.log(!!null);     // false
 ```
 이는 내장 함수 `Boolean(..)` 의 결과와 같다.
 
@@ -211,7 +212,7 @@ console.log(!!null);     // false ;
 ```js
 let height = 0;
 
-alert(height || 100); // 100 ;
+alert(height || 100); // 100
 alert(height ?? 100); // 0   ; 0은 정의되어 있기때문에 0이 출력된다.
 ```
 
@@ -381,7 +382,7 @@ switch(num) {
 ```
 `switch`는 일치 비교(`===`)를 사용하므로 자동으로 형변환이 이루어지지 않는다.
 
-## 참고 
+## Reference
 - [2.9 비교 연산자](https://ko.javascript.info/comparison)
 - [2.10 if와 '?'를 사용한 조건 처리](https://ko.javascript.info/ifelse)
 - [2.11 논리 연산자](https://ko.javascript.info/logical-operators)
