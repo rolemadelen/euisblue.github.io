@@ -1,4 +1,4 @@
-## 2.9 Comparisos
+## 2.9 Comparisons
 
 ### Boolean is the result
 
@@ -226,168 +226,215 @@ console.log( undefined && null && 0 ); // undefined
 
 ### Short circuit evaluation
 
-JavaScript checks the expression from left to right.
+JavaScript checks the expression from left to right, and it stops evaluating when the final result is already determined.
 
-단락 평가(short circuit evaluation)란, 논리 연산자를 왼쪽에서 부터 평가하는데 결과가 이미 **확실하게** 정해지면 거기서 평가를 그만두고 바로 값을 반환하는 것을 의미.
+For example, when first truthy value is found in an **OR** expression, the result would be `true` no matter what argument comes afterward.
+So, JavaScript stops the evaluation right away and returns `true`. This is *short circuit evaluation*.
 
-**OR**의 경우 첫 번째 `true` 를 찾은 순간, 그 뒤에 어떤 연산자가 있든 무조건 `true` 이기 때문에 바로 참을 반환합니다.
-
-아래 코드의 경우 첫 번째 `true` 를 확인하고 바로 참을 반환합니다.
-
+Thus, following code is perfectly legal.
 ```js
-let result = true || ('... 뭐든 간에 상관없다'); 
-console.log( result ); // true
-```
-**AND**의 경우 거짓을 만나게 되면 무조건 `false` 이기 때문에 평가를 종료하고 바로 거짓을 반환합니다.
-
-```js
-let result = false && ('... 뭐든 간에 상관없다');
-console.log( result ); // false
+/* no error about 'foo' not defined */
+if( true || foo.bar.whatever ) {
+    console.log('true');
+}
 ```
 
-### ! (NOT)
+For the case of **AND**, the short circuit evaluation happens when the engine finds the first falsy argumment.
 
-- `!true` → `false`
-- `!false` → `true`
+```js
+/* no error about 'foo' and 'bar' not defined */
+if( false && foo.bar.anything.works ) {
+    console.log("this won't be printed");
+}
+```
 
-느낌표를 논리 연산자 앞에 붙이면, 참은 거짓으로, 거짓은 참으로 변환된다.
+### NOT "!"
+The `NOT` operator will invert boolean values:
+```js
+console.log(!true === false ); // true
+console.log(!false === true ); // true
+```
 
 ### '!!' trick
 
-NOT을 연달아 사용하면 값을 불린형으로 변환할 수 있다.
+We can use `Boolean(data)` to type cast from one data to a Boolean data type. But, there's a shortcut to it.
 
 ```js
 console.log(!!"string"); // true
 console.log(!!null);     // false
 ```
-이는 내장 함수 `Boolean(..)` 의 결과와 같다.
 
-## 2.12 null 병합 연산자 '??'
 
-스펙에 추가된 지 얼마 안된 문법. 구식 브라우저는 폴리필이 필요하다.
+## 2.12 Nullish coalescing operator '??'
 
-- null 병합 연산자 (nullish coalescing operator) `??` <br />
-    `a ?? b` → `a` 가 `null` 도 아니고 `undefined` 도 아니면 `a`; 그 외는 `b` <br />
-    삼항연산자로 표현하면 이것과 같다 → `x = (a != null && a != undefined) ? a : b`
+> This is a newly added feature to the language. Old browsers may need polyfills.
 
-- `??` 도 체이닝이 가능하다. <br />
-    `null`이나 `undefined`가 아닌 첫 번째 피연산자를 반환 <br />
-    →  `fname ?? lname ?? nickName ?? "Anonymous"`
+- The result of `a ?? b`:
+  - returns `a` if it's neither `null` or `undefined` otherwise return `b`.
+  - equivalent expression using a ternary: <br/> `x = (a != null && a != undefined) ? a : b`
 
-### '??' 와 '||' 의 차이
+- We can also chain `??` operator:
+  - returns the first argument that is neither `null` or `undefined`: <br> ex) `fname ?? lname ?? nickName ?? "Anonymous"`
 
-- `||` 는 첫 번째 truthy값을 반환
-- `??` 는 첫 번째 defined된 값을 반환
+### Comparsion: '??' and '||'
+
+- `||` returns the first **truthy** argument.
+- `??` returns the first **defined** argumnt.
 
 ```js
 let height = 0;
 
 alert(height || 100); // 100
-alert(height ?? 100); // 0   ; 0은 정의되어 있기때문에 0이 출력된다.
+alert(height ?? 100); // 0   (0 is defined)
 ```
 
-## 2.13 반복문
+## 2.13 Loops: for and while
 
-### 'for'문
+### The "for" loop
 
 ```js
-for (초기식; 조건식; 증감식/감소식) {
-	// statements
+for (initializer; conditions; increment/decrement) {
+    // statements
 }
 ```
-아래와 같이 무한루프를 만들수도 있다.
+
+Let's calculate the sum of `1 + 2 + ... + 99 + 100` using the for loop.
+```js
+let sum = 0;
+
+for(let i=1; i<=100; ++i) {
+    sum += i;
+}
+
+consol.log(sum); // 5050
+```
+
+We can create an infinite loop like the following:
 
 ```js
 for(;;) {
-	// 끊임 없이 반복한다.
+    // repeat endlessly
 } 
 ```
-### 'while'문
+### The "while" loop
 
 ```js
-// 초기식
+initializer;
 
-while (조건식) {
-	// 증감식
+while (condition) {
+    increment / decrement;
 }
 ```
-`for`문 하고는 다르게 초기식이랑 증감/감소 하는 구절이 반복문에 포함되어 있지 않다. 그렇기 때문에 반복문 외부에서 따로 초기식을 선언하고, 내부에서 증감/감소를 해준다.
 
-`while`문도 `for`문과 마찬가지로 무한루프를 만들 수 있다.
+Unlike the `for` loop, we only pass in *conditions* as an argument. We need to declare initializer outside the loop and increment/decrement the value within the loop.
 
+Here's the same code of calculating the sum from 1 to 100 using the while loop:
+```js
+let sum = 0;
+let i = 1;
+
+while( i <= 100 ) {
+    sum += i;
+    ++i;
+}
+
+console.log(sum); // 5050
+```
+
+We can also create an infinite loop in the `while` loop and this one is more intuitive than `for`.
 ```js
 while(true) {
-	// 끈임 없이 반복한다.
+	// repeat endlessly
 }
 ```
-### 'do..while'문
+### The "do..while" loop
 
 ```js
-// 초기식
+initializer;
 
 do {
-	증감/감소
-} while (조건식)
+    increment / decrement;
+} while (condition);
 ```
-### 'while' vs 'do-while'
 
-- `do..while`문의 경우는 조건과 상관없이 무조건 한 번은 실행.
-- 무조건 한 번은 실행되야 하는 경우 `do..while` 문을 사용.
+And again, let's calculate the sum of 1 to 100:
+```js
+let sum = 0;
+let i = 1;
 
-### break
+do {
+    sum += i;
+    ++i;
+} while (i <= 100);
 
-- 무한 루프에서 빠져나올 때 사용된다.
-- 혹은 조건이 만족 되었을때 임의로 루프 도중 탈출이 가능!
+console.log(sum);
+```
 
-아래 코드는 `i` 가 7이 되면 반복문을 탈출한다.
+### "while" vs "do-while"
+
+The `do..while` loop will execute the code at least once even the condition is `false`.
+```js
+do {
+    console.log("this will be printed");
+} while (false);
+```
+
+So use `do..while` if the code must be executed once before checking the condition, otherwise use `while`.
+
+### Breaking the loop
+
+Normally, a loop terminates when the condition becomes falsy. But we can force the exit at any time using the `break` directive.
+
+The below infinite loop will exit when `i === 7`:
 
 ```js
 let i = 0;
 
 while(true) {
-	if (i == 7) {
-		break;
-	}
-	
-	console.log(i);
-	++i;
+    if (i == 7) {
+        break;
+    }
+
+    console.log(i);
+    ++i;
 }
 ```
-### continue
+### Continue to the next iteration
 
-- 반복문을 탈출하지 않고, 다음 반복으로 넘어간다
+We can use the `continue` directive to skip to the next iteration without further executing the code.
 
-아래는 `i`가 짝수일 경우 다음 반복으로 넘긴다. 즉, 홀수만 출력된다.
+The below code console logs all odds between 0 to 10:
 
 ```js
 for(let i=0; i<10; ++i) {
-	if (i % 2 == 0) {
-		continue;
-	}
-	console.log(i);
+    if (i % 2 == 0) {
+        continue;
+    }
+    console.log(i); // 1 3 5 7 9
 }
 ```
-### label
+### Labels for break/continue
 
-레이블을 사용해서 반복문을 탈출 할 수 있다.
+Sometimes we need to break out from multiple nested loops at once.
 
 ```js
 LOOP: 
 for (...) {
-	for (...) {
-		for(...) {
-			if (true) {
-				break LOOP;
-			}
-		}		
-	}
+    for (...) {
+        for(...) {
+            if (true) {
+                break LOOP;
+            }
+        }		
+    }
 }
 ```
-위 코드의 경우, 레이블을 사용하지 않으면 조건문을 사용해서 안쪽에서 부터 `break`로 탈출해야 한다. 아주 살짝 코드가 길어진다. 레이블은 웬만하면 사용하지 않는것이 좋지만, 위와 같은 경우는 예외로 사용해도 괜찮다 (개인적인 생각).
 
-## 2.14 switch문
+The ordinary `break` will only break out from the inner loop. In order to make it work, we will need to add multiple `if` statements to check whether we're breaking the loop from the inside and repeat this for all loops until we're completely out. Or use the `label`.
 
-- 복수의 `if` 조건문은 `switch` 문으로 바꿀 수 있다.
+## 2.14 The "switch" statement
+
+A `switch` statement can replace multiple `if` checks.
 
 ```js
 switch(x) {
@@ -400,7 +447,7 @@ switch(x) {
 ```
 검사 할 데이터를 `switch(..)`에 넘겨주고, 해당 데이터와 비교 할 값들을 `case` 에 작성한다.
 
-`case`는 `if`문에 해당하고 `default`는 `else`와 같다.
+A `case` and `default` is similar to `if` and `else` respectively.
 
 ### fall through - 1
 
@@ -454,8 +501,8 @@ switch(num) {
 
 ## Reference
 - [2.9 Comparisos](https://javascript.info/comparison)
-- [2.10 if와 '?'를 사용한 조건 처리](https://ko.javascript.info/ifelse)
-- [2.11 논리 연산자](https://ko.javascript.info/logical-operators)
-- [2.12 null 병합 연산자 '??'](https://ko.javascript.info/nullish-coalescing-operator)
-- [2.13 while과 for 반복문](https://ko.javascript.info/while-for)
-- [2.14 switch문](https://ko.javascript.info/switch)
+- [2.10 Conditional branching: if, '?'](https://javascript.info/ifelse)
+- [2.11 Logical operators](https://javascript.info/logical-operators)
+- [2.12 Nullish coalescing operator '??'](https://javascript.info/nullish-coalescing-operator)
+- [2.13 Loops: for and while](https://javascript.info/while-for)
+- [2.14 The "switch" statement](https://javascript.info/switch)
