@@ -68,15 +68,15 @@ console.log('' === 0);    // false
 ```js
 if ( cond ) 
 {
-	console.log('첫 번째 조건문이 참이라면 여기를 실행');
+    console.log('첫 번째 조건문이 참이라면 여기를 실행');
 } 
 else if ( cond2 ) 
 {
-	console.log('두 번째 조건문이 참이라면 여기를 실행');
+    console.log('두 번째 조건문이 참이라면 여기를 실행');
 }
 else if ( cond3 )
 {
-	console.log('세 번째 조건문이 참이라면 여기를 실행');
+    console.log('세 번째 조건문이 참이라면 여기를 실행');
 }
 else 
 {
@@ -96,11 +96,11 @@ let x = prompt('enter a number', 1);
 
 if (x == 7) 
 {
-	console.log('lucky seven!');
+    console.log('lucky seven!');
 }
 else
 {
-	console.log('just a number');
+    console.log('just a number');
 }
 ```
 위 조건문을 삼항연산자로 나타내면 아래처럼 표현 할 수 있다.
@@ -222,23 +222,23 @@ alert(height ?? 100); // 0   ; 0은 정의되어 있기때문에 0이 출력된�
 
 ```js
 for (초기식; 조건식; 증감식/감소식) {
-	// statements
+    // statements
 }
 ```
 아래와 같이 무한루프를 만들수도 있다.
 
 ```js
 for(;;) {
-	// 끊임 없이 반복한다.
+    // 끊임 없이 반복한다.
 } 
 ```
 ### 'while'문
 
 ```js
-// 초기식
+초기식
 
 while (조건식) {
-	// 증감식
+    증감식
 }
 ```
 `for`문 하고는 다르게 초기식이랑 증감/감소 하는 구절이 반복문에 포함되어 있지 않다. 그렇기 때문에 반복문 외부에서 따로 초기식을 선언하고, 내부에서 증감/감소를 해준다.
@@ -247,16 +247,16 @@ while (조건식) {
 
 ```js
 while(true) {
-	// 끈임 없이 반복한다.
+    // 끈임 없이 반복한다.
 }
 ```
 ### 'do..while'문
 
 ```js
-// 초기식
+초기식
 
 do {
-	증감/감소
+    증감/감소
 } while (조건식)
 ```
 ### 'while' vs 'do-while'
@@ -275,12 +275,12 @@ do {
 let i = 0;
 
 while(true) {
-	if (i == 7) {
-		break;
-	}
-	
-	console.log(i);
-	++i;
+    if (i == 7) {
+        break;
+    }
+
+    console.log(i);
+    ++i;
 }
 ```
 ### continue
@@ -291,10 +291,10 @@ while(true) {
 
 ```js
 for(let i=0; i<10; ++i) {
-	if (i % 2 == 0) {
-		continue;
-	}
-	console.log(i);
+    if (i % 2 == 0) {
+        continue;
+    }
+    console.log(i);
 }
 ```
 ### label
@@ -304,13 +304,13 @@ for(let i=0; i<10; ++i) {
 ```js
 LOOP: 
 for (...) {
-	for (...) {
-		for(...) {
-			if (true) {
-				break LOOP;
-			}
-		}		
-	}
+    for (...) {
+        for(...) {
+            if (true) {
+                break LOOP;
+            }
+        }		
+    }
 }
 ```
 위 코드의 경우, 레이블을 사용하지 않으면 조건문을 사용해서 안쪽에서 부터 `break`로 탈출해야 한다. 아주 살짝 코드가 길어진다. 레이블은 웬만하면 사용하지 않는것이 좋지만, 위와 같은 경우는 예외로 사용해도 괜찮다 (개인적인 생각).
@@ -321,11 +321,11 @@ for (...) {
 
 ```js
 switch(x) {
-	case '1':  // if (x == '1')
-		break;
-	case 'value': // if (x == 'value')
-		break
-	default:
+    case '1':  // if (x === '1')
+        break;
+    case 'value': // if (x === 'value')
+        break
+    default: // else
 }
 ```
 검사 할 데이터를 `switch(..)`에 넘겨주고, 해당 데이터와 비교 할 값들을 `case` 에 작성한다.
@@ -339,15 +339,15 @@ switch(x) {
 ```js
 let x = 7;
 switch(x) {
-	case 7:
-		console.log('lucky!');
-	case 4:
-		console.log('bad luck!');
-	case 1:
-		console.log("you're the best");
-		break;
-	default:
-		console.log('okay');
+    case 7:
+        console.log('lucky!');
+    case 4:
+        console.log('bad luck!');
+    case 1:
+        console.log("you're the best");
+        break;
+    default:
+        console.log('okay');
 }
 ```
 위 코드는 첫 번째 `case 7:` 이 실행되지만 `break`가 없기 때문에 이어서 `case 4:`, `case 1:`을 실행하고 `break` 를 만나서 `switch`문을 빠져나오게 된다.
@@ -362,22 +362,22 @@ fall through를 사용해서 비슷한 값들을 묶어줄 수 있다.
 let num = prompt('enter a number', 0);
 
 switch(num) {
-	case '1':
-	case '3':
-	case '5':
-	case '7':
-	case '9':
-		console.log('홀수!');
-		break;
-	case '2':
-	case '4':
-	case '6':
-	case '8':
-	case '10':
-		console.log('짝수');
-		braek;
-	default:
-		console.log('숫자');
+    case '1':
+    case '3':
+    case '5':
+    case '7':
+    case '9':
+        console.log('홀수!');
+        break;
+    case '2':
+    case '4':
+    case '6':
+    case '8':
+    case '10':
+        console.log('짝수');
+        break;
+    default:
+        console.log('숫자');
 }
 ```
 `switch`는 일치 비교(`===`)를 사용하므로 자동으로 형변환이 이루어지지 않는다.
