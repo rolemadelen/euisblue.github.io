@@ -1,6 +1,6 @@
-## 2.9 Comparisons
+## 2.9 比較
 
-### Boolean is the result
+### Boolean は結果です
 
 All comparison operators return a boolean result:`true` or `false`.
 
@@ -12,7 +12,7 @@ let isSame = 2 == 1;
 console.log(isSame); // false
 ```
 
-### String comparison
+### 文字列比較
 
 Strings are compared lexicographically, or "dictionary" order.
 
@@ -41,7 +41,7 @@ The above code becomes like the below internally, and it's a falsy statement.
 console.log(65 > 97); // false
 ```
 
-### Comparison of different types
+### 異なる型の比較
 
 When comparing values of different types, JavaScript converts the values to numbers.
 
@@ -52,7 +52,7 @@ console.log('2' > 1);    // true: 2 > 1 으로 변환된다 ;
 console.log(true == 1);  // true
 console.log(false == 0); // true 
 ```
-### Strict equality
+### 厳密な等価
 
 A regular equality check (`==`) cannot differentiate these values:
 ```js
@@ -68,7 +68,7 @@ console.log('0' === 0);   // false
 console.log(false === 0); // false
 console.log('' === 0);    // false
 ```
-### Comparsion with *null* and *undefined*
+### null と undefined の比較
 
 - Don't compare `null` and `undefined` together with a regular check (`==`)
     ```js
@@ -89,9 +89,9 @@ console.log('' === 0);    // false
     console.log(undefined == 0); // false
     ```
 
-## 2.10 Conditional branching: if, '?'
+## 2.10 厳密な等価
 
-### The “if” statement
+### “if” 文
 
 We often perform different actions based on different conditions.
 For example, we only want to carry an umbrella when it's going to rain or is raining.
@@ -117,7 +117,7 @@ If first condition is `true`, it executes the code inside the `if` branch, other
 
 If none of the condition is `true`, it executes the *default* branch, that is `else`.
 
-### The ternary operator '?'
+### 3項演算子 ‘?’
 
 Sometimes, we need to assign a different value to the variable depending on a condition.
 
@@ -175,8 +175,7 @@ else // not raining
 console.log(takeUmbrella);
 ```
 
-
-## 2.11 Logical Operators
+## 2.11 論理演算子
 
 ### OR "||" 
 
@@ -189,7 +188,7 @@ console.log(false || true);  // true
 console.log(false || false); // false
 ```
 
-### OR "||" finds the first truthy value
+### OR "||" は最初の真値を探します
 This is an extended feature of OR operator in JavaScript. 
 
 When we perform OR, it returns the *first* `true` argument.
@@ -212,7 +211,7 @@ console.log(false && true);  // false
 console.log(false && false); // false
 ```
 
-### AND “&&” finds the first falsy value
+### AND “&&” は最初の偽値を探します
 This is an extended feature of AND operator in JavaScript. 
 
 AND operator looks for the *first* falsy argument and returns it. If none of the arguments are falsy, it returns the *last* argument.
@@ -265,7 +264,7 @@ console.log(!!null);     // false
 ```
 
 
-## 2.12 Nullish coalescing operator '??'
+## 2.12 NULL合体演算子(Nullish coalescing operator) '??'
 
 > This is a newly added feature to the language. Old browsers may need polyfills.
 
@@ -276,7 +275,7 @@ console.log(!!null);     // false
 - We can also chain `??` operator:
   - returns the first argument that is neither `null` or `undefined`: <br> ex) `fname ?? lname ?? nickName ?? "Anonymous"`
 
-### Comparsion: '??' and '||'
+### 比較： '??' と '||'
 
 - `||` returns the first **truthy** argument.
 - `??` returns the first **defined** argumnt.
@@ -288,9 +287,9 @@ alert(height || 100); // 100
 alert(height ?? 100); // 0   (0 is defined)
 ```
 
-## 2.13 Loops: for and while
+## 2.13 ループ: for と while
 
-### The "for" loop
+### "for" ループ
 
 ```js
 for (initializer; conditions; increment/decrement) {
@@ -316,7 +315,7 @@ for(;;) {
     // repeat endlessly
 } 
 ```
-### The "while" loop
+### "while" ループ
 
 ```js
 initializer;
@@ -347,7 +346,7 @@ while(true) {
 	// repeat endlessly
 }
 ```
-### The "do..while" loop
+### "do..while" ループ
 
 ```js
 initializer;
@@ -370,7 +369,7 @@ do {
 console.log(sum);
 ```
 
-### "while" vs "do-while"
+### 比較："while" と "do-while"
 
 The `do..while` loop will execute the code at least once even the condition is `false`.
 ```js
@@ -381,7 +380,7 @@ do {
 
 So use `do..while` if the code must be executed once before checking the condition, otherwise use `while`.
 
-### Breaking the loop
+### ループの終わり
 
 Normally, a loop terminates when the condition becomes falsy. But we can force the exit at any time using the `break` directive.
 
@@ -399,7 +398,7 @@ while(true) {
     ++i;
 }
 ```
-### Continue to the next iteration
+### 次のイテレーションに進む
 
 We can use the `continue` directive to skip to the next iteration without further executing the code.
 
@@ -413,7 +412,7 @@ for(let i=0; i<10; ++i) {
     console.log(i); // 1 3 5 7 9
 }
 ```
-### Labels for break/continue
+### break/continue のためのラベル
 
 Sometimes we need to break out from multiple nested loops at once.
 
@@ -432,7 +431,7 @@ for (...) {
 
 The ordinary `break` will only break out from the inner loop. In order to make it work, we will need to add multiple `if` statements to check whether we're breaking the loop from the inside and repeat this for all loops until we're completely out. Or use the `label`.
 
-## 2.14 The "switch" statement
+## 2.14 switch文
 
 A `switch` statement can replace multiple `if` checks.
 
@@ -450,7 +449,7 @@ The value of `x` is checked for a strict equality to the value from the `case` i
 
 Each `case` statement is similar to `if` and `else if` statements, and `default` is similar to `else`.
 
-### fall through - 1
+### "case"のグルーピング：fall through 
 
 Notice that in every `case` statement, we have a `break` directive. If we omit the directive, JavaScript will continue to check the next `case` without breaking the `switch` statement. 
 Hence, it will *fall through*.
@@ -498,8 +497,6 @@ switch(x) {
 }
 ```
 
-### fall through - 2
-
 We can intentionally omit the `break` directive to group different cases together.
 
 ```js
@@ -528,9 +525,9 @@ switch(num) {
 We grouped *even* and *odd* cases together by letting it *fall through*.
 
 ## Reference
-- [2.9 Comparisons](https://javascript.info/comparison)
-- [2.10 Conditional branching: if, '?'](https://javascript.info/ifelse)
-- [2.11 Logical operators](https://javascript.info/logical-operators)
-- [2.12 Nullish coalescing operator '??'](https://javascript.info/nullish-coalescing-operator)
-- [2.13 Loops: for and while](https://javascript.info/while-for)
-- [2.14 The "switch" statement](https://javascript.info/switch)
+- [2.9 比較](https://ja.javascript.info/comparison)
+- [2.10 厳密な等価](https://ja.javascript.info/ifelse)
+- [2.11 論理演算子](https://ja.javascript.info/logical-operators)
+- [2.12 NULL合体演算子(Nullish coalescing operator) '??'](https://ja.javascript.info/nullish-coalescing-operator)
+- [2.13 ループ: for と while](https://ja.javascript.info/while-for)
+- [2.14 switch文](https://ja.javascript.info/switch)
