@@ -52,7 +52,7 @@ console.log('2' > 1);    // true: 2 > 1 으로 변환된다 ;
 console.log(true == 1);  // true
 console.log(false == 0); // true 
 ```
-### String equality
+### Strict equality
 
 A regular equality check (`==`) cannot differentiate these values:
 ```js
