@@ -438,66 +438,94 @@ A `switch` statement can replace multiple `if` checks.
 
 ```js
 switch(x) {
-	case '1':  // if (x == '1')
-		break;
-	case 'value': // if (x == 'value')
-		break
-	default:
+    case '1':  // if (x === '1')
+        break;
+    case 'value': // if (x === 'value')
+        break
+    default: // else
 }
 ```
-검사 할 데이터를 `switch(..)`에 넘겨주고, 해당 데이터와 비교 할 값들을 `case` 에 작성한다.
 
-A `case` and `default` is similar to `if` and `else` respectively.
+The value of `x` is checked for a strict equality to the value from the `case` in order from top to bottom.
+
+Each `case` statement is similar to `if` and `else if` statements, and `default` is similar to `else`.
 
 ### fall through - 1
 
-`break`문이 없으면, 해당 조건을 만족하더라도 탈출하지 않고 `break`를 만나거나 `switch`문이 끝날때까지 이어지는 `case`문을 실행한다(fall-through).
+Notice that in every `case` statement, we have a `break` directive. If we omit the directive, JavaScript will continue to check the next `case` without breaking the `switch` statement. 
+Hence, it will *fall through*.
 
 ```js
 let x = 7;
 switch(x) {
-	case 7:
-		console.log('lucky!');
-	case 4:
-		console.log('bad luck!');
-	case 1:
-		console.log("you're the best");
-		break;
-	default:
-		console.log('okay');
+    case 7: // if (x === 7)
+        console.log('lucky!');
+    case 4: // if (x === 4)
+        console.log('bad luck!');
+    case 1: // if (x === 1)
+        console.log("you're the best");
+        break;
+    default: // else
+        console.log('okay');
 }
 ```
-위 코드는 첫 번째 `case 7:` 이 실행되지만 `break`가 없기 때문에 이어서 `case 4:`, `case 1:`을 실행하고 `break` 를 만나서 `switch`문을 빠져나오게 된다.
+The value of `x` is `7`. The first `case` is `true` so it will log the string *lucky* to the console. However, there's no `break` directive. So it will continue to run next cases **without checking** them until it finds the `break` or `switch` reaches the end.
+
+So JavaScript will log these three strings to the console and break before the `default` statement.
+```
+> lucky!
+> bad luck!
+> you're the best
+```
+
+The above code is equivalent to the code below:
+```js
+switch(x) {
+    case 7: // if (x === 7)
+        console.log('lucky!');
+        console.log('bad luck!');
+        console.log("you're the best");
+        break;
+    case 4: // if (x === 4)
+        console.log('bad luck!');
+        console.log("you're the best");
+        break;
+    case 1: // if (x === 1)
+        console.log("you're the best");
+        break;
+    default: // else
+        console.log('okay');
+}
+```
 
 ### fall through - 2
 
-fall through를 사용해서 비슷한 값들을 묶어줄 수 있다.
-
-아래는 입력한 숫자가 짝수인지 홀수인지 판별하는 간단한 코드이다.
+We can intentionally omit the `break` directive to group different cases together.
 
 ```js
 let num = prompt('enter a number', 0);
 
 switch(num) {
-	case '1':
-	case '3':
-	case '5':
-	case '7':
-	case '9':
-		console.log('홀수!');
-		break;
-	case '2':
-	case '4':
-	case '6':
-	case '8':
-	case '10':
-		console.log('짝수');
-		braek;
-	default:
-		console.log('숫자');
+    case '1':
+    case '3':
+    case '5':
+    case '7':
+    case '9':
+        console.log('It is odd.');
+        break;
+    case '2':
+    case '4':
+    case '6':
+    case '8':
+    case '10':
+        console.log('It is even');
+        break;
+    default:
+        console.log('A nummber.');
 }
 ```
-`switch`는 일치 비교(`===`)를 사용하므로 자동으로 형변환이 이루어지지 않는다.
+
+We grouped *even* and *odd* cases together by letting it *fall through*.
 
 ## Reference
 - [2.9 Comparisos](https://javascript.info/comparison)
