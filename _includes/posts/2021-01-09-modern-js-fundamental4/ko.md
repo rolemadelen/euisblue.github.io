@@ -22,9 +22,9 @@ console.log('A' > 'a'); // false
 ```
 마지막 줄인 `A` 와 `a` 의 비교결과는 왜 `false`일까?
 
-위에서 사전 순이 아닌 유니코드순 이라고 한 이유가 여기에 있다. 
+아래의 표를 참고해주세요.
+![ASCII table](/img/in-post/modern-js/fundamental4/ascii-table.png)
 
-[ASCII 표 참고](http://www.asciitable.com). <br />
 `A`의 유니코드는 10진수(Dec)로 65이고 `a`는 97이다. 즉 `67 > 97` 가 되어서 `false`가 반환된다.
 
 ### 다른 형을 가진 값 간의 비교
