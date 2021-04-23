@@ -1,7 +1,7 @@
 ## 👋🏼 안녕하세요!
 
 <ul style="float: left;"> 
-<li> 이름: <b>유지이</b>(Jii Eu; <a href="https://github.com/imeubug">@imeubug</a>)</li>
+<li> 이름: <b>유지이</b>(Jii Eu; <a href="https://github.com/ipflegen">@ipflegen</a>)</li>
 <li> 하는 일: <b>주니어 프론트엔드 개발자</b></li>
 <li> 주요 관심사: <b>Design/UI/UX/FE/BE</b></li>
 <li> 취미 (1): <b>🤖 코드 분석</b></li>
@@ -11,7 +11,7 @@
 
 <ul style="float: left;"> 
 📍 일본 가나가와현 <br />
-✉️ <a href = "mailto: im.eubug@gmail.com">im.eubug@gmail.com</a>
+✉️ <a href = "mailto: ipflegen@pm.me">ipflegen@pm.me</a>
 </ul>
 <div style="clear: both;"></div>
 
@@ -41,13 +41,13 @@
 ## 🧸 토이 프로젝트
 
 |:---|:---:|:---|
-|[14일간 프로젝트 14개 끝내기](https://github.com/imeubug/14Days_14Projects)| Nov 2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
-|[읽은 책 도서관](https://github.com/imeubug/library) | Oct 2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
-|[개인 블로그](https://github.com/imeubug/vue-blog) | Aug 2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
-| [클론 코딩: Schwart Media](https://github.com/imeubug/clone-schwartz-media) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [클론 코딩: Best Horror Scenes](https://github.com/imeubug/clone-best-horror-scenes) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [COVID-19 Directory](https://github.com/imeubug/covid-directory) | Aug 2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
-| [틱택토 GUI](https://github.com/imeubug/ruby-toy-projects/tree/master/tic-tac-toe/gui) | Jun 2020 | `Ruby` `Gosu` |
-| [루비 젬: BOJ Stat Viewer](https://github.com/imeubug/boj-solvedac) | May 2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
-| [Merriam-Webster 사전 API](https://github.com/imeubug/mw-dictionary) | May 2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
-| [맥OS 계산기](https://github.com/imeubug/mac-calculator) | May 2020 | `JavaScript` `HTML5` `CSS` |
+|[14일간 프로젝트 14개 끝내기](https://github.com/ipflegen/14Days_14Projects)| Nov 2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
+|[읽은 책 도서관](https://github.com/ipflegen/library) | Oct 2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
+|[개인 블로그](https://github.com/ipflegen/vue-blog) | Aug 2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
+| [클론 코딩: Schwart Media](https://github.com/ipflegen/clone-schwartz-media) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [클론 코딩: Best Horror Scenes](https://github.com/ipflegen/clone-best-horror-scenes) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [COVID-19 Directory](https://github.com/ipflegen/covid-directory) | Aug 2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
+| [틱택토 GUI](https://github.com/ipflegen/ruby-toy-projects/tree/master/tic-tac-toe/gui) | Jun 2020 | `Ruby` `Gosu` |
+| [루비 젬: BOJ Stat Viewer](https://github.com/ipflegen/boj-solvedac) | May 2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
+| [Merriam-Webster 사전 API](https://github.com/ipflegen/mw-dictionary) | May 2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
+| [맥OS 계산기](https://github.com/ipflegen/mac-calculator) | May 2020 | `JavaScript` `HTML5` `CSS` |

@@ -44,9 +44,9 @@ console.log( 2 ** 10 ); // 1024 (2 * 2 *  ... * 2 * 2, 10回)
 二項演算`+`が文字列に適用された場合は、お互いの文字を結合します。
 
 ```js
-let name = 'Eubug';
+let name = 'Ipflegen';
 let s = 'my name is ';
-console.log(s + name); // my name is Eubug
+console.log(s + name); // my name is Ipflegen
 ```
 
 一方のオペランドが文字列の場合、その式の結果も文字列になることに注意してください。
