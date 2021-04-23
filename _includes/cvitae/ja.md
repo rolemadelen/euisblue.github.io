@@ -1,7 +1,7 @@
 ## 👋🏼 こんにちは
 
 <ul style="float: left;"> 
-<li> 名前: <b>劉 智道</b>(ユー ジイ; <a href="https://github.com/imeubug">@imeubug</a>)</li>
+<li> 名前: <b>劉 智道</b>(ユー ジイ; <a href="https://github.com/ipflegen">@ipflegen</a>)</li>
 <li> 仕事: <b>フロントエンドエンジニア</b></li>
 <li> 主な関心事: <b>ディザイン/UI/UX/FE/BE</b></li>
 <li> 趣味【１】: <b>🤖 コード分析</b></li>
@@ -11,7 +11,7 @@
 
 <ul style="float: left;"> 
 📍 日本神奈川県 <br />
-✉️ <a href = "mailto: im.eubug@gmail.com">im.eubug@gmail.com</a>
+✉️ <a href = "mailto: ipflegen@pm.me">ipflegen@pm.me</a>
 </ul>
 <div style="clear: both;"></div>
 
@@ -40,13 +40,13 @@
 ## 🧸 サイドプロジェクト
 
 |:---|:---:|:---|
-|[１４日間１４個のプロジェクト](https://github.com/imeubug/14Days_14Projects)| 11月2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
-|[個人図書館](https://github.com/imeubug/library) | 10月2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
-|[個人ブログ](https://github.com/imeubug/vue-blog) | 8月2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
-| [ウェブクローニング：Schwart Media](https://github.com/imeubug/clone-schwartz-media) | 8月2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [ウェブクローニング：Best Horror Scenes](https://github.com/imeubug/clone-best-horror-scenes) | 8月2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [COVID-19 Directory](https://github.com/imeubug/covid-directory) | 8月2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
-| [TicTacToe GUI](https://github.com/imeubug/ruby-toy-projects/tree/master/tic-tac-toe/gui) | 6月2020 | `Ruby` `Gosu` |
-| [RubyのGem：BOJ Stat Viewer](https://github.com/imeubug/boj-solvedac) | 5月2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
-| [Merriam-Webster辞書API](https://github.com/imeubug/mw-dictionary) | 5月2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
-| [MacOSの電卓](https://github.com/imeubug/mac-calculator) | 5月2020 | `JavaScript` `HTML5` `CSS` |
+|[１４日間１４個のプロジェクト](https://github.com/ipflegen/14Days_14Projects)| 11月2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
+|[個人図書館](https://github.com/ipflegen/library) | 10月2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
+|[個人ブログ](https://github.com/ipflegen/vue-blog) | 8月2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
+| [ウェブクローニング：Schwart Media](https://github.com/ipflegen/clone-schwartz-media) | 8月2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [ウェブクローニング：Best Horror Scenes](https://github.com/ipflegen/clone-best-horror-scenes) | 8月2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [COVID-19 Directory](https://github.com/ipflegen/covid-directory) | 8月2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
+| [TicTacToe GUI](https://github.com/ipflegen/ruby-toy-projects/tree/master/tic-tac-toe/gui) | 6月2020 | `Ruby` `Gosu` |
+| [RubyのGem：BOJ Stat Viewer](https://github.com/ipflegen/boj-solvedac) | 5月2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
+| [Merriam-Webster辞書API](https://github.com/ipflegen/mw-dictionary) | 5月2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
+| [MacOSの電卓](https://github.com/ipflegen/mac-calculator) | 5月2020 | `JavaScript` `HTML5` `CSS` |

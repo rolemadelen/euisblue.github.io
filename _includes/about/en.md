@@ -1,4 +1,4 @@
-Hi, I'm [@imeubug](https://github.com/imeubug) (Eu, Jii), a doodler, lifelong learner, cat lover, 
+Hi, I'm [@ipflegen](https://github.com/ipflegen) (Jii Eu), a doodler, lifelong learner, cat lover, 
 sometime procrastinator and a former elementary school English teacher in Japan. 
 
 I'm currently working at a startup company based in Yokohama as a junior frontend engineer. 
