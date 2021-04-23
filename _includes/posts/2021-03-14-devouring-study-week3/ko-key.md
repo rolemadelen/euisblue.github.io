@@ -96,7 +96,7 @@
 
 ![postfix6](/img/in-post/devouring/week3/postfix6.jpg)
 
-[전체 코드](https://github.com/eubug17/ds-algo/blob/master/algorithm/stack/infix2postfix/infix2postfix.rb)
+[전체 코드](https://github.com/ipflegen17/ds-algo/blob/master/algorithm/stack/infix2postfix/infix2postfix.rb)
 
 ## 후위표현 수식 계산 (Evaluating Postfix Expression)
 

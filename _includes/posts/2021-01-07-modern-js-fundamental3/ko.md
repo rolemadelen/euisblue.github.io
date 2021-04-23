@@ -39,9 +39,9 @@ console.log(a % b); // 2
 덧셈 연사자를 사용해서 문자열을 합칠 수 있다.
 
 ```js
-let name = 'Eubug';
+let name = 'Ipflegen';
 let s = 'my name is ';
-console.log(s + name); // my name is Eubug
+console.log(s + name); // my name is Ipflegen
 ```
 
 두 피연산자 중 하나라도 문자열이면, 결과는 문자열이 된다.
