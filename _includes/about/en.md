@@ -8,3 +8,5 @@ but switched to Cognitive Science during my 3rd year at UCSD and graduated with 
 
 > 🤖 Fun fact: when I switched my major to HCI, I thought HCI was machine learning related and was expecting to 
 > learn about robotics and AI but nope. It was UI/UX 😝 
+
+✉️ <a href = "mailto: ipflegen@pm.me">ipflegen@pm.me</a>
