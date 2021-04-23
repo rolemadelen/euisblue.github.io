@@ -1,7 +1,7 @@
 ## 👋🏼 Hi 
 
 <ul style="float: left;"> 
-<li> I'm <b>Jii Eu</b> (<a href="https://github.com/imeubug">@imeubug</a>)</li>
+<li> I'm <b>Jii Eu</b> (<a href="https://github.com/ipflegen">@ipflegen</a>)</li>
 <li> a <b>Junior Frontend Engineer</b> </li>
 <li> likes to break & analyze things </li>
 <li> loves <b>playing 🥁 taiko</b> </li>
@@ -11,7 +11,7 @@
 
 <ul style="float: left;">
 📍 Kanagawa, Japan <br />
-✉️ <a href = "mailto: im.eubug@gmail.com">im.eubug@gmail.com</a>
+✉️ <a href = "mailto: ipflegen@pm.me">ipflegen@pm.me</a>
 </ul>
 
 <div style="clear: both;"></div>
@@ -43,13 +43,13 @@
 ## 🧸 Toy Projects
 
 |:---|:---:|:---|
-|[14 Days 14 Projects](https://github.com/imeubug/14Days_14Projects)| Nov 2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
-|[Library](https://github.com/imeubug/library) | Oct 2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
-|[Personal Blog](https://github.com/imeubug/vue-blog) | Aug 2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
-| [Schwartz Media](https://github.com/imeubug/clone-schwartz-media) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [Best Horror Scenes](https://github.com/imeubug/clone-best-horror-scenes) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
-| [COVID-19 Directory](https://github.com/imeubug/covid-directory) | Aug 2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
-| [TicTacToe GUI](https://github.com/imeubug/ruby-toy-projects/tree/master/tic-tac-toe/gui) | Jun 2020 | `Ruby` `Gosu` |
-| [Ruby gem - BOJ Stats Viewer](https://github.com/imeubug/boj-solvedac) | May 2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
-| [Merriam-Webster Dictionary](https://github.com/imeubug/mw-dictionary) | May 2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
-| [MacOS Calculator](https://github.com/imeubug/mac-calculator) | May 2020 | `JavaScript` `HTML5` `CSS` |
+|[14 Days 14 Projects](https://github.com/ipflegen/14Days_14Projects)| Nov 2020| `Vanilla JS` `Vue` `React` `HTML5` `CSS` `SASS` `axios` `REST API`|
+|[Library](https://github.com/ipflegen/library) | Oct 2020 | `HTML5` `CSS`  `Vanilla-JS` `firebase` |
+|[Personal Blog](https://github.com/ipflegen/vue-blog) | Aug 2020 | `HTML5` `CSS` `SASS` `JavaScript` `Vue` `webpack` `Netlify`|
+| [Schwartz Media](https://github.com/ipflegen/clone-schwartz-media) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [Best Horror Scenes](https://github.com/ipflegen/clone-best-horror-scenes) | Aug 2020 | `HTML5` `CSS` `Vanilla JS` `SASS` `webpack` `Netlify`|
+| [COVID-19 Directory](https://github.com/ipflegen/covid-directory) | Aug 2020 | `JavaScript` `HTML5` `CSS` `Vue` `json` `REST API` |
+| [TicTacToe GUI](https://github.com/ipflegen/ruby-toy-projects/tree/master/tic-tac-toe/gui) | Jun 2020 | `Ruby` `Gosu` |
+| [Ruby gem - BOJ Stats Viewer](https://github.com/ipflegen/boj-solvedac) | May 2020 | `Ruby 2.7.1` `curl` `net/http` `parsing` |
+| [Merriam-Webster Dictionary](https://github.com/ipflegen/mw-dictionary) | May 2020 | `Ruby` `gemspec` `net/http` `parsing` `Dictionary API` |
+| [MacOS Calculator](https://github.com/ipflegen/mac-calculator) | May 2020 | `JavaScript` `HTML5` `CSS` |
