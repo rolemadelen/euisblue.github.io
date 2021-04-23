@@ -2,7 +2,8 @@
 
 ### Boolean は結果です
 
-All comparison operators return a boolean result:`true` or `false`.
+すべての比較演算子ブール値（`true`・`false`）を返します。
+
 
 ```js
 console.log(2 > 1); // true
@@ -14,6 +15,7 @@ console.log(isSame); // false
 
 ### 文字列比較
 
+文字列を比較する場合、いわゆる”辞書”の順序が使われます。
 Strings are compared lexicographically, or "dictionary" order.
 
 ```js
