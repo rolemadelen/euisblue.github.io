@@ -1,14 +1,14 @@
 {
-    "name": "eubug-blog",
-    "title": "Eubug Blog",
-    "author": "Eubug <im.eubug@gmail.com>",
+    "name": "ipflegen-blog",
+    "title": "Ipflegen Blog",
+    "author": "Ipflegen <ipflegen@pm.me>",
     "version": "1.0.0",
-    "homepage": "http://imeubug.github.io",
+    "homepage": "http://ipflegen.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/imeubug/imeubug.github.io"
+        "url": "https://github.com/ipflegen/ipflegen.github.io"
     },
-    "bugs": "https://github.com/imeubug/imeubug.github.io/issues",
+    "bugs": "https://github.com/ipflegen/ipflegen.github.io/issues",
     "devDependencies": {
         "grunt": "^1.1.0",
         "grunt-banner": "~0.2.3",

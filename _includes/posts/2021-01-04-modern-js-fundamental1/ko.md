@@ -124,10 +124,10 @@ modern JS는 클래스와 모듈이라는 구조를 제공하는데 이 둘을 �
 데이터를 저장할 때 쓰이는 **이름이 붙은 저장소**. `let` 키워드를 쓰며 `=` 연산자를 사용해서 데이터를 저장한다. 
 
 ```js
-let name = 'eubug';
+let name = 'ipflegen';
 let age = 21;
 
-console.log('name: + ' + name); // name: eubug
+console.log('name: + ' + name); // name: ipflegen
 console.log('age: ' + age); // age: 21
 
 // 이미 만든 변수에 새로운 데이터를 저장. 이전 값을 덮어쓴다.
@@ -145,8 +145,8 @@ console.log('age: ' + age); // age: 24
 1. 변수명에는 오직 문자와 숫자, 그리고 `$` 와 `_` 만 들어갈 수 있다.
 2. 첫 글자는 숫자가 될 수 없다.
     ```js
-    let userName1 = 'eubug';
-    let userName2 = 'eubug';
+    let userName1 = 'ipflegen';
+    let userName2 = 'ipflegen';
 
     let $ = 'dollar';
     let _ = 'underscore';
@@ -224,7 +224,7 @@ const bigNumber = 1234567890123456789012345678901234567890n;
 ### 3. 문자형
 
 ```js
-let str = "Eubug";
+let str = "Ipflegen";
 let str2 = 'Quadcore';
 let str3 = `다른 변수를 삽입: ${str} and ${str2}`;
 ```

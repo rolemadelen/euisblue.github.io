@@ -44,9 +44,9 @@ console.log( 2 ** 10 ); // 2^10 = 1024
 The plus(`+`) can be used to merge(concatenate) two strings together.
 
 ```js
-let name = 'Eubug';
+let name = 'Ipflegen';
 let s = 'my name is ';
-console.log(s + name); // my name is Eubug
+console.log(s + name); // my name is Ipflegen
 ```
 
 If either one of the operand is a string, the result is also a string.

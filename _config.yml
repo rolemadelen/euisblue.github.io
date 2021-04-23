@@ -1,11 +1,11 @@
 # Site settings
-title: I'm Eubug
-SEOTitle: Eubug's Programming Blog | 유버그의 개발 블로그
+title: I'Pflegen
+SEOTitle: Ipflegen's Programming Blog
 header-img: img/home-bg.png
-email: im.eubug@gmail.com
-description: "개발 블로그 | Junior Frontend Engineer | Check how @imeubug make mistakes and learn."
-keyword: "Frontend, Engineer, Developer, Eubug, imeubug, @imeubug, Web, 웹, 프로그래밍, 개발자, 프론트엔드, 유버그, ウェブ, エンジニア, プログラミング, ユウバグ"
-url: "https://www.eubug.space"              # your host, for absolute URL
+email: ipflegen@pm.me
+description: "개발 블로그 | Junior Frontend Engineer | Check how @ipflegen make mistakes and learn."
+keyword: "Frontend, Engineer, Developer, ipflegen, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
+url: "https://www.ipflegen.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,8 +13,8 @@ future: true
 
 # SNS settings
 RSS: false
-github_username:    imeubug
-twitter_username:   imeubug
+github_username:    ipflegen
+twitter_username:   ipflegen
 #facebook_username:  ''
 linkedin_username:  eujii
 
@@ -57,7 +57,7 @@ kramdown:
 
 
 # Disqus settings
-# disqus_username: imeubug
+# disqus_username: ipflegen
 
 # Netease settings
 netease_comment: false
@@ -77,7 +77,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "🇰🇷 born 🇺🇸 raised 🇯🇵 working | Junior Frontend Engineer | Doodler | Ravenclaw "
-sidebar-avatar: /img/avatar-eubug.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-ipflegen.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
