@@ -146,10 +146,10 @@ Think of a variable as a **storage with a specific name**. In this storage, you 
 In JavaScript, we use `let` keyword to declare a variable.
 
 ```js
-let name = 'eubug';
+let name = 'ipflegen';
 let age = 21;
 
-console.log('name: + ' + name); // name: eubug
+console.log('name: + ' + name); // name: ipflegen
 console.log('age: ' + age); // age: 21
 
 // re-assign values to existing variables
@@ -168,8 +168,8 @@ Although not exactly same, `var` is old version of `let` keyword. So please use 
 2. The first letter must not be a letter.
 
     ```jsx
-    let userName1 = 'eubug';
-    let userName2 = 'eubug';
+    let userName1 = 'ipflegen';
+    let userName2 = 'ipflegen';
 
     let $ = 'dollar';
     let _ = 'underscore';
@@ -249,7 +249,7 @@ const bigNumber = 1234567890123456789012345678901234567890n; // 'n' at the end
 ### 3. string
 
 ```js
-let str1 = "Eubug";
+let str1 = "Ipflegen";
 let str2 = 'Quadcore';
 let str3 = `string interpolation: ${str1} and ${str2}`;
 ```
