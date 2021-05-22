@@ -29,8 +29,10 @@
 
 // responsive tables
 $(document).ready(function() {
+    $("img").wrap("<div data-aos='fade-up'></div>");
     $("table").wrap("<div class='table-responsive'></div>");
     $("table").addClass("table");
+    $("table").attr("data-aos", "fade-left");
 });
 
 // responsive embed videos
