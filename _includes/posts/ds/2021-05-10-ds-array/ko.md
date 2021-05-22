@@ -1,3 +1,4 @@
+
 ## Array (배열)
 
 - 메모리 상에 원소를 연속하게 배치한 자료구조
@@ -83,6 +84,132 @@ void removeAt(int index, int *arr, int &len) {
     arr[i] = arr[i+1];
 
   --len;
+}
+```
+
+### 연습 문제
+- [10808. 알파벳 개수](https://www.acmicpc.net/problem/10808)
+- [10807. 개수 세기](https://www.acmicpc.net/problem/10807)
+- [11328. Strfry](https://www.acmicpc.net/problem/11328)
+- [3273. 두 수의 합](https://www.acmicpc.net/problem/3273)
+
+---
+
+#### 10808. 알파벳 개수 [🔗](https://www.acmicpc.net/problem/10808)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+  int alphabet[26] = {0};
+  string s;
+  cin >> s;
+
+  // O(n), n = length of 's'
+  for(char c : s) ++alphabet[c - 'a'];
+
+  for(int i=0; i<26; ++i)
+    printf("%d ", alphabet[i]);
+
+  return 0;
+}
+```
+
+#### 10807. 개수 세기 [🔗](https://www.acmicpc.net/problem/10807)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int a[101];
+int main(void){
+  int n, v, cnt=0;
+  scanf("%d", &n);
+  for(int i=0; i<n; ++i) 
+    scanf("%d", &a[i]);
+  scanf("%d", &v);
+
+  // O(n)
+  for(int i=0; i<n; ++i) 
+    if(a[i] == v) ++cnt;
+
+  printf("%d\n", cnt);
+
+  return 0;
+}
+```
+
+#### 11328. Strfry [🔗](https://www.acmicpc.net/problem/11328)
+
+```cpp
+// O(n + m)
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+
+  int n;
+  cin >> n;
+  while(n--) {
+    string a, b;
+    cin >> a >> b;
+
+    int alphaA[26] = {0};
+    int alphaB[26] = {0};
+
+    // O(n + m)  
+    // O(n), n = length of 'a'
+    for(char c : a) ++alphaA[c - 'a'];
+    // O(m), m = length of 'b'
+    for(char c : b) ++alphaB[c - 'a'];
+
+    // O(m), length of 'b'
+    string s = "Possible";
+    for(char c : b) {
+      if(alphaA[c - 'a'] != alphaB[c - 'a']) {
+        s = "Impossible";
+        break;
+      }
+    }
+
+    cout << s << endl;
+  }
+  return 0;
+}
+```
+
+#### 3273. 두 수의 합 [🔗](https://www.acmicpc.net/problem/3273)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+
+  int n, x, t, cnt=0;
+  vector<int> a;
+  scanf("%d", &n);
+  for(int i=0; i<n; ++i) {
+    scanf("%d", &t);
+    a.push_back(t);
+  }
+  scanf("%d", &x);
+
+  // O(n log n)
+  sort(a.begin(), a.end());
+
+  // O(n^2)
+  for(int i=0; i<n-1; ++i) {
+    for(int j=i+1; j<n; ++j) {
+      if(a[i] + a[j] == x) ++cnt;
+      else if(a[i] + a[j] > x) break;
+    }
+  }
+
+  printf("%d\n", cnt);
+  return 0;
 }
 ```
 
