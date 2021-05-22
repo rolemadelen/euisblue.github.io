@@ -4,6 +4,7 @@
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
+
 <body ontouchstart="">
 
     {% include nav.html %}
@@ -14,8 +15,11 @@
     {% include footer.html %}
 
 
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
