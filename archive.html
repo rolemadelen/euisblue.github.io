@@ -2,8 +2,8 @@
 title: Archive
 layout: default
 description: "「What did I study?」"
-header-img: "img/archive-bg.jpg"
-header-mask: 0.6
+header-img: "img/archive-bg.png"
+header-mask: 0.2
 ---
 
 <!-- 
@@ -62,7 +62,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- assign _currentdate = _article.date | date: '%Y' -%}
 			{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
-				<section data-aos="fade-up" data-aos-duration="800">
+				<section>
 				<span class="fa listing-seperator">
 					<span class="tag-text">{{ _currentdate }}</span>
 				</span>
