@@ -9,19 +9,19 @@ multilingual: true
 {% include multilingual-sel.html %}
 
 <!-- English Version -->
-<div class="en post-container">
+<div class="en post-container" data-aos="fade-up">
   {% capture about_en %}{% include about/en.md %}{% endcapture %}
   {{ about_en | markdownify }}
 </div>
 
 <!-- Korean Version -->
-<div class="ko post-container">
+<div class="ko post-container" data-aos="fade-up">
   {% capture about_ko %}{% include about/ko.md %}{% endcapture %}
   {{ about_ko | markdownify }}
 </div>
 
 <!-- Janpanese Version -->
-<div class="ja post-container">
+<div class="ja post-container" data-aos="fade-up">
   {% capture about_ja %}{% include about/ja.md %}{% endcapture %}
   {{ about_ja | markdownify }}
 </div>
