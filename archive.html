@@ -11,7 +11,6 @@ Credits: this page shamelessly borrowed a lot from:
 https://github.com/kitian616/jekyll-TeXt-theme
 -->
 
-
 <!-- Page Header -->
 {% include intro-header.html type='page' short=true %}
 
@@ -63,7 +62,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- assign _currentdate = _article.date | date: '%Y' -%}
 			{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
-				<section>
+				<section data-aos="fade-up" data-aos-duration="800">
 				<span class="fa listing-seperator">
 					<span class="tag-text">{{ _currentdate }}</span>
 				</span>
@@ -72,11 +71,11 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 				<div class="post-preview item" data-tags="{{ _tags }}">
 				    <a href="{{ _article.url | prepend: site.baseurl }}">
-				        <h2 class="post-title" data-aos="fade-right">
+				        <h2 class="post-title">
                             {{ _article.title }}
 				        </h2>
 				        {% if _article.subtitle %}
-				        <h3 class="post-subtitle" data-aos="fade-left">
+				        <h3 class="post-subtitle">
 				            {{ _article.subtitle }}
 				        </h3>
 				        {% endif %}

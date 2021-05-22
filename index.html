@@ -2,18 +2,20 @@
 layout: page
 description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
 ---
+<script> AOS.init(); </script>
+
 {% for post in paginator.posts %}
-<div class="post-preview" data-aos="fade-right">
+<div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
+        <h2 class="post-title" data-aos="fade-right">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle">
+        <h3 class="post-subtitle" data-aos="fade-left">
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <div class="post-content-preview">
+        <div class="post-content-preview" data-aos="fade-left">
             {% if post.lang == 'en' %}
                 {{ post.content | strip_html | truncate:300 }}
             {% else %}
@@ -21,7 +23,7 @@ description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
             {% endif %}
         </div>
     </a>
-    <p class="post-meta">
+    <p class="post-meta" data-aos="fade-left">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
