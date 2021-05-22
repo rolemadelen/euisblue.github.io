@@ -2,9 +2,8 @@
 layout: page
 description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
 ---
-
 {% for post in paginator.posts %}
-<div class="post-preview">
+<div class="post-preview" data-aos="fade-right">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
@@ -31,7 +30,7 @@ description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<ul class="pager">
+<ul class="pager" data-aos="fade-up">
     {% if paginator.previous_page %}
     <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>

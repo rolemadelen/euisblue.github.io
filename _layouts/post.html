@@ -14,7 +14,7 @@ layout: default
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
-                post-container">
+                post-container" data-aos="fade-up">
 
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
@@ -26,7 +26,7 @@ layout: default
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     {% if page.previous.url %}
-                    <li class="previous">
+                    <li class="previous" data-aos="fade-right">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                         Previous<br>
                         <span>{{page.previous.title}}</span>
@@ -34,7 +34,7 @@ layout: default
                     </li>
                     {% endif %}
                     {% if page.next.url %}
-                    <li class="next">
+                    <li class="next" data-aos="fade-left">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                         Next<br>
                         <span>{{page.next.title}}</span>
