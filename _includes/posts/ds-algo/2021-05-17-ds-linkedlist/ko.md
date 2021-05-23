@@ -25,6 +25,8 @@ img {max-width: 90% !important;}
 
 또 다른 종류의 연결 리스트로 원형 연결리스트가 있습니다. 각각 단일 리스트와 이중 리스트에서 NULL을 가리키는 대신 첫 번째 혹은 마지막 노드로 다시 회귀하는 리스트입니다.
 
+단일 리스트에서 기능을 좀 더 추가하면 이중 리스트, 이중 리스트에서 좀 더 추가하면 원형 리스트가 되는 구조이기 때문에, 이중 원형 연결 리스트를 대표로 구현했습니다. 코드는 [깃허브](https://github.com/ipflegen/algorithm-study-s2/blob/s2/week2/week2/eubug/circular-doubly-linkedlist/CDList.hpp)를 참고해주세요.
+
 ### 연결리스트의 기능
 
 #### 임의의 원소에 접근 및 변경: **O(n)**
