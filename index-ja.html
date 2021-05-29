@@ -1,10 +1,11 @@
 ---
 layout: page
 description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
-lang: en
+lang: ja
+permalink: /ja/
 ---
 
-{% assign posts = site.posts | where:'lang','en' | where: 'hidden','false' %}
+{% assign posts = site.posts | where:'lang','ja' | where: 'hidden','false' %}
 
 {% for post in posts %}
 <div class="post-preview">
@@ -33,7 +34,7 @@ lang: en
 {% endfor %}
 
 <!-- Pager -->
-<!-- {% if paginator.total_pages > 1 %}
+<!-- {% if posts.size > paginator.per_page %}
 <ul class="pager" data-aos="fade-up">
     {% if paginator.previous_page %}
     <li class="previous">
