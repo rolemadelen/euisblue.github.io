@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 2.6 - 2.7"
+subtitle: "Fundamentals: Interaction: alert, prompt, confirm • Type Conversions"
 date:   2021-01-05 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

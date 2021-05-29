@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.9 - 2.14"
+title:  "모던 자바스크립트 2.9 - 2.14"
+subtitle: "비교 연산자 • if와 '?'를 사용한 조건 처리 • 논리 연산자 • null 병합 연산자 '??' • while과 for 반복문 • switch문"
 date:   2021-01-09 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
