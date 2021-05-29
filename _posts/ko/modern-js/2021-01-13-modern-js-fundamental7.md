@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 3.1"
+title:  "모던 자바스크립트 3.1"
+subtitle: "코드 품질: Chrome으로 디버깅하기"
 date:   2021-01-13 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

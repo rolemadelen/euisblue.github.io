@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.8"
+title:  "모던 자바스크립트 2.8"
 date:   2021-01-07 07:00:00 +1400
+subtitle: "기본 연산자와 수학"
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
