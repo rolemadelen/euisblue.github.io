@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.16 - 2.17"
+title:  "모던 자바스크립트 2.16 - 2.17"
+subtitle: "함수 표현식 • 화살표 함수 기본"
 date:   2021-01-12 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

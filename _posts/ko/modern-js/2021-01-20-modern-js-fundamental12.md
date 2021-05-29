@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 4.3"
+title:  "모던 자바스크립트 4.3"
+subtitle: "객체: 가비지 컬렉션"
 date:   2021-01-20 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

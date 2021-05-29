@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.1 - 2.5"
+title:  "JavaScriptの基礎 2.1 - 2.5"
+subtitle: "Hello, world!・コード構造モダンなモード, 'use strict'・変数・データ型"
 date:   2021-01-04 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
