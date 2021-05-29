@@ -20,25 +20,25 @@
 
         <div id="huxblog_navbar">
             <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right" data-aos="fade-left">
-                    <li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-aos="fade-down" data-aos-duration="700">
                         <!-- <a style="cursor: pointer;" onclick="changeURL('en', '{{page.lang}}' ,'{{page.url}}')">Eng</a> -->
                         <a href="{{ '/' | prepend: site.baseurl }}">Eng</a>
                     </li>
-                    <li>
+                    <li data-aos="fade-down" data-aos-duration="500">
                         <!-- <a style="cursor: pointer;" onclick="changeURL('ko','{{page.lang}}' ,'{{page.url}}')">한국어</a> -->
                         <a href="{{ '/ko/' | prepend: site.baseurl }}">한국어</a>
                     </li>
-                    <li>
+                    <li data-aos="fade-down">
                         <!-- <a style="cursor: pointer;" onclick="changeURL('ja','{{page.lang}}' ,'{{page.url}}')" >日本語</a> -->
                         <a href="{{ '/ja/' | prepend: site.baseurl }}">日本語</a>
                     </li>
                     <li> <a style="color: #fff; font-weight: 300; padding: 20px 5px;"> | </a></li>
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <a style="cursor: pointer;" onclick="changeURL('en', '{{page.lang}}' ,'{{page.url}}')"> About </a> -->
                         <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
                     </li>
-                    <li>
+                    <li data-aos="fade-left">
                         <a href="{{ '/archive/' | prepend: site.baseurl }}">Archive</a>
                     </li>
                     <li class="search-icon">
