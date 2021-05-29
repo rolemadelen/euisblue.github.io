@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "「배우고 때때로 익히면 즐겁지 아니한가?」"
+description: "「常に最初のように」"
 lang: ja
 permalink: /ja/
 ---
@@ -18,16 +18,15 @@ permalink: /ja/
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <div class="post-content-preview" data-aos="fade-left">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
-            {% else %}
-                {{ post.content | strip_html | truncate:200 }}
-            {% endif %}
-        </div>
+        <!-- <div class="post-content-preview" data-aos="fade-left">
+          {{ post.content | strip_html | truncate:100 }}
+        </div> -->
     </a>
-    <p class="post-meta" data-aos="fade-left">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    <p class="post-meta" style="font-style: italic;" data-aos="fade-left">
+        <span style="margin: 0px 35px 0px 2px">Ipflegen</span>
+        <span>
+            {{ post.date | date: "%Y年 %-m月 %-d日" }}
+        </span>
     </p>
 </div>
 <hr>
