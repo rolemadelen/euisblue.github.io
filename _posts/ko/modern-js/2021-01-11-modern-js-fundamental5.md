@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.15"
+title:  "모던 자바스크립트 2.15"
+subtitle: "함수 (Functions)"
 date:   2021-01-11 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

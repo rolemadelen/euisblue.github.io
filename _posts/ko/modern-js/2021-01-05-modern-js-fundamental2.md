@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.6 - 2.7"
+title:  "모던 자바스크립트 2.6 - 2.7"
+subtitle: "alert, prompt, confirm을 이용한 상호작용 • 형 변환"
 date:   2021-01-05 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
