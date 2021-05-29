@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 4.4"
+subtitle: "Objects: Object methods, 'this'"
 date:   2021-01-25 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

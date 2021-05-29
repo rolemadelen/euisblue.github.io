@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.1 - 2.5"
+title:  "모던 자바스크립트 2.1 - 2.5"
+subtitle: "자바스크립트 기본 • 코드 구조 • 엄격 모드 • 변수와 상수 • 자료형"
 date:   2021-01-04 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

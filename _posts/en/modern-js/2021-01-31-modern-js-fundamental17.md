@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 4.8"
+subtitle: "Objects: Object to Primitive Conversion"
 date:   2021-01-31 08:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
