@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 4.6"
+subtitle: "Objects: Optional chaining '?.'"
 date:   2021-01-26 08:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

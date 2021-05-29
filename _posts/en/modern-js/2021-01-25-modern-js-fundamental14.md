@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 4.5"
+subtitle: "Objects: Constructors"
 date:   2021-01-25 08:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

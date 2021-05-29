@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Modern JavaScript 4.7"
+subtitle: "Objects: Symbol type"
 date:   2021-01-28 08:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"

@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Modern JavaScript 2.6 - 2.7"
+title:  "JavaScriptの基礎 2.6 - 2.7"
+subtitle: "インタラクション: alert, prompt, confirm・型変換"
 date:   2021-01-05 07:00:00 +1400
 author: "Ipflegen"
 header-img: "img/post-bg-js.jpg"
