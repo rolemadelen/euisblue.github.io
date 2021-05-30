@@ -10,6 +10,8 @@ catalog: true
 permalink: /ko/modern-js/fundamental1/
 hidden: false
 lang: ko
+english: true
+japanese: true
 tags:
   - JavaScript
   - Modern JS 
