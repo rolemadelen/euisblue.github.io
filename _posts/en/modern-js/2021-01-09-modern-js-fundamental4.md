@@ -9,6 +9,7 @@ header-mask: 0.5
 catalog: true
 hidden: false
 lang: en
+korean: true
 permalink: /en/modern-js/fundamental4/
 tags:
   - JavaScript
