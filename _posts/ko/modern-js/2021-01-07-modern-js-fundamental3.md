@@ -9,6 +9,8 @@ header-mask: 0.5
 catalog: true
 permalink: /ko/modern-js/fundamental3/
 lang: ko
+english: true
+japanese: true
 hidden: false
 tags:
   - JavaScript
