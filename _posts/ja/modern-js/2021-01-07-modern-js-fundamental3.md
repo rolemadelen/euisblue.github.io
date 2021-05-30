@@ -10,6 +10,8 @@ catalog: true
 permalink: /ja/modern-js/fundamental3/
 hidden: false
 lang: ja
+korean: true
+english: true
 tags:
   - JavaScript
   - Modern JS 
