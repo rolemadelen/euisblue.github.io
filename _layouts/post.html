@@ -17,8 +17,18 @@ layout: default
                 post-container" data-aos="fade-up">
 
                 <!-- Multi-Lingual -->
-                {% if page.multilingual %}
-                {% include multilingual-sel.html %}
+                {% assign lang = page.lang | append:'/' %}
+                {% assign lang = '/' | append: lang %}
+                {% if page.english %}
+                    <a style="font-size: 13px; text-decoration: none; margin-right: 35px;" href="{{ page.url | prepend: site.baseurl | replace: lang, '/en/' }}"><span style="font-weight: 900;" >EN</span> <span style="color: black;">English</span></a>
+                {% endif %}
+
+                {% if page.korean %}
+                    <a style="font-size: 13px;text-decoration: none;margin-right: 35px;" href="{{ page.url | prepend: site.baseurl | replace: lang, '/ko/' }}"><span style="font-weight: 900;" >KO</span> <span style="color: black;">한국어</span></a>
+                {% endif %}
+
+                {% if page.japanese %}
+                    <a style="font-size: 13px;text-decoration: none;margin-right: 35px;" href="{{ page.url | prepend: site.baseurl | replace: lang, '/ja/' }}"><span style="font-weight: 900;" >JA</span> <span style="color: black;">日本語</span></a>
                 {% endif %}
 
                 {{ content }}
