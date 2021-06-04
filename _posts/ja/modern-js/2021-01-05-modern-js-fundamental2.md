@@ -69,14 +69,14 @@ console.log(isAdult); // OKだったらTrueまたはFalse
 
 ## 2.7 型変換(Type Conversion)
 
-- **黙示的型変換**(Implicit Conversion)**とは**
+- **黙示型変換**(Implicit Conversion)**とは**
   + 自動的に変換が行われる。
   + 例えば`alert`の場合、メッセージの中の全てのデータは自動的に文字列に変換してモーダルウィンドウに示します。
     ```js
     alert(123);
     ```
 
-- **明示的型変換**(Explicit Conversion)**とは**
+- **明示型変換**(Explicit Conversion)**とは**
   + 意図をもって直接タイプを明示する。
     ```js
     let value = String(123);
@@ -90,7 +90,7 @@ console.log(isAdult); // OKだったらTrueまたはFalse
 
 ### 数値変換
 
-#### - 黙示的型変換
+#### - 黙示型変換
 
 割算の場合自動的に文字列は数字型に型変換が行われます。
 
@@ -104,7 +104,7 @@ console.log("9" / "3"); // 9/3になって結果は３になります
 console.log('abc' / '3'); // NaN / 3 -> NaN
 ```
 
-#### - 明示的型変換
+#### - 明示型変換
 
 `Number(データ)`を使って型変換ができます。
 
@@ -125,7 +125,7 @@ Number('abc');     // NaN
 
 ### Boolean変換
 
-#### - 黙示的型変換
+#### - 黙示型変換
 
 論理演算をするとき自動的にBoolean型変換が行われます。
 
@@ -134,7 +134,7 @@ console.log(3 > 5);  // false
 console.log(3 < 5);  // true
 ```
 
-#### - 明示的型変換
+#### - 明示型変換
 
 `Boolean(データ)`を使って型変換ができます。
 
