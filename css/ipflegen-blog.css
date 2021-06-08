@@ -1693,3 +1693,31 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+
+h1:hover span {
+    display: none;
+}
+
+h1:hover:before {
+    content: var(--hover_text);
+}
+
+.gradient-text{
+    font-family:"Abril Fatface", sans-serif;
+    background: linear-gradient(to right, crimson,pink,springgreen);
+    animation: rainbow 2s ease-in-out infinite;
+    background-clip: text;
+    -webkit-background-clip:text;
+    color:rgba(255,255,255,1);
+    display:block;
+    text-align:center;
+    transition: color .2s ease-in-out;
+  }
+  .gradient-text:hover{
+    color:rgba(255,255,255,0);
+  }
+  @keyframes rainbow { 
+    0%{background-position:left}
+    50%{background-position:right}
+    100%{background-position:left}
+  }
