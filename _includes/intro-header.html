@@ -100,7 +100,16 @@
         {% else %}
         <div class="site-heading">
         {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+        {% if page.lang == 'en' %}
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(200, 0, 0), rgb(255, 255, 255), rgb(0, 0, 200))">
+        {% elsif page.lang == 'ko' %}
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(0, 0, 0), rgb(200, 0, 0), rgb(255, 255, 255), rgb(0, 0, 200), rgb(0 ,0 ,0))">
+        {% else %}
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(255, 255, 255),rgb(200, 0, 0), rgb(255, 255, 255),rgb(200, 0, 0), rgb(255, 255, 255))">
+        {% endif %}
+              <span> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
+          </h1>
+
           <span class="subheading">{{ page.description }}</span>
         </div>
       </div>
