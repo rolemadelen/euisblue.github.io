@@ -91,6 +91,10 @@
 {% endif %}
 
 {% if include.type == 'page' %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Shippori+Mincho:wght@400;500;600;700;800&family=Sunflower:wght@300;500;700&display=swap');
+</style>    
+
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
   <div class="container">
     <div class="row">
@@ -101,14 +105,16 @@
         <div class="site-heading">
         {% endif %}
         {% if page.lang == 'en' %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(200, 0, 0), rgb(255, 255, 255), rgb(0, 0, 200))">
+          <h1 class="gradient-text" style="--gradient_value:linear-gradient(to right, white, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), white)">
         {% elsif page.lang == 'ko' %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(0, 0, 0), rgb(200, 0, 0), rgb(255, 255, 255), rgb(0, 0, 200), rgb(0 ,0 ,0))">
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, black, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), black)">
+        {% elsif page.lang == 'ja' %}
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white,rgba(200, 0, 0, 0.67), white ,rgba(200, 0, 0, 0.67), white)">
         {% else %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, rgb(255, 255, 255),rgb(200, 0, 0), rgb(255, 255, 255),rgb(200, 0, 0), rgb(255, 255, 255))">
+          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white, white)">
         {% endif %}
-              <span> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
-          </h1>
+            <span> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
+         </h1>
 
           <span class="subheading">{{ page.description }}</span>
         </div>
