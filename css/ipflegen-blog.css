@@ -1744,7 +1744,7 @@ img::-moz-selection {
 #tag_cloud a.focus,
 #tag_cloud a:active,
 #tag_cloud a:hover {
-    background-color: #0085a1 !important
+    background-color: rgb(8, 9, 9) !important
 }
 
 #tag_cloud .tag.focus,
@@ -1954,7 +1954,10 @@ img::-moz-selection {
 }
 
 .site-heading h1,
-.subheading {
+.subheading,
+.post-heading h1,
+.post-heading h2,
+.post-heading span {
     font-family: 'Poiret One', 'Sunflower', 'Shippori Mincho', -apple-system, BlinkMacSystemFont !important
 }
 
