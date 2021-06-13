@@ -206,9 +206,9 @@
             $en.classList.remove("active");
             $ko.classList.remove("active");
 
-            langSelectors.options[0].textContent = "英語 🇺🇸";
-            langSelectors.options[1].textContent = "韓国語 🇰🇷";
-            langSelectors.options[2].textContent = "日本語 🇯🇵";
+            langSelectors.options[0].textContent = "English";
+            langSelectors.options[1].textContent = "한국어";
+            langSelectors.options[2].textContent = "日本語 🧑🏻‍💻";
         } else if (lang == "ko") {
             $select.selectedIndex = 1;
             $ko.style.display = "block";
@@ -219,9 +219,9 @@
             $en.classList.remove("active");
             $ja.classList.remove("active");
 
-            langSelectors.options[0].textContent = "영어 🇺🇸";
-            langSelectors.options[1].textContent = "한국어 🇰🇷";
-            langSelectors.options[2].textContent = "일본어 🇯🇵";
+            langSelectors.options[0].textContent = "English";
+            langSelectors.options[1].textContent = "한국어 🧑🏻‍💻";
+            langSelectors.options[2].textContent = "日本語";
         } else {
             $select.selectedIndex = 0;
             $en.style.display = "block";
@@ -232,9 +232,9 @@
             $ko.classList.remove("active");
             $ja.classList.remove("active");
 
-            langSelectors.options[0].textContent = "English 🇺🇸";
-            langSelectors.options[1].textContent = "Korean 🇰🇷";
-            langSelectors.options[2].textContent = "Japanese 🇯🇵";
+            langSelectors.options[0].textContent = "English 🧑🏻‍💻";
+            langSelectors.options[1].textContent = "한국어";
+            langSelectors.options[2].textContent = "日本語";
         }
         // interop with catalog 
         generateCatalog(".catalog-body");
