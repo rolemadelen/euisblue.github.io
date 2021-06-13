@@ -37,7 +37,6 @@
   <img src="https://img.shields.io/badge/C\C++-00599C?style=flat-square&logo=c&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> 
-  <img src="https://img.shields.io/badge/pm2-2B037A?style=flat-square&logo=pm2&logoColor=white"/>
 </div>
 
 <div class="--flex-col --center" style="margin: 0 1.25em;">
