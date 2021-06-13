@@ -1,13 +1,10 @@
-안녕하세요 [@ipflegen](https://github.com/ipflegen) (유지이) 입니다. 
+## 👋🏼 안녕하세요!
 
-저는 도전하고 배우며 성장하는 것을 좋아하는 영원한 학생이며, 끄적끄적 그림을 그리는 그림쟁이,
-카페와 커피를 좋아하는 카공족, 가끔 귀차니즘이 발동하여 꾸물거리는 사람이 되기도 하는, 전직 초등학교 영어 선생님입니다.
+<u><b>I'Pflegen</b></u>이란 필명을 사용하고 있는 <u><b>유지이</b></u>입니다.
 
-2021년 현재, 일본에 한 스타트업에서 주니어 프론트엔드 개발자로 일하고 있습니다.
+저는 도전하고 배우며 성장하는 것을 좋아하는 (아마도 영원한) 학생, 끄적끄적 취미로 그림을 그리는 [그림쟁이](https://www.instagram.com/jiidraws/),
+카페에서 공부하기 좋아하는 카공족, 커피=에너지인 커피 사피엔스, 가끔 귀차니즘이 발동하여 뒹굴뒹굴 거리기도 하는 그런 주니어 프론트엔드 개발자입니다.
 
-전공은 [University of California, San Diego](https://ucsd.edu)에서 [Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/)를 공부하다, 3학년 때에 전공을 바꾸고 [B.S. Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html) 학위를 받고 졸업했습니다.
-
-> 🤖 재밌는 사실: 처음에 HCI로 전공을 바꿨을때는 HCI가 머신러닝 관련 부서인줄 알고 로보틱스나 인공지능 관련 수업을 기대했었는데 UI/UX 관련 전문이었습니다 😝
 <style>
 .about-page img{
     display: inline-block !important;
@@ -27,7 +24,9 @@
 .--center {
     text-align: center;
 }
+
 </style>
+
 <div class="about-page" style="display: flex; justify-content: space-evenly; margin-bottom: 50px;">
 <div style="margin: 0 1.25em;" class="--flex-col --center">
   <h3>📚<br/>Tech</h3> 
@@ -46,9 +45,9 @@
 
 <div style="margin: 0 1.25em;" class="--flex-col --center">
   <h3>👋<br/>Contact</h3>
-  <a href="mailto: ipflegen@pm.me"><img src="https://img.shields.io/badge/ProtonMail-8B89CC?style=flat-square&logo=protonmail&logoColor=white"/></a>
-  <a href="https://www.linkedin.com/in/eujii"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
-  <a href="https://github.com/ipflegen" style="cursor: pointer"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/></a>
-  <a href="https://www.twitter.com/ipflegen/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
+  <a href="mailto: ipflegen@pm.me"><img style="cursor: pointer;" src="https://img.shields.io/badge/ProtonMail-8B89CC?style=flat-square&logo=protonmail&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/eujii" target="_blank"><img style="cursor: pointer;" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+  <a href="https://github.com/ipflegen" target="_blank"><img style="cursor: pointer;" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/></a>
+  <a href="https://www.twitter.com/ipflegen/" target="_blank"><img style="cursor: pointer;" src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
 </div>
 </div>
