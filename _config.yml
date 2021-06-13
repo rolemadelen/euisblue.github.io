@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-github_username:    ipflegen
-twitter_username:   ipflegen
+github_username:    "ipflegen"
+twitter_username:   "ipflegen"
 #facebook_username:  ''
-linkedin_username:  eujii
+linkedin_username:  "eujii"
 
 
 
@@ -29,7 +29,6 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
 #timezone: CN  
-
 
 
 # Gems
@@ -53,16 +52,6 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-
-
-
-# Disqus settings
-# disqus_username: ipflegen
-
-# Netease settings
-netease_comment: false
-
-
 
 # Analytics settings
 # Baidu Analytics 
