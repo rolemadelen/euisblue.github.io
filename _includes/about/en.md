@@ -1,13 +1,10 @@
-Hi, I'm [@ipflegen](https://github.com/ipflegen) (Jii Eu), a doodler, lifelong learner, cat lover, 
-sometime procrastinator and a former elementary school English teacher in Japan. 
+## Hello 👋🏼 
+I'm <u><b>Jii Eu</b></u> who goes by the name <u><b>I'Pflegen</b></u>.
 
-I'm currently working at a startup company based in Yokohama as a junior frontend engineer. 
+I define myself as a [doodler](http://instagram.com/jiidraws/), a lifelong learner, a cat lover, a taiko player🥁, and sometimes a procrastinator.
 
-I stuided [Mathematics-Computer Science](https://www.math.ucsd.edu/~handbook/undergraduate/ma30-math-computer-science-b-s/) at [University of California, San Diego](https://ucsd.edu) (UCSD)
-but switched to Cognitive Science during my 3rd year at UCSD and graduated with [B.S. Human Computer Interaction](https://cogsci.ucsd.edu/undergraduates/major/design-interaction.html).
+As of 2021, I'm working as a junior frontend engineer at a health tech startup in Japan. 
 
-> 🤖 Fun fact: when I switched my major to HCI, I thought HCI was machine learning related and was expecting to 
-> learn about robotics and AI but nope. It was UI/UX 😝 
 <style>
 .about-page img{
     display: inline-block !important;
