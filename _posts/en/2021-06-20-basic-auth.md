@@ -58,8 +58,9 @@ The password must be encrypted (_bcrypt, SHA1, or crpyt()_). You can use '[.htpa
 Or if you have `htpasswd` command:
 ```sh
 # -c : creates a passwd file
-# -d : use crpyt() encryption
-$ htpasswd -cd .htpasswd USER_NAME PASSWORD
+$ htpasswd -c .htpasswd USER_NAME
+# NEW PASSWORD: 
+# Retype: 
 ```
 
 This will generate a .htpasswd in your current directory with encrypted password.
@@ -77,8 +78,9 @@ First we need to create a user:passwd file similar to Apache. I recommend instal
 
 ```sh
 # -c : creates a passwd file
-# -d : use crpyt() encryption
-$ htpasswd -cd .htpasswd USER_NAME PASSWORD
+$ htpasswd -c .htpasswd USER_NAME PASSWORD
+# NEW PASSWORD: 
+# Retype: 
 ```
 
 <br>
@@ -90,8 +92,8 @@ This will generate a .htpasswd in your current directory.
 Add these lines under the nginx.conf:
 ```
 location / {
-    auth_basic "Restricted Area"
-    auth_basic_user_file /path/to/the/directory/you/are/protecting/.htpasswd 
+    auth_basic "Restricted Area";
+    auth_basic_user_file /path/to/the/directory/you/are/protecting/.htpasswd;
 }
 ```
 
