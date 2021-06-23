@@ -12,7 +12,7 @@ lang: "ko"
 permalink: /ps/programmers/1845/
 tags:
 - PS
-- Programmers
+- 프로그래머스
 - Level1
 ---
 
