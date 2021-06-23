@@ -78,7 +78,7 @@ First we need to create a user:passwd file similar to Apache. I recommend instal
 
 ```sh
 # -c : creates a passwd file
-$ htpasswd -c .htpasswd USER_NAME PASSWORD
+$ htpasswd -c .htpasswd USER_NAME
 # NEW PASSWORD: 
 # Retype: 
 ```
