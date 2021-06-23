@@ -9,7 +9,7 @@ header-mask: 0.6
 catalog: true
 hidden: true
 lang: "ko"
-permalink: "/ps/programmers/1845"
+permalink: /ps/programmers/1845/
 tags:
 - PS
 - Programmers
