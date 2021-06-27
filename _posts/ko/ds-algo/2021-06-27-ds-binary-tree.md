@@ -134,8 +134,64 @@ void BinaryTree::insertNode(int data) {
 }
 ```
 
+## 노드 삭제
+
+마지막 리프 노드를 삭제한다.
+
+```cpp
+void BinaryTree::deleteNode(void) {
+  if(!root) return;
+
+  if(root->left == nullptr && root->right == nullptr) {
+    delete root;
+    root = nullptr;
+    return;
+  }
+
+  Node *lastLevelLevelOrder = nullptr;
+  Node *parentOfLastNode = nullptr;
+  queue<Node *> q;
+  q.push(root);
+
+  while(!q.empty()) {
+    Node *temp = q.front();
+    q.pop();
+
+    if(temp->left) {
+      q.push(temp->left);
+
+      if(temp->left->left == nullptr && temp->left->right == nullptr) {
+        lastLevelLevelOrder = temp->left;
+        parentOfLastNode = temp;
+      }
+    }
+
+    if(temp->right) {
+      q.push(temp->right);
+      if(temp->right->left == nullptr && temp->right->right == nullptr) {
+        lastLevelLevelOrder = temp->right;
+        parentOfLastNode = temp;
+      }
+    }
+  }
+
+  if(lastLevelLevelOrder && parentOfLastNode) {
+    if(parentOfLastNode->right) {
+      delete parentOfLastNode->right;
+      parentOfLastNode->right = nullptr;
+    } else {
+      delete parentOfLastNode->left;
+      parentOfLastNode->left = nullptr;
+    }
+  } else {
+    cout << "Empty Tree" << endl;
+  }
+}
+```
+
 ## Reference
 - [https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
 - [https://fe-churi.tistory.com/16](https://fe-churi.tistory.com/16)
 - [https://www.baeldung.com/cs/binary-tree-intro](https://www.baeldung.com/cs/binary-tree-intro)
 - [https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)
+- [https://www.geeksforgeeks.org/delete-the-last-leaf-node-in-a-binary-tree/](https://www.geeksforgeeks.org/delete-the-last-leaf-node-in-a-binary-tree/)
