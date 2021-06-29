@@ -3,7 +3,7 @@ layout: post
 title:  "Devouring Study Curriculum"
 subtitle: "씹어먹는 기초 알고리즘과 자료구조 스터디 커리큘럼"
 date:   2021-02-27 07:00:00 +1400
-author: "Ipflegen"
+author: "J2ieu"
 permalink: /ko/devouring-study/curriculum/
 hidden: true
 lang: "ko"

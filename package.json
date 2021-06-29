@@ -1,8 +1,8 @@
 {
-    "name": "ipflegen-blog",
-    "title": "Ipflegen Blog",
-    "author": "Ipflegen <ipflegen@pm.me>",
-    "version": "1.0.0",
+    "name": "j2ieu-blog",
+    "title": "J2ieu Blog",
+    "author": "Jii Eu <j2ieu@pm.me>",
+    "version": "2.0.0",
     "homepage": "http://ipflegen.github.io",
     "repository": {
         "type": "git",
