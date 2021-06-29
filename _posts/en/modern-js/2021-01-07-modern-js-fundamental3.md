@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 2.8"
 subtitle: "Fundamentals: Basic operators, maths"
 date:   2021-01-07 07:00:00 +1400
-author: "Ipflegen"
+author: "J2ieu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -63,9 +63,9 @@ console.log( 2 ** 10 ); // 2^10 = 1024
 The plus(`+`) can be used to merge(concatenate) two strings together.
 
 ```js
-let name = 'Ipflegen';
+let name = 'Jiieu';
 let s = 'my name is ';
-console.log(s + name); // my name is Ipflegen
+console.log(s + name); // my name is Jiieu
 ```
 
 If either one of the operand is a string, the result is also a string.

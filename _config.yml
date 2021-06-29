@@ -1,10 +1,10 @@
 # Site settings
-title: I'Pflegen
-SEOTitle: Ipflegen's Programming Blog
+title: J2ieu
+SEOTitle: J2ieu's Programming Blog
 header-img: img/home-bg.png
-email: ipflegen@pm.me
-description: "개발 블로그 | Junior Frontend Engineer | Check how @ipflegen make mistakes and learn."
-keyword: "Frontend, Engineer, Developer, ipflegen, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
+email: j2ieu@pm.me
+description: "개발 블로그 | Junior Frontend Engineer | Check how @j2ieu make mistakes and learn."
+keyword: "Frontend, Engineer, Developer, j2ieu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
 url: "https://www.ipflegen.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -14,9 +14,9 @@ future: true
 # SNS settings
 RSS: false
 github_username:    "ipflegen"
-twitter_username:   "ipflegen"
+twitter_username:   "j2ieu"
 #facebook_username:  ''
-linkedin_username:  "eujii"
+linkedin_username:  "jiieu"
 
 
 
