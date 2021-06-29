@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 4.7"
 subtitle: "Objects: Symbol type"
 date:   2021-01-28 08:00:00 +1400
-author: "Ipflegen"
+author: "J2ieu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -49,7 +49,7 @@ By using symbols as a key, we can create a *hidden* properties of an object so t
 
 ```js
 let user  ={
-    name: "Ipflegen"
+    name: "Jiieu"
 };
 
 let id = Symbol("id");
@@ -73,7 +73,7 @@ To add a symbol in an object literal `{ ... }`, use square brackets.
 let id = Symbol("id");
 
 let user = {
-    name: "Ipflegen",
+    name: "j2ieu",
     [id]: 1
 };
 ```

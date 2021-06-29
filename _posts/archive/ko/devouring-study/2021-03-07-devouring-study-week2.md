@@ -2,7 +2,7 @@
 layout: post
 title:  "Devouring Study Week 2: Doubly & Circular LinkedList"
 date:   2021-03-07 07:00:00 +1400
-author: "Ipflegen"
+author: "J2ieu"
 catalog: true
 hidden: true
 lang: "ko"
