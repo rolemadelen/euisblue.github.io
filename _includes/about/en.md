@@ -1,5 +1,5 @@
 ## Hello 👋🏼 
-I'm <u><b>Jii Eu</b></u> who goes by the name <u><b>I'Pflegen</b></u>.
+I'm <u><b>Jii Eu</b></u> who goes by the name <u><b>j2ieu</b></u>.
 
 I define myself as a [doodler](http://instagram.com/jiidraws/), a lifelong learner, a cat lover, a taiko player🥁, and sometimes a procrastinator.
 
