@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "시간 & 공간 복잡도 (Time & Space Complexity)"
-subtitle: "알고리즘 테스트에서의 시간복잡도? 공간복잡도? Big-Oh? 는 무엇을 의미하는가"
+subtitle: "PS에서의 시간복잡도? 공간복잡도? Big-Oh? 는 무엇을 의미하는가"
 date:   2021-05-03 07:00:00 +1400
 author: "J2ieu"
 header-img: "img/post-bg-ds-algo.jpg"
