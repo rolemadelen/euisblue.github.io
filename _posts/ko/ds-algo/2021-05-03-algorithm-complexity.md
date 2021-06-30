@@ -9,6 +9,7 @@ header-mask: 0.6
 catalog: true
 hidden: false
 lang: "ko"
+english: true
 permalink: /ko/algorithm/complexity/
 tags:
   - Algorithm
@@ -40,7 +41,7 @@ int countEven(int N) {
 **2번째 줄** `cnt = 0`에서 1번. **4번째 줄** 반복문 `i=1`에서 1번, 그리고 이후는 N번 반복되는데 `i <= N`와 `++i` 각각 1번. 
 **5번째 줄** `i % 2 == 0`에서 2번 `++cnt`에서 1번. 그리고 마지막 **8번째 줄**에서 1번의 연산이 이루어집니다.
 
-`printEven`함수는 총 `1+1*N(2+2+1)+1 = 5N+3`번의 연산이 이루어집니다.
+`countEven`함수는 총 `1+1*N(2+2+1)+1 = 5N+3`번의 연산이 이루어집니다.
 
 위에서 1초에 대략 1억번의 연산이 수행된다고 했었죠. N이 1000만이면, 대략 5000만번의 연산을 하는데 이는 1초안에 충분히 수행됩니다. 하지만 N이 5000만이면 대략 2억5천만번의 연산이 필요하기 때문에 1초 이상의 시간을 필요로 합니다.
 
@@ -69,4 +70,4 @@ int countEven(int N) {
 
 ## Reference
 - [https://blog.encrypted.gg/922](https://blog.encrypted.gg/922)
-- Big Oh Chart: [ref](https://danielmiessler.com/study/big-o-notation/)
+- [Big Oh Chart](https://danielmiessler.com/study/big-o-notation/)
