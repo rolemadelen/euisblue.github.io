@@ -189,6 +189,11 @@ void BinaryTree::deleteNode(void) {
 }
 ```
 
+### 연습 문제 (leetcode)
+- [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
+
+문제 풀이: [617](https://github.com/ipflegen/cp/tree/leetcode/easy/617/617.cpp)
+
 ## Reference
 - [https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
 - [https://fe-churi.tistory.com/16](https://fe-churi.tistory.com/16)
