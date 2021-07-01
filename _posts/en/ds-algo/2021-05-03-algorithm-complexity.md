@@ -10,6 +10,7 @@ catalog: true
 hidden: false
 lang: "en"
 korean: true
+japanese: true
 permalink: /en/algorithm/complexity/
 tags:
   - Algorithm
@@ -20,7 +21,7 @@ tags:
 ## Time Complexity
 - A correlation between the input size and the time it takes to process it.
 - In CP, we assume that a program can process about 100 million operations per second.
-  + FYI: In May 2021, the world's fastest super computer is Japanese _[Fugaku](https://blog.global.fujitsu.com/fgb/2020-06-22/supercomputer-fugaku-named-world-fastest/)_. Its peak performance is 537petaFLOPS(PF) which means it can process about 53 quadrillion 7000 trillion operations per second.
+  + FYI: In May 2021, the world's fastest super computer is Japanese _[Fugaku](https://blog.global.fujitsu.com/fgb/2020-06-22/supercomputer-fugaku-named-world-fastest/)_. Its peak performance is 537petaFLOPS(PF) which means it can process about 53.7 quadrillion operations per second.
 
 Here's a `countEven` function that finds a total number of evens between 1 to N.
 
