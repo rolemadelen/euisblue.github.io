@@ -10,6 +10,7 @@ catalog: true
 hidden: false
 lang: "ko"
 english: true
+japanese: true
 permalink: /ko/algorithm/complexity/
 tags:
   - Algorithm
@@ -20,7 +21,7 @@ tags:
 ## 시간 복잡도 (Time Complexity)
 - 입력의 크기와 문제를 해결하는데 걸리는 시간의 상관관계
 - 보통 코딩테스트(코테) 혹은 PS 에서 1억 번의 연산을 1초로 계산.
-  + TMI: 2021년 5월 기준, 최고 성능의 슈퍼컴퓨터는 일본에 [후가쿠(Fugaku)](https://blog.global.fujitsu.com/fgb/2020-06-22/supercomputer-fugaku-named-world-fastest/)이며 최고 연산 속도는 537petaFLOPS(PF)인듯하다. 1PF가 1000조 만큼의 연산속도를 의미하므로 Fugaku는 1초에 약 53경7000조 만큼의 연산을 수행할 수 있다는 의미입니다.
+  + TMI: 2021년 5월 기준, 최고 성능의 슈퍼컴퓨터는 일본에 [후가쿠(Fugaku)](https://blog.global.fujitsu.com/fgb/2020-06-22/supercomputer-fugaku-named-world-fastest/)이며 최고 연산 속도는 537petaFLOPS(PF)인듯하다. 1PF가 1000조 만큼의 연산속도를 의미하므로 Fugaku는 1초에 약 53.7경 만큼의 연산을 수행할 수 있다는 의미입니다.
 
 아래 `countEven` 함수가 있습니다. 이 함수는 1 부터 N사이 짝수의 갯수를 반환합니다.
 각 연산들이 몇 번 수행되는지 확인해봅시다.
