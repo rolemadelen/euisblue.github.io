@@ -112,8 +112,6 @@ tags:
 
 ![postfix6](/img/in-post/devouring/week3/postfix6.jpg)
 
-[전체 코드](https://github.com/ipflegen17/ds-algo/blob/master/algorithm/stack/infix2postfix/infix2postfix.rb)
-
 ## 후위표현 수식 계산 (Evaluating Postfix Expression)
 
 반대로 후위 표현식을 계산하는 방법은 간단합니다.
