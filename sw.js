@@ -19,7 +19,7 @@ const PRECACHE_LIST = [
   "./js/ipflegen-blog.min.js",
   "./js/snackbar.js",
   "./img/avatar-ipflegen.jpg",
-  "./img/home-bg.jpg",
+  "./img/home-bg.png",
   "./img/404-bg.jpg",
   "./css/ipflegen-blog.min.css",
   "./css/bootstrap.min.css"
