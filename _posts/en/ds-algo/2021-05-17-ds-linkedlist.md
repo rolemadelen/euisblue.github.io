@@ -41,10 +41,6 @@ As noted earlier, a linked list is a linear data structure where each element is
 
 In singly and doubly linked list, we can identify the end by finding a node that references the *NULL*. In **circular linked list**, however, the last node references the first node and vice versa which creates a cycle in a list.
 
-<br>
-
-The full implementation of doubly circular linked list can be found [here](https://github.com/ipflegen/algorithm-study-s2/blob/s2/week2/week2/eubug/circular-doubly-linkedlist/CDList.hpp).
-
 ### Operations
 
 #### Access & Modify: **O(n)**

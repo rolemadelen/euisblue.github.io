@@ -5,7 +5,7 @@ header-img: img/home-bg.png
 email: j2ieu@pm.me
 description: "개발 블로그 | Junior Frontend Engineer | Check how @j2ieu make mistakes and learn."
 keyword: "Frontend, Engineer, Developer, j2ieu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
-url: "https://www.ipflegen.com"              # your host, for absolute URL
+url: "https://www.jiieu.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,7 +13,7 @@ future: true
 
 # SNS settings
 RSS: false
-github_username:    "ipflegen"
+github_username:    "j2ieu"
 twitter_username:   "j2ieu"
 #facebook_username:  ''
 linkedin_username:  "jiieu"
