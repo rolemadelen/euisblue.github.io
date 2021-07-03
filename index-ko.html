@@ -19,7 +19,11 @@ permalink: /ko/
             {{ post.subtitle }}
         </h3>
         {% endif %}
+        <!-- <div class="post-content-preview" >
+            {{ post.content | strip_html | truncate:300 }}
+        </div> -->
     </a>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <div class="post-meta" style="font-style: italic;">
@@ -29,9 +33,12 @@ permalink: /ko/
 =======
     <div class="post-meta" style="font-style: italic;">
 >>>>>>> 8534215 (tags splitted by a space)
+=======
+    <div class="post-preview item archive" style="display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-left: 0; padding: 0.5em 0 0.5em 0;" data-tags="{{ _tags }}">
+>>>>>>> 90b9f20 (about page modified)
         <div>
-            <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
-            <span> {{ post.date | date: "%B %-d, %Y" }}</span>
+            <!-- <span style="margin: 0px 35px 0px 2px">{{site.title}}</span> -->
+            <span style="font-size: 14px;"> {{ post.date | date: "%B %-d, %Y" }}</span>
         </div>
         <div class="tag">
             {%- for _tag in post.tags -%}
@@ -54,9 +61,36 @@ permalink: /ko/
 {% endfor %}
 
 <style>
+    @media only screen and (max-width:580px) {
+    hr {
+        margin-top: 5px !important;
+    }
+    .archive {
+        justify-content: left;
+        flex-direction: column;
+        align-items: flex-start !important;
+        justify-content: initial !important;
+        flex-wrap: nowrap !important;
+    }
+    .archive p {
+        align-items: left;
+        justify-content: initial;
+        flex-wrap: nowrap;
+        margin-left: 5px;
+    }
+    #tag_cloud .tag, #tag_cloud a {
+        font-size: 13px !important;
+    }
+    .tag {
+        width: 100%;
+        margin-top: 5px;
+        margin-left: -2px;
+    }
+}
+
 .tag {
     float: right;
-    user-select: none; 
+    user-select: none;
     --webkit-user-select: none; }
     .tag__link {
         text-decoration: none !important;}
@@ -68,7 +102,7 @@ permalink: /ko/
 >>>>>>> cd4e0c9 (tag__item modifier)
         --webkit-user-select: none;  
         color: #6e6e6e;
-        font-size: 14px;
+        font-size: 13px;
         font-style: initial;
 <<<<<<< HEAD
 =======
