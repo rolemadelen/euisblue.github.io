@@ -10,8 +10,28 @@ multilingual: true
     p {
         margin: 30px 0;
     }
+    .lang-selector {
+        display: flex;
+        justify-content: space-around;
+    }
+    .lang-selector a:hover,
+    .lang-selector a:focus,
+    .lang-selector a:active {
+        text-decoration: none;
+    }
 </style>
-{% include multilingual-sel.html %}
+
+<p align="center" class="lang-selector">
+    <a href="/about/">English 🇺🇸 </a>
+    <a href="/about/?lang=ja">日本語 🇯🇵</a>
+    <a href="/about/?lang=ko">한국어 🇰🇷 </a>
+</p>
+
+<select class="sel-lang" style="display: none;"onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected>  English </option>
+    <option value="1"> Korean</option>
+    <option value="2"> Japanese </option>
+</select>
 
 <!-- English Version -->
 <div class="en post-container" data-aos="fade-up">
