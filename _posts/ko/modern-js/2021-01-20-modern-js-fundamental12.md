@@ -11,8 +11,8 @@ hidden: false
 lang: "ko"
 permalink: /ko/modern-js/fundamental12/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern-js 
 ---
 
 ## 4.3 가비지 컬렉션

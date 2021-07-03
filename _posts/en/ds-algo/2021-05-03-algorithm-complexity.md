@@ -13,9 +13,8 @@ korean: true
 japanese: true
 permalink: /en/algorithm/complexity/
 tags:
-  - Algorithm
-  - Time Complexity 
-  - Space Complexity
+  - algorithm
+  - ps
 ---
 
 ## Time Complexity

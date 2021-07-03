@@ -11,8 +11,8 @@ hidden: false
 lang: "en"
 permalink: /en/modern-js/fundamental16/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern-js
 ---
 
 ## 4.7 Symbol type

@@ -19,19 +19,43 @@ permalink: /ja/
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <!-- <div class="post-content-preview" data-aos="fade-left">
-          {{ post.content | strip_html | truncate:100 }}
-        </div> -->
     </a>
-    <p class="post-meta" style="font-style: italic;" data-aos="fade-left">
-        <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
-        <span>
-            {{ post.date | date: "%Y年 %-m月 %-d日" }}
-        </span>
-    </p>
+    <div class="post-meta" style="font-style: italic;" data-aos="fade-right">
+        <div>
+            <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
+            <span> {{ post.date | date: "%B %-d, %Y" }}</span>
+        </div>
+        <div class="tag">
+            {%- for _tag in post.tags -%}
+            <a class="tag__link" href="/archive/?tag={{_tag}}"><span class="tag__item">{{_tag}}</span></a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <hr>
 {% endfor %}
+
+
+<style>
+.tag {
+    float: right;
+    user-select: none;
+    --webkit-user-select: none;  }
+    .tag__link {
+        text-decoration: none !important;}
+    .tag__item {
+        user-select: none;
+        color: #bdbdbd;
+        font-size: 14px;
+        border: 0.5px solid #dadada;
+        border-radius: 5px;
+        padding: 2px 5px; }
+    .tag__item:focus,
+    .tag__item:active,
+    .tag__item:hover {
+        color: #fff;
+        background-color: rgb(70, 70, 70); }
+</style>
 
 <!-- Pager -->
 <!-- {% if posts.size > paginator.per_page %}

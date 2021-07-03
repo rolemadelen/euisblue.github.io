@@ -11,8 +11,8 @@ hidden: false
 lang: "en"
 permalink: /en/modern-js/fundamental15/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern-js
 ---
 
 ## 4.6 Optional chaining '?.'

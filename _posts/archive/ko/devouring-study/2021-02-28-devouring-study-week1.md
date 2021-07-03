@@ -8,10 +8,9 @@ hidden: true
 lang: "ko"
 permalink: /devouring-study/week1/
 tags:
-  - Devouring Study
-  - Data Structure 
-  - Array 
-  - LinkedList 
+  - data structure 
+  - array 
+  - linked list 
 ---
 
 배열과 연결리스트의 장단점과 연결리스트의 종류를 공부하고, 단일 연결리스트의 의사코드를 살펴봅니다.

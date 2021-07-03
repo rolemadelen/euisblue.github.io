@@ -8,11 +8,10 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week5/
 tags:
-  - Binary Tree
-  - Data Structure  
-  - Devouring Study
-  - Traversal
-  - Tree
+  - binary tree
+  - data structure  
+  - traversal
+  - tree
 ---
 
 지금까지 계속해서 달려왔기에 지난 주(Week 4)는 지금까지 배운것들을 복습하고 부족한 부분을 보충하는 시간으로 대체했었습니다.  충분한 휴식이 되었다고 믿고, 이제 다시 달려봅시다 🔥 
