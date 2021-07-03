@@ -14,7 +14,11 @@ korean: true
 japanese: true
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js
+=======
+  - modern-js
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 2.6 Interaction: alert, prompt, confirm

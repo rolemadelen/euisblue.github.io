@@ -12,7 +12,11 @@ lang: "en"
 permalink: /en/modern-js/fundamental15/
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js
+=======
+  - modern-js
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 4.6 Optional chaining '?.'

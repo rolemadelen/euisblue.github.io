@@ -82,10 +82,17 @@ https://github.com/kitian616/jekyll-TeXt-theme
                         <p> {{ _article.title }} </p>
                     </a>
                     <div class="tag">
+<<<<<<< HEAD
                         {% for _tag in _article.tags %}
                         {% assign _t = _tag | split:' ' %}
                         <a class="tag__link" href="./?tag={{_t | join:'+'}}"><span class="tag__item">{{_tag}}</span></a>
                         {% endfor %}
+=======
+                        {%- for _tag in _article.tags -%}
+                        <a class="tag__link" href="./?tag={{_tag}}"><span class="tag__item">{{_tag}}</span></a>
+                        {% endfor %}
+                        <!-- {{ _article.date | date: "%Y-%m-%d"}}  -->
+>>>>>>> ba229b1 (Design Modified)
                     </div>
                 </div>
                 {%- if forloop.last -%}</section>{%- endif -%}
@@ -105,9 +112,14 @@ https://github.com/kitian616/jekyll-TeXt-theme
         text-decoration: none !important;}
     .tag__item {
         user-select: none;
+<<<<<<< HEAD
         --webkit-user-select: none;
         color: #6e6e6e;
         font-size: 13px;
+=======
+        color: #bdbdbd;
+        font-size: 14px;
+>>>>>>> ba229b1 (Design Modified)
         border: 0.5px solid #dadada;
         border-radius: 5px;
         padding: 2px 5px; }

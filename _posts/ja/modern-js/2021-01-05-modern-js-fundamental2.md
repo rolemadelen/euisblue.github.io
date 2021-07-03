@@ -14,7 +14,11 @@ english: true
 korean: true
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js
+=======
+  - modern-js
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## インタラクション: alert, prompt, confirm

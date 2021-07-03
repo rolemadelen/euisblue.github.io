@@ -14,7 +14,11 @@ english: true
 permalink: /ja/algorithm/complexity/
 tags:
   - algorithm
+<<<<<<< HEAD
   - 競プロ
+=======
+  - ps
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 時間複雑度 (Time Complexity)

@@ -13,8 +13,13 @@ korean: true
 japanese: false
 permalink: /en/ds/linkedlist/
 tags:
+<<<<<<< HEAD
 - data structure
 - linked list
+=======
+- data-structure
+- linked-list
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## Linked List

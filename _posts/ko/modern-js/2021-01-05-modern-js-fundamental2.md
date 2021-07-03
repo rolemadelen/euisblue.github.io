@@ -14,7 +14,11 @@ english: true
 japanese: true
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 2.6 alert, prompt, confirm을 이용한 상호작용

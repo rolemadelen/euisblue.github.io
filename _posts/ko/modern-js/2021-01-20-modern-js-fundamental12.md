@@ -12,7 +12,11 @@ lang: ko
 permalink: /ko/modern-js/fundamental12/
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 4.3 가비지 컬렉션
