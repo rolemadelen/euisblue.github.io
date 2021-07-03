@@ -1,6 +1,12 @@
 <div align="center">
 <h2>🧑 Hello 👋🏼 </h2> 
-<p>I’m <b>Jii Eu</b> who goes by the name <b>J2ieu</b>.</p>
+<p>
+I’m <u><b>J2ieu</b></u> or <b>Jii Eu</b>.
+</p>
+<img src="./../../img/avatar-j2ieu.jpg" width="300" height="256" alt="j2ieu" />
+<p>
+I define myself as a doodler, a lifelong learner, a cat lover, <br>a taiko player🥁, and sometimes a procrastinator.
+</p>
 </div>
 
 ---
@@ -51,21 +57,16 @@ h3 {
     </div>
     <br>
     <img src="https://img.shields.io/badge/^%20Techs that I've used before%20^-f5f5f5?style=flat-square"/>
-    </div>
-
-<hr>
-
-<div align='center'>
-  <h3>🐱 Reach Me 🐱</h3>
-  <div style="display: flex; justify-content: center;">
-  <a href="https://www.jiieu.com"><img src="https://img.shields.io/badge/Tech%20Blog-CC0000?style=flat-square&logo=jekyll&logoColor=white&link=https://www.jiieu.com"/></a>
-  <a href="https://www.instagram.com/jiidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/jiidraws/"/></a>
-  <a href="https://www.linkedin.com/in/jiieu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
-  </div>
 </div>
 
 <hr>
 
-<div align="center">
-    <img src="./../../img/avatar-j2ieu.jpg" width="315" height="256" alt="j2ieu" />
+<div align='center' class="contact">
+  <h3>🐱 Reach Me 🐱</h3>
+  <div style="display: flex; justify-content: center;">
+  <a href="https://www.linkedin.com/in/jiieu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+  <a href="https://www.twitter.com/ipflegen/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
+  <a href="https://www.jiieu.com"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white&link=https://www.jiieu.com"/></a>
+  <a href="https://www.instagram.com/jiidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/jiidraws/"/></a>
+  </div>
 </div>
