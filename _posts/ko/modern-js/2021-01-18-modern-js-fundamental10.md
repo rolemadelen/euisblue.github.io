@@ -11,8 +11,8 @@ hidden: false
 lang: ko
 permalink: /ko/modern-js/fundamental10/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 4.1 객체

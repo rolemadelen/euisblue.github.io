@@ -16,12 +16,12 @@ const PRECACHE_LIST = [
   "./",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
-  "./js/ipflegen-blog.min.js",
+  "./js/j2ieu-blog.min.js",
   "./js/snackbar.js",
-  "./img/avatar-ipflegen.jpg",
+  "./img/avatar-j2ieu.jpg",
   "./img/home-bg.png",
   "./img/404-bg.jpg",
-  "./css/ipflegen-blog.min.css",
+  "./css/j2ieu-blog.min.css",
   "./css/bootstrap.min.css"
 ]
 const HOSTNAME_WHITELIST = [

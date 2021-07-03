@@ -8,8 +8,7 @@ permalink: /ko/devouring-study/recruit/
 hidden: true
 lang: "ko"
 tags:
-  - Devouring Study
-  - Recruit
+  - etc
 ---
 
 같이 공부하고 관련 문제를 풀면서 서로의 코드를 리뷰하고 질문하면서 성장할 스터디원을 구합니다.
