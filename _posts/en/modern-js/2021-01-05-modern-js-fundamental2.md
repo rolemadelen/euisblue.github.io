@@ -14,7 +14,7 @@ korean: true
 japanese: true
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 2.6 Interaction: alert, prompt, confirm

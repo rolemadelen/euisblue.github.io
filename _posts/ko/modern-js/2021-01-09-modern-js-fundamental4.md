@@ -13,7 +13,7 @@ english: true
 permalink: /ko/modern-js/fundamental4/
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 ## 2.9 비교 연산자

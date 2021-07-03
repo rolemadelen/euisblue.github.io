@@ -14,7 +14,7 @@ korean: true
 japanese: true
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 #  2.8 Basic operators, maths

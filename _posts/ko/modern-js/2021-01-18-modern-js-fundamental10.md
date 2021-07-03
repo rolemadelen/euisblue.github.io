@@ -12,7 +12,7 @@ lang: ko
 permalink: /ko/modern-js/fundamental10/
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 ## 4.1 객체

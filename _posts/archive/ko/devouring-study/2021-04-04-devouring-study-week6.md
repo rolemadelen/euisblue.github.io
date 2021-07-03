@@ -10,7 +10,7 @@ permalink: /ko/devouring-study/week6/
 tags:
   - bst
   - data structure
-  - red-black tree
+  - red-black-tree
   - tree
 ---
 

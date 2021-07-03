@@ -12,7 +12,7 @@ lang: "en"
 permalink: /en/modern-js/fundamental17/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 4.8 Object to Primitive Conversion

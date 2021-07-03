@@ -13,7 +13,7 @@ korean: true
 permalink: /en/modern-js/fundamental4/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 2.9 Comparisons

@@ -14,8 +14,8 @@ english: true
 korean: true
 permalink: /ja/ds/linkedlist/
 tags:
-- data-structure
-- linked-list
+- データ構造
+- 連結リスト
 ---
 
 ## LinkedList (연결리스트)

@@ -13,8 +13,8 @@ english: true
 japanese: false
 permalink: /ko/ds/linkedlist/
 tags:
-- data-structure
-- linked-list
+- data structure
+- linked list
 ---
 
 ## LinkedList (연결리스트)

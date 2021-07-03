@@ -14,7 +14,7 @@ japanese: true
 permalink: /en/algorithm/complexity/
 tags:
   - algorithm
-  - ps
+  - cp
 ---
 
 ## Time Complexity
