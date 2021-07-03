@@ -13,8 +13,8 @@ lang: ja
 korean: true
 english: true
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js
 ---
 
 #  2.8 演算子

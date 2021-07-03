@@ -3,7 +3,7 @@
 License
 -------
 
-Apache License 2.0. Copyright (c) 2021 J2ieu
+Apache License 2.0. Copyright (c) 2020 J2ieu
 
 J2ieu Blog is derived from 
 - [Hux Blog (Apache License)](https://github.com/Huxpro/huxpro.github.io)

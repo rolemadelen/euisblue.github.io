@@ -13,8 +13,8 @@ lang: ja
 english: true
 korean: true
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js
 ---
 
 ## インタラクション: alert, prompt, confirm

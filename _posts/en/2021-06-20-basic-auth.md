@@ -13,9 +13,9 @@ korean: false
 japanese: false
 permalink: /en/basic-auth/
 tags:
-- Basic Auth
-- Nginx
-- Apache
+- basic auth
+- nginx
+- apache
 ---
 
 > I'm running my web under Nginx, so take it as grain of salt about my findings for adding basic auth to your page running under the Apache server.
