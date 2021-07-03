@@ -13,8 +13,8 @@ lang: ko
 english: true
 japanese: true
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 2.6 alert, prompt, confirm을 이용한 상호작용

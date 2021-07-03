@@ -13,8 +13,8 @@ english: true
 japanese: true
 hidden: false
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 #  2.8 기본 연산자와 수학

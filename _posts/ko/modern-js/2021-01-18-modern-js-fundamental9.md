@@ -11,8 +11,8 @@ hidden: false
 lang: ko
 permalink: /ko/modern-js/fundamental9/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 3.5 테스트 자동화와 Mocha

@@ -12,8 +12,8 @@ lang: ko
 english: true 
 permalink: /ko/modern-js/fundamental4/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 2.9 비교 연산자
