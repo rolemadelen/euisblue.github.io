@@ -12,7 +12,11 @@ lang: ko
 permalink: /ko/modern-js/fundamental7/
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 3.1 Chrome으로 디버깅하기

@@ -12,9 +12,15 @@ lang: "ko"
 permalink: /ps/programmers/1845/
 tags:
 - ps
+<<<<<<< HEAD
 - implementation
 - 프로그래머스
 - lv1
+=======
+- 구현
+- 프로그래머스
+- level-1
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## [Lv.1 폰켓몬](https://programmers.co.kr/learn/courses/30/lessons/1845)

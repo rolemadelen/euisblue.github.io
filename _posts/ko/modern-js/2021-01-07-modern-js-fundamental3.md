@@ -14,7 +14,11 @@ japanese: true
 hidden: false
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 #  2.8 기본 연산자와 수학

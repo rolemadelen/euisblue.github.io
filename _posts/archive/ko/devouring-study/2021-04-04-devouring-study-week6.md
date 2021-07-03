@@ -10,7 +10,11 @@ permalink: /ko/devouring-study/week6/
 tags:
   - bst
   - data structure
+<<<<<<< HEAD
   - red-black-tree
+=======
+  - red-black tree
+>>>>>>> ba229b1 (Design Modified)
   - tree
 ---
 
