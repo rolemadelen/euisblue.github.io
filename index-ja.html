@@ -21,10 +21,14 @@ permalink: /ja/
         {% endif %}
     </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="post-meta" style="font-style: italic;">
 =======
     <div class="post-meta" style="font-style: italic;" data-aos="fade-right">
 >>>>>>> ba229b1 (Design Modified)
+=======
+    <div class="post-meta" style="font-style: italic;">
+>>>>>>> 8534215 (tags splitted by a space)
         <div>
             <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
             <span> {{ post.date | date: "%B %-d, %Y" }}</span>
@@ -32,11 +36,16 @@ permalink: /ja/
         <div class="tag">
             {%- for _tag in post.tags -%}
 <<<<<<< HEAD
+<<<<<<< HEAD
             {% assign _t = _tag | split:' ' %}
             <a class="tag__link" href="/archive/?tag={{_t | join:'+'}}"><span class="tag__item">{{_tag}}</span></a>
 =======
             <a class="tag__link" href="/archive/?tag={{_tag}}"><span class="tag__item">{{_tag}}</span></a>
 >>>>>>> ba229b1 (Design Modified)
+=======
+            {% assign _t = _tag | split:' ' %}
+            <a class="tag__link" href="/archive/?tag={{_t | join:'+'}}"><span class="tag__item">{{_tag}}</span></a>
+>>>>>>> 8534215 (tags splitted by a space)
             {% endfor %}
         </div>
     </div>

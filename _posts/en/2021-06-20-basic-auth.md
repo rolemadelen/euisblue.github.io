@@ -14,10 +14,14 @@ japanese: false
 permalink: /en/basic-auth/
 tags:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - basic auth
 =======
 - basic-auth
 >>>>>>> ba229b1 (Design Modified)
+=======
+- basic auth
+>>>>>>> 8534215 (tags splitted by a space)
 - nginx
 - apache
 ---

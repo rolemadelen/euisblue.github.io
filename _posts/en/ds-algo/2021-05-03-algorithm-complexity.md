@@ -15,10 +15,14 @@ permalink: /en/algorithm/complexity/
 tags:
   - algorithm
 <<<<<<< HEAD
+<<<<<<< HEAD
   - cp
 =======
   - ps
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - cp
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## Time Complexity
