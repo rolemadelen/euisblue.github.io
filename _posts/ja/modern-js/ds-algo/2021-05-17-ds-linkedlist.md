@@ -15,12 +15,17 @@ korean: true
 permalink: /ja/ds/linkedlist/
 tags:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - データ構造
 - 連結リスト
 =======
 - data-structure
 - linked-list
 >>>>>>> ba229b1 (Design Modified)
+=======
+- データ構造
+- 連結リスト
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## LinkedList (연결리스트)

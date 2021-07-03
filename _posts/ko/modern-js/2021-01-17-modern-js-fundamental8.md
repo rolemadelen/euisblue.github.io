@@ -13,10 +13,14 @@ permalink: /ko/modern-js/fundamental8/
 tags:
   - javascript
 <<<<<<< HEAD
+<<<<<<< HEAD
   - modern js 
 =======
   - modern-js 
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - modern js 
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## 3.2 코딩 스타일
