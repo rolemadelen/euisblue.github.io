@@ -68,7 +68,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
                     {%- assign _date = _currentdate -%}
                 {%- endif -%}
 
-                <div class="post-preview item" style="border-bottom: 1px solid #cccccc; display: flex; flex-wrap: wrap;justify-content: space-between; align-items: center; margin: 0.5em 0 0.5em 20px;" data-tags="{{ _tags }}">
+                <div class="post-preview item archive" style="border-bottom: 1px solid #cccccc; display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-left: 0; padding: 0.5em 0 0.5em 0;" data-tags="{{ _tags }}">
                     <a href="{{ _article.url | prepend: site.baseurl }}" style="display: flex;">
                         <p style="margin-right: 1em;">
                             {% if _article.lang == 'ko' %}
@@ -97,6 +97,9 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 
 <style>
+.archive p {
+    font-size: 14px; }
+
 .tag {
     float: right;
     user-select: none;
