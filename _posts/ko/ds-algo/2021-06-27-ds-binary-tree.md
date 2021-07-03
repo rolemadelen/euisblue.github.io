@@ -10,6 +10,7 @@ lang: "ko"
 permalink: /ko/ds/binary-tree/
 tags:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - data structure  
   - binary tree
   - tree
@@ -19,6 +20,11 @@ tags:
   - tree
   - data-structure
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - data structure  
+  - binary tree
+  - tree
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## 이진 트리(Binary Tree) 란?

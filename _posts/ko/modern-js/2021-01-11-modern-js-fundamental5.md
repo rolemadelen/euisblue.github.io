@@ -13,10 +13,14 @@ permalink: /ko/modern-js/fundamental5/
 tags:
   - javascript
 <<<<<<< HEAD
+<<<<<<< HEAD
   - modern js 
 =======
   - modern-js 
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - modern js 
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## 2.15 함수

@@ -15,10 +15,14 @@ permalink: /ja/algorithm/complexity/
 tags:
   - algorithm
 <<<<<<< HEAD
+<<<<<<< HEAD
   - 競プロ
 =======
   - ps
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - 競プロ
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## 時間複雑度 (Time Complexity)

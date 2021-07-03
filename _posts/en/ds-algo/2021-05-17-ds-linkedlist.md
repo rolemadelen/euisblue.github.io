@@ -14,12 +14,17 @@ japanese: false
 permalink: /en/ds/linkedlist/
 tags:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - data structure
 - linked list
 =======
 - data-structure
 - linked-list
 >>>>>>> ba229b1 (Design Modified)
+=======
+- data structure
+- linked list
+>>>>>>> 8534215 (tags splitted by a space)
 ---
 
 ## Linked List

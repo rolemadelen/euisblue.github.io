@@ -11,10 +11,14 @@ tags:
   - bst
   - data structure
 <<<<<<< HEAD
+<<<<<<< HEAD
   - red-black-tree
 =======
   - red-black tree
 >>>>>>> ba229b1 (Design Modified)
+=======
+  - red-black-tree
+>>>>>>> 8534215 (tags splitted by a space)
   - tree
 ---
 
