@@ -14,7 +14,7 @@ english: true
 korean: true
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## インタラクション: alert, prompt, confirm

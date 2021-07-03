@@ -12,7 +12,7 @@ lang: "en"
 permalink: /en/modern-js/fundamental16/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 4.7 Symbol type

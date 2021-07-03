@@ -14,7 +14,7 @@ korean: true
 english: true
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 #  2.8 演算子

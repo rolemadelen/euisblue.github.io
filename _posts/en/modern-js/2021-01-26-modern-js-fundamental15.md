@@ -12,7 +12,7 @@ lang: "en"
 permalink: /en/modern-js/fundamental15/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 4.6 Optional chaining '?.'

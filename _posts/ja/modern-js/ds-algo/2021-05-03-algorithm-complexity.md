@@ -14,7 +14,7 @@ english: true
 permalink: /ja/algorithm/complexity/
 tags:
   - algorithm
-  - ps
+  - 競プロ
 ---
 
 ## 時間複雑度 (Time Complexity)

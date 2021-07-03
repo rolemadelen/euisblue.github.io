@@ -12,7 +12,7 @@ lang: ko
 permalink: /ko/modern-js/fundamental6/
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 ## 2.16 함수 표현식

@@ -14,7 +14,7 @@ english: true
 japanese: true
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 ## 2.6 alert, prompt, confirm을 이용한 상호작용

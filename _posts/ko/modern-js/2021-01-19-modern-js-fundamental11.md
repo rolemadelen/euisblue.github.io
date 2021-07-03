@@ -12,7 +12,7 @@ lang: ko
 permalink: /ko/modern-js/fundamental11/
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 ## 4.2 참조에 의한 객체 복사

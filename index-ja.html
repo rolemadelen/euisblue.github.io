@@ -9,25 +9,26 @@ permalink: /ja/
 {% assign posts = site.posts | where:'lang','ja' | where: 'hidden','false' %}
 
 {% for post in posts %}
-<div class="post-preview">
+<div class="post-preview" data-aos="fade-up">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title" data-aos="fade-right">
+        <h2 class="post-title">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle" data-aos="fade-left">
+        <h3 class="post-subtitle">
             {{ post.subtitle }}
         </h3>
         {% endif %}
     </a>
-    <div class="post-meta" style="font-style: italic;" data-aos="fade-right">
+    <div class="post-meta" style="font-style: italic;">
         <div>
             <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
             <span> {{ post.date | date: "%B %-d, %Y" }}</span>
         </div>
         <div class="tag">
             {%- for _tag in post.tags -%}
-            <a class="tag__link" href="/archive/?tag={{_tag}}"><span class="tag__item">{{_tag}}</span></a>
+            {% assign _t = _tag | split:' ' %}
+            <a class="tag__link" href="/archive/?tag={{_t | join:'+'}}"><span class="tag__item">{{_tag}}</span></a>
             {% endfor %}
         </div>
     </div>

@@ -9,10 +9,9 @@ hidden: false
 lang: "ko"
 permalink: /ko/ds/binary-tree/
 tags:
-  - data-structure  
-  - binary-tree
+  - data structure  
+  - binary tree
   - tree
-  - data-structure
 ---
 
 ## 이진 트리(Binary Tree) 란?

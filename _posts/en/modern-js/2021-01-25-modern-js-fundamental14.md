@@ -12,7 +12,7 @@ lang: "en"
 permalink: /en/modern-js/fundamental14/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 4.5 Constructors

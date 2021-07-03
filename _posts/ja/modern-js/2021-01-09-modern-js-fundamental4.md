@@ -12,7 +12,7 @@ lang: ja
 permalink: /ja/modern-js/fundamental4/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 2.9 比較

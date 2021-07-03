@@ -14,7 +14,7 @@ japanese: true
 hidden: false
 tags:
   - javascript
-  - modern-js 
+  - modern js 
 ---
 
 #  2.8 기본 연산자와 수학

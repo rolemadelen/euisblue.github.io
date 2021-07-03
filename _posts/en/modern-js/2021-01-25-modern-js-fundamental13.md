@@ -12,7 +12,7 @@ lang: "en"
 permalink: /en/modern-js/fundamental13/
 tags:
   - javascript
-  - modern-js
+  - modern js
 ---
 
 ## 4.4 Object methods, "this"
