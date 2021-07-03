@@ -8,8 +8,7 @@ permalink: /ko/devouring-study/curriculum/
 hidden: true
 lang: "ko"
 tags:
-  - Devouring Study
-  - Curriculum
+  - etc
 ---
 
 씹어먹는 알고리즘과 자료구조 스터디의 대략적인 커리큘럼을 소개합니다.

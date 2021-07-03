@@ -11,8 +11,8 @@ hidden: false
 lang: ko
 permalink: /ko/modern-js/fundamental5/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 2.15 함수

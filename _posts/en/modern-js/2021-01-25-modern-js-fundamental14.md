@@ -11,8 +11,8 @@ hidden: false
 lang: "en"
 permalink: /en/modern-js/fundamental14/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js
 ---
 
 ## 4.5 Constructors
