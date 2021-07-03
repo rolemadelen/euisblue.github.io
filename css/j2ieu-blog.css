@@ -1544,7 +1544,8 @@ footer .list-inline {
 footer .copyright {
     font-size: 14px;
     text-align: center;
-    margin-bottom: 0
+    margin-bottom: 0;
+    margin-top: 30px;
 }
 
 footer .copyright a {
