@@ -20,7 +20,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<!-- Tags (as filter) -->
 			<div id='tag_cloud' class="tags tags-sup js-tags">
-				<a class="tag-button--all" data-encode="" data-aos="fade-right"> 
+				<a class="tag-button--all" data-encode=""> 
 					Show All
 					<sup>{{site.posts.size}}</sup>
 				</a>
@@ -30,8 +30,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
 					data-encode="{{ tag[0] | strip | url_encode }}"
 					class="tag-button"
-					title="{{ tag[0] }}" rel="{{ tag[1].size }}"
-                    data-aos="fade-left">
+					title="{{ tag[0] }}" rel="{{ tag[1].size }}">
 					{{ tag[0] }}
 					<sup>{{tag[1].size}}</sup>
 				</a>__SEPERATOR__
@@ -58,33 +57,62 @@ https://github.com/kitian616/jekyll-TeXt-theme
 					{%- endif -%}
 				{%- endfor -%}
 
-			{% comment %} group by year {% endcomment %}
-			{%- assign _currentdate = _article.date | date: '%Y' -%}
-			{%- if _currentdate != _date -%}
-				{%- unless forloop.first -%}</section>{%- endunless -%}
-				<section>
-				<span class="fa listing-seperator">
-					<span class="tag-text">{{ _currentdate }}</span>
-				</span>
-				{%- assign _date = _currentdate -%}
-			{%- endif -%}
+                {% comment %} group by year {% endcomment %}
+                {%- assign _currentdate = _article.date | date: '%Y' -%}
+                {%- if _currentdate != _date -%}
+                    {%- unless forloop.first -%}</section>{%- endunless -%}
+                    <section>
+                    <span class="fa listing-seperator">
+                        <span class="tag-text">{{ _currentdate }}</span>
+                    </span>
+                    {%- assign _date = _currentdate -%}
+                {%- endif -%}
 
-				<div class="post-preview item" data-tags="{{ _tags }}">
-				    <a href="{{ _article.url | prepend: site.baseurl }}">
-				        <h2 class="post-title">
-                            {{ _article.title }}
-				        </h2>
-				        {% if _article.subtitle %}
-				        <h3 class="post-subtitle">
-				            {{ _article.subtitle }}
-				        </h3>
-				        {% endif %}
-				    </a>
-					<hr>
-				</div>
-			{%- if forloop.last -%}</section>{%- endif -%}
+                <div class="post-preview item" style="border-bottom: 1px solid #cccccc; display: flex; flex-wrap: wrap;justify-content: space-between; align-items: center; margin: 0.5em 0 0.5em 20px;" data-tags="{{ _tags }}">
+                    <a href="{{ _article.url | prepend: site.baseurl }}" style="display: flex;">
+                        <p style="margin-right: 1em;">
+                            {% if _article.lang == 'ko' %}
+                            🇰🇷
+                            {% elsif _article.lang == 'en' %}
+                            🇺🇸
+                            {% else %}
+                            🇯🇵
+                            {% endif %}
+                        </p>
+                        <p> {{ _article.title }} </p>
+                    </a>
+                    <div class="tag">
+                        {%- for _tag in _article.tags -%}
+                        <a class="tag__link" href="./?tag={{_tag}}"><span class="tag__item">{{_tag}}</span></a>
+                        {% endfor %}
+                        <!-- {{ _article.date | date: "%Y-%m-%d"}}  -->
+                    </div>
+                </div>
+                {%- if forloop.last -%}</section>{%- endif -%}
 			{% endfor %}
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<style>
+.tag {
+    float: right;
+    user-select: none;
+    --webkit-user-select: none; }
+    .tag__link {
+        text-decoration: none !important;}
+    .tag__item {
+        user-select: none;
+        color: #bdbdbd;
+        font-size: 14px;
+        border: 0.5px solid #dadada;
+        border-radius: 5px;
+        padding: 2px 5px; }
+    .tag__item:focus,
+    .tag__item:active,
+    .tag__item:hover {
+        color: #fff;
+        background-color: rgb(70, 70, 70); }
+</style>

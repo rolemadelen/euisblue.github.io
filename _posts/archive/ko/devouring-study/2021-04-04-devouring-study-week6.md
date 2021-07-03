@@ -8,11 +8,10 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week6/
 tags:
-  - Binary Search Tree
-  - Data Structure  
-  - Devouring Study
-  - Red-Black Tree
-  - Tree
+  - bst
+  - data structure
+  - red-black tree
+  - tree
 ---
 
 

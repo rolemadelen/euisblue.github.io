@@ -8,9 +8,8 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week1/key/
 tags:
-  - Devouring Study
-  - Data Structure 
-  - LinkedList 
+  - data structure 
+  - linked list 
 ---
 
 이번 주 《[배열과 연결리스트](/devouring-study/week1/)》의 생각해볼 문제였던 

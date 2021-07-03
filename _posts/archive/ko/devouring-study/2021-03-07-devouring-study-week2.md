@@ -8,9 +8,8 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week2/
 tags:
-  - Devouring Study
-  - Data Structure  
-  - LinkedList 
+  - data Structure  
+  - linked list 
 ---
 
 이중 연결리스트와 원형 연결리스트의 차이점을 이해하고 연결리스트에서 사용되는 함수들의 의사코드를 살펴봅니다.

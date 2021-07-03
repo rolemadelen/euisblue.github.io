@@ -8,10 +8,9 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week3/
 tags:
-  - Devouring Study
-  - Data Structure  
-  - Stack
-  - Queue
+  - data structure  
+  - stack
+  - queue
 ---
 
 지금까지 배열과 연결리스트에 대해서 공부를 했습니다. **배열의 최고의 장점**으로는 **임의접근**(*random access*)이 가능하다는 것이었습니다. 
