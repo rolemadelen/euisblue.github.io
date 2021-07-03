@@ -11,8 +11,8 @@ hidden: true
 lang: ja
 permalink: /ja/modern-js/fundamental4/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js
 ---
 
 ## 2.9 比較

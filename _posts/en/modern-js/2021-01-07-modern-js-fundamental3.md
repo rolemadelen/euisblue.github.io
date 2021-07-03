@@ -13,8 +13,8 @@ lang: en
 korean: true
 japanese: true
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js
 ---
 
 #  2.8 Basic operators, maths

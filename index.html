@@ -8,32 +8,62 @@ lang: en
 {% assign posts = site.posts | where:'lang','en' | where: 'hidden','false' %}
 
 {% for post in posts %}
-<div class="post-preview">
+<div class="post-preview" data-aos="fade-up">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title" data-aos="fade-right">
+        <h2 class="post-title">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle" data-aos="fade-left">
+        <h3 class="post-subtitle">
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <!-- <div class="post-content-preview" data-aos="fade-left">
+        <!-- <div class="post-content-preview" >
             {{ post.content | strip_html | truncate:300 }}
         </div> -->
     </a>
-    <p class="post-meta" data-aos="fade-left">
-        <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
-        <span>    
-            {{ post.date | date: "%B %-d, %Y" }}
-        </span>
-    </p>
+    <div class="post-meta" style="font-style: italic;">
+        <div>
+            <span style="margin: 0px 35px 0px 2px">{{site.title}}</span>
+            <span> {{ post.date | date: "%B %-d, %Y" }}</span>
+        </div>
+        <div class="tag">
+            {%- for _tag in post.tags -%}
+            {% assign _t = _tag | split:' ' %}
+            <a class="tag__link" href="/archive/?tag={{_t | join:'+'}}"><span class="tag__item">{{_tag}}</span></a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <hr>
 {% endfor %}
 
+
+<style>
+.tag {
+    float: right;
+    user-select: none;
+    --webkit-user-select: none; }
+    .tag__link {
+        text-decoration: none !important;}
+    .tag__item {
+        user-select: none;
+        --webkit-user-select: none;  
+        color: #6e6e6e;
+        font-size: 15px;
+        font-style: initial;
+        border: 0.5px solid #dadada;
+        border-radius: 5px;
+        padding: 2px 5px; }
+    .tag__item:focus,
+    .tag__item:active,
+    .tag__item:hover {
+        color: #fff;
+        background-color: rgb(70, 70, 70); }
+</style>
+
 <!-- Pager -->
-<!-- {% if paginator.total_pages > 1 %}
+ <!-- {% if paginator.total_pages > 1 %} 
 <ul class="pager" data-aos="fade-up">
     {% if paginator.previous_page %}
     <li class="previous">
@@ -46,4 +76,4 @@ lang: en
     </li>
     {% endif %}
 </ul>
-{% endif %} -->
+{% endif %}  -->

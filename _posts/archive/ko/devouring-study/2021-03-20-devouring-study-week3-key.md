@@ -8,10 +8,9 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week3/key/
 tags:
-  - Devouring Study
-  - Data Structure 
-  - Stack
-  - Queue
+  - data structure 
+  - stack
+  - queue
 ---
 
 《[스택 & 큐](/devouring-study/week3/)》의 생각해볼 문제였던 후위표기법(postfix)에 대해 살펴봅시다.

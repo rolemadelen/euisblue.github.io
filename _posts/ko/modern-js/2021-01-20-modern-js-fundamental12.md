@@ -8,11 +8,11 @@ header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
 hidden: false
-lang: "ko"
+lang: ko
 permalink: /ko/modern-js/fundamental12/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 4.3 가비지 컬렉션

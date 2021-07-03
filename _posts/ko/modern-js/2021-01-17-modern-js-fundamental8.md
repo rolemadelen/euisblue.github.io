@@ -11,8 +11,8 @@ hidden: false
 lang: ko
 permalink: /ko/modern-js/fundamental8/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 3.2 코딩 스타일

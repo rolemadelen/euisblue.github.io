@@ -11,8 +11,8 @@ hidden: false
 lang: ko
 permalink: /ko/modern-js/fundamental7/
 tags:
-  - JavaScript
-  - Modern JS 
+  - javascript
+  - modern js 
 ---
 
 ## 3.1 Chrome으로 디버깅하기
