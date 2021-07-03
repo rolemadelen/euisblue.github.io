@@ -14,8 +14,13 @@ english: true
 korean: true
 permalink: /ja/ds/linkedlist/
 tags:
+<<<<<<< HEAD
 - データ構造
 - 連結リスト
+=======
+- data-structure
+- linked-list
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## LinkedList (연결리스트)

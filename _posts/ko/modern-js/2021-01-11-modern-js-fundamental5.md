@@ -12,7 +12,11 @@ lang: ko
 permalink: /ko/modern-js/fundamental5/
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 2.15 함수

@@ -14,7 +14,11 @@ japanese: true
 permalink: /en/algorithm/complexity/
 tags:
   - algorithm
+<<<<<<< HEAD
   - cp
+=======
+  - ps
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## Time Complexity

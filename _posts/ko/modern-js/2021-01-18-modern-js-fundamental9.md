@@ -12,7 +12,11 @@ lang: ko
 permalink: /ko/modern-js/fundamental9/
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 3.5 테스트 자동화와 Mocha

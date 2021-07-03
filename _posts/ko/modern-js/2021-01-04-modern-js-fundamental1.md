@@ -14,7 +14,11 @@ english: true
 japanese: true
 tags:
   - javascript
+<<<<<<< HEAD
   - modern js 
+=======
+  - modern-js 
+>>>>>>> ba229b1 (Design Modified)
 ---
 
 ## 2.1 Hello, World!

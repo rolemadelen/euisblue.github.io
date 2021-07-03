@@ -13,7 +13,11 @@ korean: false
 japanese: false
 permalink: /en/basic-auth/
 tags:
+<<<<<<< HEAD
 - basic auth
+=======
+- basic-auth
+>>>>>>> ba229b1 (Design Modified)
 - nginx
 - apache
 ---
