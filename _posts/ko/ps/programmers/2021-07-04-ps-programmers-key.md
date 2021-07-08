@@ -7,7 +7,7 @@ author: "J2ieu"
 header-img: "img/post-bg-ps.jpg"
 header-mask: 0.6
 catalog: true
-published: false;
+published: false
 hidden: false
 lang: "ko"
 permalink: /ps/programmers/key/
