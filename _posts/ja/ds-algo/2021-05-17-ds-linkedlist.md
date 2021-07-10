@@ -8,7 +8,7 @@ header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
 hidden: false
-published: false
+published: true
 lang: "ja"
 english: true
 korean: true
@@ -41,10 +41,10 @@ tags:
 ![linkedlist](/img/in-post/ds-algo/linkedlist/ko/linkedlist1.png)
 
 ## 連結リストの特性
-- k번째 ノード에 アクセス及び데이터의 変更: **O(k)**
-- 임의위치에 새로운 ノード 삽입及び제거: **O(1)**
-- ノード들이 메모리 상에 연속해있지 않아 [cache hit rate](https://parksb.github.io/article/29.html)가 낮다.
-- 32비트/64비트 컴퓨터에 따라 각각의 ノード가 4바이트 또는 8바이트 크기의 포인터를 가지기 때문에 오버헤드가 존재한다.
+- **k**番目のノードにアクセス及び変更は**O(k)**。
+- 新しいノードの挿入及び除去は**O(1)**。
+- 各ノードがメモリ上に連続に位置されてないので[キャッシュヒット率](https://parksb.github.io/article/29.html)が低い。
+- 各ノードは32ビットPCでは4バイト、64ビットPCでは8バイトの大きさを持つため、 [メモリオーバーヘッド](https://wa3.i-3-i.info/word12471.html)が発生する。
 
 ## 連結リストのタイプ
 
@@ -52,30 +52,41 @@ tags:
 
 ![singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/singly-linkedlist.jpg)
 
-단일 연결 리스트는 각 ノード가 다음 ノード의 주소를 가지고 있으며, 한 방향으로만 순회가 가능합니다. 
-마지막 ノード는 NULL을 가리킵니다.
+単方向リストのノードは次のノードを指すポインター(*pointer*)を持っています。そして、「単方向リスト」の文字通り、左から右側の方だけに巡回ができます。
+最後のノードはヌル(*null*)を指します。
 
 ### 双方向リスト
 ![doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/doubly-linkedlist.jpg)
 
-양쪽으로 두 개의 ノード의 주소를 가지며, 앞뒤로 순회가 가능한 리스트를 이중 連結リスト라고 합니다. 마지막 ノード는 해당 ノード 이전 ノード의 주소와 NULL을 가리킵니다. 그리고 첫 번째 ノード는 NULL과 다음 ノード의 주소를 가집니다. 
+双方向リストのノードは前後のノードを指すポインターを持って、左右どちらの方向でも巡回ができるリストです。
+最初のノードの前 (*prev*)、そして最後のノードの次 (*next*) はヌルを指します。
 
 ### 円形連結リスト
+「単方向リスト」と「双方向リスト」にはヌルデータを指すノードが存在します。そのノードを見つけると、リストの最初及び最後の位置がわかります。
+しかし、ヌルがない円形リストというのもあります。
+
+<br>
+
+**単方円形向リスト**
 ![circular singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/circular-singly.jpg)
 
+**双方向円形リスト**
 ![circular doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/circular-doubly.jpg)
 
-또 다른 종류의 연결 리스트로 원형 連結リスト가 있습니다. 각각 단일 리스트와 이중 리스트에서 NULL을 가리키는 대신 첫 번째 혹은 마지막 ノード로 다시 회귀하는 리스트입니다.
+円形連結リストのノードはヌルを指しないので、必ず他のノードを指します。ノードが一つしかない場合は、自分を指します。
+![self pointing list](/img/in-post/ds-algo/linkedlist/ja/single-node.jpg)
 
-단일 리스트에서 기능을 좀 더 추가하면 이중 리스트, 이중 리스트에서 좀 더 추가하면 원형 리스트가 되는 구조이기 때문에, 이중 원형 연결 리스트를 대표로 구현했습니다. 
 
 ## 連結リストの機能
 
 ### データのアクセス及び変更: **O(N)**
-連結リスト는 배열처럼 인덱스를 사용하여 해당 データに 바로 アクセス하는 것이 불가능합니다. 그렇기 때문에 항상 첫 번째 ノード부터 원하는 위치의 ノード까지 순차적으로 순회를 해야합니다.
+配列の場合はindex (*operator[ ]*) を使って任意のデータに直接アクセスができましたが、連結リストでは不可能です。
+リストの場合は最初のノード (*head*) から一個づつ移動しながらターゲットノードに届きます。
+
+<br>
 
 ```cpp
-// 3번째 위치의 データに アクセス 
+// 3番目のデータにアクセス 
 unsigned index = 3;
 Node *temp = head;
 while(index>1) {
@@ -84,13 +95,20 @@ while(index>1) {
 }
 ```
 
-### 任意の位置データ追加: **O(1)**
+### ノードの追加: **O(1)**
 
-원소를 추가하려는 위치에 이미 있다는 가정하에, 새로운 ノード를 추가하는 것은 ノード의 주소만 서로 연결하면 되기 때문에 O(1)의 시간이 걸립니다.
-만약 첫 번째 ノード부터 직접 순회해서 해당 위치의 ノード까지 이동하면 O(1)이 아니게 됩니다.
+配列で新しいデータを追加するときは、以降にあるすべてのデータを１ブロック右側にプッシュする面倒な作業が必要でした。
+でもリストの場合はすごく簡単になります。
+
+<br>
+
+各ノードは次のノードのアドレスを持ちます。そして、そのアドレスを使ってどれが次のノードかがわかります。
+なので、現在のノードが新しいノードを指すように、つまり新しいノードのアドレスを代入することえで追加ができます。
+
+<br>
 
 ```cpp
-// 2번째 위치에 새로운 ノード 추가
+// ２番目の位置に新しいノードを追加
 Node *temp = head;
 Node *newNode = new Node(data);
 
@@ -100,11 +118,13 @@ temp->next = newNode;
 newNode->prev = temp;
 ```
 
-### 任意位置データ除去: **O(1)**
-마찬가지로 해당 ノード까지 이동하는 부분을 제외하고 삭제하는 부분만을 봤을 때, ノード의 주소를 끊기만 하면 되기 때문에 이 역시 O(1)입니다.
+### ノードの除去 **O(1)**
+
+除去も追加と同じく、除去するノードを指しないようにすると終わりです。
+
 
 ```cpp
-Node *temp = nodeToDelete; // 지우려는 ノード
+Node *temp = nodeToDelete; // 除去するノード
 
 temp->prev->next = temp->next;
 temp->next->prev = temp->prev;
@@ -128,29 +148,29 @@ class Solution {
         ListNode *temp = res;
 
         while(l1 && l2) {
-        if(l1->val <= l2->val) {
-            cout << "l1: " << l1->val << endl;
-            temp->next = l1; 
-            temp = temp->next;
-            l1 = l1->next;
-        } else {
-            cout << "l2: " << l2->val << endl;
-            temp->next = l2;
-            temp = temp->next;
-            l2 = l2->next;
-        }
+            if(l1->val <= l2->val) {
+                cout << "l1: " << l1->val << endl;
+                temp->next = l1; 
+                temp = temp->next;
+                l1 = l1->next;
+            } else {
+                cout << "l2: " << l2->val << endl;
+                temp->next = l2;
+                temp = temp->next;
+                l2 = l2->next;
+            }
         }
 
         while(l1) {
-        temp->next = l1;
-        temp = temp->next;
-        l1 = l1->next;
+            temp->next = l1;
+            temp = temp->next;
+            l1 = l1->next;
         }
 
         while(l2) {
-        temp->next = l2;
-        temp = temp->next;
-        l2 = l2->next;
+            temp->next = l2;
+            temp = temp->next;
+            l2 = l2->next;
         }
 
         return res->next;
@@ -169,12 +189,12 @@ class Solution {
         ListNode *hare = head->next;
 
         while(turtle != hare) {
-        if(turtle == nullptr || hare == nullptr) return false;
+            if(turtle == nullptr || hare == nullptr) return false;
 
-        if(turtle) turtle = turtle->next;
+            if(turtle) turtle = turtle->next;
 
-        if(hare) hare = hare->next;
-        if(hare) hare = hare->next;
+            if(hare) hare = hare->next;
+            if(hare) hare = hare->next;
         } 
 
         return true;
@@ -188,17 +208,17 @@ class Solution {
     public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         unordered_set<ListNode*> us;
+
         ListNode *temp = headA;
         while(temp) {
-        us.insert(temp);
-        temp = temp->next;
+            us.insert(temp);
+            temp = temp->next;
         }
 
         temp = headB;
         while(temp) {
-        if(us.find(temp) != us.end()) return temp;
-        temp = temp->next;
-        }
+            if(us.find(temp) != us.end()) return temp;
+                temp = temp->next;
 
         return nullptr;
 
@@ -225,13 +245,11 @@ class Solution {
             prev = temp;
             temp = temp->next;
         }
-        }
 
         if(head->val == val) {
-        temp = head;
-        head = head->next;
-        delete temp;
-
+            temp = head;
+            head = head->next;
+            delete temp;
         }
         return head;
     }
