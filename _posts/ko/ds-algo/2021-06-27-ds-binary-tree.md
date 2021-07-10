@@ -5,6 +5,7 @@ subtitle: "이진 트리의 기본 특성과 용어 그리고 순회(traversal)�
 date:   2021-06-27 07:00:00 +1400
 author: "J2ieu"
 header-img: "img/post-bg-ds-algo.jpg"
+header-mask: 0.6
 catalog: true
 hidden: false
 lang: "ko"
