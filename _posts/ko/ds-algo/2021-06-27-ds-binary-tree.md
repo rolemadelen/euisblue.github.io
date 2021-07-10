@@ -4,6 +4,7 @@ title:  "이진 트리 (Binary Tree)"
 subtitle: "이진 트리의 기본 특성과 용어 그리고 순회(traversal)하는 법을 알아본다."
 date:   2021-06-27 07:00:00 +1400
 author: "J2ieu"
+header-img: "img/post-bg-ds-algo.jpg"
 catalog: true
 hidden: false
 lang: "ko"
