@@ -50,13 +50,13 @@ tags:
 
 ### 単方向リスト
 
-![singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/singly-linkedlist.jpg)
+![singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/singly-linkedlist.svg)
 
 単方向リストのノードは次のノードを指すポインター(*pointer*)を持っています。そして、「単方向リスト」の文字通り、左から右方向だけに巡回ができます。
 最後のノードはヌル(*null*)を指します。
 
 ### 双方向リスト
-![doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/doubly-linkedlist.jpg)
+![doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/doubly-linkedlist.svg)
 
 双方向リストのノードは前後のノードを指すポインターを持って、左右どちらの方向でも巡回ができるリストです。
 最初のノードの前 (*prev*)、そして最後のノードの次 (*next*) はヌルを指します。
@@ -68,13 +68,13 @@ tags:
 <br>
 
 **単方円形向リスト**
-![circular singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/circular-singly.jpg)
+![circular singly linkedlist](/img/in-post/ds-algo/linkedlist/ja/singly-circular.svg)
 
 **双方向円形リスト**
-![circular doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/circular-doubly.jpg)
+![circular doubly linkedlist](/img/in-post/ds-algo/linkedlist/ja/doubly-circular.svg)
 
 円形連結リストのノードはヌルを指さないので、必ず他のノードを指します。ノードが一つしかない場合は、そのノード自身を指します。
-![self pointing list](/img/in-post/ds-algo/linkedlist/ja/single-node.jpg)
+![self pointing list](/img/in-post/ds-algo/linkedlist/ja/single-node.svg)
 
 
 ## 連結リストの機能
