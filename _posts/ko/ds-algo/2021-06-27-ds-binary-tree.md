@@ -9,6 +9,8 @@ header-mask: 0.6
 catalog: true
 hidden: false
 lang: "ko"
+english: true
+japanese: false
 permalink: /ko/ds/binary-tree/
 tags:
 <<<<<<< HEAD
