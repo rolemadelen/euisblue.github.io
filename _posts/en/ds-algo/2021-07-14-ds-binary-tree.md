@@ -2,7 +2,7 @@
 layout: post
 title:  "Binary Tree"
 subtitle: "Learn about the characteristcs of binary tree, types, and tree traversals."
-date:   2021-06-27 07:00:00 +1400
+date:   2021-07-14 07:00:00 +1400
 author: "J2ieu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
