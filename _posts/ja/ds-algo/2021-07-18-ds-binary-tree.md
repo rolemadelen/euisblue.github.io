@@ -44,8 +44,8 @@ tags:
 ## 二分木のタイプ
 ### 二分探索木 
 - 英: Binary Search Tree, BST
-+ Left child's data is smaller than that of the parent.
-+ Right child's data is gretaer than that of the parent.
++ 左子のデータが親ノードより小さい。
++ 右子のデータは親ノードより大きい。
 ![BST](/img/in-post/ds-algo/tree/bst.svg)
 
 ### Full/Strict 二分木
