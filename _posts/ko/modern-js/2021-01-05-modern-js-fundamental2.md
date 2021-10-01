@@ -3,7 +3,7 @@ layout: post
 title:  "모던 자바스크립트 2.6 - 2.7"
 subtitle: "alert, prompt, confirm을 이용한 상호작용 • 형 변환"
 date:   2021-01-05 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -48,12 +48,12 @@ let name = prompt(message); // 잘 작동한다.
 
 하지만 IE 에서는 초기값을 쓰지 않으면 `undefined`가 명시된다고 한다.
 
-아래의 코드를 실행하고 '**j2ieu**'를 입력하면 `name` 변수에는 문자열 '**j2ieu**'가 저장된다.
+아래의 코드를 실행하고 '**jeyeyeu**'를 입력하면 `name` 변수에는 문자열 '**jeyeyeu**'가 저장된다.
 
 ```js
 let name = prompt("당신의 이름은?", '이름을 입력해주세요');
 
-console.log(name); // j2ieu
+console.log(name); // jeyeyeu
 ```
 
 ### - 컨펌(confirm) 대화상자

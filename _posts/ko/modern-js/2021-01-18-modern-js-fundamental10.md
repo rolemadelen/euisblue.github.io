@@ -3,7 +3,7 @@ layout: post
 title:  "모던 자바스크립트 4.1"
 subtitle: "객체: 기본 (Objects, the basics)"
 date:   2021-01-18 08:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

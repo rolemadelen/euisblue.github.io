@@ -1,10 +1,10 @@
 # Site settings
-title: J2ieu
-SEOTitle: J2ieu's Programming Blog
+title: Jeyeyeu
+SEOTitle: Jeyeyeu's Programming Blog
 header-img: img/home-bg.png
-email: j2ieu@pm.me
-description: "개발 블로그 | Junior Frontend Engineer | Check how @j2ieu make mistakes and learn."
-keyword: "Frontend, Engineer, Developer, j2ieu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
+email: jeyeyeu@pm.me
+description: "개발 블로그 | Junior Frontend Engineer | Check how @jeyeyeu learns."
+keyword: "Frontend, Engineer, Developer, jeyeyeu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
 url: "https://www.jiieu.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -13,8 +13,8 @@ future: true
 
 # SNS settings
 RSS: true
-github_username:    "j2ieu"
-twitter_username:   "j2ieu"
+github_username:    "jeyeyeu"
+# twitter_username:   ""
 linkedin_username:  "jiieu"
 
 # Build settings
@@ -59,7 +59,7 @@ kramdown:
 # Sidebar settings
 sidebar: false                           # whether or not using Sidebar.
 sidebar-about-description: "🇰🇷 born 🇺🇸 raised 🇯🇵 working | Junior Frontend Engineer | Doodler | Ravenclaw "
-sidebar-avatar: /img/avatar-j2ieu.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-jeyeyeu.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: false                     # whether or not using Feature-Tags
@@ -70,7 +70,7 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
-page-mathjax: false
+page-mathjax: true
 
 
 # Friends

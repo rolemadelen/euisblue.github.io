@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "時間・空間複雑度"
-subtitle: "競プロ？時間複雑度？空間複雑度？オーダー記法？"
+title:  "Big-O記法とは"
+subtitle: "ビッグ・オー (Big-O) 最悪の場合"
 date:   2021-05-03 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
@@ -13,76 +13,112 @@ korean: true
 english: true
 permalink: /ja/algorithm/complexity/
 tags:
-  - algorithm
-  - 競プロ
+  - cs
 ---
 
-## 時間複雑度 (Time Complexity)
-- 時間複雑度は入力の大きさと問題を解決する時かかる時に間の相関関係です。
-- 普通競プロでは１億もの演算を１秒で計算します。
-  + TMI: 令和３年5月、世界性能のスパコンは日本の[富岳](https://blog.global.fujitsu.com/fgb/2020-06-22/supercomputer-fugaku-named-world-fastest/)(Fugaku)で、演算スピードのトップは537petaFLOPS(PF)です。 
-  1PFが1000兆の演算速度を意味します。つまり、富岳は１秒に53.7京回の演算ができます。
-
-下の`countEven()`関数は１~N間の偶数の回数を返します。
-
-それぞれの演算が何回行われるか確認してみましょう。
-
-```cpp
-int countEven(int N) {
-    int cnt = 0;
-
-    for(int i=1; i<=N; ++i) {
-        if(i % 2 == 0) ++cnt;
-    }
-
-    return cnt;
-}
-```
-
-- ２行: `cnt = 0` (+1)
-- forループ
-  + ４行: `i=1` (+1)
-  + ４行 - N回振り返す: `i <= N` & `++i` (+2) 
-  + ５行 - N回振り返す: `i % 2 == 0` (+2) & `++cnt` (+1)
-- ８行: `return cnt` (+1)
-
-２-８行の演算を含めると`1+1*N(2+2+1)+1 = 5N+3`になります。これで`countEven()`関数がどのぐらいの演算をするか確認できます。
+### Big-O記法とは
+Big-O記法（`O(log N)`, `O(N)`, `O(N!)`, ...）は計算時間の上限示す。つまり、最悪の場合の計算量を示すということ。
 
 <br>
 
-一般的なPCでは１秒に約１億の計算ができると言いました。たとえば `N=10_000_000` の場合、`5N+3`は５千万になるので１秒以内に実行できます。
-しかし `N=50_000_000` の場合にはNが2.5億になるので１秒以上の時間がかかります。
+Big-Oは<u>最悪の場合の計算量</u>というのはわかったけど。これてどういう意味だろう。
 
 <br>
 
-ところで`5N + 3`と時間複雑度はなんの関係があるんでしょう。ここで大事なのは比例性(proportionality)です。`N`が大きくなればなるほど演算回数とプログラムの実行時間が増加します。そして逆に`N`が小さくなればなるほど演算回数やプログラムの実行時間が減少します。
+Big-Oが我らに聞く質問は「 `N`が無限に大きくなるとアルゴリズムはどうなるか」だと思う。アルゴリズムを実装するときこの質問は大事。なぜかというと、結果的にBig-Oがアルゴリズムがどのぐらい効率的かを表すため。
 
 <br>
 
-Big-Oh表記法を使って、`countEven()`関数の時間複雑度は`O(N)`になります。
-
-### Big-Oh表記法
-アルゴリズムの効率性を分析するための表記法です。支配項以外のすべての係数と項は無視されます。
-
-```
-- O(N)   ==> N+3, 10N + logN, 5N + 10sqrtN, ...
-- O(N^2) ==> 5N^2 + 10N + 7, 10N^2 + 1, ...
-- O(1)   ==> 1, 5, 17, ...
-```
-
-オーダー表記のグラフ。
+下の表はよく使われる7つのBig-Oの性能を比べたググラフ。
 
 ![Big-Oh Chart](/img/in-post/ds-algo/complexity/big-oh.png)
 
-時間複雑度を計算して、だいたい自分のプログラムがどのぐらい速いか遅いかが判断できます。
+一番早いのがO(1)で、`N`とは関係なく必ず一回だけ実行される。赤い部分に近づくほど演算回数が増えてアルゴリズムが遅くなる。
 
-## 空間複雑度
-- 空間複雑度は入力の大きさと使用したメモリ空間の相関関係です。
-- 一般的に、競プロの問題のメモリ制限は512MBです。 512MBは、int系の変数を120万個使うことと一緒です。
+#### O(1)
+```cpp
+cout << "Hello, World" << endl;
+```
 
-競プロでメモリが問題になるときはふだんはないので、普通は空間より時間複雑度のほうもっと考えながらアルゴリズムを実装します。
-しかし、たまにメモリの制限がすごく厳しい問題も存在するのでそこだけ気をつけてください。
+#### O( log(N) )
 
-## Reference
-- [https://blog.encrypted.gg/922](https://blog.encrypted.gg/922)
-- [Big Oh Chart](https://danielmiessler.com/study/big-o-notation/)
+```cpp
+while(n)
+    n = n / 2;
+```
+
+#### O(N)
+
+```cpp
+for(int i=0; i<n; ++i);
+```
+
+#### O(N・log(N))
+
+```cpp
+for(int i=0; i<n; i++) { // O(n)
+    for(int j=i;; j/=2); // O(log n)
+}
+```
+
+#### O(N^2)
+
+```cpp
+for(int i=0; i<n; i++)   { // O(n)
+    for(int j=0; j<n; j++); // O(n)
+}
+```
+
+#### O(2^n)
+
+```cpp
+int fib(int n) {
+    if(n==0||n==1) return 1;
+    return fib(n-1) + fib(n-2);
+}
+```
+
+#### O(n!)
+Some well-known problems with a factorial time complexity.
+
+- [Travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+- [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)
+- [The Clique Problem](https://en.wikipedia.org/wiki/Clique_problem)
+
+---
+
+### Big-O記法のルール
+
+**Coefficient Rule**
+- 無限に近い数字に何の数字をかけても無限なので、 Nに影響がない係数は全て捨てられる。
+    ```
+    O(kf(n))  ->  O(f(n)) 
+    O(5n)     ->  O(n)
+    ```
+
+**Sum Rule**
+- 最終時間計算量が複数の式の和（sum）の場合は、最終Big-Oも複数のBig-Oの和で表記する。
+    ```
+    O(h(n)) + O(g(n))  ->  O(h(n) + g(n))
+    O(n)+O(m)          ->  O(n+m)
+    ```
+
+**Product Rule**
+- 最終時間計算量が一つ以上の計算量の積で成り立っている場合、 最終Big-Oも複数のBig-Oの積で表記する。
+    ```
+    O(f(n)) \times O(g(n))   ->  O(f(n)g(n))
+    O(n^2) \times O(log(n))  ->  O(n^2 log(n))
+    O(n) \times O(m)         ->  O(nm)
+    ```
+
+**Polynomial Rule**
+- 時間計算量が多項式の場合、Big-Oは当該式の最高次項（highest degree）になる。
+    ```
+    f(n) = 5n^2 + 7n  ->   O(n^2)
+    f(n) = 10n + 2    ->   O(n)
+    f(n) = 10         ->   O(1)
+    ```
+---
+
+### 参考
+- JavaScript Data Structures and Algorithms - Sammie Bae

@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 2.9 - 2.14"
 subtitle: "Fundamentals: Comparisons • Conditional branching: if, '?' • Logical operators • Nullish coalescing operator '??' • Loops: while and for • The 'switch' statement"
 date:   2021-01-09 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

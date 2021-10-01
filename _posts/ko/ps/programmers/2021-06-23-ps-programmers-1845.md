@@ -3,7 +3,7 @@ layout: post
 title: "1845. 폰켓몬"
 subtitle: "프로그래머스 Level 1 - 찾아라 프로그래밍 마에스터"
 date: 2021-06-23 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-ps-pokemon.jpg"
 header-mask: 0.6
 catalog: true

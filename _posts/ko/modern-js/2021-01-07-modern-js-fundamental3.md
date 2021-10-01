@@ -3,7 +3,7 @@ layout: post
 title:  "모던 자바스크립트 2.8"
 date:   2021-01-07 07:00:00 +1400
 subtitle: "기본 연산자와 수학"
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -58,9 +58,9 @@ console.log(a % b); // 2
 덧셈 연사자를 사용해서 문자열을 합칠 수 있다.
 
 ```js
-let name = 'j2ieu';
+let name = 'jeyeyeu';
 let s = 'my name is ';
-console.log(s + name); // my name is j2ieu
+console.log(s + name); // my name is jeyeyeu
 ```
 
 두 피연산자 중 하나라도 문자열이면, 결과는 문자열이 된다.

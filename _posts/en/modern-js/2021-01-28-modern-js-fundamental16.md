@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 4.7"
 subtitle: "Objects: Symbol type"
 date:   2021-01-28 08:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -73,7 +73,7 @@ To add a symbol in an object literal `{ ... }`, use square brackets.
 let id = Symbol("id");
 
 let user = {
-    name: "j2ieu",
+    name: "jeyeyeu",
     [id]: 1
 };
 ```
