@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 4.8"
 subtitle: "Objects: Object to Primitive Conversion"
 date:   2021-01-31 08:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
