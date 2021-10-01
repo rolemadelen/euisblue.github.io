@@ -1,14 +1,14 @@
 {
-    "name": "j2ieu-blog",
-    "title": "J2ieu Blog",
-    "author": "Jii Eu <j2ieu@pm.me>",
+    "name": "jeyeyeu-blog",
+    "title": "Jeyeyeu Blog",
+    "author": "Jii Eu <jeyeyeu@pm.me>",
     "version": "2.0.0",
-    "homepage": "http://j2ieu.github.io",
+    "homepage": "http://jeyeyeu.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/j2ieu/j2ieu.github.io"
+        "url": "https://github.com/jeyeyeu/jeyeyeu.github.io"
     },
-    "bugs": "https://github.com/j2ieu/j2ieu.github.io/issues",
+    "bugs": "https://github.com/jeyeyeu/jeyeyeu.github.io/issues",
     "devDependencies": {
         "grunt": "^1.3.0",
         "grunt-banner": "~0.2.3",

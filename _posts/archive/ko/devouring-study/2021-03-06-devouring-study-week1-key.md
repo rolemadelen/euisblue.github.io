@@ -2,7 +2,7 @@
 layout: post
 title:  "Devouring Study Week 1: insertAt & removeAt"
 date:   2021-03-06 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 catalog: true
 hidden: true
 lang: "ko"

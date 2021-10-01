@@ -3,7 +3,7 @@ layout: post
 title:  "Modern JavaScript 2.1 - 2.5"
 subtitle: "Fundamentals: The basics • Code structure • The modern mode, 'use strict' • Variables • Data types"
 date:   2021-01-04 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

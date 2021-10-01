@@ -1,9 +1,9 @@
 <div align="center">
 <h2>🧑 こんにちは 👋🏼 </h2> 
 <p>
-<u><b>j2ieu</b></u>という筆名で活動している<u><b>劉・智道</b></u>（ユウ・ジイ）と申します。
+<u><b>Jeyeyeu</b></u>という筆名で活動している<u><b>劉・智道</b></u>（ユウ・ジイ）と申します。
 </p>
-<img src="./../../img/avatar-j2ieu-3.jpg" width="200" height="256" alt="j2ieu" />
+<img src="./../../img/avatar-jeyeyeu-3.jpg" width="200" height="256" alt="jeyeyeu" />
 <p class="desc">
 私は、新しいことに挑戦しいろいろなことを学び、<wbr>常に挑戦することが好きな<wbr>
 永遠に学生のような人です。 <wbr>コーヒー、<wbr>とくにモカが大好きなので、<wbr>

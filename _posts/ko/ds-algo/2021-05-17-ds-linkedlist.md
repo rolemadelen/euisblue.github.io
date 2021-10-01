@@ -3,7 +3,7 @@ layout: post
 title: "연결리스트 (LinkedList)"
 subtitle: "연결리스트의 정의와 성질, 종류, 그리고 기능에 대하여 알아본다"
 date: 2021-05-17 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
