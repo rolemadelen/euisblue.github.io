@@ -16,12 +16,12 @@ const PRECACHE_LIST = [
   "./",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
-  "./js/j2ieu-blog.min.js",
+  "./js/jeyeyeu-blog.min.js",
   "./js/snackbar.js",
-  "./img/avatar-j2ieu.jpg",
+  "./img/avatar-jeyeyeu.jpg",
   "./img/home-bg.png",
   "./img/404-bg.jpg",
-  "./css/j2ieu-blog.min.css",
+  "./css/jeyeyeu-blog.min.css",
   "./css/bootstrap.min.css"
 ]
 const HOSTNAME_WHITELIST = [

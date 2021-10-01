@@ -3,7 +3,7 @@ layout: post
 title: "프로그래머스 Level 1 문제풀이"
 subtitle: "프로그래머스 Level 1 난이도 - 해결한 문제들 리스트"
 date: 2021-07-04 07:00:00 +1400
-author: "J2ieu"
+author: "Jeyeyeu"
 header-img: "img/post-bg-ps.jpg"
 header-mask: 0.6
 catalog: true

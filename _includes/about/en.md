@@ -1,9 +1,9 @@
 <div align="center">
 <h2>🧑 Hello 👋🏼 </h2> 
 <p>
-I’m <u><b>J2ieu</b></u> or <b>Jii Eu</b>.
+I’m <u><b>Jeyeyeu</b></u> or <b>Jii Eu</b>.
 </p>
-<img src="./../../img/avatar-j2ieu.jpg" width="300" height="256" alt="j2ieu" />
+<img src="./../../img/avatar-jeyeyeu.jpg" width="300" height="256" alt="jeyeyeu" />
 <p class="desc">
 I define myself as a doodler, <wbr>a lifelong learner, <wbr>a cat lover, <wbr>a taiko player🥁, and sometimes a <wbr>procrastinator.
 </p>

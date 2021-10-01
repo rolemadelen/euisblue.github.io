@@ -1,10 +1,10 @@
 <div align="center">
 <h2>🧑 안녕하세요 👋🏼 </h2> 
 <p>
-<u><b>j2ieu</b></u>이란 필명을 사용하고 있는 <u><b>유지이</b></u>입니다.
+<u><b>jeyeyeu</b></u>이란 필명을 사용하고 있는 <u><b>유지이</b></u>입니다.
 </p>
 
-<img src="./../../img/avatar-j2ieu-2.jpg" width="300" height="256" alt="j2ieu" />
+<img src="./../../img/avatar-jeyeyeu-2.jpg" width="300" height="256" alt="jeyeyeu" />
 
 <p class="desc">
 저는 도전하고 배우며 성장하는 것을 좋아하는 영원한 <wbr>학생,<wbr> 
