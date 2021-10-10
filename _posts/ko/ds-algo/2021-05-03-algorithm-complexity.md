@@ -3,7 +3,6 @@ layout: post
 title:  "시간 & 공간 복잡도 (Time & Space Complexity)"
 subtitle: "PS에서의 시간복잡도? 공간복잡도? Big-Oh? 는 무엇을 의미하는가"
 date:   2021-05-03 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true

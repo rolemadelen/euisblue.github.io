@@ -3,7 +3,6 @@ layout: post
 title:  "Binary Tree"
 subtitle: "Learn about the characteristcs of binary tree, types, and tree traversals."
 date:   2021-07-14 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
@@ -202,7 +201,7 @@ void BinaryTree::deleteNode(void) {
 ```
 
 ### Practice (leetcode)
-- [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) ([solution](https://github.com/jeyeyeu/cp/tree/leetcode/easy/617/617.cpp))
+- [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) ([solution](https://github.com/yuueu/cp/tree/leetcode/easy/617/617.cpp))
 
 ## Reference
 - [https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
