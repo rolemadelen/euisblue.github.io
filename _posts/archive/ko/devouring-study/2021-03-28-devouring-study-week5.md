@@ -2,7 +2,6 @@
 layout: post
 title:  "Devouring Study Week 5: Tree & Binary Tree"
 date:   2021-03-28 07:00:00 +1400
-author: "Jeyeyeu"
 catalog: true
 hidden: true
 lang: "ko"

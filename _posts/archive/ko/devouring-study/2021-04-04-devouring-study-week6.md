@@ -2,7 +2,6 @@
 layout: post
 title:  "Devouring Study Week 6: BST & Red-Black Tree"
 date:   2021-04-04 07:00:00 +1400
-author: "Jeyeyeu"
 catalog: true
 hidden: true
 lang: "ko"

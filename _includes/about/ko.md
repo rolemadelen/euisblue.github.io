@@ -1,10 +1,10 @@
 <div align="center">
 <h2>🧑 안녕하세요 👋🏼 </h2> 
 <p>
-<u><b>jeyeyeu</b></u>이란 필명을 사용하고 있는 <u><b>유지이</b></u>입니다.
+<b>유유 (Eu, Yuu)</b>입니다.
 </p>
 
-<img src="./../../img/avatar-jeyeyeu-2.jpg" width="300" height="256" alt="jeyeyeu" />
+<img src="./../../img/avatar-yuueu-2.jpg" width="300" height="256" alt="yuueu" />
 
 <p class="desc">
 저는 도전하고 배우며 성장하는 것을 좋아하는 영원한 <wbr>학생,<wbr> 
@@ -72,7 +72,7 @@ h3 {
 <div align='center' class="contact">
   <h3>🐱 Reach Me 🐱</h3>
   <div style="display: flex; justify-content: center;">
-  <a href="https://www.linkedin.com/in/jiieu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/yuueu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
   <a href="https://www.twitter.com/ipflegen/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
   <a href="https://www.jiieu.com"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white&link=https://www.jiieu.com"/></a>
   <a href="https://www.instagram.com/jiidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/jiidraws/"/></a>

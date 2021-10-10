@@ -3,7 +3,6 @@ layout: post
 title:  "JavaScriptの基礎 2.8"
 subtitle: "JavaScriptの演算子"
 date:   2021-01-07 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -71,9 +70,9 @@ console.log( 2 ** 10 ); // 1024 (2 * 2 *  ... * 2 * 2, 10回)
 二項演算`+`が文字列に適用された場合は、お互いの文字を結合します。
 
 ```js
-let name = 'jeyeyeu';
+let name = 'yuueu';
 let s = 'my name is ';
-console.log(s + name); // my name is jeyeyeu
+console.log(s + name); // my name is yuueu
 ```
 
 一方のオペランドが文字列の場合、その式の結果も文字列になることに注意してください。

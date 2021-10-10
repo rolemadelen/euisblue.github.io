@@ -3,7 +3,6 @@ layout: post
 title:  "Modern JavaScript 4.5"
 subtitle: "Objects: Constructors"
 date:   2021-01-25 08:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -34,9 +33,9 @@ function User(name) {
     this.age = 19;
 }
 
-let user = new User('Jiieu');
+let user = new User('Yuueu');
 
-console.log(user.name); // Jiieu
+console.log(user.name); // Yuueu
 console.log(user.age); // 19
 ```
 
@@ -53,11 +52,11 @@ function User(name) {
 }
 ```
 
-So `let user = new User('jiieu')` gives the same result as:
+So `let user = new User('Yuueu')` gives the same result as:
 
 ```js
 let user = {
-    name: "jiieu",
+    name: "yuueu",
     age: 19,
 };
 ```
@@ -106,18 +105,18 @@ When it is defined, it will return that particular object.
 ```js
 // returns 'this'
 function User() {
-    this.name = "jeyeyeu";
+    this.name = "yuueu";
 }
 
 // also returns 'this'
 function User2() {
-    this.name = "jeyeyeu";
+    this.name = "yuueu";
     return;
 }
 
-// returns an object with name: "jeyeyeu"
+// returns an object with name: "yuueu"
 function Admin() {
-    return { name: "jeyeyeu" };
+    return { name: "yuueu" };
 }
 ```
 
@@ -132,8 +131,8 @@ function User(name) {
     }
 }
 
-let user = new User("Jiieu");
-user.sayHi(); // Hi! Jiieu
+let user = new User("Yuueu");
+user.sayHi(); // Hi! Yuueu
 ```
 
 ## Reference

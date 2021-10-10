@@ -3,7 +3,6 @@ layout: post
 title:  "Modern JavaScript 2.1 - 2.5"
 subtitle: "Fundamentals: The basics • Code structure • The modern mode, 'use strict' • Variables • Data types"
 date:   2021-01-04 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -173,10 +172,10 @@ Think of a variable as a **storage with a specific name**. In this storage, you 
 In JavaScript, we use `let` keyword to declare a variable.
 
 ```js
-let name = 'jiieu';
+let name = 'yuueu';
 let age = 21;
 
-console.log('name: + ' + name); // name: jiieu
+console.log('name: + ' + name); // name: yuueu
 console.log('age: ' + age); // age: 21
 
 // re-assign values to existing variables
@@ -195,8 +194,8 @@ Although not exactly same, `var` is old version of `let` keyword. So please use 
 2. The first letter must not be a letter.
 
     ```jsx
-    let userName1 = 'jiieu';
-    let userName2 = 'jiieu';
+    let userName1 = 'yuueu';
+    let userName2 = 'yuueu';
 
     let $ = 'dollar';
     let _ = 'underscore';
@@ -276,7 +275,7 @@ const bigNumber = 1234567890123456789012345678901234567890n; // 'n' at the end
 ### 3. string
 
 ```js
-let str1 = "Jiieu";
+let str1 = "Yuueu";
 let str2 = 'Quadcore';
 let str3 = `string interpolation: ${str1} and ${str2}`;
 ```
