@@ -3,7 +3,6 @@ layout: post
 title:  "JavaScriptの基礎 2.9 - 2.14"
 subtitle: "比較・条件分岐: if, '?'・論理演算子・NULL合体演算子'??'・ループ: whileとfor・switch文"
 date:   2021-01-09 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

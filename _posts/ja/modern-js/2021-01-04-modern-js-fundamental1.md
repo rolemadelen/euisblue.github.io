@@ -3,7 +3,6 @@ layout: post
 title:  "JavaScriptの基礎 2.1 - 2.5"
 subtitle: "Hello, world!・コード構造モダンなモード, 'use strict'・変数・データ型"
 date:   2021-01-04 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -146,10 +145,10 @@ JavaScriptプログラムを複数のファイルに分割できます。分割�
 データを保存するとき使用する**名前がついているコンテナー**です。`let`キーワードを使用し、`=`演算子を使用してデータを保存します。
 
 ```js
-let name = 'jeyeyeu';
+let name = 'yuueu';
 let age = 21;
 
-console.log('name: + ' + name); // name: jeyeyeu
+console.log('name: + ' + name); // name: yuueu
 console.log('age: ' + age); // age: 21
 
 // 値の変更
@@ -166,8 +165,8 @@ console.log('age: ' + age); // age: 24
 
 1. 変数名には文字、数字、記号`$`と`_`のみを含む必要があります。
     ```js
-    let userName1 = 'jeyeyeu';
-    let userName2 = 'jeyeyeu';
+    let userName1 = 'yuueu';
+    let userName2 = 'yuueu';
 
     let $ = 'dollar';
     let _ = 'underscore';
@@ -254,7 +253,7 @@ const bigNumber = 1234567890123456789012345678901234567890n;
 ### 【３】文字列
 
 ```js
-let str = "jeyeyeu";
+let str = "yuueu";
 let str2 = 'Quadcore';
 let str3 = `다른 변수를 삽입: ${str} and ${str2}`;
 ```

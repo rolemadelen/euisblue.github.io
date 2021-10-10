@@ -3,7 +3,6 @@ layout: post
 title: "Apache & Nginx Basic Authentication"
 subtitle: "Setting up Basic Authentication in Apache and Nginx"
 date: 2021-06-21 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-security.jpg"
 header-mask: 0.6
 catalog: true

@@ -3,7 +3,6 @@ layout: post
 title:  "二分木（Binary Tree）"
 subtitle: "二分木の特性やタイプそしてツリーの巡回について知る。"
 date:   2021-07-18 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
@@ -206,7 +205,7 @@ void BinaryTree::deleteNode(void) {
 ```
 
 ## 練習問題
-- [617. Merge Two 二分木s](https://leetcode.com/problems/merge-two-binary-trees/) ([solution](https://github.com/jeyeyeu/cp/tree/leetcode/easy/617/617.cpp))
+- [617. Merge Two 二分木s](https://leetcode.com/problems/merge-two-binary-trees/) ([solution](https://github.com/yuueu/cp/tree/leetcode/easy/617/617.cpp))
 
 --- 
 

@@ -3,7 +3,6 @@ layout: post
 title:  "모던 자바스크립트 3.5 - 3.6"
 subtitle: "코드 품질: 테스트 자동화와 Mocha • 폴리필"
 date:   2021-01-18 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
