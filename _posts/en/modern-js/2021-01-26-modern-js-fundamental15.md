@@ -3,7 +3,6 @@ layout: post
 title:  "Modern JavaScript 4.6"
 subtitle: "Objects: Optional chaining '?.'"
 date:   2021-01-26 08:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -77,13 +76,13 @@ Optional chaining `?.` is not an operator. It is a special syntax construct that
 let user = {};
 user.sayHi?.(); // nothing (no such method)
 
-let jeyeyeu {
+let yuueu {
     sayHi () {
         console.log("Hello!");
     }
 }
 
-jeyeyeu.sayHi?.(); // Hello
+yuueu.sayHi?.(); // Hello
 ```
 
 Same when trying to access properties using square brackets.
@@ -91,12 +90,12 @@ Same when trying to access properties using square brackets.
 let key = 'first name';
 
 let user1 = {
-    'first name': "jeyeyeu"
+    'first name': "yuueu"
 };
 
 let user2 = { };
 
-console.log(user1?.[key]); // jeyeyeu
+console.log(user1?.[key]); // yuueu
 console.log(user2?.[key]); // undefined
 ```
 

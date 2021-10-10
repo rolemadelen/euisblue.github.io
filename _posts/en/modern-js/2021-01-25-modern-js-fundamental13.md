@@ -3,7 +3,6 @@ layout: post
 title:  "Modern JavaScript 4.4"
 subtitle: "Objects: Object methods, 'this'"
 date:   2021-01-25 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true
@@ -20,7 +19,7 @@ Let's recall what object is from previous units.
 **Object** - an entity that represents the real world object.
 ```js
 let user = {
-    name: "jeyeyeu",
+    name: "yuueu",
     age: "19"
 };
 ```
@@ -30,7 +29,7 @@ Objects in the real world have an action associated to it. For example, a human 
 ## Methods
 ```js
 let user = {
-    name: "jeyeyeu",
+    name: "yuueu",
     age: "19"
 };
 
@@ -73,32 +72,32 @@ We can omit `function` and just write `sayHi()`. This shorter syntax is easier t
 We can access the object from the method using `this` keyword.
 ```js
 let user = {
-    name: "jeyeyeu",
+    name: "yuueu",
     sayHi() {
         console.log(`Hi! ${this.name}`);
     }
 };
 
-user.sayHi(); // Hi! jeyeyeu
+user.sayHi(); // Hi! yuueu
 ```
 
 It is also possible to access the object without using `this`.
 
 ```js
 let user = {
-    name: "jeyeyeu",
+    name: "yuueu",
     sayHi() {
         console.log(`Hi! ${user.name}`);
     }
 };
 
-user.sayHi(); // Hi! jeyeyeu
+user.sayHi(); // Hi! yuueu
 ```
 
 This approach, however, is risky. We can overwrite the outer object `user` to some other value and now `user.name` will reference something else or wont exist at all.
 ```js
 let user = {
-    name: "jeyeyeu",
+    name: "yuueu",
     sayHi() {
         console.log(`Hi! ${user.name}`);
     }
@@ -135,14 +134,14 @@ guest.f(); // Admin
 Arrow functions do not have `this`.
 ```js
 let user = {
-    firstName: "jiieu",
+    firstName: "Yuu",
     sayHi() {
         let arraw = () => alert(this.firstName);
         arrow();
     }
 };
 
-user.sayHi(); // jiieu
+user.sayHi(); // Yuu
 ```
 
 ## Reference

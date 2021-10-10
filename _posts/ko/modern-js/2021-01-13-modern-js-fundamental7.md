@@ -3,7 +3,6 @@ layout: post
 title:  "모던 자바스크립트 3.1"
 subtitle: "코드 품질: Chrome으로 디버깅하기"
 date:   2021-01-13 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

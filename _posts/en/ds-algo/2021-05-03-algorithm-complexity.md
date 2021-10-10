@@ -3,7 +3,6 @@ layout: post
 title:  "Time & Space Complexity"
 subtitle: "What is time & space complexity in CP? What is Big-Oh?"
 date:   2021-05-03 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true

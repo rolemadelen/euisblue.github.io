@@ -3,7 +3,6 @@ layout: post
 title:  "모던 자바스크립트 4.3"
 subtitle: "객체: 가비지 컬렉션"
 date:   2021-01-20 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

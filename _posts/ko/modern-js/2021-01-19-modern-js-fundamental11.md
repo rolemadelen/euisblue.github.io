@@ -3,7 +3,6 @@ layout: post
 title:  "모던 자바스크립트 4.2"
 subtitle: "객체: 참조에 의한 객체 복사"
 date:   2021-01-19 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-js.jpg"
 header-mask: 0.5
 catalog: true

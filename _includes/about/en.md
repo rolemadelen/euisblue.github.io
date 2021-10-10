@@ -1,9 +1,9 @@
 <div align="center">
 <h2>🧑 Hello 👋🏼 </h2> 
 <p>
-I’m <u><b>Jeyeyeu</b></u> or <b>Jii Eu</b>.
+I’m <b>Yuu Eu</b>.
 </p>
-<img src="./../../img/avatar-jeyeyeu.jpg" width="300" height="256" alt="jeyeyeu" />
+<img src="./../../img/avatar-yuueu.jpg" width="300" height="256" alt="yuueu" />
 <p class="desc">
 I define myself as a doodler, <wbr>a lifelong learner, <wbr>a cat lover, <wbr>a taiko player🥁, and sometimes a <wbr>procrastinator.
 </p>
@@ -67,9 +67,9 @@ h3 {
 <div align='center' class="contact">
   <h3>🐱 Reach Me 🐱</h3>
   <div style="display: flex; justify-content: center;">
-  <a href="https://www.linkedin.com/in/jiieu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/Viieu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
   <a href="https://www.twitter.com/ipflegen/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
-  <a href="https://www.jiieu.com"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white&link=https://www.jiieu.com"/></a>
-  <a href="https://www.instagram.com/jiidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/jiidraws/"/></a>
+  <a href="https://www.Viieu.com"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white&link=https://www.Viieu.com"/></a>
+  <a href="https://www.instagram.com/Viidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/Viidraws/"/></a>
   </div>
 </div>

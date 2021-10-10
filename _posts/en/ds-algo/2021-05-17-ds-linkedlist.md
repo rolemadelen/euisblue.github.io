@@ -3,7 +3,6 @@ layout: post
 title: "Linked List"
 subtitle: "Characteristics, types, and operations of Linked List"
 date: 2021-05-17 07:00:00 +1400
-author: "Jeyeyeu"
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
