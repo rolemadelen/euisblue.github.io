@@ -75,8 +75,8 @@ h3 {
   <h3>🐱 連絡 🐱</h3>
   <div style="display: flex; justify-content: center;">
   <a href="https://www.linkedin.com/in/yuueu"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
-  <a href="https://www.twitter.com/ipflegen/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
+  <a href="https://www.twitter.com/_yuueu_/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white"/></a>
   <a href="https://www.yuueu.me"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white&link=https://www.yuueu.me"/></a>
-  <a href="https://www.instagram.com/jiidraws/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/jiidraws/"/></a>
+  <a href="https://www.instagram.com/yuusdoodle/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/yuusdoodle/"/></a>
   </div>
 </div>
