@@ -6,7 +6,6 @@ date:   2021-06-27 07:00:00 +1400
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
-hidden: false
 lang: "ko"
 english: true
 japanese: false

@@ -6,7 +6,9 @@ date: 2021-06-21 07:00:00 +1400
 header-img: "img/post-bg-security.jpg"
 header-mask: 0.6
 catalog: true
+
 hidden: false
+published: true
 lang: "en"
 korean: false
 japanese: false
