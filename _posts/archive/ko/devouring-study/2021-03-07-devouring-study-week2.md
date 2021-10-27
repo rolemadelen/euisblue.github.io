@@ -7,7 +7,7 @@ hidden: true
 lang: "ko"
 permalink: /ko/devouring-study/week2/
 tags:
-  - data Structure  
+  - data structure  
   - linked list 
 ---
 

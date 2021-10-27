@@ -6,8 +6,7 @@ date: 2021-07-04 07:00:00 +1400
 header-img: "img/post-bg-ps.jpg"
 header-mask: 0.6
 catalog: true
-published: false
-hidden: false
+published: true
 lang: "ko"
 permalink: /ps/programmers/key/
 tags:
