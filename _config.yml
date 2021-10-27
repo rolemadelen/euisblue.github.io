@@ -90,3 +90,5 @@ defaults:
       path: ""
     values:
       author: "Yuu Eu"
+      hidden: true
+      published: false
