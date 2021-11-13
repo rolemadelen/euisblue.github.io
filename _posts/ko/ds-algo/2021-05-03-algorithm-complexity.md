@@ -10,6 +10,10 @@ catalog: true
 lang: "ko"
 english: true
 japanese: true
+
+published: true
+hidden: false
+
 permalink: /ko/algorithm/complexity/
 tags:
   - algorithm

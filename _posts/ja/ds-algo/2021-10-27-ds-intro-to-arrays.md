@@ -7,9 +7,6 @@ header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
 
-hidden: false
-published: true
-
 lang: "ja"
 english: true
 korean: true
