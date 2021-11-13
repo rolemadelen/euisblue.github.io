@@ -9,6 +9,10 @@ catalog: true
 lang: "en"
 korean: true
 japanese: false
+
+published: true
+hidden: false
+
 permalink: /en/ds/binary-tree/
 tags:
   - data structure  
