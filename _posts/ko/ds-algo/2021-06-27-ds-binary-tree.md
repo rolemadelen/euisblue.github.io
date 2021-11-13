@@ -9,6 +9,10 @@ catalog: true
 lang: "ko"
 english: true
 japanese: false
+
+published: true
+hidden: false
+
 permalink: /ko/ds/binary-tree/
 tags:
   - data structure  

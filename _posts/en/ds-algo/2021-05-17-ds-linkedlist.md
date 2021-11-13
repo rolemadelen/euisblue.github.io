@@ -9,6 +9,10 @@ catalog: true
 lang: "en"
 korean: true
 japanese: true
+
+published: true
+hidden: false
+
 permalink: /en/ds/linkedlist/
 tags:
 - data structure
