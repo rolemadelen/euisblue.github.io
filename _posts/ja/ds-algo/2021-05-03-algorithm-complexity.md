@@ -9,6 +9,10 @@ catalog: true
 lang: "ja"
 korean: true
 english: true
+
+published: true
+hidden: false
+
 permalink: /ja/algorithm/complexity/
 tags:
 <<<<<<< HEAD

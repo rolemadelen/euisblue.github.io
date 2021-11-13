@@ -9,6 +9,10 @@ catalog: true
 lang: "ja"
 korean: true
 english: true
+
+published: true
+hidden: false
+
 permalink: /ja/ds/binary-tree/
 tags:
   - data structure  
