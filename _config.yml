@@ -1,10 +1,10 @@
 # Site settings
-title: YuuEu
-SEOTitle: Yuueu's Programming Blog
+title: .Blue
+SEOTitle: Blue's Tech Blog
 header-img: img/home-bg.png
 email: yuueu@pm.me
-description: "개발 블로그 | Junior Frontend Engineer | Check how @yuueu learns."
-keyword: "Frontend, Engineer, Developer, yuueu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
+description: "개발 블로그 | Junior Frontend Engineer | Check how @euisblue learns."
+keyword: "Frontend, Engineer, Developer, euisblue, yuueu, Web, 웹, 프로그래밍, 개발자, 프론트엔드, ウェブ, エンジニア, プログラミング"
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -12,8 +12,8 @@ future: true
 
 # SNS settings
 RSS: true
-github_username:    "yuueu"
-twitter_username:   "_yuueu"
+github_username:    "euisblue"
+twitter_username:   "euisblue"
 linkedin_username:  "yuueu"
 instagram_username: "yuusdoodle"
 
@@ -88,6 +88,6 @@ defaults:
     scope:
       path: ""
     values:
-      author: "Yuu Eu"
+      author: ".Blue"
       hidden: true
       published: false
