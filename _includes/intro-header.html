@@ -95,33 +95,47 @@
     @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Shippori+Mincho:wght@400;500;600;700;800&family=Sunflower:wght@300;500&display=swap');
 </style>    
 
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {% if include.short %}
-        <div class="site-heading" id="tag-heading">
-        {% else %}
-        <div class="site-heading">
-        {% endif %}
-        {% if page.lang == 'en' %}
-          <h1 class="gradient-text" style="--gradient_value:linear-gradient(to right, white, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), white)">
-        {% elsif page.lang == 'ko' %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, black, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), black)">
-        {% elsif page.lang == 'ja' %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white,rgba(200, 0, 0, 0.67), white ,rgba(200, 0, 0, 0.67), white)">
-        {% else %}
-          <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white, white)">
-        {% endif %}
-            <span> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
-         </h1>
+    {% if page.lang == 'en'%}
+    <video loop autoplay muted style="width:100%;">
+        <source src="/img/blue.mp4" type="video/mp4">
+    </video>
+    {% elsif page.lang == 'ko'%}
+    <video loop autoplay muted style="width:100%;">
+        <source src="/img/blue_kr.mp4" type="video/mp4">
+    </video>
+    {% elsif page.lang == 'ja'%}
+    <video loop autoplay muted style="width:100%;">
+        <source src="/img/blue_ja.mp4" type="video/mp4">
+    </video>
+    {% else %}
+    <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% if include.short %}
+            <div class="site-heading" id="tag-heading">
+            {% else %}
+            <div class="site-heading">
+            {% endif %}
+            {% if page.lang == 'en' %}
+            <h1 class="gradient-text" style="--gradient_value:linear-gradient(to right, white, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), white)">
+            {% elsif page.lang == 'ko' %}
+            <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, black, rgba(221, 5, 5, 0.67), white, rgba(5, 5, 221, 0.67), black)">
+            {% elsif page.lang == 'ja' %}
+            <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white,rgba(200, 0, 0, 0.67), white ,rgba(200, 0, 0, 0.67), white)">
+            {% else %}
+            <h1 class="gradient-text" style="--gradient_value: linear-gradient(to right, white, white)">
+            {% endif %}
+                <span> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
+            </h1>
 
-          <span class="subheading">
-            {{ page.description }}
-            </span>
+            <span class="subheading">
+                {{ page.description }}
+                </span>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-</header>
+    </header>
+    {% endif %}
 {% endif %}
