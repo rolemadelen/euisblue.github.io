@@ -6,22 +6,6 @@ title: "유유"
 permalink: /ko/
 ---
 
-
-<script src="js/lottie.js" type="text/javascript"></script>
-<script src="js/bodymovin.js" type="text/javascript"></script>
- <script type="text/javascript">
-        console.log('hello');
-        lottie.loadAnimation({
-            container: document.getElementById('bm'), // the dom element that will contain the animation
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'img/data.json' // the path to the animation json
-            });
-    </script>
-
-<div id="bm"></div>
-
 {% assign posts = site.posts | where:'lang','ko' | where: 'hidden','false' %}
 
 {% for post in posts %}
