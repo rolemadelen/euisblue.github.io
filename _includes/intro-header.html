@@ -96,17 +96,11 @@
 </style>    
 
     {% if page.lang == 'en'%}
-    <video loop autoplay muted style="width:100%;">
-        <source src="/img/blue.mp4" type="video/mp4">
-    </video>
+    <img src="/img/blue.gif"  style="width: 100%">
     {% elsif page.lang == 'ko'%}
-    <video loop autoplay muted style="width:100%;">
-        <source src="/img/blue_kr.mp4" type="video/mp4">
-    </video>
+    <img src="/img/blue_ko.gif" style="width: 100%">
     {% elsif page.lang == 'ja'%}
-    <video loop autoplay muted style="width:100%;">
-        <source src="/img/blue_ja.mp4" type="video/mp4">
-    </video>
+    <img src="/img/blue_ja.gif" style="width: 100%">
     {% else %}
     <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
