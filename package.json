@@ -24,6 +24,7 @@
         "push": "git push origin main --tag"
     },
     "dependencies": {
+        "json-schema": "^0.4.0",
         "openssl": "^1.1.0"
     }
 }
