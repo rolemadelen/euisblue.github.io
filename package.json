@@ -24,6 +24,7 @@
         "push": "git push origin main --tag"
     },
     "dependencies": {
+        "lottie-web": "^5.8.1",
         "openssl": "^1.1.0"
     }
 }
