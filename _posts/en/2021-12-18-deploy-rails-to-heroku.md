@@ -2,7 +2,7 @@
 layout: post
 title: "[RoR] Migrating from SQLite3 to PostgreSQL"
 subtitle: "Migrate pre-existing rails app's database from sqlite3 to postgresql"
-date: 2021-12-18 07:00:00 +1400
+date: 2021-12-17 07:00:00 +1400
 header-img: "img/post-bg-ds-algo.jpg"
 header-mask: 0.6
 catalog: true
@@ -13,7 +13,7 @@ published: true
 lang: "en"
 korean: false
 japanese: false
-permalink: /en/deploy-rails-app-to-heroku
+permalink: /en/deploy-rails-app-to-heroku/
 tags:
 - rails
 - postgresql
