@@ -3,7 +3,7 @@ layout: post
 title: "[RoR] How to use partial layouts"
 subtitle: "Learn how to create partials with local variables."
 date: 2022-01-01 06:00:00 +1400
-header-img: "img/post-bg-ds-algo.jpg"
+header-img: "img/post-bg-rails.jpeg"
 header-mask: 0.6
 catalog: true
 
