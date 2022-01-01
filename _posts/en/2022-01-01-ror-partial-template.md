@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[RoR] How to use partial layouts"
+title: "[RoR] How to use partial template"
 subtitle: "Learn how to create partials with local variables."
 date: 2022-01-01 06:00:00 +1400
 header-img: "img/post-bg-rails.jpeg"
@@ -13,15 +13,15 @@ published: true
 lang: "en"
 korean: false
 japanese: false
-permalink: /en/ror-partial-layouts/
+permalink: /en/ror-partial-template/
 tags:
 - rails
 - partials
 ---
 
-## Partial Layouts 
+## Partial Templates 
 
-Let say we have a file `a.html.erb` and `b.html.erb`.
+We have two files: `a.html.erb` and `b.html.erb`, with similar contents.
 
 <br>
 
@@ -63,12 +63,14 @@ b.html.erb
 </div>
 ```
 
-Both files are identical except `<h1>` tag. I like DRY (Don't Repeat Yourself) method. So lets create a partial template and replace those lines with it.
+Contents of both files are identical except `<h1>` tag. I'm going to follow the DRY (Don't Repeat Yourself) principle and remove those duplicates using a partial template.
 
 ### Creating a partial
-The name of the partials start with an underscore(`_`). I'm going to create a partial `_langList.html.erb` since it's a list of programming languages in the view.
+The name of the partial template or a partial starts with an underscore(`_`). 
 
+<br>
 
+Here's my partial `_langList.html.erb`:
 ```erb
 <ul role="list">
   <li>Ruby</li>
@@ -83,7 +85,7 @@ The name of the partials start with an underscore(`_`). I'm going to create a pa
 </ul>
 ```
 
-There you go. Now lets replace those lines from `a.html.erb` and `b.html.erb`
+Now we can replace these codes in `a.html.erb` and `b.html.erb` with the partial we just created.
 
 ### Calling a partial
 
@@ -105,7 +107,7 @@ b.html.erb
 </div>
 ```
 
-Note that I didn't use `'_langList'`. You don't need to include the underscore when passing the name. In fact, you shouldn't include it otherwise rails wont be able to locate the file.
+Note that I didn't use `'_langList'`. You don't need to include the underscore when passing the name. In fact, you shouldn't include it otherwise rails wont be able to locate partials.
 
 <br>
 
@@ -115,7 +117,7 @@ Sometimes you might need to specify the partial in a specific view directory. Le
 ```
 
 ### Passing local variables
-We replaced the list with a `langList` partial but what about those `<h1>` tags? Wouldn't it be nice if we can pass in variables in a partial? We actually can.
+We can further reduce those codes in `a.html.erb` and `b.html.erb` by passing in contents inside the `<h1>` tag with a variable to the partial.
 
 <br>
 
@@ -133,13 +135,13 @@ b.html.erb
 </div>
 ```
 
-Using `:locals`, we can pass in variables to our partials. Here, `:title` is the variable I named, and I can use this variable in partial template.
+Using `:locals`, we can pass in variables to the partial. Here, `:title` is the key I named, and I can access its value with `title` (without the colon) in partial.
 
 <br>
 
 _langList.html.erb
 ```erb
-<h1> <%= title %> </h1> <!-- not :title -->
+<h1> <%= title %> </h1>
 
 <ul role="list">
   <li>Ruby</li>
@@ -154,7 +156,38 @@ _langList.html.erb
 </ul>
 ```
 
-Now if you want, you can actually put those `<div>` inside the partial too.
+If you want, you can even include those `<div>` tags inside the partial and reduce the code even further more.
+
+<br>
+
+_langList.html.erb
+```erb
+<div class="container mx-auto">
+  <h1> <%= title %> </h1>
+
+  <ul role="list">
+    <li>Ruby</li>
+    <li>Rails</li>
+    <li>C++</li>
+    <li>C</li> 
+    <li>Python</li>
+    <li>JavaScript</li>
+    ... 
+    ...
+    <!-- many more -->
+  </ul>
+</div>
+```
+
+a.html.erb
+```erb
+<%= render partial: 'langList', :locals => {:title => "a.html.erb"} %>
+```
+
+b.html.erb
+```erb
+<%= render partial: 'langList', :locals => {:title => "b.html.erb"} %>
+```
 
 ## Reference
 - [Rails Guides - Layouts and Renderings](https://guides.rubyonrails.org/layouts_and_rendering.html)
