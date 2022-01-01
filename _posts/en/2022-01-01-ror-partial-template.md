@@ -2,7 +2,7 @@
 layout: post
 title: "[RoR] How to use partial template"
 subtitle: "Learn how to create partials with local variables."
-date: 2022-01-01 06:00:00+1400
+date: 2022-01-01 06:00
 header-img: "img/post-bg-rails.jpeg"
 header-mask: 0.6
 catalog: true
