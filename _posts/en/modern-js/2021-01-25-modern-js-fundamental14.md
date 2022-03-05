@@ -33,9 +33,9 @@ function User(name) {
     this.age = 19;
 }
 
-let user = new User('Yuueu');
+let user = new User('euisblue');
 
-console.log(user.name); // Yuueu
+console.log(user.name); // euisblue
 console.log(user.age); // 19
 ```
 
@@ -52,11 +52,11 @@ function User(name) {
 }
 ```
 
-So `let user = new User('Yuueu')` gives the same result as:
+So `let user = new User('euisblue')` gives the same result as:
 
 ```js
 let user = {
-    name: "yuueu",
+    name: "euisblue",
     age: 19,
 };
 ```
@@ -105,18 +105,18 @@ When it is defined, it will return that particular object.
 ```js
 // returns 'this'
 function User() {
-    this.name = "yuueu";
+    this.name = "euisblue";
 }
 
 // also returns 'this'
 function User2() {
-    this.name = "yuueu";
+    this.name = "euisblue";
     return;
 }
 
-// returns an object with name: "yuueu"
+// returns an object with name: "euisblue"
 function Admin() {
-    return { name: "yuueu" };
+    return { name: "euisblue" };
 }
 ```
 
@@ -131,8 +131,8 @@ function User(name) {
     }
 }
 
-let user = new User("Yuueu");
-user.sayHi(); // Hi! Yuueu
+let user = new User("euisblue");
+user.sayHi(); // Hi! euisblue
 ```
 
 ## Reference
